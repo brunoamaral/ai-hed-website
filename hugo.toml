@@ -1,4 +1,5 @@
-baseURL = 'https://ai-hed.com/'
+#baseURL = 'https://ai-hed.com/'
+baseURL= 'https://ai-hed-website.pages.dev'
 languageCode = 'en-uk'
 title = 'AI-HED'
 theme = "Hugo-Now-UI-Pro"
