@@ -1,4 +1,6 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://ai-hed.com/'
 languageCode = 'en-uk'
-title = 'My New Hugo Site'
-themes = ["Hugo-Now-UI-Pro"]
+title = 'AI-HED'
+theme = "Hugo-Now-UI-Pro"
+[params]
+logo = "/images/ai-hed-shorthandlogo.svg"

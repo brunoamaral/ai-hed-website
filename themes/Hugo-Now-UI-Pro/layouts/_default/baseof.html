@@ -41,7 +41,7 @@
 	{{ $solid := resources.Get "css/fontawesome/solid.css"  }}
 
 	{{- $bootstrap := resources.Get "css/bootstrap.min.css" -}}
-	{{- $nowUi := resources.Get "scss/now-ui-kit.scss" | resources.ToCSS (dict "enableSourceMap" false "outputStyle" "compressed") -}}
+	{{- $nowUi := resources.Get "scss/now-ui-kit.scss" | toCSS (dict "enableSourceMap" false "outputStyle" "compressed") -}}
 
 	{{ $styles := slice $bootstrap $nowUi $montserrat $fontawesome $brands $regular $solid | resources.Concat "css/style.css" |  minify | fingerprint  -}}
 
@@ -169,12 +169,8 @@
 	{{- end -}}
 	<meta name="twitter:dnt" content="on">
 
-	<!-- Facebook Page Admin ID for Domain Insights -->
-	{{- with $.Site.Social.facebook_admin -}}<meta property="fb:admins" content="{{- . -}}" />{{- end -}}
-	{{- with $.Site.Social.facebook_app_id -}}<meta property="fb:app_id" content="{{- . -}}" />{{- end -}}
-
 	{{- with $.Site.Params.googleSiteVerification -}}<meta name="google-site-verification" content="{{- . -}}" />{{- end -}}
-	{{- if ne .Site.IsServer true -}}
+	{{- if ne hugo.IsServer true -}}
 	{{- with $.Site.Params.googleTagManager -}}
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -197,7 +193,7 @@
 	{{ end }}
 </head>
 	<body class="{{ block "bodyclasses" . }}{{ end }} sidebar-collapse" id="{{ block "bodyid" . }}home{{ end }}" {{ block "data-attributes" . }}{{end}} >
-	{{- if eq .Site.IsServer false -}}
+	{{- if eq hugo.IsServer false -}}
 	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{- $.Site.Params.googleTagManager -}}"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -209,7 +205,7 @@
 	<div class="container">
 	  <div class="navbar-translate">
 		<a class="navbar-brand menu-click" href="{{- .Site.BaseURL | relLangURL -}}" rel="tooltip" title="Home" data-placement="bottom">
-		  {{- .Site.Title -}}
+		  <img src="{{- .Site.Params.logo -}}" alt="AI-HED" width="150px">
 		</a>
 		<button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-bar top-bar"></span>
