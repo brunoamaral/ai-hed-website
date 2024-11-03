@@ -25,4 +25,6 @@ options:
 menu:
   main:
     name: Project
+  footer_one:
+    name: Project
 ---

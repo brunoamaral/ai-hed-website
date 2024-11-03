@@ -25,4 +25,6 @@ options:
 menu:
   main:
     name: Resources
+  footer_one:
+    name: Resources
 ---

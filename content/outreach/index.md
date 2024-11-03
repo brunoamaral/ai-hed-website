@@ -25,4 +25,6 @@ options:
 menu:
   main:
     name: Outreach
+  footer_one:
+    name: Outreach
 ---

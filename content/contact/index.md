@@ -25,4 +25,6 @@ options:
 menu:
   main:
     name: Contact
+  footer_one:
+    name: Contact
 ---

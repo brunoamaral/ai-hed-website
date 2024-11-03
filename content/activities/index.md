@@ -25,4 +25,6 @@ options:
 menu:
   main:
     name: Activities
+  footer_one:
+    name: Activities
 ---
