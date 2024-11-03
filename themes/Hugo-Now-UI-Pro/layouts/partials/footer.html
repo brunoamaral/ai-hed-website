@@ -1,14 +1,14 @@
 
-<footer class="footer footer-big" data-background-color="black">
+<footer class="footer footer-white footer-big" data-background-color="white">
     <div class="container">
         <div class="content">
             <div class="row">
                 <div class="col-md-3">
-                    <h5>{{ i18n "footer1" | upper }}</h5>
-                    <ul class="links-vertical">
+                    <h5 class="text-dark">{{ i18n "footer1" | upper }}</h5>
+                    <ul class="links-vertical text-dark">
                     	{{- range .Site.Menus.footer_one -}}
                         <li>
-                            <a href="{{ .URL }}" class="text-muted">
+                            <a href="{{ .URL }}" class="text-dark">
                                 {{ .Name }}
                             </a>
                         </li>
@@ -16,7 +16,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5>{{ i18n "footer2" | upper }}</h5>
+                    <h5 class="text-dark">{{ i18n "footer2" | upper }}</h5>
                     <ul class="links-vertical">
                     		{{- range .Site.Menus.footer_two -}}
                     	    <li>
@@ -28,7 +28,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5>{{ i18n "footer3" | upper }}</h5>
+                    <h5 class="text-dark">{{ i18n "footer3" | upper }}</h5>
 
                     <ul class="links-vertical">
                     			{{- range .Site.Menus.footer_three -}}
@@ -41,7 +41,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5>{{ i18n "follow" | upper }}</h5>
+                    <h5 class="text-dark">{{ i18n "follow" | upper }}</h5>
                     <ul class="social-buttons">
                     	{{ $author := "" }}
                         {{ with $.Site.Params.defaultAuthor }}
@@ -62,6 +62,23 @@
                     </ul>
                 </div>
             </div>
+            <hr class="border">
+            <div class="row">
+                <div class="col">
+                    <a href="https://escs.ipl.pt/" target="_blank">
+                        <img src="/images/Logo_ESCS_vENG_color-ai.svg" alt="School of Communication and Media Studies" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col">
+                    <a href="https://www.foi.unizg.hr/en" target="_blank">
+                        <img src="/images/FOI_horiz_EN_color-ai.svg" alt="" class="img-fluid">
+                    </a>
+                </div>
+                <div class="col">
+                    <img src="/images/EN_Co-fundedbytheEU_RGB_POS.png" alt="co-funded by the European Union" class="img-fluid">
+                </div>
+            </div>
+
         </div>
         <hr>
         <div class="copyright">
