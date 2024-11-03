@@ -4,7 +4,7 @@
         <div class="content">
             <div class="row">
                 <div class="col-md-3">
-                    <h5 class="text-dark">{{ i18n "footer1" | upper }}</h5>
+                    <p class="h5 text-dark">{{ i18n "footer1" | upper }}</p>
                     <ul class="links-vertical text-dark">
                     	{{- range .Site.Menus.footer_one -}}
                         <li>
@@ -16,7 +16,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5 class="text-dark">{{ i18n "footer2" | upper }}</h5>
+                    <p class="h5 text-dark">{{ i18n "footer2" | upper }}</p>
                     <ul class="links-vertical">
                     		{{- range .Site.Menus.footer_two -}}
                     	    <li>
@@ -28,7 +28,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5 class="text-dark">{{ i18n "footer3" | upper }}</h5>
+                    <p class="h5 text-dark">{{ i18n "footer3" | upper }}</p>
 
                     <ul class="links-vertical">
                     			{{- range .Site.Menus.footer_three -}}
@@ -41,7 +41,7 @@
                     </ul>
                 </div>
                 <div class="col-md-3">
-                    <h5 class="text-dark">{{ i18n "follow" | upper }}</h5>
+                    <p class="h5 text-dark">{{ i18n "follow" | upper }}</p>
                     <ul class="social-buttons">
                     	{{ $author := "" }}
                         {{ with $.Site.Params.defaultAuthor }}
