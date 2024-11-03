@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-uk'
+title = 'My New Hugo Site'
+themes = ["Hugo-Now-UI-Pro"]
