@@ -1,5 +1,5 @@
 ---
-title: About this project
+title: About us
 date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
@@ -24,7 +24,7 @@ options:
 
 menu:
   main:
-    name: Project
+    name: About us
   footer_one:
-    name: Project
+    name: About us
 ---
