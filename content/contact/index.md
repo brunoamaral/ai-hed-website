@@ -3,14 +3,14 @@ title: Contact
 date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
-type: "page"
+layout: page
 disable_comments: true
 
 description:
 aliases:
 
 resources:
-  - src: 
+  - src: images/pexels-cottonbro-6153360.jpeg
     name: "header"
 options:
   header: small
@@ -28,3 +28,13 @@ menu:
   footer_one:
     name: Contact
 ---
+
+<div class="section py-0 my-0 bg-grey">
+  <div class="container-fluid">
+<div class="col-md-12">
+<p class="text-center">
+<a href="https://www.pexels.com/photo/close-up-shot-of-two-people-fist-bump-6153360/">Header Photo by cottonbro studio from Pexels.</a>
+</p>
+</div>
+  </div>
+</div>
