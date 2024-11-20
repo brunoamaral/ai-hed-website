@@ -28,6 +28,7 @@ options:
 menu:
   main:
     name: About us
+    weight: 1
   footer_one:
     name: About us
 ---

@@ -27,6 +27,7 @@ options:
 menu:
   main:
     name: Resources
+    weight: 1
   footer_one:
     name: Resources
 ---

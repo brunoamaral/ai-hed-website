@@ -26,6 +26,7 @@ options:
 menu:
   main:
     name: Activities
+    weight: 1
   footer_one:
     name: Activities
 ---

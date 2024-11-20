@@ -28,6 +28,7 @@ options:
 menu:
   main:
     name: Outreach
+    weight: 1
   footer_one:
     name: Outreach
 ---
