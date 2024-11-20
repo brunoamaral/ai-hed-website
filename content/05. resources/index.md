@@ -11,7 +11,7 @@ url: resources
 aliases:
 
 resources:
-  - src: 
+  - src: images/aidin-geranrekab-bV_P23FXxhI-unsplash.jpg
     name: "header"
 options:
   header: small
