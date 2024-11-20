@@ -35,6 +35,10 @@ menu:
     weight: 1
   footer_one:
     name: Contact
+
+copyright:
+  name: Cottonbro Studio
+  href: https://www.pexels.com/photo/close-up-shot-of-two-people-fist-bump-6153360/
 ---
 
 <div class="section py-0 my-0 bg-grey">
