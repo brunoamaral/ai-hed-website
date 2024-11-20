@@ -216,7 +216,7 @@
 	  <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="/assets/img/blurred-image-1.jpg">
 		<ul class="navbar-nav">
 
-			{{- range .Site.Menus.main -}}
+			{{- range .Site.Menus.main.Sort.ByWeight -}}
 				<li class="nav-item {{ if (or ( $.Page.IsMenuCurrent "main" .) ( $.Page.HasMenuCurrent "main" .)) }} active {{- end -}}"><a href="{{- .URL | absLangURL -}}" title="{{- .Post -}}" class="nav-link top-menu menu-click" data-umami-event="click--topnav-{{- .Name | urlize | lower -}} ">{{- .Name | safeHTML -}}</a></li>
 			{{- end -}}  <!-- end range .Site.Menus.main -->
 
@@ -288,7 +288,7 @@
 {{- end -}}
 
 {{- if  ne .Section "instagram" | and ( ne $.Params.options.hideFooter true ) -}}
-	{{- partialCached "footer.html" . -}}
+	{{- partial "footer.html" . -}}
 {{- end -}}
 
 {{- if .HasShortcode "gallery" -}}

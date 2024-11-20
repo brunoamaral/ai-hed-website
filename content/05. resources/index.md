@@ -1,5 +1,6 @@
 ---
 title: Resources
+subtitle: Guides, Use Cases, and Other Teaching Tools
 date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
@@ -7,10 +8,11 @@ type: "page"
 disable_comments: true
 
 description:
+url: resources
 aliases:
 
 resources:
-  - src: 
+  - src: images/aidin-geranrekab-bV_P23FXxhI-unsplash.jpg
     name: "header"
 options:
   header: small
@@ -25,6 +27,7 @@ options:
 menu:
   main:
     name: Resources
+    weight: 1
   footer_one:
     name: Resources
 ---

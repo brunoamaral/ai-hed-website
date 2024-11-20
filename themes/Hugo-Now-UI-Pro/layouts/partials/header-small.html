@@ -9,7 +9,7 @@
 	<div class="content-center">
 		<div class="container">
 			<div class="px-0
-			{{ with $.Params.title_align }}
+			{{ with $.Params.options.title_align }}
 			col-md-12 text-{{.}}
 			{{ else }}
 			col-md-8 ml-auto mr-auto text-center
@@ -17,7 +17,7 @@
 
 				">
 				{{- if (ne .Params.options.showTitle false)  }}
-				<h1 class="title" itemprop="headline d-print-block">{{ .Title }}</h1> {{ .Params.options.showTitle}}
+				<h1 class="title" itemprop="headline d-print-block">{{ .Title | safeHTML }}</h1> {{ .Params.options.showTitle}}
 				{{ end }}
 				{{- with .Params.subtitle }}
 					<h2 itemprop="subtitle d-print-block">{{ . }}</h2>

@@ -40,7 +40,7 @@
   { "id": "stories", "translation": "Stories"},
   { "id": "story", "translation": "story"},
   { "id": "submit_label", "translation": "Submit"},
-  { "id": "subscribe_description", "translation": "Enter your email to subscribe to the newsletter."},
+  { "id": "subscribe_description", "translation": "Stay Updated"},
   { "id": "subscribe_label", "translation": "Subscribe"},
   { "id": "subscribe", "translation": "Subscribe"},
   { "id": "tags", "translation":"Tags"},
