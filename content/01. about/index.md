@@ -13,7 +13,7 @@ description:
 aliases:
 
 resources:
-  - src: images/about-aihed.png
+  - src: images/about-aihed.jpeg
     name: "header"
 options:
   header: mini
