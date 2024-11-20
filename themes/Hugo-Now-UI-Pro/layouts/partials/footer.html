@@ -38,6 +38,26 @@
                     		        </a>
                     		    </li>
                     		    {{ end }}
+                                {{- with $.Page.Resources.GetMatch "header" -}}
+                                <li class="nav-item">
+                                {{ $copyName := "" }}
+                                {{ $copyHref := "" }}
+                                    {{ if in .Permalink "-unsplash.jpg" }}
+                                        {{ $unsplash := replaceRE $.Page.Permalink "" .Permalink | replaceRE "images/" "" | replaceRE "-unsplash.jpg" ""}}
+                                        {{ $strings := split $unsplash "-" }}
+                                        {{$copyName = printf "%s %s" (index $strings 0) (index $strings 1)}}
+                                        {{$copyHref = replaceRE (printf "%s-%s-" (index $strings 0) (index $strings 1) ) "https://unsplash.com/photos/" $unsplash}}
+                                    {{ else }}
+                                        {{ $copyName = $.Params.copyright.name }}
+                                        {{ $copyHref = $.Params.copyright.href }}  
+                                    {{ end }}
+                                    {{ if and $copyName $copyHref }}
+                                        <a href="{{$copyHref}}" class="nav-link text-muted opacity-8 text-sm" target="_blank">Header Photo by {{ $copyName | title }}
+                                            <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
+                                        </a>
+                                    {{ end }}
+                                    </li>
+                                {{end }}
                     </ul>
                 </div>
                 <div class="col-md-3">

@@ -288,7 +288,7 @@
 {{- end -}}
 
 {{- if  ne .Section "instagram" | and ( ne $.Params.options.hideFooter true ) -}}
-	{{- partialCached "footer.html" . -}}
+	{{- partial "footer.html" . -}}
 {{- end -}}
 
 {{- if .HasShortcode "gallery" -}}
