@@ -3,7 +3,9 @@ module.exports = {
         "@fullhuman/postcss-purgecss": {
             content: ["./content/**/*.html", "./content/**/*.md"],
             safelist: {
-                greedy: ["/.animate.*/"]
+                greedy: ["/.animate.*/",
+                    "/.text-align.*/"
+                ]
             },
             // fontFace: false,
             variables: false
