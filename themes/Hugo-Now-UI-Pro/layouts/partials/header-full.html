@@ -13,7 +13,11 @@
 		{{- end -}}
 	{{- end -}}
 
-<div class="page-header header-filter">
+<div class="page-header header-filter" 
+{{ with $.Params.options.filter_color }}
+filter-color="{{.}}"
+{{end}}
+>
 	<div class="page-header-image" style="background-image: url('{{- $headerImage -}}');"></div>
 	<div class="container">
 		<div class="row">

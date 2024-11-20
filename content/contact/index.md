@@ -13,7 +13,7 @@ resources:
   - src: images/pexels-cottonbro-6153360.jpeg
     name: "header"
 options:
-  header: small
+  header: full
   headerHeight:
   unlisted: false
   showHeader: true
@@ -22,7 +22,8 @@ options:
   hideShareButtons: true
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
   title_align: center
-
+  filter_color: black
+cta:
 menu:
   main:
     name: Contact
