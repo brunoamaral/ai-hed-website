@@ -8,6 +8,7 @@ layout: page
 disable_comments: true
 
 description:
+url: contact
 aliases:
 
 resources:

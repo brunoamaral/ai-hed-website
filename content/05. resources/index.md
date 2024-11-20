@@ -1,5 +1,5 @@
 ---
-title: Activities
+title: Resources
 date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
@@ -7,6 +7,7 @@ type: "page"
 disable_comments: true
 
 description:
+url: outreach
 aliases:
 
 resources:
@@ -24,7 +25,7 @@ options:
 
 menu:
   main:
-    name: Activities
+    name: Resources
   footer_one:
-    name: Activities
+    name: Resources
 ---

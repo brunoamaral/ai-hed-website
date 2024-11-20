@@ -7,6 +7,7 @@ type: "page"
 disable_comments: true
 
 description:
+url: outreach
 aliases:
 
 resources:

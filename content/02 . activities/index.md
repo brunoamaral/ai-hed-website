@@ -1,5 +1,5 @@
 ---
-title: Resources
+title: Activities
 date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
@@ -7,6 +7,7 @@ type: "page"
 disable_comments: true
 
 description:
+url: activities
 aliases:
 
 resources:
@@ -24,7 +25,7 @@ options:
 
 menu:
   main:
-    name: Resources
+    name: Activities
   footer_one:
-    name: Resources
+    name: Activities
 ---
