@@ -11,10 +11,10 @@ url: activities
 aliases:
 
 resources:
-  - src: 
+  - src: images/steve-johnson-ZPOoDQc8yMw-unsplash.jpg
     name: "header"
 options:
-  header: small
+  header: mini
   headerHeight:
   unlisted: false
   showHeader: true
