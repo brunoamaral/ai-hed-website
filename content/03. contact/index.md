@@ -45,7 +45,7 @@ copyright:
   <div class="container-fluid">
 <div class="col-md-12">
 <p class="text-center">
-<a href="https://www.pexels.com/photo/close-up-shot-of-two-people-fist-bump-6153360/">Header Photo by cottonbro studio from Pexels.</a>
+
 </p>
 </div>
   </div>
