@@ -24,6 +24,9 @@ options:
   title_align: center
   filter_color: black
 cta:
+  - label: TEAM@AI-HED.COM
+    url: mailto:TEAM@AI-HED.COM?subject=Email%20From%20Website%20|%20
+    classes: btn btn-lg btn-info font-weight-bold text-tit
 menu:
   main:
     name: Contact
