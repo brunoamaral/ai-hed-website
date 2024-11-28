@@ -6,7 +6,7 @@ draft: false
 categories: 
 type: "page"
 disable_comments: true
-url: about
+url: partners
 description:
 aliases:
 
