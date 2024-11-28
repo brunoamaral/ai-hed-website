@@ -215,7 +215,9 @@ div.row.row-logos > div > a > img{
 	max-width: none;
 }
 
-// MOBILE NAVIGATION
-.sidebar-collapse div#navigation.navbar-collapse ul.navbar-nav li.nav-item.dropdown.show ul.dropdown-menu.show li.dropdown-item a.menu-click{
-	color: #fff;
+/* MOBILE NAVIGATION */
+@media (max-width: 991.98px) {
+	.sidebar-collapse div#navigation.navbar-collapse ul.navbar-nav li.nav-item.dropdown.show ul.dropdown-menu.show li.dropdown-item a.menu-click {
+		color: #fff;
+	}
 }
