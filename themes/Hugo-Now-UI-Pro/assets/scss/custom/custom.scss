@@ -214,3 +214,8 @@ div.row.row-logos > div > a > img{
 .profile-page .content{
 	max-width: none;
 }
+
+// MOBILE NAVIGATION
+.sidebar-collapse div#navigation.navbar-collapse ul.navbar-nav li.nav-item.dropdown.show ul.dropdown-menu.show li.dropdown-item a.menu-click{
+	color: #fff;
+}

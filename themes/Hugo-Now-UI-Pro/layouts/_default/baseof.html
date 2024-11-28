@@ -201,48 +201,39 @@
 	{{- end -}}
 
 <!-- Menu -->
-  <nav class={{with .Params.options.navbar }}"{{.}}"{{else}}"navbar navbar-expand-lg bg-dynamic fixed-top navbar-transparent" color-on-scroll="400"{{end}}>
+  <nav class="{{ with .Params.options.navbar }}{{.}}{{else}}navbar navbar-expand-lg bg-dynamic fixed-top navbar-transparent{{end}}" color-on-scroll="400">
 	<div class="container">
 	  <div class="navbar-translate">
 		<a class="navbar-brand menu-click" href="{{- .Site.BaseURL | relLangURL -}}" rel="tooltip" title="Home" data-placement="bottom">
 		  <img src="{{- .Site.Params.logo -}}" alt="AI-HED" width="150px">
 		</a>
-		<button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
 		  <span class="navbar-toggler-bar top-bar"></span>
 		  <span class="navbar-toggler-bar middle-bar"></span>
 		  <span class="navbar-toggler-bar bottom-bar"></span>
 		</button>
 	  </div>
-	  <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="/assets/img/blurred-image-1.jpg">
+	  <div class="collapse navbar-collapse justify-content-end" id="navigation">
 		<ul class="navbar-nav">
 
-			{{- range .Site.Menus.main.Sort.ByWeight -}}
-				<li class="nav-item {{ if (or ( $.Page.IsMenuCurrent "main" .) ( $.Page.HasMenuCurrent "main" .)) }} active {{- end -}}"><a href="{{- .URL | absLangURL -}}" title="{{- .Post -}}" class="nav-link top-menu menu-click" data-umami-event="click--topnav-{{- .Name | urlize | lower -}} ">{{- .Name | safeHTML -}}</a></li>
-			{{- end -}}  <!-- end range .Site.Menus.main -->
-
-			{{- if hugo.IsMultilingual -}}
-
-				{{- range .Site.Languages -}}
-
-					{{- if eq . $.Site.Language -}}
-									<li class="nav-item active"><a href="#" title="{{- .LanguageName -}}" class="nav-link language">
-									{{- partial "language-icons" (dict "context" .  "active" true "lang" .Lang "hasTranslation" true) -}}
-									</a></li>
-							{{- else -}} <!-- else if not eq . $.Site.Language -->
-
-								{{- if eq (len $.Translations) 0 -}}
-									<li class="nav-item language-inactive"><a title="{{- .LanguageName -}}" class="nav-link language-inactive language">{{- partial "language-icons" (dict "context" .  "active" false "lang" .Lang "hasTranslation" false) -}}</a></li>
-									{{- else -}}
-									{{- range $.Translations -}}
-										<li class="nav-item"><a href="{{- .Permalink -}}" title="{{- .Language.LanguageName -}}" class="nav-link language">{{- partial "language-icons" (dict "context" .  "active" false "lang" .Lang "hasTranslation" true) -}}</a></li>
-									{{- end -}} <!-- end range translations -->
-							{{- end -}} <!-- if  len translation 0  -->
-
-					{{- end -}} <!-- if eq . $.Site.Language -->
-
-				{{- end -}} <!-- range site languates -->
-
-			{{- end -}} <!-- end if site is multilingual   -->
+			{{- range .Site.Menus.main.ByWeight -}}
+				<li class="nav-item {{ if .HasChildren }}dropdown{{ end }} {{ if (or ( $.Page.IsMenuCurrent "main" .) ( $.Page.HasMenuCurrent "main" .)) }} active{{ end }}">
+						<a href="{{ if .HasChildren }}#{{ else }}{{- .URL | absLangURL -}}{{ end }}"
+							class="nav-link {{ if .HasChildren }}dropdown-toggle{{ end }}"
+							{{ if .HasChildren }}data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"{{ end }}>
+							{{- .Name | safeHTML -}}
+						</a>
+						{{ if .HasChildren }}
+							<ul class="dropdown-menu">
+								{{ range .Children }}
+									<li class="dropdown-item {{ if (or ( $.Page.IsMenuCurrent "main" .) ( $.Page.HasMenuCurrent "main" .)) }}active{{ end }}">
+										<a href="{{- .URL | absLangURL -}}" class="menu-click">{{- .Name | safeHTML -}}</a>
+									</li>
+								{{ end }}
+							</ul>
+						{{ end }}
+					</li>
+				{{- end -}}
 			</ul>
 	  </div>
 	</div>
