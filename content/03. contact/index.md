@@ -32,7 +32,7 @@ cta:
 menu:
   main:
     name: Contact
-    weight: 1
+    weight: 10
   footer_one:
     name: Contact
 
