@@ -17,7 +17,10 @@
  
 // CUSTOM VALUES
 $dark-gray:                  #737373;
-$primary-color:              #dc3600;
+$primary-color:              #6b8b6b;
+$primary-states-color:       lighten($primary-color, 6%) ;
+$primary-color-opacity:      rgba(107, 139, 107, .3) ;
+$primary-color-alert:        rgba(107, 139, 107, .8) ;
 $danger-color:               #e22b2b;
 
 $padding-label-vertical:        2px;
