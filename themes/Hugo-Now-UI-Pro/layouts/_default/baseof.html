@@ -29,7 +29,7 @@
 	
 	<!-- CSS Files -->
 	{{- $print := resources.Get "css/print.css" | resources.Fingerprint -}}
-	<link href="{{- $print.Permalink -}}" media="print" rel="stylesheet" />
+	<link href="{{- $print.RelPermalink -}}" media="print" rel="stylesheet" />
 	<!-- Preload fonts -->
 	<link rel="preload" href="/fonts/nucleo-outline.woff2" as="font" crossorigin="anonymous">
 	<link rel="preload" href="/webfonts/fa-regular-400.woff2" as="font" crossorigin="anonymous">
@@ -45,7 +45,7 @@
 
 	{{ $styles := slice $bootstrap $nowUi $montserrat $fontawesome $brands $regular $solid | resources.Concat "css/style.css" |  minify | fingerprint  -}}
 
-	<link rel="stylesheet" href="{{$styles.Permalink}}">
+	<link rel="stylesheet" href="{{$styles.RelPermalink}}">
 
 	{{- if or (.HasShortcode "youtube") (.HasShortcode "youtube") (.HasShortcode "youtube") -}}
 	{{- $plyr_css := resources.Get "/css/plyr/plyr.css" -}}
