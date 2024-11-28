@@ -27,10 +27,11 @@ options:
   title_align: center
 menu:
   main:
-    name: About us
+    parent: About
+    name: AI-HED Project
     weight: 1
   footer_one:
-    name: About us
+    name: AI-HED Project
 ---
 The AI-HED Project, co-funded by the European Commission, aims to adapt the teaching and learning environments at our Higher Education Institutions (HEIs) to the shifts caused by Artificial Intelligence (AI). With this project, the consortium will explore, test and conceptualise the impact of AI on teaching and learning, enhance teachers skills, competences and attitudes to use AI in teaching and learning, enhance students skills, competences and attitudes to use AI in learning and also develop recommendations for HEIs on integration of AI in teaching and learning.
 
