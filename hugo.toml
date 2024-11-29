@@ -56,6 +56,9 @@ logo = "/images/ai-hed-shorthandlogo.svg"
     ordered = false
     startLevel = 2
 
+[security.funcs]
+  getenv = ['^HUGO_', '^CI$', '^SLUG$']
+
 [menu]
 
   [[menu.footer_two]]
