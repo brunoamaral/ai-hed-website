@@ -206,9 +206,11 @@ a.nav-link.language svg { height:30px;}
 	}
 }
 
-div.row.row-logos > div > a > img{
-	max-width: 220px;
+div.row.row-logos img{
+	max-width: 200px;
+	max-height: 100px;
 	height: 50px;
+	object-fit: contain;
 }
 
 .profile-page .content{
