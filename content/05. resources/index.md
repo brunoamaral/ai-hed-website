@@ -23,6 +23,7 @@ options:
   disable_sharebuttons: true
   hideShareButtons: true
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
+  hide_date_reading_time: true
 
 menu:
   main:
