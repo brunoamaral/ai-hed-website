@@ -9,6 +9,16 @@ html {
   scroll-behavior: smooth;
 }
 
+article > p > a {
+	text-decoration: underline;
+	text-underline-offset: 6px;
+	font-weight: 500;
+}
+
+article > ul > li {
+	font-size: 1.2em;
+}
+
 // offset required to avoid overlap with top menu
 a.anchor {
     display: block;
