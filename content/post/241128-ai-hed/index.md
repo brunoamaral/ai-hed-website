@@ -14,8 +14,8 @@ tags:
 categories: 
   - 
 title: "Erasmus+ Funding for the AI-HED project"
-
 options:
+  navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
   unlisted: false
   showHeader: true
   hideFooter: false
