@@ -18,13 +18,15 @@
                 <div class="col-md-3">
                     <p class="h5 text-dark">{{ i18n "footer2" | upper }}</p>
                     <ul class="links-vertical">
-                    		{{- range .Site.Menus.footer_two -}}
-                    	    <li>
-                                <a href="{{ .URL }}" class="text-muted" {{ with .Params.target }} target="{{.}}"{{ end }} >
-                                    {{ .Name }}
-                                </a>
+                        {{- range .Site.Menus.footer_two -}}
+                        <li>
+                            <a href="{{ .URL }}" class="text-muted" 
+                                {{ if (hasPrefix .URL "http") }} target="_blank"{{ end }} 
+                                {{ with .Params.target }} target="{{ . }}"{{ end }}>
+                                {{ .Name }}
+                            </a>
                         </li>
-                    	    {{ end }}
+                        {{ end }}
                     </ul>
                 </div>
                 <div class="col-md-3">
