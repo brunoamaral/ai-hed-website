@@ -60,7 +60,9 @@ logo = "/images/ai-hed-shorthandlogo.svg"
   getenv = ['^HUGO_', '^CI$', '^SLUG$']
 
 [menu]
-
+  [[menu.main]]
+    name = "About"
+    weight = 1
   [[menu.footer_two]]
     name = "LinkedIn"
     url = "https://www.linkedin.com/company/ai-hed/"

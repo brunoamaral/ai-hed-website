@@ -4,7 +4,7 @@ description:
 menu:
   main:
     name: News and Updates
-    weight: 2
+    weight: 3
 resources:
   - src: jakob-owens-WUmb_eBrpjs-unsplash.jpg
     name: header
