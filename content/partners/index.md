@@ -7,7 +7,7 @@ categories:
 type: "page"
 layout: page
 disable_comments: true
-url: partners
+url: about/partners/
 description:
 aliases:
 
