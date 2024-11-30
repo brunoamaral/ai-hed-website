@@ -25,6 +25,7 @@ options:
   hideShareButtons: true
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
   title_align: center
+  hide_date_reading_time: true
 menu:
   main:
     parent: About
