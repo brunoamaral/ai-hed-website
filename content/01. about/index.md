@@ -8,7 +8,7 @@ draft: false
 categories: 
 type: "page"
 disable_comments: true
-url: about
+url: about/project/
 description:
 aliases:
 
