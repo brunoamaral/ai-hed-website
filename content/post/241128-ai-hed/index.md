@@ -10,6 +10,7 @@ slug:
 subtitle:  Artificial Intelligence in Higher Education Teaching and Learning
 tags: 
   - ai
+  - team
 categories: 
   - updates
 title: "AI-HED Kick-off Meeting took place in Lisbon in November 2024"
