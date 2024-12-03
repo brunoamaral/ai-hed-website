@@ -62,7 +62,7 @@ menu:
       </a>
     </div>
     <div class="col-md-6 order-md-1">
-      <h3>School of Communication and Media Studies</h3>
+      <h3>School of Communication and Media Studies - Polytechnic University of Lisbon</h3>
       <p>
         The School of Communication and Media Studies (ESCS) in Lisbon provides exceptional education in public relations, journalism, and communication, shaping future leaders in the media industry.
       </p>
