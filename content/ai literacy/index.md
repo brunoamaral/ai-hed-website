@@ -5,7 +5,7 @@ date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
 type: "page"
-layout: page
+layout:
 disable_comments: true
 url: ai-higher-education/literacy/
 description:
