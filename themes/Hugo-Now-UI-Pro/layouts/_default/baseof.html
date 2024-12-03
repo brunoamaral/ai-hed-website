@@ -201,7 +201,7 @@
 	{{- end -}}
 
 <!-- Menu -->
-  <nav class="{{ with .Params.options.navbar }}{{.}}{{else}}navbar navbar-expand-lg bg-dynamic fixed-top navbar-transparent{{end}}" color-on-scroll="400">
+  <nav class="{{ with .Params.options.navbar }}{{.}}{{else}}navbar navbar-expand-lg bg-white fixed-top{{end}}">
 	<div class="container">
 	  <div class="navbar-translate">
 		<a class="navbar-brand menu-click" href="{{- .Site.BaseURL | relLangURL -}}" rel="tooltip" title="Home" data-placement="bottom">
