@@ -29,7 +29,7 @@ menu:
   main:
     parent: About
     name: Partners
-    weight: 1
+    weight: 10
   footer_one:
     name: Partners
 ---

@@ -30,7 +30,7 @@ menu:
   main:
     parent: About
     name: AI-HED Project
-    weight: 0
+    weight: 1
   footer_one:
     name: AI-HED Project
 ---
