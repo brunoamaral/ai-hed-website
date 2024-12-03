@@ -7,7 +7,7 @@ categories:
 type: "page"
 layout: page
 disable_comments: true
-url: 
+url: ai-higher-education/literacy/
 description:
 aliases:
 

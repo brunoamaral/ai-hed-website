@@ -7,7 +7,7 @@ type: "page"
 disable_comments: true
 
 description:
-url: activities
+url: ai-higher-education
 aliases:
 
 resources:
