@@ -1,5 +1,5 @@
 ---
-title: AI-HED Activities and Expected Outcomes
+title: AI in Higher Education
 date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
@@ -26,10 +26,10 @@ options:
 
 menu:
   main:
-    name: Activities
+    name: AI in Higher Education
     weight: 1
   footer_one:
-    name: Activities
+    name: AI in Higher Education
 ---
 
 <p class="lead">
