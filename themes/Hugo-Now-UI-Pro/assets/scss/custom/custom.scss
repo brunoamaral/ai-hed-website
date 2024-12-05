@@ -227,6 +227,11 @@ div.row.row-logos img{
 	max-width: none;
 }
 
+
+/* NAVIGATION */
+#navigation > ul > li.nav-item.dropdown.active.show > ul > li.dropdown-item.active{
+	background-color: #f0f0f0;
+}
 /* MOBILE NAVIGATION */
 @media (max-width: 991.98px) {
 	.sidebar-collapse div#navigation.navbar-collapse ul.navbar-nav li.nav-item.dropdown.show ul.dropdown-menu.show li.dropdown-item a.menu-click {
