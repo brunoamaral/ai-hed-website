@@ -47,11 +47,6 @@
 
 	<link rel="stylesheet" href="{{$styles.RelPermalink}}">
 
-	{{- if or (.HasShortcode "youtube") (.HasShortcode "youtube") (.HasShortcode "youtube") -}}
-	{{- $plyr_css := resources.Get "/css/plyr/plyr.css" -}}
-	<link rel="stylesheet" href="{{- $plyr_css.RelPermalink -}}">
-	{{end}}
-
 	{{- with .OutputFormats.Get "rss" -}}
 	<link rel="{{- .Rel -}}" type="{{- .MediaType.Type -}}" href="{{- .Permalink | safeURL -}}" title="{{- $.Site.Title -}}">
 	{{- end -}}
@@ -191,6 +186,15 @@
 	{{ block "head" . }}
 	<!-- custom head -->
 	{{ end }}
+	<!-- MailerLite Universal -->
+<script>
+	(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+	.push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+	n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+	(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+	ml('account', '1232886');
+</script>
+<!-- End MailerLite Universal -->
 </head>
 	<body class="{{ block "bodyclasses" . }}{{ end }} sidebar-collapse" id="{{ block "bodyid" . }}home{{ end }}" {{ block "data-attributes" . }}{{end}} >
 	{{- if eq hugo.IsServer false -}}
@@ -350,11 +354,7 @@
 		<!-- Control Center for Now Ui Kit: parallax effects, scripts for the example pages etc -->
 		{{- $nowuikitjs := resources.Get "/js/now-ui-kit.js" -}}
 		{{- $vibrant := resources.Get "/js/Vibrant.js" | resources.Fingerprint -}} 
-		{{- if or (.HasShortcode "youtube") (.HasShortcode "youtube") (.HasShortcode "youtube") -}}
-		<!-- Plyr for better html <video> and <audio> -->
-		{{- $plyr_js := resources.Get "/js/plyr/plyr.min.js" -}} 
-		<script src="{{- $plyr_js.Permalink }}"></script>
-		{{ end }}
+
 		<!-- Bring it all together into one file -->
 		<!-- we are not including nouislider and  bootstrapSwitch -->
 		{{- $javascript := slice $jquery $popper $bootstrap $nowuikitjs  | resources.Concat "js/javascript.js" | resources.Minify | resources.Fingerprint  -}}
