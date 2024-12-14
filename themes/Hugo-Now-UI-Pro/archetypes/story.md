@@ -17,7 +17,7 @@ tags:
 title: {{ replace .Name "-" " " | title }}
 options:
   hideFooter: false
-  hideSubscribeForm: false
+  hideSubscribeForm: true
   showHeader: true
   unlisted: false
 scripts:

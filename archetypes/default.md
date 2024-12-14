@@ -21,7 +21,7 @@ options:
   unlisted: false
   showHeader: true
   hideFooter: false
-  hideSubscribeForm: false
+  hideSubscribeForm: true
   header:
 	navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
 scripts:

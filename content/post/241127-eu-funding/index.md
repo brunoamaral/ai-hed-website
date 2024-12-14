@@ -19,7 +19,7 @@ options:
   unlisted: false
   showHeader: true
   hideFooter: false
-  hideSubscribeForm: false
+  hideSubscribeForm: true
   header:
 scripts:
   -
