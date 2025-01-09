@@ -12,7 +12,7 @@ url: contact
 aliases:
 
 resources:
-  - src: images/pexels-cottonbro-6153360.jpeg
+  - src: images/getty-images-iLLoCMbfpPc-unsplash.jpg
     name: "header"
 options:
   header: full
