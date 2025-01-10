@@ -57,7 +57,7 @@ menu:
   <!-- Partner 2 -->
   <div class="row align-items-center mb-5 mt-5 pt-5">
     <div class="col-md-6 order-md-2 text-center">
-      <a href="https://escs.ipl.pt/" target="_blank">
+      <a href="https://escs.ipl.pt/en/home" target="_blank">
         <img src="/images/partners/Logo_ESCS_vENG_color-ai.svg" class="img-fluid" alt="School of Communication and Media Studies">
       </a>
     </div>
@@ -66,7 +66,7 @@ menu:
       <p>
         The School of Communication and Media Studies (ESCS) in Lisbon provides exceptional education in public relations, journalism, and communication, shaping future leaders in the media industry.
       </p>
-      <a href="https://escs.ipl.pt/" target="_blank" class="btn btn-primary">Learn More</a>
+      <a href="https://escs.ipl.pt/en/home" target="_blank" class="btn btn-primary">Learn More</a>
     </div>
   </div>
 

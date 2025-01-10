@@ -51,7 +51,7 @@ AI is spreading at an unprecedented pace and has a profound impact on higher edu
 
 ### Project Partners{.title}
 
-[The Amsterdam University of Applied Sciences (AUAS)](https://www.amsterdamuas.com/) was the applicant organisation, in partnership with the [University of Applied Sciences BFI Vienna (UAS-BFI)](https://www.fh-vie.ac.at/en/), the [Polytechnic University of Lisbon (IPL)](https://escs.ipl.pt/) and the [University of Zagreb (UNIZG)](https://www.foi.unizg.hr/en).
+[The Amsterdam University of Applied Sciences (AUAS)](https://www.amsterdamuas.com/) was the applicant organisation, in partnership with the [University of Applied Sciences BFI Vienna (UAS-BFI)](https://www.fh-vie.ac.at/en/), the [Polytechnic University of Lisbon (IPL)](https://escs.ipl.pt/en/home) and the [University of Zagreb (UNIZG)](https://www.foi.unizg.hr/en).
 
 ### Co-funded by the European Union{.title}
 
