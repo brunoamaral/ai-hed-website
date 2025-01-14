@@ -1,8 +1,8 @@
 ---
-title: |
-  Artificial Intelligence <br>
+subtitle: |
+  Artificial Intelligence
   in Higher Education
-subtitle: 
+title: About AI-HED 
 date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
