@@ -12,7 +12,7 @@ url: resources
 aliases:
 
 resources:
-  - src: images/aidin-geranrekab-bV_P23FXxhI-unsplash.jpg
+  - src: images/microsoft-365-hC_796Wu-VY-unsplash.jpg
     name: "header"
 options:
   header: small
