@@ -16,7 +16,7 @@ resources:
   - src: images/about-aihed.jpeg
     name: "header"
 options:
-  header: mini
+  header: small
   headerHeight:
   unlisted: false
   showHeader: true
