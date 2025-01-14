@@ -12,7 +12,7 @@ description:
 aliases:
 
 resources:
-  - src: images/steve-johnson-ZPOoDQc8yMw-unsplash.jpg
+  - src: images/getty-images-pkak-bDAngo-unsplash.jpg
     name: "header"
 options:
   header: mini

@@ -13,7 +13,7 @@ description:
 aliases:
 
 resources:
-  - src: images/about-aihed.jpeg
+  - src: images/curated-lifestyle-Bco-ncIN6Lw-unsplash.jpg
     name: "header"
 options:
   header: small

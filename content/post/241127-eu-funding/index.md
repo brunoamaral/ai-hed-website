@@ -4,7 +4,7 @@ date: 2024-11-28T19:06:46Z
 description: ""
 draft: false
 resources: 
-- src: images/robot_european_union.png
+- src: images/thisisengineering-sGwoXcxKbcE-unsplash.jpg
   name: "header"
 slug:
 subtitle:  Artificial Intelligence in Higher Education Teaching and Learning

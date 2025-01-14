@@ -1,5 +1,5 @@
 ---
-title: AI in Higher Education
+title: About the AI in Higher Education Project
 date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
@@ -11,7 +11,7 @@ url: ai-higher-education
 aliases:
 
 resources:
-  - src: images/steve-johnson-ZPOoDQc8yMw-unsplash.jpg
+  - src: images/curated-lifestyle-Bco-ncIN6Lw-unsplash.jpg
     name: "header"
 options:
   header: mini
