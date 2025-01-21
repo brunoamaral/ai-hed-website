@@ -19,8 +19,7 @@ resources:
       src: gregoryai_background.jpg
 url: /team/izabela-oletic-tusek
 ---
-Email: <izabela.oletic@foi.unizg.hr>  
-Alternate Email: <izabela.oletic@gmail.com>
+Email: <izabela.oletic@foi.unizg.hr>
 
 Izabela Oletić Tušek has been the Head of the International Relations Office at the University of Zagreb Faculty of Organization and Informatics (FOI) since 2010. She has extensive experience in internationalization processes, cooperation, and the management of international partnerships, student and staff mobility, and the organization of various international events. 
 
