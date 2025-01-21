@@ -22,7 +22,7 @@ url: /team/bogdan-okresa-duric
 Email: <dokresa@foi.unizg.hr>  
 Alternate Email: <dokresa@foi.hr>
 
-Bogdan Okreša Đurić, PhD, is a senior teaching assistant at the University of Zagreb Faculty of Organization and Informatics (FOI) and a member of the FOI Artificial Intelligence Laboratory. He has authored more than 50 scientific publications, including conference proceedings, journal articles, and book chapters. He has delivered several international invited lectures and participated in over 8 international and national projects as a researcher, AI expert, and specialist in gamification and teaching methodologies.
+Bogdan Okreša Đurić, PhD, is a senior teaching assistant at the University of Zagreb - Faculty of Organization and Informatics (FOI) and a member of the FOI Artificial Intelligence Laboratory. He has authored more than 50 scientific publications, including conference proceedings, journal articles, and book chapters. He has delivered several international invited lectures and participated in over 8 international and national projects as a researcher, AI expert, and specialist in gamification and teaching methodologies.
 
 **Role in Projects**:
 Bogdan serves as the Lead of WP2 and the FOI academic team, contributing his expertise in artificial intelligence to project development and implementation.

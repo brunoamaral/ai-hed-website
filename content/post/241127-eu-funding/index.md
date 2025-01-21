@@ -27,11 +27,11 @@ scripts:
 
 Four Higher Education Institutions submitted the application of the project “Artificial Intelligence in Higher Education Teaching and Learning” (AI-HED), that has been awarded with 250.000 euros and received 89 points out of 100 by the European Commission. 
  
-The Amsterdam University of Applied Sciences (AUAS) was the applicant organisation, in partnership with the University of Applied Sciences BFI Vienna (UAS-BFI), the Polytechnic University of Lisbon (IPL) and the University of Zagreb (UNIZG). 
+The Amsterdam University of Applied Sciences (AUAS) was the applicant organisation, in partnership with the University of Applied Sciences BFI Vienna (UAS-BFI), the Polytechnic University of Lisbon (IPL) and the University of Zagreb - Faculty of Organization and Informatics (FOI). 
  
 The broader aim of AI-HED Project is to adjust the teaching and learning environments at HEIs (Higher Education Institutions) to the shifts caused by Artificial Intelligence (AI). With this project, the consortium wants to explore, test and conceptualise the impact of AI on teaching and learning, enhance teachers skills, competences and attitudes to use AI in teaching and learning, enhance students skills, competences and attitudes to use AI in learning and also develop recommendations for HEIs on integration of AI in teaching and learning. 
  
-The AI-HED project brings together members from the four partner institutions. Representing the School of Communication and Media Studies - Polytechnic University of Lisbon (ESCS-IPL) are Ana Raposo, Tatiana Nunes, and Bruno Amaral Tiago; from the Amsterdam University of Applied Sciences (AUAS), Erik Kostelijk, Bernard Smeenk, and Margit Varga; from the Fachhochschule BFI Wien (UAS-BFI), Dietmar Paier, Johannes Wetzinger, and Anastasija Lyubova; and from the University of Zagreb, Faculty of Organization and Information, Izabela Oletic and Bogdan Okreša Đurić.
+The AI-HED project brings together members from the four partner institutions. Representing the School of Communication and Media Studies - Polytechnic University of Lisbon (ESCS-IPL) are Ana Raposo, Tatiana Nunes, and Bruno Amaral Tiago; from the Amsterdam University of Applied Sciences (AUAS), Erik Kostelijk, Bernard Smeenk, and Margit Varga; from the Fachhochschule BFI Wien (UAS-BFI), Dietmar Paier, Johannes Wetzinger, and Anastasija Lyubova; and from the University of Zagreb - Faculty of Organization and Informatics, Izabela Oletic and Bogdan Okreša Đurić.
 
 
 AI-HED is a two years project, ending in the end of the academic year 2025/2026, and will develop a variety of activities, such as: 
