@@ -90,11 +90,11 @@ menu:
   <div class="row align-items-center mb-5 mt-5 pt-5">
     <div class="col-md-6 order-md-2 text-center">
       <a href="https://www.foi.unizg.hr/en" target="_blank">
-        <img src="/images/partners/FOI_horiz_EN_color-ai.svg" class="img-fluid" alt="University Of Zagreb Faculty Of Organization And Informatics Varazdin">
+        <img src="/images/partners/FOI_horiz_EN_color-ai.svg" class="img-fluid" alt="University of Zagreb - Faculty of Organization and Informatics">
       </a>
     </div>
     <div class="col-md-6 order-md-1">
-      <h3>University Of Zagreb - Faculty Of Organization And Informatics</h3>
+      <h3>University of Zagreb - Faculty of Organization and Informatics</h3>
       <p>
         The Faculty of Organization and Informatics at the University of Zagreb offers top-notch education and research in information systems, promoting innovation and collaboration in technology.
       </p>
