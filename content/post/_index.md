@@ -16,7 +16,7 @@ cta:
   - label: 'Subscribe by email&nbsp;&nbsp;<i class="fa fa-envelope" aria-hidden="true"></i>'
     url: '#subscribe'
     classes: btn-success font-weight-bold text-uppercase btn-md text-dark
-  - label: Add to RSS reader&nbsp;&nbsp;<i class="fa fa-rss" aria-hidden="true"></i>
-    url: /post/index.xml
-    classes: btn-warning text-dark font-weight-bold text-uppercase
+  # - label: Add to RSS reader&nbsp;&nbsp;<i class="fa fa-rss" aria-hidden="true"></i>
+  #   url: /post/index.xml
+  #   classes: btn-warning text-dark font-weight-bold text-uppercase
 ---
