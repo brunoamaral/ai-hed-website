@@ -140,6 +140,11 @@ body.slug-search .content{ width: 100vw;}
 
 // Categories
 
+.profile-page .page-header-mini > div.container > p.category {
+	color: #737373;
+	padding-top: 15px;
+}
+
 .category.artificial-intelligence{
 	color: $primary-color !important;
 }
