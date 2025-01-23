@@ -13,7 +13,7 @@ options:
 profiles: {}
 resources:
     - name: avatar
-      src: margit.jpeg
+      src: margit.png
     - name: header
       src: gregoryai_background.jpg
 
