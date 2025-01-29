@@ -19,7 +19,7 @@ options:
   headerHeight:
   unlisted: false
   showHeader: true
-  hideSubscribeForm: true
+  hideSubscribeForm: false
   disable_sharebuttons: true
   hideShareButtons: true
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
