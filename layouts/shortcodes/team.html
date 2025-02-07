@@ -1,10 +1,10 @@
-<div class="about-team team-4">
+<div class="about-team team-4 p-0 m-0">
 	<div class="container">
 		<div class="row">
 			{{ range (where ($.Site.Pages.ByTitle) "Section" "authors") }}{{ if .Params.name }}
 			{{$name := .Params.name }}
 			<div class="col-xl-6 col-lg-7 ">
-				<div class="card card-profile card-plain">
+				<div class="card card-profile card-plain p-1 m-1">
 					<div class="row">
 						<div class="col-md-5">
 							<div class="card-image">
