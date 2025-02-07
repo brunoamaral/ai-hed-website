@@ -7,6 +7,9 @@ authorlink: ""
 subtitle: Coordinator of the Bachelor’s Degree in Public Relations and Corporate Communication
 twitterUsername: ""
 weight: 4
+params:
+  kind: team-member
+
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
