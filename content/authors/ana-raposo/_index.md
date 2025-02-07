@@ -6,6 +6,8 @@ summary: "Professor, researcher, and consultant specializing in strategic commun
 authorlink: ""
 subtitle: Deputy-Vice President for Strategic Communication at the Polytechnic University of Lisbon
 twitterUsername: ""
+params:
+  kind: team-member
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold

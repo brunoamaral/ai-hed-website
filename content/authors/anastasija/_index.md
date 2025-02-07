@@ -7,6 +7,9 @@ authorlink: ""
 subtitle: Advisor at the Teaching & Learning Center, UAS-BFI
 twitterUsername: ""
 weight: 11
+params:
+  kind: team-member
+
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold

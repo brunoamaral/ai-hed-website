@@ -7,6 +7,9 @@ authorlink: ""
 subtitle: Lecturer and Researcher at HVA
 twitterUsername: ""
 weight: 12
+params:
+  kind: team-member
+
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
