@@ -34,8 +34,14 @@
 				{{ with .Params.profiles }}
 				{{ $map := (index . ) }}
 				{{ range $key, $val := . }}
+					{{ if eq $key "website" }}
+						<a href="{{ $val }}" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="" data-original-title="Visit {{$name}}'s {{ $key }}">
+							<i class="fa fa-globe p-3 mt-1"></i>
+						</a>
+					{{ else }}
 					<a href="{{ $val }}" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="" data-original-title="Follow {{$name}} on {{ $key }}">
 						<i class="fab fa-{{ $key }}"></i>
+						{{end}}
 					</a>
 				{{ end }}
 				{{ end }}
