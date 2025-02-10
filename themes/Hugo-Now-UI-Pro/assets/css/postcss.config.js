@@ -6,8 +6,8 @@ module.exports = {
 				greedy: [
 					"/.animate.*/",
 					"/.text-align.*/",
-                    "/.clear-filter.*",
-					"\\[filter-color\\=.*\\]" // Matches any [filter-color="..."]
+					"/.clear-filter.*",
+					"\\[filter-color\\=.*\\]", // Matches any [filter-color="..."]
 				]
 			},
 			// fontFace: false,
