@@ -22,7 +22,7 @@ resources:
     - name: header
       src: gregoryai_background.jpg
 
-url: /authors/phiilippe-borremans/
+url: /authors/philippe-borremans/
 ---
 
 Philippe Borremans is a crisis and risk communication consultant with over 25 years of experience in public relations, strategic communications, and emergency preparedness. He has collaborated with global organizations, including the World Health Organization (WHO), the European Union, and the West African Union, focusing on crisis response, epidemic preparedness, and infodemic management.
