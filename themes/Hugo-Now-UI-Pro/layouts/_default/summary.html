@@ -15,7 +15,7 @@
 								<div class="card-body">
 									{{ if isset .Params "categories" }}
 									{{ range $index, $category := .Params.categories }}
-									<span class="h6 category text-info text-left {{ $category | urlize }} ">{{ $category }}</span>
+									<span class="h6 category text-primary text-left {{ $category | urlize }} ">{{ $category }}</span>
 										{{ end }}
 										{{ end }}
 									<h4 class="card-title">
