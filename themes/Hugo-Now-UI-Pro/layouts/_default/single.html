@@ -77,8 +77,15 @@
 					<div class="meta text-center">
 						<div class="row mb-5">
 							{{ if ne .Params.options.hide_date_reading_time true }}
-							<time class="published col-6 text-right border-primary border-right align-middle" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Format "January 2, 2006" }}</time>
-							<span class="readingtime col-6 text-left align-middle">{{ .ReadingTime }} {{ i18n "min_read" }}</span>
+							{{ with .Params.authors }}
+								{{- range . }}
+									{{- with $.Site.GetPage (printf "authors/%s/" .) }}
+											<a href="{{ .Permalink }}" class="col-4 border-right align-middle text-center">{{ .Params.name }}</a>
+									{{ end }}
+								{{ end }} 
+							{{ end }}
+							<time class="published col-4 text-center border-primary border-right align-middle" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Format "January 2, 2006" }}</time>
+							<span class="readingtime col-4 text-center align-middle">{{ .ReadingTime }} {{ i18n "min_read" }}</span>
 							{{ end }}
 						{{ if .IsTranslated }} 
 							<div class="col-12">
