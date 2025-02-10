@@ -1,7 +1,6 @@
 ---
 title: Guest Authors
 url: /authors/
-
 options:
   header: mini
   hideShareButtons: true
