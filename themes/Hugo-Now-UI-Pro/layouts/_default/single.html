@@ -165,7 +165,9 @@
 					</div>
 				 </div>
 				 <div class="col-md-8">
-					<h4 class="card-title">{{ .Params.name }}</h4>
+					<h4 class="card-title">
+						<a href="{{ .Permalink }}">{{ .Params.name }}</a>
+					</h4>
 				 </div>
 				 <div class="col-md-2">
 					<a href="{{ .Permalink }}" class="btn btn-default pull-right btn-round">Follow</a>
