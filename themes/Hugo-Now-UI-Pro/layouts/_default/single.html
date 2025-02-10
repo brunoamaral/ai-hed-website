@@ -148,33 +148,27 @@
 				</div>
 			 </div>
 			 <hr />
-			 {{ with .Params.authors }}
-			 {{- range . }}
-			 {{ $author := $.Site.GetPage (printf "authors/%s/" .)}}
-			 <div class="card card-profile card-plain">
-				<div class="row">
-				 <div class="col-md-2">
-					<div class="card-avatar">
-					 <a href="{{ $author.Permalink }}">
-					 	{{- with $author.Resources.GetMatch "avatar" -}}
-					 	{{ $avatarimage := ""}}
-					 		{{- if eq .MediaType.SubType "gif" -}}
-					 			{{- $avatarimage = .RelPermalink -}}
-					 		{{- else }}
-					 			{{- $avatarimage = (.Fill "300x300").RelPermalink -}}
-					 		{{- end }}
-					 		<img alt="{{ $author.Params.name }}" class="img img-raised" src="{{- $avatarimage -}}">
-					 	{{- end -}}
-					 </a>
+			 {{ range .Params.authors }}
+			 	{{ with $.Site.GetPage (printf "authors/%s/" .) }}
+					<div class="card card-profile card-plain">
+						<div class="row">
+				 			<div class="col-md-2">
+								<div class="card-avatar">
+					 				<a href="{{ .Permalink }}">
+										{{ with $r := .Resources.GetMatch "avatar" }}
+										{{ with .Fill "300x300" }}
+										<img alt="{{ $r.Name }}" class="img img-raised" src="{{ .RelPermalink }}">
+					 					{{- end -}}
+										{{end}}
+					 				</a>
 					 <div class="ripple-container"></div>
 					</div>
 				 </div>
 				 <div class="col-md-8">
-					<h4 class="card-title">{{ $author.Params.name }}</h4>
-					{{/*  <p class="description">{{ $author.Content }}</p>  */}}
+					<h4 class="card-title">{{ .Params.name }}</h4>
 				 </div>
 				 <div class="col-md-2">
-					<a href="{{ $author.Permalink }}" class="btn btn-default pull-right btn-round">Follow</a>
+					<a href="{{ .Permalink }}" class="btn btn-default pull-right btn-round">Follow</a>
 				 </div>
 				</div>
 			 </div>
