@@ -15,6 +15,7 @@ options:
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
 profiles:
   linkedin: https://www.linkedin.com/in/philippeborremans/
+  website: https://www.wagthedog.io/
 
 resources:
     - name: avatar
