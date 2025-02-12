@@ -15,7 +15,7 @@ resources:
   - src: images/getty-images-pkak-bDAngo-unsplash.jpg
     name: "header"
 options:
-  header: mini
+  header: small
   headerHeight:
   unlisted: false
   showHeader: true
