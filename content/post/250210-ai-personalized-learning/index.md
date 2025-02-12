@@ -17,7 +17,7 @@ categories:
 slug:
 
 resources:
-  - src: images/chatgpt-phillipe-borremans-article-ai-education.png
+  - src: images/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg
     name: "header"
 
 copyright:
