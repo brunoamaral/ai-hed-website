@@ -7,6 +7,9 @@ authorlink: ""
 subtitle: Policy Advisor at the International Centre of FBE
 twitterUsername: ""
 weight: 7
+params:
+  kind: team-member
+
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold

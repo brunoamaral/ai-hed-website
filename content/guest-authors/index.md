@@ -1,21 +1,21 @@
 ---
-title: Recommendations 
-subtitle: Digital Literacy on AI among higher education teachers
+title: Guest Authors
+subtitle: 
 date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
 type: "page"
-layout: page
+layout:
 disable_comments: true
-url: ai-higher-education/recommendations/
+url: 
 description:
 aliases:
 
 resources:
-  - src: images/getty-images-pkak-bDAngo-unsplash.jpg
+  - src: images/getty-images-hMFkHxwP4ZU-unsplash.jpg
     name: "header"
 options:
-  header: small
+  header: mini
   headerHeight:
   unlisted: false
   showHeader: true
@@ -26,12 +26,9 @@ options:
   title_align: center
   hide_date_reading_time: true
 menu:
-  main:
-    parent: AI in Higher Education
-    name: Recommendations
-    weight: 10
   footer_one:
-    name: Recommendations
+    name: Guest Authors
 ---
 
-### Available Soon{.text-center}
+
+{{< guest-authors >}}

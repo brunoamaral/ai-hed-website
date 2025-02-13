@@ -7,6 +7,9 @@ authorlink: ""
 subtitle: Certified Project Manager at the University of Applied Sciences BFI Vienna
 twitterUsername: ""
 weight: 10
+params:
+  kind: team-member
+
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold

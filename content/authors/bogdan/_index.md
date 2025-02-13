@@ -7,6 +7,9 @@ authorlink: ""
 subtitle: Member of the FOI Artificial Intelligence Laboratory
 twitterUsername: ""
 weight: 5
+params:
+  kind: team-member
+
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold

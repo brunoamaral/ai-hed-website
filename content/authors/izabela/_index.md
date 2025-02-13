@@ -7,6 +7,9 @@ authorlink: ""
 subtitle: Experienced in managing international partnerships and mobility programs
 twitterUsername: ""
 weight: 6
+params:
+  kind: team-member
+
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold

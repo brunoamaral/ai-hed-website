@@ -7,6 +7,9 @@ authorlink: ""
 subtitle: Leader of AI-focused projects and expert in teaching, learning, and research innovation
 twitterUsername: ""
 weight: 9
+params:
+  kind: team-member
+
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold

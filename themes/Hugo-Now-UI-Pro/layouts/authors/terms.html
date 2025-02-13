@@ -44,6 +44,11 @@
 											<div class="card-footer">
 												{{ with .Params.profiles }}
 													{{ range $key, $val := . }}
+
+													{{ if eq $key "website" }}
+													<a href="{{ $val }}" class="btn btn-icon btn-neutral btn-{{ $key }}" title="{{$name}} on {{$key}}"><i class="fa fa-globe"></i></a>
+													{{else}}
+			
 													<a href="{{ $val }}" class="btn btn-icon btn-neutral btn-{{ $key }}"><i class="fab fa-{{ $key }}"></i></a>
 													{{ end }}
 												{{ end }}

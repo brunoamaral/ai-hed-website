@@ -77,8 +77,15 @@
 					<div class="meta text-center">
 						<div class="row mb-5">
 							{{ if ne .Params.options.hide_date_reading_time true }}
-							<time class="published col-6 text-right border-primary border-right align-middle" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Format "January 2, 2006" }}</time>
-							<span class="readingtime col-6 text-left align-middle">{{ .ReadingTime }} {{ i18n "min_read" }}</span>
+							{{ with .Params.authors }}
+								{{- range . }}
+									{{- with $.Site.GetPage (printf "authors/%s/" .) }}
+											<a href="{{ .Permalink }}" class="col-4 border-right align-middle text-center">{{ .Params.name }}</a>
+									{{ end }}
+								{{ end }} 
+							{{ end }}
+							<time class="published col-4 text-center border-primary border-right align-middle" itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">{{ .Date.Format "January 2, 2006" }}</time>
+							<span class="readingtime col-4 text-center align-middle">{{ .ReadingTime }} {{ i18n "min_read" }}</span>
 							{{ end }}
 						{{ if .IsTranslated }} 
 							<div class="col-12">
@@ -148,33 +155,29 @@
 				</div>
 			 </div>
 			 <hr />
-			 {{ with .Params.authors }}
-			 {{- range . }}
-			 {{ $author := $.Site.GetPage (printf "authors/%s/" .)}}
-			 <div class="card card-profile card-plain">
-				<div class="row">
-				 <div class="col-md-2">
-					<div class="card-avatar">
-					 <a href="{{ $author.Permalink }}">
-					 	{{- with $author.Resources.GetMatch "avatar" -}}
-					 	{{ $avatarimage := ""}}
-					 		{{- if eq .MediaType.SubType "gif" -}}
-					 			{{- $avatarimage = .RelPermalink -}}
-					 		{{- else }}
-					 			{{- $avatarimage = (.Fill "300x300").RelPermalink -}}
-					 		{{- end }}
-					 		<img alt="{{ $author.Params.name }}" class="img img-raised" src="{{- $avatarimage -}}">
-					 	{{- end -}}
-					 </a>
+			 {{ range .Params.authors }}
+			 	{{ with $.Site.GetPage (printf "authors/%s/" .) }}
+					<div class="card card-profile card-plain">
+						<div class="row">
+				 			<div class="col-md-2">
+								<div class="card-avatar">
+					 				<a href="{{ .Permalink }}">
+										{{ with $r := .Resources.GetMatch "avatar" }}
+										{{ with .Fill "300x300" }}
+										<img alt="{{ $r.Name }}" class="img img-raised" src="{{ .RelPermalink }}">
+					 					{{- end -}}
+										{{end}}
+					 				</a>
 					 <div class="ripple-container"></div>
 					</div>
 				 </div>
 				 <div class="col-md-8">
-					<h4 class="card-title">{{ $author.Params.name }}</h4>
-					{{/*  <p class="description">{{ $author.Content }}</p>  */}}
+					<h4 class="card-title">
+						<a href="{{ .Permalink }}">{{ .Params.name }}</a>
+					</h4>
 				 </div>
 				 <div class="col-md-2">
-					<a href="{{ $author.Permalink }}" class="btn btn-default pull-right btn-round">Follow</a>
+					<a href="{{ .Permalink }}" class="btn btn-default pull-right btn-round">Follow</a>
 				 </div>
 				</div>
 			 </div>

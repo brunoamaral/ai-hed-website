@@ -7,6 +7,9 @@ authorlink: ""
 subtitle: Strategy and Policy Specialist for Internationalisation
 twitterUsername: ""
 weight: 8
+params:
+  kind: team-member
+
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
