@@ -35,7 +35,7 @@ options:
   ShowHeaderSubscribeForm: false
   unlisted: false
 
-draft: false
+draft: true
 disable_comments: true
 ---
 
