@@ -1,0 +1,101 @@
+{{- /* 
+	Shortcode: csv-to-md
+	Description: Renders a markdown table from a CSV file.
+	Parameters:
+	  - path (string): The path to the CSV file.
+	  - caption (string): Optional. A caption for the table.
+	  - hasHeaderRow (bool): Optional. Defaults to true. Set to false if the CSV does not include a header.
+	  - delimiter (string): Optional. Defaults to a comma.
+*/ -}}
+
+{{- $path := .Get "path" -}}
+{{- if not $path -}}
+	{{- errorf "The csv-to-md shortcode requires a path parameter." -}}
+{{- end -}}
+
+{{- $delimiter := or (.Get "delimiter") "," -}}
+{{- $hasHeaderRow := true -}}
+{{- if isset .Params "hasHeaderRow" -}}
+	{{- if in (slice false "false") (.Get "hasHeaderRow") -}}
+		{{- $hasHeaderRow = false -}}
+	{{- end -}}
+{{- end -}}
+{{- $caption := .Get "caption" -}}
+
+{{- /* Resolve the CSV resource. */ -}}
+{{- $r := "" -}}
+{{- $u := urls.Parse $path -}}
+{{- if $u.IsAbs -}}
+	{{- with try (resources.GetRemote $u.String) -}}
+		{{- with .Err -}}
+			{{- errorf "%s" . -}}
+		{{- else with .Value -}}
+			{{- $r = . -}}
+		{{- else -}}
+			{{- errorf "The csv-to-md shortcode was unable to get %s" $u.String -}}
+		{{- end -}}
+	{{- end -}}
+{{- else -}}
+	{{- with .Page.Resources.Get (strings.TrimPrefix "./" $u.Path) -}}
+		{{- $r = . -}}
+	{{- else -}}
+		{{- with (and (ne .Page.BundleType "leaf") (.Page.CurrentSection.Resources.Get (strings.TrimPrefix "./" $u.Path))) -}}
+			{{- $r = . -}}
+		{{- else -}}
+			{{- with resources.Get $u.Path -}}
+				{{- $r = . -}}
+			{{- else -}}
+				{{- errorf "The csv-to-md shortcode was unable to get %s" $u.String -}}
+			{{- end -}}
+		{{- end -}}
+	{{- end -}}
+{{- end -}}
+
+{{- $data := unmarshal (dict "delimiter" $delimiter) $r -}}
+{{- if not $data -}}
+	{{- errorf "No data found in CSV file: %s" $path -}}
+{{- end -}}
+
+{{- /* Use Scratch to hold header and row data outside our block scope. */ -}}
+{{- .Scratch.Set "header" (slice) -}}
+{{- .Scratch.Set "rows" (slice) -}}
+
+{{- if $hasHeaderRow -}}
+	{{- .Scratch.Set "header" (index $data 0) -}}
+	{{- .Scratch.Set "rows" (after 1 $data) -}}
+{{- else -}}
+	{{- $cols := len (index $data 0) -}}
+	{{- $headerTemp := slice -}}
+	{{- range seq 1 $cols -}}
+		{{- $headerTemp = $headerTemp | append (printf "Column %d" .) -}}
+	{{- end -}}
+	{{- .Scratch.Set "header" $headerTemp -}}
+	{{- .Scratch.Set "rows" $data -}}
+{{- end -}}
+
+{{- $header := .Scratch.Get "header" -}}
+{{- $rows := .Scratch.Get "rows" -}}
+
+{{- /* Build markdown table lines */ -}}
+{{- $md := slice -}}
+
+{{- if $caption -}}
+	{{- $md = $md | append (printf "**%s**" $caption) -}}
+{{- end -}}
+
+{{- $headerLine := printf "| %s |" (delimit $header " | ") -}}
+{{- $md = $md | append $headerLine -}}
+
+{{- $separatorCells := slice -}}
+{{- range $header -}}
+	{{- $separatorCells = $separatorCells | append "---" -}}
+{{- end -}}
+{{- $separatorLine := printf "| %s |" (delimit $separatorCells " | ") -}}
+{{- $md = $md | append $separatorLine -}}
+
+{{- range $rows -}}
+	{{- $line := printf "| %s |" (delimit . " | ") -}}
+	{{- $md = $md | append $line -}}
+{{- end -}}
+
+{{- markdownify (delimit $md "\n") -}}

@@ -27,3 +27,5 @@ options:
 ---
 
 ### To Be Available Soon
+
+{{< ai-tools path="tools.csv" caption="tools">}}
