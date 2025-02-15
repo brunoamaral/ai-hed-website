@@ -14,7 +14,7 @@ resources:
   - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
     name: "header"
 options:
-  header: small
+  header: mini
   headerHeight:
   unlisted: false
   showHeader: true
