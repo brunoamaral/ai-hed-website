@@ -1,6 +1,6 @@
 ---
 title: List of AI Tools
-subtitle: Guides, Use Cases, and Other Teaching Tools
+subtitle: 
 date: 2025-02-13T15:11:28Z 
 draft: false
 categories: 
