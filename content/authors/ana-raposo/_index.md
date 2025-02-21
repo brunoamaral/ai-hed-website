@@ -4,7 +4,7 @@ name: Ana Raposo
 email: "araposo@escs.ipl.pt"
 summary: "Professor, researcher, and consultant specializing in strategic communication and Public Relations."
 authorlink: ""
-subtitle: Deputy-Vice President for Strategic Communication at the Polytechnic University of Lisbon
+subtitle: professor at the IPL School of Communication and Media Studies
 twitterUsername: ""
 params:
   kind: team-member
