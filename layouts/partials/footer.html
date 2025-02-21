@@ -1,0 +1,282 @@
+
+<footer class="footer footer-white footer-big" data-background-color="white">
+    {{- if (ne $.Params.options.hideSubscribeForm true | and (ne .Section "instagram")) -}}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 pb-5 m-0 p-0"><div class="ml-embedded" data-form="S56ZJs"></div></div>
+        </div>
+    </div>
+    {{ end }}
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-3">
+                    <p class="h5 text-dark">{{ i18n "footer1" | upper }}</p>
+                    <ul class="links-vertical text-dark">
+                    	{{- range .Site.Menus.footer_one -}}
+                        <li>
+                            <a href="{{ .URL }}" class="text-dark">
+                                {{ .Name }}
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <p class="h5 text-dark">{{ i18n "footer2" | upper }}</p>
+                    <ul class="links-vertical">
+                        {{- range .Site.Menus.footer_two -}}
+                        <li>
+                            <a href="{{ .URL }}" class="text-muted" 
+                                {{ if (hasPrefix .URL "http") }} target="_blank"{{ end }} 
+                                {{ with .Params.target }} target="{{ . }}"{{ end }}>
+                                {{ .Name }}
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <p class="h5 text-dark">{{ i18n "footer3" | upper }}</p>
+
+                    <ul class="links-vertical">
+                    			{{- range .Site.Menus.footer_three -}}
+                    		    <li>
+                    		        <a href="{{ .URL }}" class="text-muted" {{ with .Params.target }} target="{{.}}"{{ end }} >
+                    		            {{ .Name }}
+                    		        </a>
+                    		    </li>
+                    		    {{ end }}
+                                {{- with $.Page.Resources.GetMatch "header" -}}
+                                <li class="nav-item">
+                                {{ $copyName := "" }}
+                                {{ $copyHref := "" }}
+                                    {{ if in .Permalink "-unsplash.jpg" }}
+                                        {{ $unsplash := replaceRE $.Page.Permalink "" .Permalink | replaceRE "images/" "" | replaceRE "-unsplash.jpg" ""}}
+                                        {{ $strings := split $unsplash "-" }}
+                                        {{$copyName = printf "%s %s" (index $strings 0) (index $strings 1)}}
+                                        {{$copyHref = replaceRE (printf "%s-%s-" (index $strings 0) (index $strings 1) ) "https://unsplash.com/photos/" $unsplash}}
+                                    {{ else }}
+                                        {{ $copyName = $.Params.copyright.name }}
+                                        {{ $copyHref = $.Params.copyright.href }}  
+                                    {{ end }}
+                                    {{ if and $copyName $copyHref }}
+                                        <a href="{{$copyHref}}" class="nav-link text-muted opacity-8 text-sm" target="_blank">Header Photo by {{ $copyName | title }}
+                                            <i class="fas fa-external-link-alt ml-1" aria-hidden="true"></i>
+                                        </a>
+                                    {{ end }}
+                                    </li>
+                                {{end }}
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <p class="h5 text-dark">{{ i18n "follow" | upper }}</p>
+                    <ul class="social-buttons">
+                    	{{ $author := "" }}
+                        {{ with $.Site.Params.defaultAuthor }}
+                            {{ $author = $.Site.GetPage (printf "authors/%s" $.Site.Params.defaultAuthor ) }}
+                        {{ end }}
+                        {{ if ne $author "" }}
+                    	{{ with $author.Params.profiles }}
+                    	{{ $map := (index $author.Params.profiles ) }} {{$map}}
+                    	{{ range $key, $val := $author.Params.profiles }}
+                    		<li class="ml-1">
+                    			<a href="{{ $val }}" title="{{ $.Site.Title }} on {{ $key }}" class="btn btn-icon btn-neutral btn-{{ printf $key }} btn-round" target="_blank">
+                    				<i class="fab fa-{{ printf $key }}"></i>
+                    			</a>
+                    		</li>
+                    		{{ end }}
+                    	{{ end }}
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+            <hr class="border">
+            <div class="row row-logos d-flex justify-content-around align-items-center">
+                <div class="">
+                    <a href="https://www.amsterdamuas.com" target="_blank">
+                        <img src="/images/partners/logo_amsterdam-uas.svg" alt="Amsterdam University of Applied Sciences" >
+                    </a>
+                </div>
+                <div class="">
+                    <a href="https://escs.ipl.pt/en/home" target="_blank">
+                        <img src="/images/partners/Logo_ESCS_vENG_color-ai.svg" alt="School of Communication and Media Studies" >
+                    </a>
+                </div>
+                <div class="">
+                    <a href="https://www.fh-vie.ac.at/en/">
+                        <img src="/images/partners/FH_e_Logo_Blue_RGB.svg" alt="University of Applied Sciences BFI Vienna - economics management finance">
+                    </a>
+                </div>
+                <div class="">
+                    <a href="https://www.foi.unizg.hr/en" target="_blank">
+                        <img src="/images/partners/FOI_horiz_EN_color-ai.svg" alt="University of Zagreb - Faculty of Organization and Informatics" >
+                    </a>
+                </div>
+                <div class="">
+                    <img src="/images/partners/EN_Co-fundedbytheEU_RGB_POS.png" alt="co-funded by the European Union" >
+                </div>
+            </div>
+
+        </div>
+        <hr>
+        <div class="copyright text-black-50 mb-5 pb-5">
+        	Copyright &copy; {{ now.Format "2006"}} {{ if ne $author "" }}{{ $author.Params.name }}{{ end }}
+            <p class="text-muted">The European Commission's support for the production of this publication does not constitute an endorsement of the contents, which reflect the views only of the authors, and the Commission cannot be held responsible for any use which may be made of the information contained therein
+            </p>
+        </div>
+    </div>
+</footer>no!!
+{{ if $.HasShortcode "csv2table" }}yes!!
+<script>
+/**
+ * Apply filters to tables.
+ *
+ * @param {Object} options - Configuration options.
+ * @param {string} [options.tableSelector="table.database-table"] - CSS selector for tables.
+ * @param {string[]} [options.facetColumns=[]] - Array of column names for dropdown facets.
+ * @param {string[]} [options.searchColumns=[]] - Array of column names to search.
+ * @param {string} [options.searchPlaceholder="Search..."] - Placeholder text for the search input.
+ */
+window.applyTableFilters = function(options) {
+	var tableSelector = options.tableSelector || "table.database-table";
+	var facetColumns = options.facetColumns || [];
+	var searchColumns = options.searchColumns || [];
+	var searchPlaceholder = options.searchPlaceholder || "Search...";
+
+	// Find all matching tables
+	var tables = document.querySelectorAll(tableSelector);
+
+	tables.forEach(function (table) {
+		// Build a map from header text (lowercase) to its index
+		var headerCells = table.querySelectorAll("thead th");
+		var columnIndices = {};
+		headerCells.forEach(function (th, index) {
+			var headerText = th.textContent.trim();
+			columnIndices[headerText.toLowerCase()] = index;
+		});
+
+		// Determine indices for facet and search columns
+		var facetIndices = {};
+		facetColumns.forEach(function (col) {
+			var lowerCol = col.toLowerCase();
+			if (lowerCol in columnIndices) {
+				facetIndices[lowerCol] = columnIndices[lowerCol];
+			}
+		});
+		var searchIndices = [];
+		searchColumns.forEach(function (col) {
+			var lowerCol = col.toLowerCase();
+			if (lowerCol in columnIndices) {
+				searchIndices.push(columnIndices[lowerCol]);
+			}
+		});
+
+		// Create filter container
+		var filterContainer = document.createElement("div");
+		filterContainer.className = "mb-3 d-flex align-items-center flex-wrap";
+
+		// Create a dropdown for each facet column
+		var facetSelects = {};
+		Object.keys(facetIndices).forEach(function (key) {
+			var colIndex = facetIndices[key];
+			// Gather unique values for this facet from tbody rows
+			var rows = table.querySelectorAll("tbody tr");
+			var facetValuesSet = new Set();
+			rows.forEach(function (row) {
+				var cells = row.querySelectorAll("td");
+				if (cells[colIndex]) {
+					var cellText = cells[colIndex].textContent.trim();
+					if (cellText !== "") {
+						facetValuesSet.add(cellText);
+					}
+				}
+			});
+			var facetValues = Array.from(facetValuesSet).sort();
+
+			// Build the select element
+			var select = document.createElement("select");
+			select.className = "form-control mr-3 mb-2";
+			// Default option: All [Facet]
+			var defaultOption = document.createElement("option");
+			defaultOption.value = "";
+			// Capitalize first letter of facet name
+			defaultOption.textContent = "" + key.charAt(0).toUpperCase() + key.slice(1);
+			select.appendChild(defaultOption);
+			facetValues.forEach(function (val) {
+				var option = document.createElement("option");
+				option.value = val;
+				option.textContent = val;
+				select.appendChild(option);
+			});
+			facetSelects[key] = select;
+			filterContainer.appendChild(select);
+		});
+
+		// Create a text input if searchIndices are defined
+		var searchInput = null;
+		if (searchIndices.length > 0) {
+			searchInput = document.createElement("input");
+			searchInput.type = "text";
+			searchInput.className = "form-control mb-2";
+			searchInput.placeholder = searchPlaceholder;
+			filterContainer.appendChild(searchInput);
+		}
+
+		// Insert filter container above the table
+		table.parentNode.insertBefore(filterContainer, table);
+
+		// Get all tbody rows
+		var rows = table.querySelectorAll("tbody tr");
+
+		// Filtering function that checks each row against facet and search filters
+		function filterRows() {
+			// Collect current facet filter values
+			var facetFilterValues = {};
+			Object.keys(facetSelects).forEach(function (key) {
+				facetFilterValues[key] = facetSelects[key].value;
+			});
+			var searchText = searchInput ? searchInput.value.trim().toLowerCase() : "";
+
+			rows.forEach(function (row) {
+				var cells = row.querySelectorAll("td");
+				var showRow = true;
+
+				// Apply facet filters (exact match)
+				Object.keys(facetFilterValues).forEach(function (key) {
+					var filterVal = facetFilterValues[key];
+					var colIndex = facetIndices[key];
+					var cellText = cells[colIndex] ? cells[colIndex].textContent.trim() : "";
+					if (filterVal !== "" && cellText !== filterVal) {
+						showRow = false;
+					}
+				});
+
+				// Apply free text search (if defined)
+				if (showRow && searchText !== "") {
+					var found = false;
+					searchIndices.forEach(function (i) {
+						if (cells[i] && cells[i].textContent.trim().toLowerCase().indexOf(searchText) !== -1) {
+							found = true;
+						}
+					});
+					if (!found) {
+						showRow = false;
+					}
+				}
+
+				row.style.display = showRow ? "" : "none";
+			});
+		}
+
+		// Add event listeners
+		Object.keys(facetSelects).forEach(function (key) {
+			facetSelects[key].addEventListener("change", filterRows);
+		});
+		if (searchInput) {
+			searchInput.addEventListener("input", filterRows);
+		}
+	});
+}
+</script>
+{{ end }}

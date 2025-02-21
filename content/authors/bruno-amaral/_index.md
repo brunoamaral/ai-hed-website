@@ -9,6 +9,7 @@ twitterUsername: ""
 weight: 2
 params:
   kind: team-member
+  reason: kick-it
 
 options:
   header: mini
