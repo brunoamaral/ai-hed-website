@@ -2,7 +2,7 @@
 title: Glossary
 subtitle: Guides, Use Cases, and Other Teaching Tools
 date: 2025-02-13T15:11:28Z 
-draft: false
+draft: true
 categories: 
 
 disable_comments: true
