@@ -2,7 +2,7 @@
 title: Training Materials for Teachers
 subtitle: Guides, Use Cases, and Other Teaching Tools
 date: 2025-02-13T15:11:28Z 
-draft: false
+draft: true
 categories: 
 type: "page"
 disable_comments: true

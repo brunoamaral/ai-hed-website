@@ -1,0 +1,175 @@
+{{- /* 
+	Shortcode: csv-to-md
+	Description: Renders a markdown table from a CSV file or an HTML table with Bootstrap 4 styling.
+	Parameters:
+	  - path (string): The path to the CSV file.
+	  - caption (string): Optional. A caption for the table.
+	  - hasHeaderRow (bool): Optional. Defaults to true. Set to false if the CSV does not include a header.
+	  - delimiter (string): Optional. Defaults to a comma.
+	  - outputFormat (string): Optional. Either "md" for Markdown (default) or "html" for HTML output.
+*/ -}}
+
+{{- $path := .Get "path" -}}
+{{- if not $path -}}
+	{{- errorf "The csv-to-md shortcode requires a path parameter." -}}
+{{- end -}}
+
+{{- $delimiter := or (.Get "delimiter") "," -}}
+{{- $hasHeaderRow := true -}}
+{{- if isset .Params "hasHeaderRow" -}}
+	{{- if in (slice false "false") (.Get "hasHeaderRow") -}}
+		{{- $hasHeaderRow = false -}}
+	{{- end -}}
+{{- end -}}
+{{- $caption := .Get "caption" -}}
+{{- $outputFormat := or (.Get "outputFormat") "md" -}} <!-- Default to Markdown if not specified -->
+
+{{- /* Resolve the CSV resource */ -}}
+{{- $r := "" -}}
+{{- $u := urls.Parse $path -}}
+{{- if $u.IsAbs -}}
+	{{- with try (resources.GetRemote $u.String) -}}
+		{{- with .Err -}}
+			{{- errorf "%s" . -}}
+		{{- else with .Value -}}
+			{{- $r = . -}}
+		{{- else -}}
+			{{- errorf "The csv-to-md shortcode was unable to get %s" $u.String -}}
+		{{- end -}}
+	{{- end -}}
+{{- else -}}
+	{{- with .Page.Resources.Get (strings.TrimPrefix "./" $u.Path) -}}
+		{{- $r = . -}}
+	{{- else -}}
+		{{- with (and (ne .Page.BundleType "leaf") (.Page.CurrentSection.Resources.Get (strings.TrimPrefix "./" $u.Path))) -}}
+			{{- $r = . -}}
+		{{- else -}}
+			{{- with resources.Get $u.Path -}}
+				{{- $r = . -}}
+			{{- else -}}
+				{{- errorf "The csv-to-md shortcode was unable to get %s" $u.String -}}
+			{{- end -}}
+		{{- end -}}
+	{{- end -}}
+{{- end -}}
+
+{{- $data := unmarshal (dict "delimiter" $delimiter) $r -}}
+{{- if not $data -}}
+	{{- errorf "No data found in CSV file: %s" $path -}}
+{{- end -}}
+
+{{- /* Process CSV: convert rows to maps keyed by header if header row exists */ -}}
+{{- if $hasHeaderRow -}}
+	{{- $rawHeader := index $data 0 -}}
+	{{- $header := slice -}}
+	{{- range $rawHeader -}}
+		{{- $header = $header | append (trim . " ") -}}
+	{{- end -}}
+	{{- .Scratch.Set "header" $header -}}
+
+	{{- $rowsMap := slice -}}
+	{{- range $data | after 1 -}}
+		{{- $rowMap := dict -}}
+		{{- range $i, $cell := . -}}
+			{{- $key := index $header $i -}}
+			{{- $rowMap = merge $rowMap (dict $key $cell) -}}
+		{{- end -}}
+		{{- $rowsMap = $rowsMap | append $rowMap -}}
+	{{- end -}}
+	{{- .Scratch.Set "rowsMap" $rowsMap -}}
+{{- else -}}
+	{{- /* If no header row, assume first column is Tool and third is Link */ -}}
+	{{- $cols := len (index $data 0) -}}
+	{{- $header := slice -}}
+	{{- range seq 0 (sub $cols 1) -}}
+		{{- if eq . 0 -}}
+			{{- $header = $header | append "Tool" -}}
+		{{- else if eq . 2 -}}
+			{{- $header = $header | append "Link" -}}
+		{{- else -}}
+			{{- $header = $header | append (printf "Column %d" (add . 1)) -}}
+		{{- end -}}
+	{{- end -}}
+	{{- .Scratch.Set "header" $header -}}
+	{{- /* Convert each row into a map using the default header */ -}}
+	{{- $rowsMap := slice -}}
+	{{- range $data -}}
+		{{- $rowMap := dict -}}
+		{{- range $i, $cell := . -}}
+			{{- $key := index $header $i -}}
+			{{- $rowMap = merge $rowMap (dict $key $cell) -}}
+		{{- end -}}
+		{{- $rowsMap = $rowsMap | append $rowMap -}}
+	{{- end -}}
+	{{- .Scratch.Set "rowsMap" $rowsMap -}}
+{{- end -}}
+
+{{- $header := .Scratch.Get "header" -}}
+{{- $rowsMap := .Scratch.Get "rowsMap" -}}
+
+{{- /* Generate output */ -}}
+{{- if eq $outputFormat "html" -}}
+	{{- $html := slice -}}
+	{{- if $caption -}}
+		{{- $html = $html | append (printf "<caption>%s</caption>" $caption) -}}
+	{{- end -}}
+	{{- /* Wrap the table in a responsive div and add hover and small table classes */ -}}
+	{{- $html = $html | append "<div class=\"table-responsive\"><table class=\"database-table table table-bordered table-striped table-hover table-sm\">" -}}
+	{{- $html = $html | append "<thead><tr>" -}}
+	{{- range $header -}}
+		{{- if ne . "Link" -}}
+			{{- $html = $html | append (printf "<th>%s</th>" .) -}}
+		{{- end -}}
+	{{- end -}}
+	{{- $html = $html | append "</tr></thead>" -}}
+	{{- $html = $html | append "<tbody>" -}}
+	{{- range $row := $rowsMap -}}
+		{{- $html = $html | append "<tr>" -}}
+		{{- range $header -}}
+			{{- if eq . "Tool" -}}
+				{{- $toolName := index $row "Tool" | string -}}
+				{{- $linkString := index $row "Link" | string -}}
+				{{- $html = $html | append (printf "<td><a href=\"%s\">%s</a></td>" $linkString $toolName) -}}
+			{{- else if ne . "Link" -}}
+				{{- $html = $html | append (printf "<td>%s</td>" (index $row .)) -}}
+			{{- end -}}
+		{{- end -}}
+		{{- $html = $html | append "</tr>" -}}
+	{{- end -}}
+	{{- $html = $html | append "</tbody></table></div>" -}}
+	{{- .Scratch.Set "htmlTable" (delimit $html "") -}}
+	{{- markdownify (.Scratch.Get "htmlTable") -}}
+{{- else -}}
+	{{- /* Markdown output */ -}}
+	{{- $md := slice -}}
+	{{- if $caption -}}
+		{{- $md = $md | append (printf "**%s**" $caption) -}}
+	{{- end -}}
+	{{- $headerLine := slice -}}
+	{{- range $header -}}
+		{{- if ne . "Link" -}}
+			{{- $headerLine = $headerLine | append . -}}
+		{{- end -}}
+	{{- end -}}
+	{{- $md = $md | append (printf "| %s |" (delimit $headerLine " | ")) -}}
+	{{- $separatorCells := slice -}}
+	{{- range $headerLine -}}
+		{{- $separatorCells = $separatorCells | append "---" -}}
+	{{- end -}}
+	{{- $separatorLine := printf "| %s |" (delimit $separatorCells " | ") -}}
+	{{- $md = $md | append $separatorLine -}}
+	{{- range $row := $rowsMap -}}
+		{{- $line := slice -}}
+		{{- range $header -}}
+			{{- if eq . "Tool" -}}
+				{{- $toolName := index $row "Tool" | string -}}
+				{{- $linkString := index $row "Link" | string -}}
+				{{- $line = $line | append (printf "[%s](%s)" $toolName $linkString) -}}
+			{{- else if ne . "Link" -}}
+				{{- $line = $line | append (index $row .) -}}
+			{{- end -}}
+		{{- end -}}
+		{{- $md = $md | append (printf "| %s |" (delimit $line " | ")) -}}
+	{{- end -}}
+	{{- markdownify (delimit $md "\n") -}}
+{{- end -}}
