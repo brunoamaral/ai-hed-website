@@ -265,8 +265,11 @@ document.addEventListener("DOMContentLoaded", function() {
 {{- end -}}
 
 <style>
-	.glossary-index { font-size: large; color:#ddd}
-	.glossary-index a {font-weight: bold;}
-	.glossary-index > .glossary-index-letter.disabled.text-muted{font-weight: normal;}
-  dd > ul > li > a {text-decoration: underline; text-underline-offset: 0.3em; }
+  .glossary-index { font-size: large; color: #ddd; }
+  .glossary-index a { font-weight: bold; }
+  .glossary-index a.active { background-color: #007bff;  color: #fff; padding: 0.2em 0.4em; border-radius: 3px; text-decoration: none;}
+  .glossary-index > .glossary-index-letter.disabled.text-muted { font-weight: normal; }
+  dd + p + ul li > a { text-decoration: underline; text-underline-offset: 0.3em; }
+	dt {font-size: 1.2em; line-height: 1.61em; text-transform: uppercase;}
+
 </style>
