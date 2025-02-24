@@ -137,7 +137,8 @@
 			{{- if $source2Parsed -}}
 				{{- $sources = $sources | append $source2Parsed -}}
 			{{- end -}}
-			{{- $html = $html | append (printf "<p><strong>Sources<br></strong> %s</p>" (delimit $sources "<br>")) -}}
+			{{- /* Render sources as a bullet list */ -}}
+			{{- $html = $html | append (printf "<p><strong>Sources</strong></p><ul><li>%s</li></ul>" (delimit $sources "</li><li>")) -}}
 		{{- end -}}
 		{{- $html = $html | append (printf "<p><strong>Description:</strong> %s</p>" $description) -}}
 		{{- $html = $html | append (printf "<p><strong>Example:</strong> %s</p></dd>" $example) -}}
@@ -250,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			{{- if $source2Parsed -}}
 				{{- $sources = $sources | append $source2Parsed -}}
 			{{- end -}}
-			{{- $line = printf ": **Sources:** %s" (delimit $sources ", ") -}}
+			{{- $line = printf ": **Sources:**\n- %s" (delimit $sources "\n- ") -}}
 			{{- $md = $md | append $line -}}
 		{{- end -}}
 		{{- $line = printf ": **Description:** %s" $description -}}
@@ -265,5 +266,5 @@ document.addEventListener("DOMContentLoaded", function() {
 <style>
 	.glossary-index{font-weight: bold; font-size: large;}
 	.glossary-index > .glossary-index-letter.disabled.text-muted{font-weight: normal;}
-  dd > p > a {text-decoration: underline;   text-underline-offset: 0.3em; }
+  dd > ul > li > a {text-decoration: underline; text-underline-offset: 0.3em; }
 </style>
