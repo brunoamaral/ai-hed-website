@@ -31,22 +31,6 @@ options:
 
 <div class="row">
 <div class="col-10 offset-1">
-{{< csv2table path="glossary.csv" outputFormat="html" caption="">}}
+{{< glossary path="glossary.csv" outputFormat="html" >}}
 </div>
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-	var waitForFilters = setInterval(function () {
-		if (typeof applyTableFilters === "function") {
-			clearInterval(waitForFilters);
-			applyTableFilters({
-				tableSelector: "table.database-table",
-				facetColumns: [],
-				searchColumns: ["Concept"],
-				searchPlaceholder: "Search concepts ..."
-			});
-		}
-	}, 50);
-});
-</script>

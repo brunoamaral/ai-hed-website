@@ -1,0 +1,151 @@
+{{- /* 
+	Shortcode: glossary
+	Description: Renders a definition list from a CSV file.
+	Parameters:
+	  - path (string): The path to the CSV file.
+	  - delimiter (string): Optional. Defaults to a comma.
+	  - outputFormat (string): Optional. Either "md" for Markdown (default) or "html" for HTML output.
+	  - hasHeaderRow (bool): Optional. Defaults to true.
+*/ -}}
+
+{{- $path := .Get "path" -}}
+{{- if not $path -}}
+	{{- errorf "The glossary shortcode requires a path parameter." -}}
+{{- end -}}
+
+{{- $delimiter := or (.Get "delimiter") "," -}}
+{{- $outputFormat := or (.Get "outputFormat") "md" -}}
+{{- $hasHeaderRow := true -}}
+{{- if isset .Params "hasHeaderRow" -}}
+	{{- if in (slice false "false") (.Get "hasHeaderRow") -}}
+		{{- $hasHeaderRow = false -}}
+	{{- end -}}
+{{- end -}}
+
+{{- /* Resolve the CSV resource */ -}}
+{{- $r := "" -}}
+{{- $u := urls.Parse $path -}}
+{{- if $u.IsAbs -}}
+	{{- with try (resources.GetRemote $u.String) -}}
+		{{- with .Err -}}
+			{{- errorf "%s" . -}}
+		{{- else with .Value -}}
+			{{- $r = . -}}
+		{{- else -}}
+			{{- errorf "The glossary shortcode was unable to get %s" $u.String -}}
+		{{- end -}}
+	{{- end -}}
+{{- else -}}
+	{{- with .Page.Resources.Get (strings.TrimPrefix "./" $u.Path) -}}
+		{{- $r = . -}}
+	{{- else -}}
+		{{- with (and (ne .Page.BundleType "leaf") (.Page.CurrentSection.Resources.Get (strings.TrimPrefix "./" $u.Path))) -}}
+			{{- $r = . -}}
+		{{- else -}}
+			{{- with resources.Get $u.Path -}}
+				{{- $r = . -}}
+			{{- else -}}
+				{{- errorf "The glossary shortcode was unable to get %s" $u.String -}}
+			{{- end -}}
+		{{- end -}}
+	{{- end -}}
+{{- end -}}
+
+{{- $data := unmarshal (dict "delimiter" $delimiter) $r -}}
+{{- if not $data -}}
+	{{- errorf "No data found in CSV file: %s" $path -}}
+{{- end -}}
+
+{{- /* Process CSV: if a header row exists, use it to build maps for each row */ -}}
+{{- if $hasHeaderRow -}}
+	{{- $rawHeader := index $data 0 -}}
+	{{- $header := slice -}}
+	{{- range $rawHeader -}}
+		{{- $header = $header | append (trim . " ") -}}
+	{{- end -}}
+	{{- .Scratch.Set "header" $header -}}
+
+	{{- $rowsMap := slice -}}
+	{{- range $data | after 1 -}}
+		{{- $rowMap := dict -}}
+		{{- range $i, $cell := . -}}
+			{{- $key := index $header $i -}}
+			{{- $rowMap = merge $rowMap (dict $key $cell) -}}
+		{{- end -}}
+		{{- $rowsMap = $rowsMap | append $rowMap -}}
+	{{- end -}}
+	{{- .Scratch.Set "rowsMap" $rowsMap -}}
+{{- else -}}
+	{{- /* If no header row is provided, you might want to define a default header here */ -}}
+	{{- errorf "The glossary shortcode requires a header row in the CSV file." -}}
+{{- end -}}
+
+{{- $rowsMap := .Scratch.Get "rowsMap" -}}
+
+{{- /* Generate glossary output */ -}}
+{{- if eq $outputFormat "html" -}}
+	{{- $html := slice -}}
+	{{- $html = $html | append "<dl class=\"glossary\">" -}}
+	{{- range $row := $rowsMap -}}
+		{{- $concept := index $row "Concept" -}}
+		{{- $definition := index $row "Definition" -}}
+		{{- $source1 := index $row "Source 1" -}}
+		{{- $source2 := index $row "Source 2" -}}
+		{{- $description := index $row "Description" -}}
+		{{- $example := index $row "Example" -}}
+
+		{{- $html = $html | append (printf "<dt>%s</dt>" $concept) -}}
+		{{- $html = $html | append "<dd>" -}}
+		{{- $html = $html | append (printf "<p><strong>Definition:</strong> %s</p>" $definition) -}}
+		{{- if or $source1 $source2 -}}
+			{{- $sources := slice -}}
+			{{- if $source1 -}}
+				{{- $sources = $sources | append $source1 -}}
+			{{- end -}}
+			{{- if $source2 -}}
+				{{- $sources = $sources | append $source2 -}}
+			{{- end -}}
+			{{- $html = $html | append (printf "<p><strong>Sources:</strong> %s</p>" (delimit $sources ", ")) -}}
+		{{- end -}}
+		{{- $html = $html | append (printf "<p><strong>Description:</strong> %s</p>" $description) -}}
+		{{- $html = $html | append (printf "<p><strong>Example:</strong> %s</p>" $example) -}}
+		{{- $html = $html | append "</dd>" -}}
+	{{- end -}}
+	{{- $html = $html | append "</dl>" -}}
+	{{- .Scratch.Set "htmlGlossary" (delimit $html "") -}}
+	{{- markdownify (.Scratch.Get "htmlGlossary") -}}
+{{- else -}}
+	{{- /* Markdown output using a definition list style (supported by some Markdown processors) */ -}}
+	{{- $md := slice -}}
+	{{- range $row := $rowsMap -}}
+		{{- $concept := index $row "Concept" -}}
+		{{- $definition := index $row "Definition" -}}
+		{{- $source1 := index $row "Source 1" -}}
+		{{- $source2 := index $row "Source 2" -}}
+		{{- $description := index $row "Description" -}}
+		{{- $example := index $row "Example" -}}
+
+{{- /* Print the term */ -}}
+{{- $md = $md | append $concept -}}
+{{- /* Build the definition details */ -}}
+{{- $line := printf ": **Definition:** %s" $definition -}}
+{{- $md = $md | append $line -}}
+{{- if or $source1 $source2 -}}
+	{{- $sources := slice -}}
+	{{- if $source1 -}}
+		{{- $sources = $sources | append $source1 -}}
+	{{- end -}}
+	{{- if $source2 -}}
+		{{- $sources = $sources | append $source2 -}}
+	{{- end -}}
+	{{- $line = printf ": **Sources:** %s" (delimit $sources ", ") -}}
+	{{- $md = $md | append $line -}}
+{{- end -}}
+{{- $line = printf ": **Description:** %s" $description -}}
+{{- $md = $md | append $line -}}
+{{- $line = printf ": **Example:** %s" $example -}}
+{{- $md = $md | append $line -}}
+{{- $md = $md | append "" -}}  {{/* blank line between entries */}}
+	{{- end -}}
+	{{- markdownify (delimit $md "\n") -}}
+{{- end -}}
