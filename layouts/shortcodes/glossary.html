@@ -1,6 +1,6 @@
 {{- /* 
 	Shortcode: glossary
-	Description: Renders a definition list from a CSV file.
+	Description: Renders a definition list from a CSV file with an alphabetical index for filtering.
 	Parameters:
 	  - path (string): The path to the CSV file.
 	  - delimiter (string): Optional. Defaults to a comma.
@@ -76,15 +76,24 @@
 	{{- end -}}
 	{{- .Scratch.Set "rowsMap" $rowsMap -}}
 {{- else -}}
-	{{- /* If no header row is provided, you might want to define a default header here */ -}}
 	{{- errorf "The glossary shortcode requires a header row in the CSV file." -}}
 {{- end -}}
 
 {{- $rowsMap := .Scratch.Get "rowsMap" -}}
 
-{{- /* Generate glossary output */ -}}
 {{- if eq $outputFormat "html" -}}
 	{{- $html := slice -}}
+
+	{{- /* Build the alphabetical index */ -}}
+	{{- $letters := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" -}}
+	{{- $html = $html | append "<div class=\"glossary-index\">" -}}
+	{{- range $letters -}}
+		{{- $html = $html | append (printf "<a href=\"#\" class=\"glossary-index-letter\" data-letter=\"%s\">%s</a> | " . .) -}}
+	{{- end -}}
+	{{- $html = $html | append "<a href=\"#\" class=\"glossary-index-letter\" data-letter=\"all\"><strong> All</strong></a>" -}}
+	{{- $html = $html | append "</div><br>" -}}
+
+	{{- /* Build the glossary definition list */ -}}
 	{{- $html = $html | append "<dl class=\"glossary\">" -}}
 	{{- range $row := $rowsMap -}}
 		{{- $concept := index $row "Concept" -}}
@@ -93,29 +102,62 @@
 		{{- $source2 := index $row "Source 2" -}}
 		{{- $description := index $row "Description" -}}
 		{{- $example := index $row "Example" -}}
+		{{- $firstLetter := upper (substr $concept 0 1) -}}
 
-		{{- $html = $html | append (printf "<dt>%s</dt>" $concept) -}}
-		{{- $html = $html | append "<dd>" -}}
-		{{- $html = $html | append (printf "<p><strong>Definition:</strong> %s</p>" $definition) -}}
-		{{- if or $source1 $source2 -}}
+		{{- /* Parse links in the source fields */ -}}
+		{{- $source1Parsed := replaceRE "(https?://[^[:space:]]+)" "<a href=\"$1\">$1</a>" $source1 -}}
+		{{- $source2Parsed := replaceRE "(https?://[^[:space:]]+)" "<a href=\"$1\">$1</a>" $source2 -}}
+
+		{{- /* Output term with a data-letter attribute */ -}}
+		{{- $html = $html | append (printf "<dt data-letter=\"%s\">%s</dt>" $firstLetter $concept) -}}
+		{{- $html = $html | append (printf "<dd data-letter=\"%s\"><p><strong>Definition:</strong> %s</p>" $firstLetter $definition) -}}
+		{{- if or $source1Parsed $source2Parsed -}}
 			{{- $sources := slice -}}
-			{{- if $source1 -}}
-				{{- $sources = $sources | append $source1 -}}
+			{{- if $source1Parsed -}}
+				{{- $sources = $sources | append $source1Parsed -}}
 			{{- end -}}
-			{{- if $source2 -}}
-				{{- $sources = $sources | append $source2 -}}
+			{{- if $source2Parsed -}}
+				{{- $sources = $sources | append $source2Parsed -}}
 			{{- end -}}
 			{{- $html = $html | append (printf "<p><strong>Sources:</strong> %s</p>" (delimit $sources ", ")) -}}
 		{{- end -}}
 		{{- $html = $html | append (printf "<p><strong>Description:</strong> %s</p>" $description) -}}
-		{{- $html = $html | append (printf "<p><strong>Example:</strong> %s</p>" $example) -}}
-		{{- $html = $html | append "</dd>" -}}
+		{{- $html = $html | append (printf "<p><strong>Example:</strong> %s</p></dd>" $example) -}}
 	{{- end -}}
 	{{- $html = $html | append "</dl>" -}}
+
+	{{- /* Add inline JavaScript for filtering the glossary */ -}}
+	{{- $script := `
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const indexLinks = document.querySelectorAll(".glossary-index-letter");
+  indexLinks.forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const letter = this.getAttribute("data-letter");
+      // Toggle active state
+      indexLinks.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
+      // Show/hide glossary items based on data-letter attribute
+      const items = document.querySelectorAll(".glossary dt, .glossary dd");
+      items.forEach(item => {
+        if(letter === "all" || item.getAttribute("data-letter") === letter) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      });
+    });
+  });
+});
+</script>
+` -}}
+	{{- $html = $html | append $script -}}
+
 	{{- .Scratch.Set "htmlGlossary" (delimit $html "") -}}
 	{{- markdownify (.Scratch.Get "htmlGlossary") -}}
 {{- else -}}
-	{{- /* Markdown output using a definition list style (supported by some Markdown processors) */ -}}
+	{{- /* Markdown output remains unchanged; interactive filtering requires HTML/JS */ -}}
 	{{- $md := slice -}}
 	{{- range $row := $rowsMap -}}
 		{{- $concept := index $row "Concept" -}}
@@ -125,27 +167,29 @@
 		{{- $description := index $row "Description" -}}
 		{{- $example := index $row "Example" -}}
 
-{{- /* Print the term */ -}}
-{{- $md = $md | append $concept -}}
-{{- /* Build the definition details */ -}}
-{{- $line := printf ": **Definition:** %s" $definition -}}
-{{- $md = $md | append $line -}}
-{{- if or $source1 $source2 -}}
-	{{- $sources := slice -}}
-	{{- if $source1 -}}
-		{{- $sources = $sources | append $source1 -}}
-	{{- end -}}
-	{{- if $source2 -}}
-		{{- $sources = $sources | append $source2 -}}
-	{{- end -}}
-	{{- $line = printf ": **Sources:** %s" (delimit $sources ", ") -}}
-	{{- $md = $md | append $line -}}
-{{- end -}}
-{{- $line = printf ": **Description:** %s" $description -}}
-{{- $md = $md | append $line -}}
-{{- $line = printf ": **Example:** %s" $example -}}
-{{- $md = $md | append $line -}}
-{{- $md = $md | append "" -}}  {{/* blank line between entries */}}
+		{{- /* Parse links: convert URLs into Markdown links */ -}}
+		{{- $source1Parsed := replaceRE "(https?://[^[:space:]]+)" "[$1]($1)" $source1 -}}
+		{{- $source2Parsed := replaceRE "(https?://[^[:space:]]+)" "[$1]($1)" $source2 -}}
+
+		{{- $md = $md | append $concept -}}
+		{{- $line := printf ": **Definition:** %s" $definition -}}
+		{{- $md = $md | append $line -}}
+		{{- if or $source1Parsed $source2Parsed -}}
+			{{- $sources := slice -}}
+			{{- if $source1Parsed -}}
+				{{- $sources = $sources | append $source1Parsed -}}
+			{{- end -}}
+			{{- if $source2Parsed -}}
+				{{- $sources = $sources | append $source2Parsed -}}
+			{{- end -}}
+			{{- $line = printf ": **Sources:** %s" (delimit $sources ", ") -}}
+			{{- $md = $md | append $line -}}
+		{{- end -}}
+		{{- $line = printf ": **Description:** %s" $description -}}
+		{{- $md = $md | append $line -}}
+		{{- $line = printf ": **Example:** %s" $example -}}
+		{{- $md = $md | append $line -}}
+		{{- $md = $md | append "" -}}  {{/* blank line between entries */}}
 	{{- end -}}
 	{{- markdownify (delimit $md "\n") -}}
 {{- end -}}
