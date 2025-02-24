@@ -127,21 +127,22 @@
 		{{- $source2Parsed := replaceRE "(https?://[^[:space:]]+)" "<a href=\"$1\">$1</a>" $source2 -}}
 
 		{{- /* Output term and definition, each tagged with the first letter */ -}}
-		{{- $html = $html | append (printf "<dt data-letter=\"%s\">%s</dt>" $firstLetter $concept) -}}
-		{{- $html = $html | append (printf "<dd data-letter=\"%s\"><p><strong>Definition:</strong> %s</p>" $firstLetter $definition) -}}
-		{{- if or $source1Parsed $source2Parsed -}}
-			{{- $sources := slice -}}
-			{{- if $source1Parsed -}}
-				{{- $sources = $sources | append $source1Parsed -}}
-			{{- end -}}
-			{{- if $source2Parsed -}}
-				{{- $sources = $sources | append $source2Parsed -}}
-			{{- end -}}
-			{{- /* Render sources as a bullet list */ -}}
-			{{- $html = $html | append (printf "<p><strong>Sources</strong></p><ul><li>%s</li></ul>" (delimit $sources "</li><li>")) -}}
-		{{- end -}}
+		{{- $html = $html | append (printf "<dt data-letter=\"%s\" class='mt-5 pt-5 border-top'>%s</dt>" $firstLetter $concept) -}}
+		{{- $html = $html | append (printf "<dd data-letter=\"%s\"><p>%s</p>" $firstLetter $definition) -}}
+
 		{{- $html = $html | append (printf "<p><strong>Description:</strong> %s</p>" $description) -}}
 		{{- $html = $html | append (printf "<p><strong>Example:</strong> %s</p></dd>" $example) -}}
+		{{- if or $source1Parsed $source2Parsed -}}
+		{{- $sources := slice -}}
+		{{- if $source1Parsed -}}
+			{{- $sources = $sources | append $source1Parsed -}}
+		{{- end -}}
+		{{- if $source2Parsed -}}
+			{{- $sources = $sources | append $source2Parsed -}}
+		{{- end -}}
+		{{- /* Render sources as a bullet list */ -}}
+		{{- $html = $html | append (printf "<p><strong>Sources</strong></p><ul><li>%s</li></ul>" (delimit $sources "</li><li>")) -}}
+	{{- end -}}
 	{{- end -}}
 	{{- $html = $html | append "</dl>" -}}
 
