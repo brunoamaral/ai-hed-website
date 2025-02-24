@@ -137,7 +137,7 @@
 			{{- if $source2Parsed -}}
 				{{- $sources = $sources | append $source2Parsed -}}
 			{{- end -}}
-			{{- $html = $html | append (printf "<p><strong>Sources:</strong> %s</p>" (delimit $sources ", ")) -}}
+			{{- $html = $html | append (printf "<p><strong>Sources<br></strong> %s</p>" (delimit $sources "<br>")) -}}
 		{{- end -}}
 		{{- $html = $html | append (printf "<p><strong>Description:</strong> %s</p>" $description) -}}
 		{{- $html = $html | append (printf "<p><strong>Example:</strong> %s</p></dd>" $example) -}}
