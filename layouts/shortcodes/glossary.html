@@ -217,3 +217,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	{{- end -}}
 	{{- markdownify (delimit $md "\n") -}}
 {{- end -}}
+<style>
+	.glossary-index{font-weight: bold; font-size: large;}
+	.glossary-index > .glossary-index-letter.disabled.text-muted{font-weight: normal;}
+  dd > p > a {text-decoration: underline;   text-underline-offset: 0.3em; }
+</style>
