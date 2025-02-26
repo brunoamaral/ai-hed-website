@@ -129,20 +129,19 @@
 		{{- /* Output term and definition, each tagged with the first letter */ -}}
 		{{- $html = $html | append (printf "<dt data-letter=\"%s\" class='mt-5 pt-5 border-top'>%s</dt>" $firstLetter $concept) -}}
 		{{- $html = $html | append (printf "<dd data-letter=\"%s\"><p>%s</p>" $firstLetter $definition) -}}
-
 		{{- $html = $html | append (printf "<p><strong>Description:</strong> %s</p>" $description) -}}
-		{{- $html = $html | append (printf "<p><strong>Example:</strong> %s</p></dd>" $example) -}}
+		{{- $html = $html | append (printf "<p><strong>Example:</strong> %s</p>" $example) -}}
 		{{- if or $source1Parsed $source2Parsed -}}
-		{{- $sources := slice -}}
-		{{- if $source1Parsed -}}
-			{{- $sources = $sources | append $source1Parsed -}}
+			{{- $sources := slice -}}
+			{{- if $source1Parsed -}}
+				{{- $sources = $sources | append $source1Parsed -}}
+			{{- end -}}
+			{{- if $source2Parsed -}}
+				{{- $sources = $sources | append $source2Parsed -}}
+			{{- end -}}
+			{{- $html = $html | append (printf "<p><strong>Sources</strong></p><ul><li>%s</li></ul>" (delimit $sources "</li><li>")) -}}
 		{{- end -}}
-		{{- if $source2Parsed -}}
-			{{- $sources = $sources | append $source2Parsed -}}
-		{{- end -}}
-		{{- /* Render sources as a bullet list */ -}}
-		{{- $html = $html | append (printf "<p><strong>Sources</strong></p><ul><li>%s</li></ul>" (delimit $sources "</li><li>")) -}}
-	{{- end -}}
+		{{- $html = $html | append "</dd>" -}}
 	{{- end -}}
 	{{- $html = $html | append "</dl>" -}}
 
@@ -150,75 +149,75 @@
 	{{- $script := `
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const indexLinks = document.querySelectorAll(".glossary-index-letter");
-  const searchBox = document.getElementById("glossarySearch");
-  // Use only the term elements (dt) for searching
-  const terms = document.querySelectorAll(".glossary dt");
-  // On load, show all items
-  terms.forEach(term => {
-    term.style.display = "";
-    let dd = term.nextElementSibling;
-    if(dd && dd.tagName.toLowerCase() === "dd"){
-      dd.style.display = "";
-    }
-  });
-  // Alphabetical filtering
-  indexLinks.forEach(link => {
-    link.addEventListener("click", function(e) {
-      e.preventDefault();
-      // Only react if link is clickable (has data-letter attribute)
-      if(!this.hasAttribute("data-letter")) return;
-      // Clear search box when using the index
-      searchBox.value = "";
-      const letter = this.getAttribute("data-letter");
-      indexLinks.forEach(l => l.classList.remove("active"));
-      this.classList.add("active");
-      terms.forEach(term => {
-        let dd = term.nextElementSibling;
-        if(letter === "all" || term.getAttribute("data-letter") === letter) {
-          term.style.display = "";
-          if(dd && dd.tagName.toLowerCase() === "dd"){
-            dd.style.display = "";
-          }
-        } else {
-          term.style.display = "none";
-          if(dd && dd.tagName.toLowerCase() === "dd"){
-            dd.style.display = "none";
-          }
-        }
-      });
-    });
-  });
-  // Search filtering: only filter by term (dt)
-  searchBox.addEventListener("input", function() {
-    const searchVal = this.value.toLowerCase();
-    indexLinks.forEach(l => l.classList.remove("active"));
-    if(searchVal.length > 0) {
-      terms.forEach(term => {
-        let dd = term.nextElementSibling;
-        if(term.textContent.toLowerCase().indexOf(searchVal) > -1) {
-          term.style.display = "";
-          if(dd && dd.tagName.toLowerCase() === "dd"){
-            dd.style.display = "";
-          }
-        } else {
-          term.style.display = "none";
-          if(dd && dd.tagName.toLowerCase() === "dd"){
-            dd.style.display = "none";
-          }
-        }
-      });
-    } else {
-      // If search is cleared, show all items.
-      terms.forEach(term => {
-        term.style.display = "";
-        let dd = term.nextElementSibling;
-        if(dd && dd.tagName.toLowerCase() === "dd"){
-          dd.style.display = "";
-        }
-      });
-    }
-  });
+	const indexLinks = document.querySelectorAll(".glossary-index-letter");
+	const searchBox = document.getElementById("glossarySearch");
+	// Use only the term elements (dt) for searching
+	const terms = document.querySelectorAll(".glossary dt");
+	// On load, show all items
+	terms.forEach(term => {
+		term.style.display = "";
+		let dd = term.nextElementSibling;
+		if(dd && dd.tagName.toLowerCase() === "dd"){
+			dd.style.display = "";
+		}
+	});
+	// Alphabetical filtering
+	indexLinks.forEach(link => {
+		link.addEventListener("click", function(e) {
+			e.preventDefault();
+			// Only react if link is clickable (has data-letter attribute)
+			if(!this.hasAttribute("data-letter")) return;
+			// Clear search box when using the index
+			searchBox.value = "";
+			const letter = this.getAttribute("data-letter");
+			indexLinks.forEach(l => l.classList.remove("active"));
+			this.classList.add("active");
+			terms.forEach(term => {
+				let dd = term.nextElementSibling;
+				if(letter === "all" || term.getAttribute("data-letter") === letter) {
+					term.style.display = "";
+					if(dd && dd.tagName.toLowerCase() === "dd"){
+						dd.style.display = "";
+					}
+				} else {
+					term.style.display = "none";
+					if(dd && dd.tagName.toLowerCase() === "dd"){
+						dd.style.display = "none";
+					}
+				}
+			});
+		});
+	});
+	// Search filtering: only filter by term (dt)
+	searchBox.addEventListener("input", function() {
+		const searchVal = this.value.toLowerCase();
+		indexLinks.forEach(l => l.classList.remove("active"));
+		if(searchVal.length > 0) {
+			terms.forEach(term => {
+				let dd = term.nextElementSibling;
+				if(term.textContent.toLowerCase().indexOf(searchVal) > -1) {
+					term.style.display = "";
+					if(dd && dd.tagName.toLowerCase() === "dd"){
+						dd.style.display = "";
+					}
+				} else {
+					term.style.display = "none";
+					if(dd && dd.tagName.toLowerCase() === "dd"){
+						dd.style.display = "none";
+					}
+				}
+			});
+		} else {
+			// If search is cleared, show all items.
+			terms.forEach(term => {
+				term.style.display = "";
+				let dd = term.nextElementSibling;
+				if(dd && dd.tagName.toLowerCase() === "dd"){
+					dd.style.display = "";
+				}
+			});
+		}
+	});
 });
 </script>
 ` -}}
@@ -259,17 +258,16 @@ document.addEventListener("DOMContentLoaded", function() {
 		{{- $md = $md | append $line -}}
 		{{- $line = printf ": **Example:** %s" $example -}}
 		{{- $md = $md | append $line -}}
-		{{- $md = $md | append "" -}}  {{/* blank line between entries */}}
+		{{- $md = $md | append "" -}}
 	{{- end -}}
 	{{- markdownify (delimit $md "\n") -}}
 {{- end -}}
 
 <style>
-  .glossary-index { font-size: large; color: #ddd; }
-  .glossary-index a { font-weight: bold; }
-  .glossary-index a.active { background-color: #007bff;  color: #fff; padding: 0.2em 0.4em; border-radius: 3px; text-decoration: none;}
-  .glossary-index > .glossary-index-letter.disabled.text-muted { font-weight: normal; }
-  dd + p + ul li > a { text-decoration: underline; text-underline-offset: 0.3em; }
-	dt {font-size: 1.2em; line-height: 1.61em; text-transform: uppercase;}
-
+	.glossary-index { font-size: large; color: #ddd; }
+	.glossary-index a { font-weight: bold; }
+	.glossary-index a.active { background-color: #007bff;  color: #fff; padding: 0.2em 0.4em; border-radius: 3px; text-decoration: none; }
+	.glossary-index > .glossary-index-letter.disabled.text-muted { font-weight: normal; }
+	dd + p + ul li > a { text-decoration: underline; text-underline-offset: 0.3em; }
+	dt { font-size: 1.2em; line-height: 1.61em; text-transform: uppercase; }
 </style>
