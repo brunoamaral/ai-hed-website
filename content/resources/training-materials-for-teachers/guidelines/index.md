@@ -24,6 +24,11 @@ options:
   hideShareButtons: true
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
   hide_date_reading_time: true
+cta:
+  - label: <i class="fas fa-file-pdf"></i> &nbsp; Download this page as a PDF
+    url: AI-HED_WP3_Guidelines_for_course_development_final_Feb14_2025.pdf
+    classes: btn btn-lg btn-success font-weight-bold text-title
+
 ---
 
 ## Adopting AI in teaching: Guidelines for course development
