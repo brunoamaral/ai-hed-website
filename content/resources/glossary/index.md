@@ -2,14 +2,14 @@
 title: Glossary
 subtitle: Guides, Use Cases, and Other Teaching Tools
 date: 2025-02-13T15:11:28Z 
-draft: true
+draft: false
 categories: 
 
 disable_comments: true
 summary: " "
 description:
 aliases:
-
+layout: page
 resources:
   - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
     name: "header"
@@ -27,26 +27,8 @@ options:
 
 ---
 
-### To Be Available Soon
-
 <div class="row">
-<div class="col-10 offset-1">
-{{< csv2table path="glossary.csv" outputFormat="html" caption="">}}
+<div class="col-6 offset-3">
+{{< glossary path="glossary.csv" outputFormat="html" >}}
 </div>
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-	var waitForFilters = setInterval(function () {
-		if (typeof applyTableFilters === "function") {
-			clearInterval(waitForFilters);
-			applyTableFilters({
-				tableSelector: "table.database-table",
-				facetColumns: [],
-				searchColumns: ["Concept"],
-				searchPlaceholder: "Search concepts ..."
-			});
-		}
-	}, 50);
-});
-</script>

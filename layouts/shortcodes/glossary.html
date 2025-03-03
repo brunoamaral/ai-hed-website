@@ -1,0 +1,273 @@
+{{- /* 
+	Shortcode: glossary
+	Description: Renders a definition list from a CSV file with an alphabetical index and a search box for filtering.
+	Parameters:
+	  - path (string): The path to the CSV file.
+	  - delimiter (string): Optional. Defaults to a comma.
+	  - outputFormat (string): Optional. Either "md" for Markdown (default) or "html" for HTML output.
+	  - hasHeaderRow (bool): Optional. Defaults to true.
+*/ -}}
+
+{{- $path := .Get "path" -}}
+{{- if not $path -}}
+	{{- errorf "The glossary shortcode requires a path parameter." -}}
+{{- end -}}
+
+{{- $delimiter := or (.Get "delimiter") "," -}}
+{{- $outputFormat := or (.Get "outputFormat") "md" -}}
+{{- $hasHeaderRow := true -}}
+{{- if isset .Params "hasHeaderRow" -}}
+	{{- if in (slice false "false") (.Get "hasHeaderRow") -}}
+		{{- $hasHeaderRow = false -}}
+	{{- end -}}
+{{- end -}}
+
+{{- /* Resolve the CSV resource */ -}}
+{{- $r := "" -}}
+{{- $u := urls.Parse $path -}}
+{{- if $u.IsAbs -}}
+	{{- with try (resources.GetRemote $u.String) -}}
+		{{- with .Err -}}
+			{{- errorf "%s" . -}}
+		{{- else with .Value -}}
+			{{- $r = . -}}
+		{{- else -}}
+			{{- errorf "The glossary shortcode was unable to get %s" $u.String -}}
+		{{- end -}}
+	{{- end -}}
+{{- else -}}
+	{{- with .Page.Resources.Get (strings.TrimPrefix "./" $u.Path) -}}
+		{{- $r = . -}}
+	{{- else -}}
+		{{- with (and (ne .Page.BundleType "leaf") (.Page.CurrentSection.Resources.Get (strings.TrimPrefix "./" $u.Path))) -}}
+			{{- $r = . -}}
+		{{- else -}}
+			{{- with resources.Get $u.Path -}}
+				{{- $r = . -}}
+			{{- else -}}
+				{{- errorf "The glossary shortcode was unable to get %s" $u.String -}}
+			{{- end -}}
+		{{- end -}}
+	{{- end -}}
+{{- end -}}
+
+{{- $data := unmarshal (dict "delimiter" $delimiter) $r -}}
+{{- if not $data -}}
+	{{- errorf "No data found in CSV file: %s" $path -}}
+{{- end -}}
+
+{{- /* Process CSV: if a header row exists, use it to build maps for each row */ -}}
+{{- if $hasHeaderRow -}}
+	{{- $rawHeader := index $data 0 -}}
+	{{- $header := slice -}}
+	{{- range $rawHeader -}}
+		{{- $header = $header | append (trim . " ") -}}
+	{{- end -}}
+	{{- .Scratch.Set "header" $header -}}
+
+	{{- $rowsMap := slice -}}
+	{{- range $data | after 1 -}}
+		{{- $rowMap := dict -}}
+		{{- range $i, $cell := . -}}
+			{{- $key := index $header $i -}}
+			{{- $rowMap = merge $rowMap (dict $key $cell) -}}
+		{{- end -}}
+		{{- $rowsMap = $rowsMap | append $rowMap -}}
+	{{- end -}}
+	{{- .Scratch.Set "rowsMap" $rowsMap -}}
+{{- else -}}
+	{{- errorf "The glossary shortcode requires a header row in the CSV file." -}}
+{{- end -}}
+
+{{- $rowsMap := .Scratch.Get "rowsMap" -}}
+
+{{- if eq $outputFormat "html" -}}
+	{{- $html := slice -}}
+
+	{{- /* Bootstrap 4 formatted search box */ -}}
+	{{- $html = $html | append "<div class=\"form-group\"><input type=\"text\" class=\"form-control\" id=\"glossarySearch\" placeholder=\"Search definitions...\"></div>" -}}
+
+	{{- /* Compute available first letters */ -}}
+	{{- $availableLetters := slice -}}
+	{{- range $row := $rowsMap -}}
+		{{- $concept := index $row "Concept" -}}
+		{{- $letter := upper (substr $concept 0 1) -}}
+		{{- if not (in $availableLetters $letter) -}}
+			{{- $availableLetters = $availableLetters | append $letter -}}
+		{{- end -}}
+	{{- end -}}
+
+	{{- /* Build the alphabetical index with disabled letters if no terms are available */ -}}
+	{{- $letters := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" -}}
+	{{- $html = $html | append "<div class=\"glossary-index\">" -}}
+	{{- range $letter := $letters -}}
+		{{- if in $availableLetters $letter -}}
+			{{- $html = $html | append (printf "<a href=\"#\" class=\"glossary-index-letter\" data-letter=\"%s\">%s</a> | " $letter $letter) -}}
+		{{- else -}}
+			{{- $html = $html | append (printf "<span class=\"glossary-index-letter disabled text-muted\">%s</span> | " $letter) -}}
+		{{- end -}}
+	{{- end -}}
+	{{- /* Always enable 'All' */ -}}
+	{{- $html = $html | append "<a href=\"#\" class=\"glossary-index-letter\" data-letter=\"all\"><strong>All</strong></a>" -}}
+	{{- $html = $html | append "</div><br>" -}}
+
+	{{- /* Build the glossary definition list with data-letter attributes */ -}}
+	{{- $html = $html | append "<dl class=\"glossary\">" -}}
+	{{- range $row := $rowsMap -}}
+		{{- $concept := index $row "Concept" -}}
+		{{- $definition := index $row "Definition" -}}
+		{{- $source1 := index $row "Source 1" -}}
+		{{- $source2 := index $row "Source 2" -}}
+		{{- $description := index $row "Description" -}}
+		{{- $example := index $row "Example" -}}
+		{{- $firstLetter := upper (substr $concept 0 1) -}}
+
+		{{- /* Parse links in the source fields */ -}}
+		{{- $source1Parsed := replaceRE "(https?://[^[:space:]]+)" "<a href=\"$1\">$1</a>" $source1 -}}
+		{{- $source2Parsed := replaceRE "(https?://[^[:space:]]+)" "<a href=\"$1\">$1</a>" $source2 -}}
+
+		{{- /* Output term and definition, each tagged with the first letter */ -}}
+		{{- $html = $html | append (printf "<dt data-letter=\"%s\" class='mt-5 pt-5 border-top'>%s</dt>" $firstLetter $concept) -}}
+		{{- $html = $html | append (printf "<dd data-letter=\"%s\"><p>%s</p>" $firstLetter $definition) -}}
+		{{- $html = $html | append (printf "<p><strong>Description:</strong> %s</p>" $description) -}}
+		{{- $html = $html | append (printf "<p><strong>Example:</strong> %s</p>" $example) -}}
+		{{- if or $source1Parsed $source2Parsed -}}
+			{{- $sources := slice -}}
+			{{- if $source1Parsed -}}
+				{{- $sources = $sources | append $source1Parsed -}}
+			{{- end -}}
+			{{- if $source2Parsed -}}
+				{{- $sources = $sources | append $source2Parsed -}}
+			{{- end -}}
+			{{- $html = $html | append (printf "<p><strong>Sources</strong></p><ul><li>%s</li></ul>" (delimit $sources "</li><li>")) -}}
+		{{- end -}}
+		{{- $html = $html | append "</dd>" -}}
+	{{- end -}}
+	{{- $html = $html | append "</dl>" -}}
+
+	{{- /* Add inline JavaScript for filtering by alphabetical index and search box */ -}}
+	{{- $script := `
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+	const indexLinks = document.querySelectorAll(".glossary-index-letter");
+	const searchBox = document.getElementById("glossarySearch");
+	// Use only the term elements (dt) for searching
+	const terms = document.querySelectorAll(".glossary dt");
+	// On load, show all items
+	terms.forEach(term => {
+		term.style.display = "";
+		let dd = term.nextElementSibling;
+		if(dd && dd.tagName.toLowerCase() === "dd"){
+			dd.style.display = "";
+		}
+	});
+	// Alphabetical filtering
+	indexLinks.forEach(link => {
+		link.addEventListener("click", function(e) {
+			e.preventDefault();
+			// Only react if link is clickable (has data-letter attribute)
+			if(!this.hasAttribute("data-letter")) return;
+			// Clear search box when using the index
+			searchBox.value = "";
+			const letter = this.getAttribute("data-letter");
+			indexLinks.forEach(l => l.classList.remove("active"));
+			this.classList.add("active");
+			terms.forEach(term => {
+				let dd = term.nextElementSibling;
+				if(letter === "all" || term.getAttribute("data-letter") === letter) {
+					term.style.display = "";
+					if(dd && dd.tagName.toLowerCase() === "dd"){
+						dd.style.display = "";
+					}
+				} else {
+					term.style.display = "none";
+					if(dd && dd.tagName.toLowerCase() === "dd"){
+						dd.style.display = "none";
+					}
+				}
+			});
+		});
+	});
+	// Search filtering: only filter by term (dt)
+	searchBox.addEventListener("input", function() {
+		const searchVal = this.value.toLowerCase();
+		indexLinks.forEach(l => l.classList.remove("active"));
+		if(searchVal.length > 0) {
+			terms.forEach(term => {
+				let dd = term.nextElementSibling;
+				if(term.textContent.toLowerCase().indexOf(searchVal) > -1) {
+					term.style.display = "";
+					if(dd && dd.tagName.toLowerCase() === "dd"){
+						dd.style.display = "";
+					}
+				} else {
+					term.style.display = "none";
+					if(dd && dd.tagName.toLowerCase() === "dd"){
+						dd.style.display = "none";
+					}
+				}
+			});
+		} else {
+			// If search is cleared, show all items.
+			terms.forEach(term => {
+				term.style.display = "";
+				let dd = term.nextElementSibling;
+				if(dd && dd.tagName.toLowerCase() === "dd"){
+					dd.style.display = "";
+				}
+			});
+		}
+	});
+});
+</script>
+` -}}
+	{{- $html = $html | append $script -}}
+
+	{{- .Scratch.Set "htmlGlossary" (delimit $html "") -}}
+	{{- markdownify (.Scratch.Get "htmlGlossary") -}}
+{{- else -}}
+	{{- /* Markdown output remains unchanged; interactive filtering requires HTML/JS */ -}}
+	{{- $md := slice -}}
+	{{- range $row := $rowsMap -}}
+		{{- $concept := index $row "Concept" -}}
+		{{- $definition := index $row "Definition" -}}
+		{{- $source1 := index $row "Source 1" -}}
+		{{- $source2 := index $row "Source 2" -}}
+		{{- $description := index $row "Description" -}}
+		{{- $example := index $row "Example" -}}
+
+		{{- /* Parse links: convert URLs into Markdown links */ -}}
+		{{- $source1Parsed := replaceRE "(https?://[^[:space:]]+)" "[$1]($1)" $source1 -}}
+		{{- $source2Parsed := replaceRE "(https?://[^[:space:]]+)" "[$1]($1)" $source2 -}}
+
+		{{- $md = $md | append $concept -}}
+		{{- $line := printf ": **Definition:** %s" $definition -}}
+		{{- $md = $md | append $line -}}
+		{{- if or $source1Parsed $source2Parsed -}}
+			{{- $sources := slice -}}
+			{{- if $source1Parsed -}}
+				{{- $sources = $sources | append $source1Parsed -}}
+			{{- end -}}
+			{{- if $source2Parsed -}}
+				{{- $sources = $sources | append $source2Parsed -}}
+			{{- end -}}
+			{{- $line = printf ": **Sources:**\n- %s" (delimit $sources "\n- ") -}}
+			{{- $md = $md | append $line -}}
+		{{- end -}}
+		{{- $line = printf ": **Description:** %s" $description -}}
+		{{- $md = $md | append $line -}}
+		{{- $line = printf ": **Example:** %s" $example -}}
+		{{- $md = $md | append $line -}}
+		{{- $md = $md | append "" -}}
+	{{- end -}}
+	{{- markdownify (delimit $md "\n") -}}
+{{- end -}}
+
+<style>
+	.glossary-index { font-size: large; color: #ddd; }
+	.glossary-index a { font-weight: bold; }
+	.glossary-index a.active { background-color: #007bff;  color: #fff; padding: 0.2em 0.4em; border-radius: 3px; text-decoration: none; }
+	.glossary-index > .glossary-index-letter.disabled.text-muted { font-weight: normal; }
+	dd + p + ul li > a { text-decoration: underline; text-underline-offset: 0.3em; }
+	dt { font-size: 1.2em; line-height: 1.61em; text-transform: uppercase; }
+</style>
