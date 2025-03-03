@@ -5,7 +5,8 @@ date: 2025-02-13T15:11:28Z
 draft: true
 toc: true
 categories: 
-
+authors:
+- dietmar
 disable_comments: true
 summary: " "
 description:
@@ -166,23 +167,22 @@ pedagogical values and meet the evolving needs of students, and society.
 Using AI for teaching & learning requires addressing three fundamental
 pedagogical questions:
 
--   How do learning outcomes need to be reformulated?
+- How do learning outcomes need to be reformulated?
 
--   How must teaching materials, learning exercises, and assignments be
-    adapted, developed further, or enhanced?
+- How must teaching materials, learning exercises, and assignments be adapted, developed further, or enhanced?
 
--   Which methods and criteria are to be applied to assess the work and
+- Which methods and criteria are to be applied to assess the work and
     examinations that students complete with AI?
 
 These questions are directly connected with fundamental issues of
 academic education which inevitably arise when AI is used. The most
 important issues include
 
--   the use of AI by the principles of academic integrity,
+- the use of AI by the principles of academic integrity,
 
--   the legally compliant use of AI,
+- the legally compliant use of AI,
 
--   and the ethically responsible use of AI.
+- and the ethically responsible use of AI.
 
 While the core principles of academic integrity, legal compliance, and
 ethical integrity are the same across disciplines, the practical
@@ -607,175 +607,18 @@ There are numerous didactical scenarios for integrating AI into a
 course. Below is a -- highly selective -- list of teaching concepts with
 some practical indications that may be useful when preparing a course.
 
-+-----------------+----------------------------------------------------+
-| **Pedagogical   | **Implementation**                                 |
-| approach**      |                                                    |
-+=================+====================================================+
-| Problem-based   | PBL is a practice-oriented teaching and learning   |
-| Learning (PBL)  | method in which students work autonomously on      |
-|                 | authentic problems in small groups in a            |
-|                 | self-directed manner, while teachers supervise     |
-|                 | them as tutors.                                    |
-|                 |                                                    |
-|                 | AI can assist in the development of                |
-|                 | problem-solving skills through:                    |
-|                 |                                                    |
-|                 | -   search for information about the elements,     |
-|                 |     structure, and manifestations of a problem     |
-|                 |                                                    |
-|                 | -   discussing and evaluating problem-solving      |
-|                 |     techniques applied by students                 |
-|                 |                                                    |
-|                 | -   evaluating pros and cons of problem-solving    |
-|                 |     approaches                                     |
-|                 |                                                    |
-|                 | providing expert knowledge for specific tasks and  |
-|                 | challenges                                         |
-+-----------------+----------------------------------------------------+
-| P               | POL is very much about creating learning           |
-| roject-oriented | environments that foster collaboration for         |
-| Learning (POL)  | developing and implementing solutions to           |
-|                 | real-world problems and reflecting collaborative   |
-|                 | work processes.                                    |
-|                 |                                                    |
-|                 | AI may be deployed                                 |
-|                 |                                                    |
-|                 | -   to act as a virtual collaboration partner      |
-|                 |                                                    |
-|                 | -   provide suggestions to set up project teams    |
-|                 |     according to their knowledge and expertise     |
-|                 |                                                    |
-|                 | -   to act as a coach helping to improve the       |
-|                 |     quality of collaboration                       |
-|                 |                                                    |
-|                 | <!-- -->                                           |
-|                 |                                                    |
-|                 | -   to examine the progress and quality of project |
-|                 |     work                                           |
-+-----------------+----------------------------------------------------+
-| Constructive    | Constructive feedback reinforces positive learning |
-| Feedback &      | achievements and reformulates errors as areas that |
-| Coaching        | need improvement.                                  |
-|                 |                                                    |
-|                 | Chatbots may be created to                         |
-|                 |                                                    |
-|                 | -   provide personalized feedback to students      |
-|                 |                                                    |
-|                 | -   helping students to develop personalized       |
-|                 |     learning strategies                            |
-|                 |                                                    |
-|                 | -   assisting students in self-assessment          |
-|                 |                                                    |
-|                 | -   reinforcing and motivating students            |
-+-----------------+----------------------------------------------------+
-| Dis             | Acquisition of knowledge can be achieved through   |
-| course-oriented | formal or informal exchange of perspectives,       |
-| Learning        | positions, and explanations between groups or      |
-|                 | individuals.                                       |
-|                 |                                                    |
-|                 | Generative AI tools can be used to                 |
-|                 |                                                    |
-|                 | -   use chatbots to represent different            |
-|                 |     perspectives in discussions; this is to        |
-|                 |     support students' ability to grasp topics from |
-|                 |     different angles                               |
-|                 |                                                    |
-|                 | -   act as a Socratic dialogue partner by          |
-|                 |     responding to students with questions only and |
-|                 |     thus helping them develop ideas and solutions  |
-|                 |     themselves                                     |
-|                 |                                                    |
-|                 | -   let students test their results and opinions   |
-|                 |     against a virtual sparring partner             |
-+-----------------+----------------------------------------------------+
-| Linking theory  | Integrating theory and practical activities        |
-| and practical   | facilitates deeper understanding.                  |
-| application     |                                                    |
-|                 | Students may use AI to                             |
-|                 |                                                    |
-|                 | -   explore the relevance of theoretical concepts  |
-|                 |     and applicability of methods for               |
-|                 |     problem-solving in professional environments   |
-|                 |                                                    |
-|                 | -   visualize linkages between theoretical         |
-|                 |     concepts and practical challenges,             |
-|                 |                                                    |
-|                 | -   explore and evaluate how AI operates in        |
-|                 |     practical settings.                            |
-|                 |                                                    |
-|                 | This approach can be implemented in learning       |
-|                 | environments such as laboratories, technical       |
-|                 | experimentation, field work, projects with         |
-|                 | external partners, etc.                            |
-+-----------------+----------------------------------------------------+
-| Self-directed   | Self-directed learning is characterized by         |
-| Learning        | pre-defined overall learning objectives and leaves |
-|                 | it to students how they organize their learning    |
-|                 | journey according to their individual needs and    |
-|                 | preferences.                                       |
-|                 |                                                    |
-|                 | AI helps learners                                  |
-|                 |                                                    |
-|                 | -   identifying their needs, e.g. through          |
-|                 |     assessing prior knowledge                      |
-|                 |                                                    |
-|                 | -   organizing individual learning paths by        |
-|                 |     suggesting individual learning plans           |
-|                 |                                                    |
-|                 | -   searching and evaluating learning resources    |
-|                 |                                                    |
-|                 | -   being a sparring partner in interim            |
-|                 |     assessments                                    |
-|                 |                                                    |
-|                 | -   documenting and reflecting on learning         |
-|                 |     progress                                       |
-+-----------------+----------------------------------------------------+
-| Game-based      | GBL means knowledge acquisition and enhancement of |
-| Learning (GBL)  | learning motivation through participating in       |
-|                 | games.                                             |
-|                 |                                                    |
-|                 | In GBL, AI can be assigned to take specific roles  |
-|                 | in learning environments such as a                 |
-|                 |                                                    |
-|                 | -   game co-developer,                             |
-|                 |                                                    |
-|                 | -   game character,                                |
-|                 |                                                    |
-|                 | -   teammate,                                      |
-|                 |                                                    |
-|                 | -   consultant for game strategy,                  |
-|                 |                                                    |
-|                 | -   referee.                                       |
-+-----------------+----------------------------------------------------+
-| Critical        | AI can do parts of the work we have done ourselves |
-| Thinking        | before. Since AI also produces false or misleading |
-|                 | output, students need to learn how to evaluate     |
-|                 | this output critically. This can be done with or   |
-|                 | without the help of AI.                            |
-|                 |                                                    |
-|                 | Students may be assigned                           |
-|                 |                                                    |
-|                 | -   to evaluate outputs regarding factual          |
-|                 |     accuracy, consistency, and academic integrity  |
-|                 |     in the classroom without the help of digital   |
-|                 |     media                                          |
-|                 |                                                    |
-|                 | -   to reason and reflect on the relevance and     |
-|                 |     impact of AI-generated outputs for particular  |
-|                 |     groups in terms of diversity, inclusion, and   |
-|                 |     sustainability                                 |
-|                 |                                                    |
-|                 | -   to reflect on the risks that arise when        |
-|                 |     AI-generated outputs are adopted without       |
-|                 |     critical assessment                            |
-|                 |                                                    |
-|                 | -   to reflect on the ways the use of AI is        |
-|                 |     shaping our results, how we perceive reality,  |
-|                 |     and the way we work and collaborate with       |
-|                 |     others                                         |
-+-----------------+----------------------------------------------------+
+| **Pedagogical Approach** | **Implementation** |
+|--------------------------|----------------------------------------------------|
+| **Problem-based Learning (PBL)** | PBL is a practice-oriented teaching and learning method in which students work autonomously on authentic problems in small groups in a self-directed manner, while teachers supervise them as tutors. AI can assist in the development of problem-solving skills through: <br> - Search for information about problem structure and manifestations. <br> - Discussing and evaluating problem-solving techniques. <br> - Evaluating pros and cons of problem-solving approaches. <br> - Providing expert knowledge for specific tasks and challenges. |
+| **Project-oriented Learning (POL)** | POL fosters collaboration to develop and implement solutions to real-world problems. AI may: <br> - Act as a virtual collaboration partner. <br> - Suggest project team formations based on expertise. <br> - Act as a coach to improve collaboration quality. <br> - Examine the progress and quality of project work. |
+| **Constructive Feedback & Coaching** | Constructive feedback reinforces positive learning achievements and reformulates errors as areas for improvement. AI can: <br> - Provide personalized feedback. <br> - Assist students in self-assessment. <br> - Reinforce and motivate students. |
+| **Discourse-oriented Learning** | Acquisition of knowledge can be achieved through formal or informal exchange of perspectives. AI can: <br> - Use chatbots to represent different perspectives in discussions. <br> - Act as a Socratic dialogue partner. <br> - Let students test their opinions against a virtual sparring partner. |
+| **Linking Theory and Practical Application** | Integrating theory with practice enhances understanding. AI can: <br> - Visualize linkages between theoretical concepts and practical challenges. <br> - Explore AI’s applicability in real-world settings. |
+| **Self-directed Learning** | AI helps learners by: <br> - Identifying learning needs. <br> - Organizing individual learning paths. <br> - Searching and evaluating learning resources. <br> - Documenting and reflecting on progress. |
+| **Game-based Learning (GBL)** | AI can take roles in game-based learning as: <br> - Game co-developer. <br> - Game character. <br> - Teammate. <br> - Consultant for game strategy. <br> - Referee. |
+| **Critical Thinking** | AI requires critical evaluation due to potential inaccuracies. AI can: <br> - Encourage students to verify factual accuracy. <br> - Support reflections on AI-generated outputs. <br> - Foster awareness of AI’s influence on perceptions and work processes. |
 
-: Table : Didactic scenarios of teaching with AI
+*Table: Didactic scenarios of teaching with AI*
 
 ## 5.3 Anticipating potential implications of AI for your course
 
@@ -844,74 +687,11 @@ have proven to be particularly helpful and effective. One common element
 of these methods is to test the output against other sources of
 information and knowledge.
 
-+----------+----------------+-----------------------------------------+
-| **       | **Approach**   | **Implementation**                      |
-| Method** |                |                                         |
-+==========+:===============+:========================================+
-| O        | Analyzing an   | **Observe:** Identify and examine the   |
-| bserve-Q | AI output by   | features of the AI output, even if they |
-| uestion- | examining its  | feel self-evident. For instance, ask    |
-| Compare  | details and    | 'How many different aspects are         |
-| (OQC)    | comparing its  | addressed in the output?'               |
-|          | information    |                                         |
-|          | with an        | **Question:** Critically evaluate every |
-|          | authoritative  | aspect of the output by asking          |
-|          | source         | questions such as: Is the AI-generated  |
-|          |                | information true and accurate? Is it    |
-|          |                | relevant? Is it fair?                   |
-|          |                |                                         |
-|          |                | **Compare:** Let students compare AI    |
-|          |                | output with other credible sources of   |
-|          |                | information, e.g. textbooks, journal    |
-|          |                | articles, descriptions of good          |
-|          |                | practices, professional association     |
-|          |                | information, or market research data.   |
-+----------+----------------+-----------------------------------------+
-| Review-E | Defining the   | **Review Criteria:** Define (also in    |
-| valuate- | quality        | collaboration with your students), what |
-| Reprompt | standards for  | constitutes a quality, desirable, or    |
-| (RER)    | a specific     | "good" output? This could include       |
-|          | task and       | specificity, context, organization,     |
-|          | evaluating AI  | clarity, usability, format,             |
-|          | outputs based  | limitations, and other factors.         |
-|          | on those       |                                         |
-|          | criteria.      | **Evaluate**: What are the gaps between |
-|          |                | the defined criteria and the            |
-|          |                | AI-generated output? What has the AI    |
-|          |                | added, deleted, or modified? What       |
-|          |                | advice does it offer for improvement,   |
-|          |                | based on the feedback it provides? What |
-|          |                | might AI not be able to improve, given  |
-|          |                | its inherent limitations?               |
-|          |                |                                         |
-|          |                | **Refine the Prompt:** Use the          |
-|          |                | identified criteria to craft more       |
-|          |                | detailed or specific instructions for   |
-|          |                | the AI. Regenerate the output with a    |
-|          |                | refined prompt, or decide to stop       |
-|          |                | prompting and make the necessary        |
-|          |                | changes manually.                       |
-+----------+----------------+-----------------------------------------+
-| Id       | Generating     | **Ideas:** Generate initial ideas on    |
-| eas-Conn | ideas, making  | the questions to be answered or         |
-| ections- | connections    | problems to be solved using AI. For     |
-| Ex       | between them,  | example, what potential solutions could |
-| tensions | and extending  | help reduce plastic waste in the        |
-| (ICE)    | them into new  | community?                              |
-|          | applications   |                                         |
-|          |                | **Connections:** Identify and explore   |
-|          |                | connections between these ideas and the |
-|          |                | insights gained from AI. For example,   |
-|          |                | how can these solutions be integrated   |
-|          |                | with existing recycling programs or     |
-|          |                | community initiatives?                  |
-|          |                |                                         |
-|          |                | **Extensions:** Extend these ideas into |
-|          |                | broader applications using AI for       |
-|          |                | further research. For example, how can  |
-|          |                | these solutions be scaled up or adapted |
-|          |                | for other environmental issues?         |
-+----------+----------------+-----------------------------------------+
+| **Method**  | **Approach**  | **Implementation**  |
+|------------|-------------|---------------------|
+| **Observe-Question-Compare (OQC)** | Analyzing an AI output by examining its details and comparing its information with an authoritative source | **Observe:** Identify and examine the features of the AI output, even if they feel self-evident. For instance, ask: "How many different aspects are addressed in the output?" <br><br> **Question:** Critically evaluate every aspect of the output by asking questions such as: Is the AI-generated information true and accurate? Is it relevant? Is it fair? <br><br> **Compare:** Let students compare AI output with other credible sources of information, e.g., textbooks, journal articles, descriptions of good practices, professional association information, or market research data. |
+| **Review-Evaluate-Reprompt (RER)** | Defining the quality standards for a specific task and evaluating AI outputs based on those criteria. | **Review Criteria:** Define (also in collaboration with your students) what constitutes a quality, desirable, or "good" output. This could include specificity, context, organization, clarity, usability, format, limitations, and other factors. <br><br> **Evaluate:** What are the gaps between the defined criteria and the AI-generated output? What has the AI added, deleted, or modified? What advice does it offer for improvement, based on the feedback it provides? What might AI not be able to improve, given its inherent limitations? <br><br> **Refine the Prompt:** Use the identified criteria to craft more detailed or specific instructions for the AI. Regenerate the output with a refined prompt, or decide to stop prompting and make the necessary changes manually. |
+| **Ideas-Connections-Extensions (ICE)** | Generating ideas, making connections between them, and extending them into new applications. | **Ideas:** Generate initial ideas on the questions to be answered or problems to be solved using AI. For example, what potential solutions could help reduce plastic waste in the community? <br><br> **Connections:** Identify and explore connections between these ideas and the insights gained from AI. For example, how can these solutions be integrated with existing recycling programs or community initiatives? <br><br> **Extensions:** Extend these ideas into broader applications using AI for further research. For example, how can these solutions be scaled up or adapted for other environmental issues? |
 
 : Table 2: 3 Approaches to Critical Thinking (from Paulson 2024, with
 minor adaptations)
