@@ -24,7 +24,7 @@ url: /team/erik-kostelijk
 ---
 Email: <e.j.kostelijk@hva.nl>
 
-Erik Kostelijk is a lecturer and researcher at Hogeschool van Amsterdam (Amsterdam University of Applied Sciences). His work focuses on education, project coordination, and contributing to academic and professional development initiatives. Erik plays a key role in supporting projects that foster collaboration and innovation in higher education.
+Erik Kostelijk is an associate professor at Hogeschool van Amsterdam (Amsterdam University of Applied Sciences). His work focuses on education, project coordination, and contributing to academic and professional development initiatives. Erik plays a key role in supporting projects that foster collaboration and innovation in higher education.
 
 **Role in Projects**:
 Erik contributes to project coordination and academic research efforts within the AI-HED framework.
