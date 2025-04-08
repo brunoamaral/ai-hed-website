@@ -1,5 +1,5 @@
 ---
-title: Adopting AI in teaching
+title: Guidelines for adopting AI in teaching
 subtitle: Guidelines for course development
 date: 2025-02-13T15:11:28Z 
 draft: false
