@@ -40,42 +40,22 @@ These guidelines were developed in work package 3 of the AI-HED project. The aut
 
 **Experts:**
 
-Jurica Babić Associate Professor, University of Zagreb, Faculty of
-Electrical Engineering and Computing
+| Expert | Affiliation |
+|--------|-------------|
+| Jurica Babić | Associate Professor, University of Zagreb, Faculty of Electrical Engineering and Computing |
+| Philippe Borremans | Crisis & Emergency Risk Communication Consultant; Vice President, International Association of Risk & Crisis Communication (IARCC) |
+| Adriana Cardoso | Teacher, Polytechnic University of Lisbon, Lisbon School of Education |
+| Martina Tomičić Furjan | Associate Professor; Vice Dean, University of Zagreb, Faculty of Organization and Informatics |
+| Anna Füssl | Head of Service Unit of Process Management in Teaching Development, Technical University Vienna |
+| Meagan Klaij | Education Specialist, Microsoft Netherlands |
+| Barbara Maly-Bowie | Teaching and Learning Expert, University of Applied Sciences BFI Vienna |
+| Iris van der Meer | Educational Advisor of Blended Learning, Amsterdam University of Applied Sciences, Faculty of Business and Economics |
+| Vítor Santos | Researcher, Polytechnic University of Lisbon |
+| Markus Schatten | Full professor, University of Zagreb, Faculty of Organization and Informatics |
+| Frederik Situmeang | Associate Professor AI & Data-Driven Business, Amsterdam University of Applied Sciences, Faculty of Business and Economics |
+| Jeroen StrijBosch | Education Specialist, Microsoft Netherlands |
 
-Philippe Borremans Crisis & Emergency Risk Communication Consultant;
-Vice President, International Association of Risk & Crisis Communication
-(IARCC)
-
-Adriana Cardoso Teacher, Polytechnic University of Lisbon, Lisbon School
-of Education
-
-Martina Tomičić Furjan Associate Professor; Vice Dean, University of
-Zagreb, Faculty of Organization and Informatics
-
-Anna Füssl Head of Service Unit of Process Management in Teaching
-Development, Technical University Vienna
-
-Meagan Klaij Education Specialist, Microsoft Netherlands
-
-Barbara Maly-Bowie Teaching and Learning Expert, University of Applied
-Sciences BFI Vien
-
-Iris van der Meer Educational Advisor of Blended Learning, Amsterdam
-University of Applied Sciences, Faculty of Business and Economics
-
-Vítor Santos Researcher, Polytechnic University of Lisbon
-
-Markus Schatten Full professor, University of Zagreb, Faculty of
-Organization and Informatics
-
-Frederik Situmeang Associate Professor AI & Data-Driven Business,
-Amsterdam University of Applied Sciences, Faculty of Business and
-Economics
-
-Jeroen StrijBosch Education Specialist, Microsoft Netherlands
-
-Barbara Maly-Bowie proofread the text and provided valuable suggestions
+> Barbara Maly-Bowie proofread the text and provided valuable suggestions
 for improvement.
 
 **Erasmus+ Cooperation partnership:** Artificial Intelligence in Higher
@@ -451,12 +431,11 @@ Teachers are recommended to follow three key steps in course design:
 > other activities.
 
 <figure>
-<img src="../media/image1.png" style="width:3.81984in;height:2.56315in"
-alt="Ein Bild, das Text, Screenshot, Kreis, Grafiken enthält. Automatisch generierte Beschreibung" />
-<figcaption><p>: Integrating AI into Constructive
+<img src="./Picture1.png" style="width:3.81984in;height:2.56315in"
+alt="" />
+<figcaption><p>Integrating AI into Constructive
 Alignment</p></figcaption>
 </figure>
-
 
 When applying the constructive alignment approach to course design, it
 is helpful to distinguish between different kinds of AI-related learning
