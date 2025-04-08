@@ -31,11 +31,12 @@ cta:
 
 ---
 
-## Adopting AI in teaching: Guidelines for course development
 
 **Dietmar Paier, UAS BFI Vienna**
 
+```callout {level="info" }
 These guidelines were developed in work package 3 of the AI-HED project. The author expresses his gratitude and appreciation to all experts and to all members of the AI-HED project who have greatly contributed to the development of this document. Any shortcomings or errors remain the sole responsibility of the author.
+```
 
 **Experts:**
 
@@ -128,7 +129,7 @@ suited for promoting specific skills, a well-documented list of
 recommendable AI tools, and a collection of good practices in teaching
 with AI.
 
-# The impact of AI on academic education
+# 2. The impact of AI on academic education
 
 ## 2.1 AI as game-changer
 
@@ -246,12 +247,9 @@ develop and optimize prompts effectively.
 Prompting and prompt engineering are essential components of teaching
 skills in two ways:
 
--   First, they are necessary for creating course materials,
-    assignments, exams, and other teaching-related content using AI.
+- First, they are necessary for creating course materials, assignments, exams, and other teaching-related content using AI.
 
--   Second, teachers must be able to guide students in using prompts
-    effectively. This entails understanding the types, techniques, and
-    quality criteria of prompts and prompting.
+- Second, teachers must be able to guide students in using prompts effectively. This entails understanding the types, techniques, and quality criteria of prompts and prompting.
 
 AI companies usually provide valuable prompting and prompt engineering
 guides (e.g. Anthropic 2023, OpenAI 2023) with explanations of key
@@ -261,19 +259,13 @@ For teachers seeking an easy introduction to prompting, a growing number
 of universities and educational institutions offer useful resources and
 examples, such as:
 
--   Introduction to basic concepts of AI, elementary guidelines, and
-    quickstart resources (metalab at Harvard 2025)
+- Introduction to basic concepts of AI, elementary guidelines, and quickstart resources (metalab at Harvard 2025)
 
--   Prompt libraries featuring examples from academic teaching across a
-    wide range of subjects (e.g., Maastricht University 2024, Wharton
-    University n.y.)
+- Prompt libraries featuring examples from academic teaching across a wide range of subjects (e.g., Maastricht University 2024, Wharton University n.y.)
 
--   Prompt labs for generative AI in university teaching (e.g. AI Campus
-    2024, available in German)
+- Prompt labs for generative AI in university teaching (e.g. AI Campus 2024, available in German)
 
--   Prompts and example outputs for various tasks, including developing
-    research questions, writing code, and creating assessments (e.g.
-    University of Edinburgh 2024)
+- Prompts and example outputs for various tasks, including developing research questions, writing code, and creating assessments (e.g. University of Edinburgh 2024)
 
 ### Stay up to date with the latest developments in AI -- in academic teaching and the workplace
 
@@ -535,7 +527,7 @@ For handling academic integrity in the course, see [Chapter '5.7
 Demanding academic integrity and good scientific
 practice'.](#demanding-academic-integrity-and-good-scientific-practice)
 
-# Designing courses: Didactical scenarios, teaching methods, assessment & grading
+# 5. Designing courses: Didactical scenarios, teaching methods, assessment & grading
 
 ## 5.1 AI for student-centered and personalized learning
 
@@ -623,7 +615,7 @@ some practical indications that may be useful when preparing a course.
 | **Game-based Learning (GBL)** | AI can take roles in game-based learning as: <br> - Game co-developer. <br> - Game character. <br> - Teammate. <br> - Consultant for game strategy. <br> - Referee. |
 | **Critical Thinking** | AI requires critical evaluation due to potential inaccuracies. AI can: <br> - Encourage students to verify factual accuracy. <br> - Support reflections on AI-generated outputs. <br> - Foster awareness of AI’s influence on perceptions and work processes. |
 
-*Table: Didactic scenarios of teaching with AI*
+*Table 1: Didactic scenarios of teaching with AI*
 
 ## 5.3 Anticipating potential implications of AI for your course
 
@@ -698,7 +690,7 @@ information and knowledge.
 | **Review-Evaluate-Reprompt (RER)** | Defining the quality standards for a specific task and evaluating AI outputs based on those criteria. | **Review Criteria:** Define (also in collaboration with your students) what constitutes a quality, desirable, or "good" output. This could include specificity, context, organization, clarity, usability, format, limitations, and other factors. <br><br> **Evaluate:** What are the gaps between the defined criteria and the AI-generated output? What has the AI added, deleted, or modified? What advice does it offer for improvement, based on the feedback it provides? What might AI not be able to improve, given its inherent limitations? <br><br> **Refine the Prompt:** Use the identified criteria to craft more detailed or specific instructions for the AI. Regenerate the output with a refined prompt, or decide to stop prompting and make the necessary changes manually. |
 | **Ideas-Connections-Extensions (ICE)** | Generating ideas, making connections between them, and extending them into new applications. | **Ideas:** Generate initial ideas on the questions to be answered or problems to be solved using AI. For example, what potential solutions could help reduce plastic waste in the community? <br><br> **Connections:** Identify and explore connections between these ideas and the insights gained from AI. For example, how can these solutions be integrated with existing recycling programs or community initiatives? <br><br> **Extensions:** Extend these ideas into broader applications using AI for further research. For example, how can these solutions be scaled up or adapted for other environmental issues? |
 
-: Table 2: 3 Approaches to Critical Thinking (from Paulson 2024, with
+Table 2: 3 Approaches to Critical Thinking (from Paulson 2024, with
 minor adaptations)
 
 ## 5.5 Using AI for feedback to students
