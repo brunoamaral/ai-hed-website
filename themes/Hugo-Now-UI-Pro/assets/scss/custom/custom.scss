@@ -256,3 +256,76 @@ div.row.row-logos img{
 
 /* TOC TABLE OF CONTENTS */ 
 #TableOfContents > ul > li > ul > li > ul { border: none; list-style-type: square; color: #007acc}
+
+/* ALERTS */
+
+code.language-callout {
+	display: block;
+	white-space: pre-wrap;
+	word-break: break-word;
+	padding: 1em;
+	border-left: 6px solid #28a745; /* Green */
+	background-color: #e6f4ea; /* Light green */
+	color: #1b3d2f;
+	font-family: sans-serif;
+	font-size: 1rem;
+	border-radius: 0.5em;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	position: relative;
+}
+
+code.language-callout::before {
+	content: "📝 Disclaimer";
+	display: block;
+	font-weight: bold;
+	margin-bottom: 0.5em;
+}
+
+/* TABLES */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 2em 0;
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+	font-size: 16px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+thead {
+	background-color: #e9f0ec;
+	font-family: "Franklin Gothic Medium", Arial, sans-serif;
+	color: #1b3d2f;
+}
+
+th, td {
+	text-align: left;
+	vertical-align: top;
+	padding: 1em;
+	border: 1px solid #ccc;
+}
+
+th {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #1b3d2f;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #f7faf8;
+}
+
+tbody td strong {
+	color: #628c68; /* AI-HED primary green */
+}
+
+table ul, table ol {
+	margin: 0.5em 0 0.5em 1.2em;
+	padding: 0;
+}
+
+td br {
+	display: block;
+	content: "";
+	margin-bottom: 0.5em;
+}
