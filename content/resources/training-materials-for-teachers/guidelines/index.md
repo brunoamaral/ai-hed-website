@@ -26,7 +26,7 @@ options:
   hide_date_reading_time: true
 cta:
   - label: <i class="fas fa-file-pdf"></i> &nbsp; Download this page as a PDF
-    url: AI-HED_WP3_Guidelines_for_course_development_final_Feb14_2025.pdf
+    url: /downloads/AI-HED_WP3_Guidelines_course_development_final_Feb14_2025.pdf
     classes: btn btn-lg btn-success font-weight-bold text-title
 
 ---
