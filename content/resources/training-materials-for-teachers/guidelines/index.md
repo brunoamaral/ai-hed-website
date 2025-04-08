@@ -69,7 +69,7 @@ reflect those of the European Union or the National Agency Stichting
 Nuffic. Neither the European Union nor the granting authority can be
 held responsible for them.
 
-# Objectives
+# 1. Objectives
 
 These guidelines particularly address teachers who have a strong
 interest in exploring the strengths and opportunities of AI in academic
