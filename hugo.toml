@@ -56,9 +56,9 @@ logo = "/images/ai-hed-shorthandlogo.svg"
     style = "monokai"
     tabWidth = 4
   [markup.tableOfContents]
-    endLevel = 3
+    endLevel = 5
     ordered = false
-    startLevel = 2
+    startLevel = 1
 
 [security.funcs]
   getenv = ['^HUGO_', '^CI$', '^SLUG$']
