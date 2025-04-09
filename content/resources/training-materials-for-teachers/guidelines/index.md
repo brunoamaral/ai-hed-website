@@ -4,6 +4,7 @@ subtitle: Guidelines for course development
 date: 2025-02-13T15:11:28Z 
 draft: false
 toc: true
+layout: page
 categories: 
 authors:
 - dietmar
