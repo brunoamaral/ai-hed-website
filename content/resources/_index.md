@@ -4,7 +4,7 @@ subtitle: Guidelines, Use Cases, and Other Teaching Tools
 date: 2024-11-03T17:05:03Z
 draft: false
 categories: 
-type: "page"
+
 disable_comments: true
 
 description:
