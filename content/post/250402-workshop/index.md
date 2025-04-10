@@ -38,22 +38,22 @@ draft: false
 disable_comments: true
 ---
 
-A two-day workshop on artificial intelligence-based tools in the context of higher education, held on February 26 and March 5, 2025, gathered over 100 educators from four partner institutions in the Netherlands, Austria, Croatia, and Portugal. 
+A two-day workshop on artificial intelligence (AI) tools in the context of higher education, held on February 26 and March 5, 2025, brought together more than 100 educators from four partner institutions in the Netherlands, Austria, Croatia, and Portugal.
 
 Our colleagues from the University of Zagreb, Faculty of Organization and Informatics, took the brave lead on making this workshop happen.
 
 On the first day of the workshop, two lectures were held:
 
-- **Introduction to Artificial Intelligence** – **Full Prof. Markus Schatten** from the Faculty of Organization and Informatics presented the basic concepts of artificial intelligence and an overview of the latest trends in AI development. Participants were introduced to AI applications, particularly in the educational context.
+- **Introduction to Artificial Intelligence** – **Full Prof. Markus Schatten** from the Faculty of Organization and Informatics presented the basic concepts of artificial intelligence and an overview of the latest trends in AI development. Participants were introduced to AI applications, particularly in educational contexts.
 - **Artificial Intelligence in Learning and Teaching Processes** – **Assist. Prof. Bogdan Okreša Đurić** from the Faculty of Organization and Informatics discussed the role of AI tools in higher education, presenting relevant case studies and concrete examples of AI usage at partner institutions. Participants discussed the pedagogical impact of AI tools and various teaching methods and approaches in the digital age.
 
-In addition to these two lectures, the first day also featured a practical workshop where participants, guided by local mentors, tested selected AI tools. Teams were formed, expectations were set, and participants had the opportunity to experiment with AI technologies in an educational setting.
+In addition to these two lectures, the first day also featured a practical workshop where participants, guided by local mentors, tested selected AI tools. During this session, teams formed, expectations were clarified, and participants had the chance to experiment with AI technologies in an educational setting.
 
 On the second day, a third lecture was held:
 
-- **Ethics, Philosophy, and Regulations of Artificial Intelligence** – **Sander van der Waal**, director of **Waag Future Lab** from the Netherlands, gave a lecture on the ethical, philosophical and legal aspects of artificial intelligence. Participants discussed key ethical and legal challenges related to the use of AI tools.
+- **Ethics, Philosophy, and Regulations of Artificial Intelligence** – **Sander van der Waal**, director of **Waag Future Lab** from the Netherlands, gave a lecture on the ethical, philosophical and legal aspects of artificial intelligence. Participants examined fundamental ethical and legal challenges surrounding AI tools.
 
-The workshop concluded with team project presentations, where participants showcased their ideas and applications of AI tools in education.
+The workshop concluded with team project presentations, in which participants showcased their ideas and applications of AI tools in education.
 
 The AI-HED workshop was conducted in a **hybrid format** (with online education while participants from different institutions gathered on-site). These sessions enabled educators to gain new knowledge and insights into the possibilities of AI tools in modern education, as well as to network and share experiences.
 
@@ -94,4 +94,24 @@ This workshop is a collaborative effort between:
 
 ## Learnings and recommendations
 
--- Here we can explain some key points if others want to conduct a similar workshop
+We encourage a culture of learning and sharing. Below you will find the presentations on AI for higher-education, and we encourage you to consider adopting a similar hybrid format for your own teams.
+
+### Reflections and Suggestions for Future Workshops
+
+Following a thorough review of the AI-HED hybrid workshop and conversations with participants, we have compiled the following insights and recommendations to guide similar initiatives in the future.
+
+**Key Successes**  
+- Hosting participants from four countries simultaneously fostered an engaging sense of international collaboration.  
+- Balancing lectures, discussions, and hands-on sessions created a dynamic, interactive learning environment.  
+- In-person discussions in each local room were productive, providing space for deeper conversation and reflection.
+
+**Identified Challenges**  
+- Extended online sessions can be challenging for maintaining concentration, and sound quality issues occasionally hamper communication. Allocating more time for in-person discussions may help alleviate these concerns.  
+- While live polls were useful, many open-ended questions can slow the discussion. Employing fewer, more focused questions or exploring other interactive tools can enhance engagement.  
+- Group presentations across countries offered valuable insights. A brief pitch format (3–5 minutes per presentation) helps maintain an energetic pace.
+
+**Recommendations**  
+1. Restrict group presentations to one or two per country and limit each presentation to a concise format. Encouraging each country’s participants to align details locally can streamline the international sessions.  
+2. Conclude the workshop with an expert-led debrief to pose larger-scale reflections and encourage final discussions.
+
+
