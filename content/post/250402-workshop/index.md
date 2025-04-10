@@ -92,26 +92,22 @@ This workshop is a collaborative effort between:
 
 ![hva](gallery/04-hva.jpeg)
 
-## Learnings and recommendations
+## Learnings and Recommendations
 
 We encourage a culture of learning and sharing. Below you will find the presentations on AI for higher-education, and we encourage you to consider adopting a similar hybrid format for your own teams.
 
-### Reflections and Suggestions for Future Workshops
+Still, a few challenges emerged. Extended online sessions occasionally tested participants’ concentration, and sporadic sound-quality issues hindered communication. Meanwhile, although live polls were beneficial, some open-ended questions sometimes slowed the flow of conversation. In addition, group presentations across countries, while insightful, could become lengthy, underscoring a need for a more concise format of about three to five minutes per presentation to sustain a more energetic pace.
 
-Following a thorough review of the AI-HED hybrid workshop and conversations with participants, we have compiled the following insights and recommendations to guide similar initiatives in the future.
+By addressing these considerations, future workshops can further enhance participant engagement. For example, encouraging each country’s participants to align project details locally before sharing them with the wider group can make presentations more efficient. Concluding the workshop with an expert-led debrief can also prompt broader reflections and final discussions. In these ways, future initiatives can maintain momentum, deepen collaboration, and strengthen the community of educators embracing AI in higher education.
 
-**Key Successes**  
-- Hosting participants from four countries simultaneously fostered an engaging sense of international collaboration.  
-- Balancing lectures, discussions, and hands-on sessions created a dynamic, interactive learning environment.  
-- In-person discussions in each local room were productive, providing space for deeper conversation and reflection.
+## Training Materials
 
-**Identified Challenges**  
-- Extended online sessions can be challenging for maintaining concentration, and sound quality issues occasionally hamper communication. Allocating more time for in-person discussions may help alleviate these concerns.  
-- While live polls were useful, many open-ended questions can slow the discussion. Employing fewer, more focused questions or exploring other interactive tools can enhance engagement.  
-- Group presentations across countries offered valuable insights. A brief pitch format (3–5 minutes per presentation) helps maintain an energetic pace.
+[AI-based Tools](./downloads/AI-HED_Starter_Kit__AI-based_Tools.pdf)
 
-**Recommendations**  
-1. Restrict group presentations to one or two per country and limit each presentation to a concise format. Encouraging each country’s participants to align details locally can streamline the international sessions.  
-2. Conclude the workshop with an expert-led debrief to pose larger-scale reflections and encourage final discussions.
+[Case_Studies](./downloads/AI-HED_Starter_Kit__Case_Studies.pdf)
 
+[Current Practices](./downloads/AI-HED_Starter_Kit__Current_Practices.pdf)
 
+[Training Overview](./downloads/AI-HED_Training__Training_Overview.pdf)
+
+[Workshop Materials](./downloads/AI-HED_Training__Workshop_Materials.pdf)
