@@ -1,6 +1,6 @@
 {{ define "bodyclasses" }}about-us authors-page authors-terms _default/authors-terms-html contentgrouptype-{{ .Data.Singular }} contentgroupname-{{ .Title | urlize }} {{ end }}
 {{ define "description" }}
-
+<!-- Page description -->
 {{ end }}
 {{ define "main" }}
 <div class="wrapper">
@@ -14,7 +14,8 @@
 						</div>
 					</div>
 					<div class="row">
-						{{ range where .Data.Pages ".Params.options.unlisted" "!=" true }} {{ if .Params.name }}
+						{{ range where .Data.Pages ".Params.options.unlisted" "!=" true }} 
+						{{ if .Params.name }}
 						<div class="col-xl-6 col-lg-7 ">
 							<div class="card card-profile card-plain">
 								<div class="row">
@@ -39,17 +40,16 @@
 											<h6 class="category">{{ . }}</h6>
 											{{ end }}
 											<p class="card-description">
-												{{ .Summary }}
+												{{ with .Summary }}{{ . }}{{ else }}{{ .Content | plainify | truncate 160 }}{{ end }}
 											</p>
 											<div class="card-footer">
 												{{ with .Params.profiles }}
 													{{ range $key, $val := . }}
-
-													{{ if eq $key "website" }}
-													<a href="{{ $val }}" class="btn btn-icon btn-neutral btn-{{ $key }}" title="{{$name}} on {{$key}}"><i class="fa fa-globe"></i></a>
-													{{else}}
-			
-													<a href="{{ $val }}" class="btn btn-icon btn-neutral btn-{{ $key }}"><i class="fab fa-{{ $key }}"></i></a>
+														{{ if eq $key "website" }}
+														<a href="{{ $val }}" class="btn btn-icon btn-neutral btn-{{ $key }}" title="{{.Params.name}} on {{$key}}"><i class="fa fa-globe"></i></a>
+														{{ else }}
+														<a href="{{ $val }}" class="btn btn-icon btn-neutral btn-{{ $key }}"><i class="fab fa-{{ $key }}"></i></a>
+														{{ end }}
 													{{ end }}
 												{{ end }}
 											</div>
@@ -58,11 +58,12 @@
 								</div>
 							</div>
 						</div>
-						{{ end }} {{ end }}
+						{{ end }} 
+						{{ end }}
 					</div>
 				</div>
 			</div>
 	</div>
-{{ end }}
+{{ end }} <!-- end of main -->
 {{ define "list-javascript" }}
 {{ end }}
