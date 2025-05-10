@@ -10,7 +10,8 @@ summary: " "
 description:
 # url: starter-kit
 aliases:
-
+authors:
+- bogdan
 resources:
   - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
     name: "header"
