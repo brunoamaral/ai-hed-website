@@ -8,7 +8,7 @@ disable_comments: true
 summary: " "
 description:
 aliases:
-layout: page
+
 resources:
   - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
     name: "header"
