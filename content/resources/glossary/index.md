@@ -27,8 +27,8 @@ options:
 
 ---
 
-<div class="row">
-<div class="col-md-6 offset-md-3 col-10 offset-1">
+<div class="row justify-content-center">
+<div class="col-12 col-md-10">
 
 As artificial intelligence (AI) continues to revolutionize fields ranging from healthcare and finance to education and the arts, a foundational understanding of its key concepts has never been more essential. 
 
