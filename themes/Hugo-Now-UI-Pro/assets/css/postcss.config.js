@@ -8,6 +8,7 @@ module.exports = {
 					"/.text-align.*/",
 					"/.clear-filter.*",
 					"\\[filter-color\\=.*\\]", // Matches any [filter-color="..."]
+					"/.row-.*",
 				]
 			},
 			// fontFace: false,

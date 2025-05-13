@@ -26,12 +26,10 @@ options:
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
   hide_date_reading_time: true
 
-
 ---
 
 
-
-<div class="container">
+<div class="container-fluid">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
     <!-- AI-based Tools -->
     <div class="col">
