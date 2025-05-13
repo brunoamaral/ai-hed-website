@@ -30,7 +30,11 @@
                             <a href="{{ .URL }}" class="text-muted" 
                                 {{ if (hasPrefix .URL "http") }} target="_blank"{{ end }} 
                                 {{ with .Params.target }} target="{{ . }}"{{ end }}>
-                                {{ .Name }}
+                                {{ if in .URL "linkedin.com" }}
+                                  <i class="fab fa-linkedin fa-2x"></i>
+                                {{ else }}
+                                  {{ .Name }}
+                                {{ end }}
                             </a>
                         </li>
                         {{ end }}
