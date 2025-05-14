@@ -12,6 +12,7 @@ tags:
 categories: 
   - 
 title: "AI-HED official launch"
+layout: single
 
 options:
   unlisted: false

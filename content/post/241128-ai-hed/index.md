@@ -21,6 +21,8 @@ options:
   hideFooter: false
   hideSubscribeForm: true
   header:
+layout: single
+
 scripts:
   -
 ---

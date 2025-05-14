@@ -10,6 +10,7 @@ authors:
 disable_comments: true
 summary: " "
 description:
+layout: page
 aliases:
 resources:
   - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
@@ -31,6 +32,8 @@ cta:
 
 ---
 
+<div class="row">
+<div class="col-lg-10 mx-auto">
 
 **Dietmar Paier, UAS BFI Vienna**
 
@@ -1154,3 +1157,7 @@ chatbots.
 
 Wharton University (2024) Prompt: Student Exercises.
 <https://ai-analytics.wharton.upenn.edu/generative-ai-labs/student-prompt/>
+
+
+</div>
+</div>

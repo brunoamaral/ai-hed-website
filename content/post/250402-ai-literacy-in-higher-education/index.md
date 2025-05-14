@@ -19,7 +19,7 @@ slug:
 resources:
   - src: images/getty-images-iv8JZoX1Wg8-unsplash.jpg
     name: "header"
-
+layout: single 
 copyright:
   name: AI-HED Project
   href: https://ai-hed.eu/

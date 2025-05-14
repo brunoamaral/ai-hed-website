@@ -7,6 +7,8 @@ resources:
 - src: images/thisisengineering-sGwoXcxKbcE-unsplash.jpg
   name: "header"
 slug:
+layout: single
+
 subtitle:  Artificial Intelligence in Higher Education Teaching and Learning
 tags: 
   - ai

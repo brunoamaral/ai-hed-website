@@ -15,6 +15,8 @@ tags:
 categories:
   - Guest Articles
 slug:
+layout: single
+
 
 resources:
   - src: images/brooke-cagle-g1Kr4Ozfoac-unsplash.jpg

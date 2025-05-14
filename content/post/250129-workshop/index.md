@@ -15,6 +15,8 @@ categories:
   - Events
   - Training
 slug: ai-hed-training-workshop
+layout: single
+
 
 resources:
   - src: images/foi_zgrada_bt.jpg

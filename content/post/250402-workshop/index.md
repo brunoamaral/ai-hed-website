@@ -33,6 +33,7 @@ options:
   showHeader: true
   ShowHeaderSubscribeForm: false
   unlisted: false
+layout: single
 
 draft: false
 disable_comments: true
