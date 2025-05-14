@@ -1,0 +1,23 @@
+{{/* filepath: /Users/brunoamaral/Labs/ai-hed-website/layouts/partials/last-updated.html */}}
+{{ $showLastUpdated := .Site.Params.showLastUpdated }}
+{{ if eq (printf "%T" $showLastUpdated) "<nil>" }}
+  {{ $showLastUpdated = dict "enabled" true "dateFormat" "January 2, 2006" }}
+{{ end }}
+
+{{ if and (not .IsHome) .IsPage ($showLastUpdated.enabled) }}
+  {{ $showLastMod := false }}
+  {{ if .Lastmod }}
+    {{ if ne .Lastmod.Unix .Date.Unix }}
+      {{ $showLastMod = true }}
+    {{ end }}
+  {{ end }}
+  
+  {{ if $showLastMod }}
+  <div class="last-updated mt-4">
+    <hr>
+    <p class="small text-muted text-right">
+      <i class="far fa-calendar-check"></i> {{ i18n "last_updated" | default "Last updated" }}: {{ .Lastmod.Format ($showLastUpdated.dateFormat | default "January 2, 2006") }}
+    </p>
+  </div>
+  {{ end }}
+{{ end }}
