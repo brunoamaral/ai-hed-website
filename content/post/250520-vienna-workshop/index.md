@@ -5,7 +5,7 @@ date: 2025-05-20T21:02:01+01:00
 description: ""
 draft: false
 resources: 
-- src: images/20250509_120532_resized.jpg
+- src: images/20250508_094634_resized.jpg
   name: "header"
 - src:
   name: slide-1
@@ -30,6 +30,8 @@ scripts:
 
 
 On May 8th and 9th, 2025, the University of Applied Sciences BFI Vienna successfully organized a workshop on the “Development of Pilot Courses”. This two-day event in Vienna was part of the EU-funded project „Artificial Intelligence in Higher Education Teaching and Learning“ (AI-HED) and focused on developing syllabi for innovative pilot courses that integrate Artificial Intelligence (AI) into the teaching and learning process.
+
+![](images/20250509_120532_resized.jpg)
 
 In total, 24 syllabi for pilot courses from various disciplines were prepared during the workshop. 39 lecturers and AI-HED team members from the University of Applied Sciences BFI Vienna, the Amsterdam University of Applied Sciences, the Polytechnic University of Lisbon (School of Communication and Media Studies), and the University of Zagreb (Faculty of Organization and Informatics) participated in the international event.
 
@@ -96,17 +98,6 @@ The developed pilot courses will be implemented in the autumn term 2025 by the r
       <div class="card h-100 shadow-sm">
         <a href="images/20250508_094634_resized.jpg" target="_blank">
           <img src="images/20250508_094634_resized.jpg" class="card-img-top" alt="Workshop team collaboration">
-        </a>
-        <div class="card-body">
-          <p class="card-text small text-muted">
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100 shadow-sm">
-        <a href="images/20250509_120532_resized.jpg" target="_blank">
-          <img src="images/20250509_120532_resized.jpg" class="card-img-top" alt="Workshop final presentation">
         </a>
         <div class="card-body">
           <p class="card-text small text-muted">
