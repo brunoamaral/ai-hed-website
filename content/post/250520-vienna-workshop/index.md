@@ -5,7 +5,7 @@ date: 2025-05-20T21:02:01+01:00
 description: ""
 draft: false
 resources: 
-- src: images/20250508_094634_resized.jpg
+- src: images/20250509_.jpg
   name: "header"
 - src:
   name: slide-1
@@ -104,6 +104,9 @@ The developed pilot courses will be implemented in the autumn term 2025 by the r
           </p>
         </div>
       </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card h-100 shadow-sm"><a href="images/20250509_120532_resized.jpg"><img src="images/20250509_120532_resized.jpg" alt=""></a></div>
     </div>
   </div>
 </div>
