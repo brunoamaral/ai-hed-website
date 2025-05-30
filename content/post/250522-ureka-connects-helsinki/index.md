@@ -49,4 +49,5 @@ The following AI-HED partner institutions are participating in the U!REKA Europe
 - Amsterdam University of Applied Sciences (full partner in U!REKA)
 - Polytechnic University of Lisbon (full partner in U!REKA)
 - University of Applied Sciences BFI Vienna (associated partner in U!REKA)
-- University of Zagreb – Faculty of Organization and Informatics (FOI).
+
+Our fourth University of Zagreb – Faculty of Organization and Informatics (FOI). 
