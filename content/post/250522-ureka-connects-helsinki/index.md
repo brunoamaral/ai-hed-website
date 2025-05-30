@@ -16,7 +16,7 @@ tags:
   - U!REKA
   - Helsinki
 categories:
-
+- updates
 slug:
 
 resources:
