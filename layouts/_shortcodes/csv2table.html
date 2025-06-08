@@ -1,5 +1,5 @@
 {{- /* 
-	Shortcode: csv-to-md
+	Shortcode: csv2table
 	Description: Renders a markdown table from a CSV file or an HTML table with Bootstrap 4 styling.
 	Parameters:
 	  - path (string): The path to the CSV file.
@@ -11,7 +11,7 @@
 
 {{- $path := .Get "path" -}}
 {{- if not $path -}}
-	{{- errorf "The csv-to-md shortcode requires a path parameter." -}}
+	{{- errorf "The csv2table shortcode requires a path parameter." -}}
 {{- end -}}
 
 {{- $delimiter := or (.Get "delimiter") "," -}}
@@ -34,7 +34,7 @@
 		{{- else with .Value -}}
 			{{- $r = . -}}
 		{{- else -}}
-			{{- errorf "The csv-to-md shortcode was unable to get %s" $u.String -}}
+			{{- errorf "The csv2table shortcode was unable to get %s" $u.String -}}
 		{{- end -}}
 	{{- end -}}
 {{- else -}}
@@ -47,7 +47,7 @@
 			{{- with resources.Get $u.Path -}}
 				{{- $r = . -}}
 			{{- else -}}
-				{{- errorf "The csv-to-md shortcode was unable to get %s" $u.String -}}
+				{{- errorf "The csv2table shortcode was unable to get %s" $u.String -}}
 			{{- end -}}
 		{{- end -}}
 	{{- end -}}
