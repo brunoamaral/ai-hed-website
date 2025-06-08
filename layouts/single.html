@@ -173,11 +173,11 @@
 
 				<div class="col-md-6">
 					{{ with .Params.tags }}
-					{{ $lenght := sub (len .) 1}}
+                                        {{ $length := sub (len .) 1}}
 					 <div class="blog-tags"> 
 						{{ i18n "tags" }}:
 						{{ range $index, $tag := . }}
-							<span class="label label-primary"><a href="{{ "tags" | absLangURL }}/{{ . | urlize }}">{{ . }}</a></span> {{- if lt $index $lenght -}}, {{ end }}
+                                                        <span class="label label-primary"><a href="{{ "tags" | absLangURL }}/{{ . | urlize }}">{{ . }}</a></span> {{- if lt $index $length -}}, {{ end }}
 						{{ end }}
 					 </div>
 					 {{ end }}
