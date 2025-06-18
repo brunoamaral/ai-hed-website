@@ -1,5 +1,5 @@
 ---
-title: Guidelines for adopting AI in teaching
+title: Adopting AI in Teaching
 subtitle: Guidelines for course development
 date: 2025-02-13T15:11:28Z 
 draft: false
@@ -61,16 +61,6 @@ These guidelines were developed in work package 3 of the AI-HED project. The aut
 > Barbara Maly-Bowie proofread the text and provided valuable suggestions
 for improvement.
 
-**Erasmus+ Cooperation partnership:** Artificial Intelligence in Higher
-Education Teaching and Learning (AI-HED)
-
-**Project number:** 2024-1-NL01-KA220-HED-000248874
-
-**Disclaimer:** Funded by the European Union. Views and opinions
-expressed are however those of the author(s) only and do not necessarily
-reflect those of the European Union or the National Agency Stichting
-Nuffic. Neither the European Union nor the granting authority can be
-held responsible for them.
 
 # 1. Objectives
 
