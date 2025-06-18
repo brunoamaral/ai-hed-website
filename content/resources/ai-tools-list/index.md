@@ -31,7 +31,7 @@ options:
 
 <div class="row">
 <div class="col-10 offset-1">
-{{< csv2table path="tools.csv" caption="tools" outputFormat="html" caption="">}}
+{{< csv2table path="tools.csv" caption="tools" outputFormat="html" >}}
 </div>
 </div>
 
