@@ -55,14 +55,14 @@ every academic area.
 
 These guidelines have three primary aims:
 
--   to increase teachers\' knowledge of the implications of using AI in
+- to increase teachers\' knowledge of the implications of using AI in
     academic education,
 
--   to highlight didactic design options, teaching scenarios, and
+- to highlight didactic design options, teaching scenarios, and
     requirements for realizing the positive potential of AI in academic
     teaching while avoiding unintended effects in courses,
 
--   to support the legally compliant and ethically responsible use of AI
+- to support the legally compliant and ethically responsible use of AI
     in university teaching.
 
 *Delimitation:*
@@ -163,18 +163,18 @@ serves as a teaching and learning tool.
 
 For teachers, adopting AI means acquiring skills at four levels:
 
--   The ability to **use specific AI tools**, general and
+- The ability to **use specific AI tools**, general and
     subject-specific, as standard elements of a professional teaching
     skills portfolio (technical AI skills).
 
--   The ability to **guide and advise students** in the professional,
+- The ability to **guide and advise students** in the professional,
     legally compliant and ethically responsible use of AI tools and in
     critically evaluating outputs (AI teaching skills).
 
--   The ability to **use, customize, or develop AI tools** like chatbots
+- The ability to **use, customize, or develop AI tools** like chatbots
     for teaching and learning (AI development skills).
 
--   The ability to **develop and apply methods for assessing** students'
+- The ability to **develop and apply methods for assessing** students'
     progress, works, and examinations accomplished with AI (AI-related
     assessment skills).
 
@@ -237,12 +237,12 @@ and course development.
 Irrespective of this, there are various easy ways to keep up to date for
 teachers:
 
--   seek advice from experts from the relevant professional field
+- seek advice from experts from the relevant professional field
 
--   analyse which specific AI skills are cited in typical job
+- analyse which specific AI skills are cited in typical job
     announcements
 
--   take a look at the [AI-HED AI Tools
+- take a look at the [AI-HED AI Tools
     Heatmap](https://ai-hed.eu/resources/ai-tools-heatmap/).
 
 Ultimately, there is one simple recommendation for educators considering
@@ -412,7 +412,7 @@ When applying the constructive alignment approach to course design, it
 is helpful to distinguish between different kinds of AI-related learning
 outcomes:
 
--   AI knowledge and skills may be defined as direct learning outcomes,
+- AI knowledge and skills may be defined as direct learning outcomes,
     e.g. when students are expected to describe the components of AI
     systems, to explain how they are connected, or to develop an AI
     system.
@@ -423,7 +423,7 @@ outcomes:
 
 <!-- -->
 
--   Students might be advised to use AI as a tool that helps them
+- Students might be advised to use AI as a tool that helps them
     achieve an overarching learning outcome, e.g. using a specific AI
     tool to summarize texts and to extract relevant content to produce
     an overview of the state of the art in a given subject.
@@ -492,15 +492,15 @@ how teachers can adopt AI as co-teacher.
 
 For instance, teachers should seek using **generative AI** for
 
--   to create tailor-made learning materials and feedback, e.g. to
+- to create tailor-made learning materials and feedback, e.g. to
     support personalized learning paths, to support students with minor
     prior knowledge closing knowledge gaps, or to support or to motivate
     particularly talented students with extra tasks,
 
--   to create challenge-based, game-based, and real-world learning
+- to create challenge-based, game-based, and real-world learning
     environments to motivate students to engage more with the contents,
 
--   or to provide real-time feedback and recommendations based on
+- or to provide real-time feedback and recommendations based on
     personal learning progress.
 
 Embracing generative AI as a learning partner for students includes
@@ -529,23 +529,23 @@ As a teacher, you should be very clear about both.
 
 AI can take very different roles (see Mollick & Mollick 2023):
 
--   **Mentor:** Provides frequent, immediate, and adaptive quality
+- **Mentor:** Provides frequent, immediate, and adaptive quality
     feedback to support student learning.
 
--   **Tutor:** Uses questioning techniques, collaborative
+- **Tutor:** Uses questioning techniques, collaborative
     problem-solving, and personalized instruction to guide students.
 
--   **Coach:** Helps students understand learning processes, identify
+- **Coach:** Helps students understand learning processes, identify
     gaps in their knowledge, and develop effective study techniques.
 
--   **Teammate:** Contributes specific knowledge or skills to a team,
+- **Teammate:** Contributes specific knowledge or skills to a team,
     offers social support, and presents diverse perspectives.
 
--   **Simulator:** Facilitates skill and knowledge transfer by creating
+- **Simulator:** Facilitates skill and knowledge transfer by creating
     contexts of application, AI-based agents, and settings with
     distributed roles.
 
--   **Tool:** Assists in carrying out developmental, analytical,
+- **Tool:** Assists in carrying out developmental, analytical,
     evaluative, design, creative tasks.
 
 ## 4.2 Didactic scenarios for teaching with generative AI
@@ -615,18 +615,18 @@ be done with or without the help of AI.
 
 Students may be assigned
 
--   to evaluate outputs regarding factual accuracy, consistency, and
+- to evaluate outputs regarding factual accuracy, consistency, and
     academic integrity in the classroom without the help of digital
     media
 
--   to reason and reflect on the relevance and impact of AI-generated
+- to reason and reflect on the relevance and impact of AI-generated
     outputs for particular groups in terms of diversity, inclusion, and
     sustainability
 
--   to reflect on the risks that arise when AI-generated outputs are
+- to reflect on the risks that arise when AI-generated outputs are
     adopted without critical assessment
 
--   to reflect on the ways the use of AI is shaping our results, how we
+- to reflect on the ways the use of AI is shaping our results, how we
     perceive reality, and the way we work and collaborate with others
 
 To develop students' ability of critical thinking, some teaching methods
@@ -704,25 +704,25 @@ improvement.
 When revising your assessments, develop a clear system for criteria that
 ensures careful
 
--   distinction between different skill levels of AI usage according to
+- distinction between different skill levels of AI usage according to
     your learning outcomes,
 
--   identification of different quality levels of practical work with
+- identification of different quality levels of practical work with
     AI,
 
--   identification of different compliance levels with standards and
+- identification of different compliance levels with standards and
     criteria of academic integrity and good scientific practice.
 
 When students must use AI for examinations (written or oral), think
 about
 
--   how your examination questions and examination tasks must be
+- how your examination questions and examination tasks must be
     designed to capture independent knowledge, skills, and competencies,
 
--   how students must document AI- and non-AI parts of assessments and
+- how students must document AI- and non-AI parts of assessments and
     how to explain this to students,
 
--   and how AI could assist you in correction and grading in a legally
+- and how AI could assist you in correction and grading in a legally
     compliant way.
 
 ### Strengthen competency-based assessment 
@@ -737,17 +737,17 @@ testing.
 Hence, teachers need to develop further assessment methods that meet
 three main objectives:
 
--   First, to prevent students from passing off AI-generated work as
+- First, to prevent students from passing off AI-generated work as
     their own. This requires cross-referencing documentation and
     ensuring transparency.
 
 <!-- -->
 
--   Second, design assignments and examinations in such a way that the
+- Second, design assignments and examinations in such a way that the
     use of AI is documented in a way that it is possible to distinguish
     between AI-generated and independent performance parts.
 
--   Third, to develop examination methods that require students to
+- Third, to develop examination methods that require students to
     practically demonstrate the knowledge and skills they have acquired,
     as well as to explain the solutions they have developed components.
 
@@ -763,11 +763,11 @@ also lead to more time being spent on examinations.
 Ultimately, it is clear that teachers need to refine three key elements
 of assessments when using AI in courses:
 
--   examination methods
+- examination methods
 
--   assessment criteria
+- assessment criteria
 
--   time required for implementing refined examinations
+- time required for implementing refined examinations
 
 ## 4.7 Demanding academic integrity and good scientific practice
 
@@ -796,18 +796,18 @@ Many universities have developed specific templates for acknowledgment
 statements, requiring students to document their use of AI by
 explaining, as minimal requirements,
 
--   which AI tools they used (name and version),
+- which AI tools they used (name and version),
 
--   the purpose for using one or more AI tools (e.g, generating ideas
+- the purpose for using one or more AI tools (e.g, generating ideas
     for study and assessments, paraphrasing and summarising sources,
     translating or optimizing text, developing presentations etc.)
 
--   Provide feedback on your ideas and work, and help you improve it
+- Provide feedback on your ideas and work, and help you improve it
 
--   the prompts, follow-up prompts, and other inputs provided to the
+- the prompts, follow-up prompts, and other inputs provided to the
     tool,
 
--   and how they adopted the AI output in their assignments,
+- and how they adopted the AI output in their assignments,
     examinations, or theses.
 
 Many universities require from students to provide declaration
@@ -864,18 +864,18 @@ and apply relevant methods and criteria on their own.
 Regarding the main evaluation topics, ask at least how helpful students
 find instructions and explanations on
 
--   the purpose and the method of AI use,
+- the purpose and the method of AI use,
 
--   the required documentation;
+- the required documentation;
 
 and ask for information on
 
--   their tool-related experiences,
+- their tool-related experiences,
 
--   the perceived impact of AI on their learning activities and
+- the perceived impact of AI on their learning activities and
     assessments,
 
--   and on the students' ability to distinguish between self-generated
+- and on the students' ability to distinguish between self-generated
     and AI-generated results,
 
 It is often useful to combine standardized and non-standardized methods
@@ -894,17 +894,17 @@ In addition, teachers have to select appropriate AI tools for
 educational purposes by applying legal, didactic, social and ethical
 criteria, such as:
 
--   Compliance with data protection regulations
+- Compliance with data protection regulations
 
--   Alignment of the AI tool with learning objectives
+- Alignment of the AI tool with learning objectives
 
--   Equal accessibility for all students: Every student must be able to
+- Equal accessibility for all students: Every student must be able to
     use the permitted or prescribed AI application under the same
     conditions.
 
--   Documentability of AI outputs
+- Documentability of AI outputs
 
--   Potential of the AI tool to foster creativity in teaching and
+- Potential of the AI tool to foster creativity in teaching and
     learning
 
 ### Define which tools can or must be used:
@@ -912,12 +912,12 @@ criteria, such as:
 Often it is advantageous to specify which AI tools students must use,
 rather than allowing them to decide themselves. Teachers should decide:
 
--   Which AI applications are permitted or prohibited for a certain task
+- Which AI applications are permitted or prohibited for a certain task
     or assignment
 
--   Whether specific AI applications are mandatory
+- Whether specific AI applications are mandatory
 
--   How students must document their use of AI, including purpose, form,
+- How students must document their use of AI, including purpose, form,
     and extent.
 
 # 5. Legal compliance and ethical responsibility 
@@ -939,17 +939,17 @@ In all courses, teachers and students:
 >
 > 3\. are particularly obliged to
 
--   not use data as prompts which is subject to copyright
+- not use data as prompts which is subject to copyright
 
--   not use prompts or parts of prompts owned by third parties
+- not use prompts or parts of prompts owned by third parties
 
--   not insert into AI applications sensitive and/or personal data or
+- not insert into AI applications sensitive and/or personal data or
     data that violate privacy
 
--   protection rights which also include company-related data such as
+- protection rights which also include company-related data such as
     emails by companies or individuals, in-company drafts, etc.
 
--   not use AI applications for discriminatory, offensive, or illegal
+- not use AI applications for discriminatory, offensive, or illegal
     purposes
 
 > 4\. use only data that does not infringe upon the rights of others
@@ -968,32 +968,32 @@ Regardless of institutional policies, the following topics should be
 discussed with students where appropriate (cf. Shalevska 2024, European
 Commission 2022):
 
--   Transparency and oversight: As many generative AI are developed and
+- Transparency and oversight: As many generative AI are developed and
     owned by corporations, it may be important to think about how the
     tools are trained or what safeguards are in place to protect users
     from inaccurate information or harmful interactions.
 
--   Privacy, data governance, and safety: These aspects concern two
+- Privacy, data governance, and safety: These aspects concern two
     levels of teaching action.
 
-    -   The first addresses the need to evaluate the policies of AI
+    - The first addresses the need to evaluate the policies of AI
         providers and the features of their tools: How is user data or
         copyrighted material used, stored, or shared? Who has access to
         user data? Which personal data (e.g. submitted when signing in
         as a user) is used for training data or for other purposes?
 
-    -   The second addresses AI users employing data: Which data am I
+    - The second addresses AI users employing data: Which data am I
         allowed to use, e.g. as a part of a prompt? Which legal
         provisions and ethical considerations must be observed?
 
--   Diversity, non-discrimination, and fairness: AI systems may show
+- Diversity, non-discrimination, and fairness: AI systems may show
     algorithmic biases that perpetuate or exacerbate social
     inequalities. Do AI tools demonstrate unfair bias in their outputs?
     Are diverse groups characterized and represented in a
     non-discriminatory way in AI outputs? Are AI tools universally
     accessible? Are there discriminatory biases in algorithms?
 
--   Societal and political impact: What safeguards are in place to
+- Societal and political impact: What safeguards are in place to
     prevent AI from being used to spread inaccurate or discriminatory
     content? What is the impact on specific social groups if we follow
     the suggestions or decisions generated by the AI directly? How does
@@ -1002,7 +1002,7 @@ Commission 2022):
     distorting information or influencing it in favor of a particular
     view?
 
--   Environmental impact: Training of AI tools with large data sets
+- Environmental impact: Training of AI tools with large data sets
     requires more and more energy consumption. What is the environmental
     impact of this energy use?
 
