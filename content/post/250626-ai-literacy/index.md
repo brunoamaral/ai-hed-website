@@ -18,7 +18,7 @@ categories:
 slug:
 
 resources:
-  - src: images/ai-education-header.jpg
+  - src: images/ai-literacy.jpeg
     name: "header"
 layout: single 
 copyright:
