@@ -32,6 +32,7 @@ cta:
 
 ---
 
+
 <div class="row">
 <div class="col-lg-10 mx-auto">
 
@@ -40,29 +41,6 @@ cta:
 ```callout {level="info" }
 These guidelines were developed in work package 3 of the AI-HED project. The author expresses his gratitude and appreciation to all experts and to all members of the AI-HED project who have greatly contributed to the development of this document. Any shortcomings or errors remain the sole responsibility of the author.
 ```
-
-**Experts:**
-
-| Expert | Affiliation |
-|--------|-------------|
-| Jurica Babić | Associate Professor, University of Zagreb, Faculty of Electrical Engineering and Computing |
-| Philippe Borremans | Crisis & Emergency Risk Communication Consultant; Vice President, International Association of Risk & Crisis Communication (IARCC) |
-| Adriana Cardoso | Teacher, Polytechnic University of Lisbon, Lisbon School of Education |
-| Martina Tomičić Furjan | Associate Professor; Vice Dean, University of Zagreb, Faculty of Organization and Informatics |
-| Anna Füssl | Head of Service Unit of Process Management in Teaching Development, Technical University Vienna |
-| Meagan Klaij | Education Specialist, Microsoft Netherlands |
-| Barbara Maly-Bowie | Teaching and Learning Expert, University of Applied Sciences BFI Vienna |
-| Iris van der Meer | Educational Advisor of Blended Learning, Amsterdam University of Applied Sciences, Faculty of Business and Economics |
-| Vítor Santos | Researcher, Polytechnic University of Lisbon |
-| Markus Schatten | Full professor, University of Zagreb, Faculty of Organization and Informatics |
-| Frederik Situmeang | Associate Professor AI & Data-Driven Business, Amsterdam University of Applied Sciences, Faculty of Business and Economics |
-| Jeroen StrijBosch | Education Specialist, Microsoft Netherlands |
-
-> Barbara Maly-Bowie proofread the text and provided valuable suggestions
-for improvement.
-
-
-# 1. Objectives
 
 These guidelines particularly address teachers who have a strong
 interest in exploring the strengths and opportunities of AI in academic
@@ -102,9 +80,9 @@ suited for promoting specific skills, a well-documented list of
 recommendable AI tools, and a collection of good practices in teaching
 with AI.
 
-# 2. The impact of AI on academic education
+# 1. The impact of AI on academic education
 
-## 2.1 AI as game-changer
+## 1.1 AI as game-changer
 
 The public release of ChatGPT-3.5 at the end of 2022 sparked enormous
 interest in AI. Within a very short time, the potential applications of
@@ -131,7 +109,7 @@ potentially for the better? How can teachers use AI to enhance teaching
 and learning? How can we ensure the responsible and ethical use of AI?
 
 The possibilities for integrating AI into teaching are extensive, as
-detailed for generative AI in [Chapter '5. Designing
+detailed for generative AI in [Chapter '4. Designing
 courses'](#designing-courses-didactical-scenarios-teaching-methods-assessment-grading)
 of these guidelines.
 
@@ -141,7 +119,7 @@ its potential to enrich, integrate, or fully transform learning
 environments to ensure that AI's game-changing opportunities align with
 pedagogical values and meet the evolving needs of students, and society.
 
-## 2.2 Rethinking courses 
+## 1.2 Rethinking courses 
 
 Using AI for teaching & learning requires addressing three fundamental
 pedagogical questions:
@@ -168,7 +146,7 @@ ethical integrity are the same across disciplines, the practical
 implementation of teaching methods varies considerably between academic
 faculties and disciplines.
 
-## 2.3 Advancing teaching skills
+## 1.3 Advancing teaching skills
 
 Teachers need AI literacy and skills to support students in developing
 AI literacy and skills. Within the wide scope of AI, certain skills are
@@ -270,7 +248,7 @@ teachers:
 Ultimately, there is one simple recommendation for educators considering
 AI adoption: Dive in!
 
-## 2.4 Types of AI
+## 1.4 Types of AI
 
 The term 'generative AI' is arguably the most well-known type of AI, yet
 it is often mistakenly equated with artificial intelligence as a whole.
@@ -315,9 +293,9 @@ research, it is used for virtual labs, research simulations, engineering
 design testing, and modeling of climate models or molecular
 interactions.
 
-# 3. Pedagogical approaches towards adopting AI in academic education
+# 2. Pedagogical approaches towards adopting AI in academic education
 
-## 3.1 AI as a tool
+## 2.1 AI as a tool
 
 A primary purpose of using AI in academic education is for students to
 use AI as an aid and as a tool for achieving learning objectives.
@@ -329,7 +307,7 @@ Therefore, AI is a tool to be utilized; it is not AI that dictates the
 practice of teaching and learning, but the teacher who determines its
 relevance and functions within their course.
 
-## 3.2 Human-centered course design 
+## 2.2 Human-centered course design 
 
 Teachers and students are at the forefront of increasingly
 technology-driven learning environments. While AI can enhance and expand
@@ -351,7 +329,7 @@ reference of didactic design.
 AI offers a wider range of opportunities to tailor courses more
 effectively to the interests, strengths, and needs of students.
 
-## 3.3 Accessible, equitable, and inclusive education
+## 2.3 Accessible, equitable, and inclusive education
 
 However, AI presents both threats and opportunities. To support students
 in developing professional, creative, and responsible use of AI as a key
@@ -399,9 +377,9 @@ too. Use AI options that promote equal access to AI tools for learning,
 assignments, and assessments in your course to avoid disadvantaging
 students who may have limited resources.
 
-# 4. Principles of course design
+# 3. Principles of course design
 
-## 4.1 Integrating AI into the Constructive Alignment Approach
+## 3.1 Integrating AI into the Constructive Alignment Approach
 
 Constructive alignment is an effective technique to create pedagogically
 sound courses. It means systematically aligning the core elements of
@@ -460,7 +438,7 @@ This distinction is important because it influences both the emphasis
 placed on each learning activity during assessment and the criteria used
 to evaluate it.
 
-## 4.2 Cultivating critical thinking
+## 3.2 Cultivating critical thinking
 
 Critical thinking essentially means the ability to interpret, analyse,
 and evaluate information, facts, and behaviour independently,
@@ -475,11 +453,11 @@ or misleading outputs, the ability to critically scrutinize AI-generated
 outputs is gaining particular importance. Therefore, teachers need to
 advise and train students to critically assess AI outputs, verify facts,
 and recognize biases, preparing them to discern accurate information.
-See [Chapter '5.4 Teaching strategies to promote critical
+See [Chapter '4.4 Teaching strategies to promote critical
 thinking'](#teaching-strategies-to-promote-critical-thinking) for
 practical ideas to support students' critical thinking.
 
-## 4.3 Fostering academic integrity 
+## 3.3 Fostering academic integrity 
 
 With generative AI tools capable of generating text, images, sound, and
 code, academic institutions need to re-emphasize the relevance of the
@@ -495,13 +473,13 @@ and to explain how, and to what extent, AI-assisted or AI-generated data
 and output were used in preparing assignments, theses, or research
 reports.
 
-For handling academic integrity in the course, see [Chapter '5.7
+For handling academic integrity in the course, see [Chapter '4.7
 Demanding academic integrity and good scientific
 practice'.](#demanding-academic-integrity-and-good-scientific-practice)
 
-# 5. Designing courses: Didactical scenarios, teaching methods, assessment & grading
+# 4. Designing courses: Didactical scenarios, teaching methods, assessment & grading
 
-## 5.1 AI for student-centered and personalized learning
+## 4.1 AI for student-centered and personalized learning
 
 ### Embrace AI as a co-teacher -- and as a learning partner for your students 
 
@@ -570,7 +548,7 @@ AI can take very different roles (see Mollick & Mollick 2023):
 -   **Tool:** Assists in carrying out developmental, analytical,
     evaluative, design, creative tasks.
 
-## 5.2 Didactic scenarios for teaching with generative AI
+## 4.2 Didactic scenarios for teaching with generative AI
 
 There are numerous didactical scenarios for integrating AI into a
 course. Below is a -- highly selective -- list of teaching concepts with
@@ -589,7 +567,7 @@ some practical indications that may be useful when preparing a course.
 
 *Table 1: Didactic scenarios of teaching with AI*
 
-## 5.3 Anticipating potential implications of AI for your course
+## 4.3 Anticipating potential implications of AI for your course
 
 ### Reflect on the impact of AI on course-related time management
 
@@ -626,7 +604,7 @@ and successful use of AI itself; and second, define assessment criteria
 for independent parts of students' work, e.g. critical reflection of the
 quality of outputs and using outputs for other tasks.
 
-## 5.4 Teaching strategies to promote critical thinking
+## 4.4 Teaching strategies to promote critical thinking
 
 ### Always link the use of AI with critical thinking:
 
@@ -665,7 +643,7 @@ information and knowledge.
 Table 2: 3 Approaches to Critical Thinking (from Paulson 2024, with
 minor adaptations)
 
-## 5.5 Using AI for feedback to students
+## 4.5 Using AI for feedback to students
 
 Imagine a co-teacher who is available to students for feedback 24/7.
 Teachers may use AI as a co-teacher that provides real-time feedback on
@@ -691,7 +669,7 @@ accurate picture of students' knowledge, skills, and competencies.
 However, despite its advantages, there are serious limitations to using
 AI for assessment and grading.
 
-## 5.6 Revising methods of assessment and grading
+## 4.6 Revising methods of assessment and grading
 
 ### Caveat: Follow the provisions of the EU AI Act
 
@@ -791,7 +769,7 @@ of assessments when using AI in courses:
 
 -   time required for implementing refined examinations
 
-## 5.7 Demanding academic integrity and good scientific practice
+## 4.7 Demanding academic integrity and good scientific practice
 
 ### Demand compliance with standards of independent scientific working 
 
@@ -870,7 +848,7 @@ could be to require students not only to submit the final work but also
 to require documentation of the entire work process, including the use
 of AI in relevant work phases and its impact on the process.
 
-## 5.8 Evaluating how AI works in courses
+## 4.8 Evaluating how AI works in courses
 
 Designing courses is a great opportunity to think about how teaching
 with AI should work out. The most important question is: How well is AI
@@ -905,7 +883,7 @@ and to ask relevant questions at the end of a teaching unit where AI was
 used, while reflection of specific topics may require a longer time of
 user experience and a greater variety of experiences.
 
-## 5.9 Selecting appropriate AI tools 
+## 4.9 Selecting appropriate AI tools 
 
 ### Apply distinct criteria for the selection of AI tools
 
@@ -942,9 +920,9 @@ rather than allowing them to decide themselves. Teachers should decide:
 -   How students must document their use of AI, including purpose, form,
     and extent.
 
-# 6. Legal compliance and ethical responsibility 
+# 5. Legal compliance and ethical responsibility 
 
-## 6.1 Committing students to compliance with legal regulations
+## 5.1 Committing students to compliance with legal regulations
 
 Teachers are obliged to use AI in compliance with the following
 regulations and inform students in courses about their mandatory nature
@@ -978,7 +956,7 @@ In all courses, teachers and students:
 > when using AI applications for teaching, learning, and research
 > activities
 
-## 6.2 Putting responsible and ethical use to practice
+## 5.2 Putting responsible and ethical use to practice
 
 Many universities have created institutional statements on the ethical
 and responsible use of AI. Since developing compliance skills takes
@@ -1028,7 +1006,7 @@ Commission 2022):
     requires more and more energy consumption. What is the environmental
     impact of this energy use?
 
-# 7. Recommended AI tools for teaching and learning
+# 6. Recommended AI tools for teaching and learning
 
 See the comprehensive [AI-HED List of recommended AI
 tools](https://ai-hed.eu/resources/ai-tools-list/).
@@ -1148,6 +1126,26 @@ chatbots.
 Wharton University (2024) Prompt: Student Exercises.
 <https://ai-analytics.wharton.upenn.edu/generative-ai-labs/student-prompt/>
 
+
+**Experts:**
+
+| Expert | Affiliation |
+|--------|-------------|
+| Jurica Babić | Associate Professor, University of Zagreb, Faculty of Electrical Engineering and Computing |
+| Philippe Borremans | Crisis & Emergency Risk Communication Consultant; Vice President, International Association of Risk & Crisis Communication (IARCC) |
+| Adriana Cardoso | Teacher, Polytechnic University of Lisbon, Lisbon School of Education |
+| Martina Tomičić Furjan | Associate Professor; Vice Dean, University of Zagreb, Faculty of Organization and Informatics |
+| Anna Füssl | Head of Service Unit of Process Management in Teaching Development, Technical University Vienna |
+| Meagan Klaij | Education Specialist, Microsoft Netherlands |
+| Barbara Maly-Bowie | Teaching and Learning Expert, University of Applied Sciences BFI Vienna |
+| Iris van der Meer | Educational Advisor of Blended Learning, Amsterdam University of Applied Sciences, Faculty of Business and Economics |
+| Vítor Santos | Researcher, Polytechnic University of Lisbon |
+| Markus Schatten | Full professor, University of Zagreb, Faculty of Organization and Informatics |
+| Frederik Situmeang | Associate Professor AI & Data-Driven Business, Amsterdam University of Applied Sciences, Faculty of Business and Economics |
+| Jeroen StrijBosch | Education Specialist, Microsoft Netherlands |
+
+> Barbara Maly-Bowie proofread the text and provided valuable suggestions
+for improvement.
 
 </div>
 </div>
