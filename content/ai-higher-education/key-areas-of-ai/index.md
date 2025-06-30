@@ -16,7 +16,7 @@ categories:
 slug: key-areas-of-ai
 
 resources:
-  - src: images/ai-higher-education-header.jpg
+  - src: images/ai-higher-education-header.jpeg
     name: "header"
 layout: page
 
