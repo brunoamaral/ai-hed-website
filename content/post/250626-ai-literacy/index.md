@@ -44,10 +44,6 @@ Many aspects of modern life are under the influence and being revolutionised by 
 
 One of the crucial roles higher education institutions (HEIs) play in the modern society is integrating, researching, and developing many different facets of AI. They serve as state-of-the-art research hubs that combine theory with practical applications. Universities worldwide use AI to streamline administrative processes, foster innovation, improve educational outcomes, and enhance teaching and learning processes. Therefore, integrating AI into education impacts technological advancement, substantial pedagogical changes and challenges, and strategic institutional development.
 
-## The AI-HED Project: Fostering AI Integration in Higher Education
-
-The Erasmus+ Cooperation Partnership project, titled Artificial Intelligence in Higher Education Teaching and Learning (AI-HED), acknowledges the importance of this strategic integration. With international collaboration between Stichting Hogeschool van Amsterdam, Fachhochschule des BFI Wien, Instituto Politécnico de Lisboa, and the University of Zagreb Faculty of Organization and Informatics, the AI-HED project's objective is to empower HEIs to foster and utilise the potential of AI technologies in teaching and learning processes. The project's essential objective is enhancing the digital competencies of educators and students and fostering enriched interactive educational experiences.
-
 ## Key Areas of AI Application in Higher Education
 
 The application of AI in higher education can be observed as both extensive and diversified, thus offering modern and innovative approaches to teaching and learning processes. More than simply adaptive learning systems or intelligent tutoring platforms, AI can be seen in HEIs in roles that could be classified in the following key areas.
