@@ -185,7 +185,7 @@ menu:
               <a target="_blank" href="/resources/starter-kit/AI-HED Starter Kit_ Full.pdf" class="btn btn-primary">
                 <i class="fas fa-file-pdf me-2"></i>Download PDF
               </a>
-              <a target="_blank" href="/resources/starter-kit/" class="btn btn-outline-secondary">
+              <a target="_blank" href="/resources/starter-kit/" class="btn btn-secondary">
                 Browse Resources <i class="fas fa-arrow-right ms-1"></i>
               </a>
               <a target="_blank" href="https://zenodo.org/records/15447156" class="btn btn-info">
