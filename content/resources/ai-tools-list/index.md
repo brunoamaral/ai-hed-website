@@ -13,7 +13,7 @@ layout: page
 authors:
 - bogdan
 resources:
-  - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
+  - src: ai-tools-list-header.png
     name: "header"
 options:
   header: mini
