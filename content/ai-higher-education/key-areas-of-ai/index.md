@@ -34,7 +34,7 @@ disable_comments: true
   <div class="row">
     <div class="col-lg-10 mx-auto">
       <h2 class="mb-4 text-primary"></h2>
-        <p class="lead">AI is reshaping higher education by enabling new ways to teach, learn, and manage academic life. Here are the most important domains where AI is making a difference.</p>
+        <p class="lead">AI is enabling new ways to teach, learn, and manage academic life. Here are the most important domains where AI is making a difference.</p>
       <div class="card-deck mb-4">
         <div class="card">
           <div class="card-body">
