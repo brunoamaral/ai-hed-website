@@ -38,19 +38,19 @@ disable_comments: true
       <div class="card-deck mb-4">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Personalised Learning</h5>
+            <h5 class="card-title mb-3">Personalised Learning</h5>
             <p class="card-text">AI customizes content delivery and learning paths based on each student's performance, style, and preferences. This leads to more engaging and effective learning experiences.</p>
           </div>
         </div>
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Intelligent Tutoring</h5>
+            <h5 class="card-title mb-3">Intelligent Tutoring</h5>
             <p class="card-text">AI-powered tutors provide real-time feedback, hints, and resources, simulating one-on-one interaction and supporting students at their own pace.</p>
           </div>
         </div>
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Automated Assessment & Feedback</h5>
+            <h5 class="card-title mb-3">Automated Assessment & Feedback</h5>
             <p class="card-text">AI can automate grading for objective questions and assist teachers in evaluating essays, offering instant feedback and saving time.</p>
           </div>
         </div>
@@ -58,26 +58,26 @@ disable_comments: true
       <div class="card-deck mb-4">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Virtual Teaching Assistants</h5>
+            <h5 class="card-title mb-3">Virtual Teaching Assistants</h5>
             <p class="card-text">AI-based assistants help answer student questions, explain course material, and facilitate discussions, making support available anytime.</p>
           </div>
         </div>
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Data-Driven Insights</h5>
+            <h5 class="card-title mb-3">Data-Driven Insights</h5>
             <p class="card-text">AI analyzes student data to identify trends, predict risks, and help educators make informed decisions about curriculum and interventions.</p>
           </div>
         </div>
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Collaborative Learning</h5>
+            <h5 class="card-title mb-3">Collaborative Learning</h5>
             <p class="card-text">AI can form student groups based on complementary skills and learning styles, fostering teamwork and critical thinking.</p>
           </div>
         </div>
       </div>
       <div class="card mb-4">
         <div class="card-body">
-          <h5 class="card-title">Administrative Automation</h5>
+          <h5 class="card-title mb-3">Administrative Automation</h5>
           <p class="card-text">AI streamlines tasks like enrollment, scheduling, and resource allocation, allowing staff to focus on more meaningful work.</p>
         </div>
       </div>

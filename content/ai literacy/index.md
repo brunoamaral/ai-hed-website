@@ -136,7 +136,7 @@ menu:
       <div class="col-md-6">
         <div class="card mb-3">
           <div class="card-header bg-dark text-white">
-            <h5 class="mb-0">Benefits</h5>
+            <h5 class="mb-0 ml-2">Benefits</h5>
           </div>
           <div class="card-body">
             <ul>
@@ -151,7 +151,7 @@ menu:
       <div class="col-md-6">
         <div class="card mb-3">
           <div class="card-header bg-dark text-white">
-            <h5 class="mb-0">Applications</h5>
+            <h5 class="mb-0 ml-2">Applications</h5>
           </div>
           <div class="card-body">
             <ul>
