@@ -13,7 +13,8 @@ params:
 options:
   header: mini
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
-profiles: {}
+profiles:
+  linkedin: https://www.linkedin.com/in/erik-kostelijk-242956/
 resources:
     - name: avatar
       src: erik.jpeg
