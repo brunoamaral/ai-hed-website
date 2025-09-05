@@ -3,4 +3,6 @@ exampleSite/resources/
 public
 .hugo_build.lock
 resources/_gen
-scripts/2509/
+scripts/202509/
+scripts/newsletter-reports/
+scripts/subscribers-reports/
