@@ -84,7 +84,7 @@ disable_comments: true
       <div class="card border-0 shadow my-5">
         <div class="row g-0 align-items-stretch">
           <div class="col-md-3">
-            <img src="/resources/starter-kit/images/ai-starter-kit.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="AI-HED Starter Kit">
+            <img src="/resources/starter-kit/images/ai-starter-kit.jpeg" class="img-fluid rounded-start h-100 object-fit-cover" alt="AI-HED Starter Kit">
           </div>
           <div class="col-md-9">
             <div class="card-body p-4">
@@ -104,7 +104,7 @@ disable_comments: true
 			<div class="card border-0 shadow my-5">
         <div class="row g-0 align-items-stretch">
           <div class="col-md-3">
-            <img src="/resources/starter-kit/images/ai-tools.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="AI-HED Starter Kit">
+            <img src="https://ai-hed.eu/resources/starter-kit/images/ai-tools.jpeg" class="img-fluid rounded-start h-100 object-fit-cover" alt="AI-HED artificial intelligence Tools">
           </div>
           <div class="col-md-9">
             <div class="card-body p-4">
