@@ -175,7 +175,7 @@ menu:
         <div class="card border-0 shadow">
           <div class="row g-0">
             <div class="col-md-3">
-              <img src="/resources/starter-kit/images/ai-starter-kit.png" class="img-fluid rounded-start h-100 object-fit-cover" alt="AI-HED Starter Kit">
+              <img src="/resources/starter-kit/images/ai-starter-kit.jpeg" class="img-fluid rounded-start h-100 object-fit-cover" alt="AI-HED Starter Kit">
         </div>
         <div class="col-md-9">
           <div class="card-body p-4">
