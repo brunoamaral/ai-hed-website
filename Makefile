@@ -16,4 +16,4 @@ publish:
 	git push origin main
 
 # Default target
-all: publish
+all: publish 
