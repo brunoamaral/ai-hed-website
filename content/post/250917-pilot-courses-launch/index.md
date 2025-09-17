@@ -6,7 +6,7 @@ description: "The AI-HED project launches 24 pilot courses across four partner i
 
 date: 2025-09-17T10:00:00Z
 authors:
-draft: true
+draft: false
 tags:
   - AI in Education
   - Higher Education
