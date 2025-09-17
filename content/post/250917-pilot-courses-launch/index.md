@@ -15,7 +15,7 @@ tags:
   - Erasmus+
   - Teaching with AI
 categories:
-  - Project Updates
+  - Updates
 slug: pilot-courses-launch
 
 resources:
