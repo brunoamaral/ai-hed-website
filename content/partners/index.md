@@ -48,7 +48,7 @@ menu:
         <div class="card-body p-0">
           <div class="row g-0 align-items-center">
             <div class="col-lg-5 bg-light p-4 p-md-5 text-center d-flex align-items-center justify-content-center" style="min-height: 250px;">
-              <a href="https://www.amsterdamuas.com" target="_blank">
+              <a href="https://www.amsterdamuas.com" target="_blank" data-umami-event="click--partner-logo-amsterdam-uas">
                 <img src="/images/partners/logo_amsterdam-uas.svg" class="img-fluid" alt="Amsterdam University of Applied Sciences" style="max-height: 150px;">
               </a>
             </div>
@@ -58,7 +58,7 @@ menu:
               <p class="mb-4">
                 The Amsterdam University of Applied Sciences (AUAS) is one of the leading higher education institutions in Europe, offering innovative programs and cutting-edge research in various fields.
               </p>
-              <a href="https://www.amsterdamuas.com" target="_blank" class="btn btn-outline-primary rounded-pill px-4">Visit Website <i class="fas fa-external-link-alt ms-2"></i></a>
+              <a href="https://www.amsterdamuas.com" target="_blank" class="btn btn-outline-primary rounded-pill px-4" data-umami-event="click--partner-website-amsterdam-uas">Visit Website <i class="fas fa-external-link-alt ms-2"></i></a>
             </div>
           </div>
         </div>
@@ -74,10 +74,10 @@ menu:
               <p class="mb-4">
                 The School of Communication and Media Studies (ESCS) in Lisbon provides exceptional education in public relations, journalism, and communication, shaping future leaders in the media industry.
               </p>
-              <a href="https://escs.ipl.pt/en/home" target="_blank" class="btn btn-outline-primary rounded-pill px-4">Visit Website <i class="fas fa-external-link-alt ms-2"></i></a>
+              <a href="https://escs.ipl.pt/en/home" target="_blank" class="btn btn-outline-primary rounded-pill px-4" data-umami-event="click--partner-website-escs-ipl">Visit Website <i class="fas fa-external-link-alt ms-2"></i></a>
             </div>
             <div class="col-lg-5 bg-light p-4 p-md-5 text-center d-flex align-items-center justify-content-center order-lg-2 order-1" style="min-height: 250px;">
-              <a href="https://escs.ipl.pt/en/home" target="_blank">
+              <a href="https://escs.ipl.pt/en/home" target="_blank" data-umami-event="click--partner-logo-escs-ipl">
                 <img src="/images/partners/Logo_ESCS_vENG_color-ai.svg" class="img-fluid" alt="School of Communication and Media Studies" style="max-height: 150px;">
               </a>
             </div>
@@ -89,7 +89,7 @@ menu:
         <div class="card-body p-0">
           <div class="row g-0 align-items-center">
             <div class="col-lg-5 bg-light p-4 p-md-5 text-center d-flex align-items-center justify-content-center" style="min-height: 250px;">
-              <a href="https://www.fh-vie.ac.at/en/" target="_blank">
+              <a href="https://www.fh-vie.ac.at/en/" target="_blank" data-umami-event="click--partner-logo-fh-vienna">
                 <img src="/images/partners/FH_e_Logo_Blue_RGB.svg" class="img-fluid" alt="University of Applied Sciences BFI Vienna" style="max-height: 150px;">
               </a>
             </div>
@@ -99,7 +99,7 @@ menu:
               <p class="mb-4">
                 Located in Vienna, the University of Applied Sciences BFI Vienna specializes in economics, management, and finance, fostering a culture of excellence and practical learning.
               </p>
-              <a href="https://www.fh-vie.ac.at/en/" target="_blank" class="btn btn-outline-primary rounded-pill px-4">Visit Website <i class="fas fa-external-link-alt ms-2"></i></a>
+              <a href="https://www.fh-vie.ac.at/en/" target="_blank" class="btn btn-outline-primary rounded-pill px-4" data-umami-event="click--partner-website-fh-vienna">Visit Website <i class="fas fa-external-link-alt ms-2"></i></a>
             </div>
           </div>
         </div>
@@ -115,10 +115,10 @@ menu:
               <p class="mb-4">
                 The Faculty of Organization and Informatics at the University of Zagreb offers top-notch education and research in information systems, promoting innovation and collaboration in technology.
               </p>
-              <a href="https://www.foi.unizg.hr/en" target="_blank" class="btn btn-outline-primary rounded-pill px-4">Visit Website <i class="fas fa-external-link-alt ms-2"></i></a>
+              <a href="https://www.foi.unizg.hr/en" target="_blank" class="btn btn-outline-primary rounded-pill px-4" data-umami-event="click--partner-website-foi-zagreb">Visit Website <i class="fas fa-external-link-alt ms-2"></i></a>
             </div>
             <div class="col-lg-5 bg-light p-4 p-md-5 text-center d-flex align-items-center justify-content-center order-lg-2 order-1" style="min-height: 250px;">
-              <a href="https://www.foi.unizg.hr/en" target="_blank">
+              <a href="https://www.foi.unizg.hr/en" target="_blank" data-umami-event="click--partner-logo-foi-zagreb">
                 <img src="/images/partners/FOI_horiz_EN_color-ai.svg" class="img-fluid" alt="University of Zagreb - Faculty of Organization and Informatics" style="max-height: 150px;">
               </a>
             </div>

@@ -103,12 +103,12 @@ By addressing these considerations, future workshops can further enhance partici
 
 ## Training Materials
 
-[AI-based Tools](./downloads/AI-HED_Starter_Kit__AI-based_Tools.pdf)
+<a href="./downloads/AI-HED_Starter_Kit__AI-based_Tools.pdf" data-umami-event="download--starter-kit-ai-tools">AI-based Tools</a>
 
-[Case_Studies](./downloads/AI-HED_Starter_Kit__Case_Studies.pdf)
+<a href="./downloads/AI-HED_Starter_Kit__Case_Studies.pdf" data-umami-event="download--starter-kit-case-studies">Case_Studies</a>
 
-[Current Practices](./downloads/AI-HED_Starter_Kit__Current_Practices.pdf)
+<a href="./downloads/AI-HED_Starter_Kit__Current_Practices.pdf" data-umami-event="download--starter-kit-current-practices">Current Practices</a>
 
-[Training Overview](./downloads/AI-HED_Training__Training_Overview.pdf)
+<a href="./downloads/AI-HED_Training__Training_Overview.pdf" data-umami-event="download--training-overview">Training Overview</a>
 
-[Workshop Materials](./downloads/AI-HED_Training__Workshop_Materials.pdf)
+<a href="./downloads/AI-HED_Training__Workshop_Materials.pdf" data-umami-event="download--workshop-materials">Workshop Materials</a>

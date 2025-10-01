@@ -49,7 +49,7 @@ The developed pilot courses will be implemented in the autumn term 2025 by the r
         <p class="text-muted mb-0">Download the full program of the Vienna workshop on syllabus development</p>
       </div>
       <div class="col-md-4 text-md-right mt-3 mt-md-0">
-        <a href="AI-HED_Vienna_workshop_syllabus_development_final_program_23.04.2025.pdf" class="btn btn-primary btn-lg">
+        <a href="AI-HED_Vienna_workshop_syllabus_development_final_program_23.04.2025.pdf" class="btn btn-primary btn-lg" data-umami-event="download--vienna-workshop-program">
           <i class="fas fa-file-pdf mr-2"></i>Download Program
         </a>
       </div>
