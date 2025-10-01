@@ -36,7 +36,7 @@ filter-color="{{.}}"
 				{{- with .Params.cta }}
 				<div class="buttons">
 						{{ range . }}
-								<a href="{{ with .url }} {{ . }}{{ end }}" class="btn btn-lg {{ with .classes }}{{ . }}{{ else }}btn-neutral{{ end }}">{{ with .label }}{{ . | safeHTML }}{{ end }}</a>
+								<a href="{{ with .url }} {{ . }}{{ end }}" class="btn btn-lg {{ with .classes }}{{ . }}{{ else }}btn-neutral{{ end }}"{{ with .umami }} data-umami-event="{{ . }}"{{ end }}>{{ with .label }}{{ . | safeHTML }}{{ end }}</a>
 						{{ end }}
 					</div>
 				{{- end -}}

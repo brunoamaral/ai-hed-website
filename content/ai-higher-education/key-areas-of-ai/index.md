@@ -90,10 +90,10 @@ disable_comments: true
             <div class="card-body p-4">
               <h3 class="h4">For a practical guide and examples, read our Starter Kit for AI in Higher Education</h3>
               <div class="d-flex flex-wrap gap-2">
-                <a target="_blank" href="/resources/starter-kit/AI-HED%20Starter%20Kit_%20Full.pdf" class="btn btn-primary font-weight-bold">
+                <a target="_blank" href="/resources/starter-kit/AI-HED%20Starter%20Kit_%20Full.pdf" class="btn btn-primary font-weight-bold" data-umami-event="download--starter-kit-full">
                   <i class="fas fa-file-pdf mr-2"></i>Open the Starter Kit
                 </a>
-                <a target="_blank" href="/resources/starter-kit/" class="btn btn-secondary">
+                <a target="_blank" href="/resources/starter-kit/" class="btn btn-secondary" data-umami-event="click--browse-resources">
                   Browse More Resources <i class="fas fa-arrow-right ms-1"></i>
                 </a>
               </div>
@@ -110,10 +110,10 @@ disable_comments: true
             <div class="card-body p-4">
               <h3 class="h4">Find AI-Based tools to help you develop these key areas</h3>
               <div class="d-flex flex-wrap gap-2">
-                <a target="_blank" href="/resources/starter-kit/AI-HED%20Starter%20Kit_%20Full.pdf" class="btn btn-primary font-weight-bold">
+                <a target="_blank" href="/resources/starter-kit/AI-HED%20Starter%20Kit_%20Full.pdf" class="btn btn-primary font-weight-bold" data-umami-event="download--starter-kit-full">
                   <i class="fas fa-file-pdf mr-2"></i>Open the Starter Kit
                 </a>
-                <a target="_blank" href="/resources/starter-kit/" class="btn btn-secondary">
+                <a target="_blank" href="/resources/starter-kit/" class="btn btn-secondary" data-umami-event="click--browse-resources">
                   Browse More Resources <i class="fas fa-arrow-right ms-1"></i>
                 </a>
               </div>

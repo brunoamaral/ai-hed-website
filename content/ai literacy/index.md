@@ -182,13 +182,13 @@ menu:
             <h3 class="h4">Explore Our AI-HED Starter Kit</h3>
             <p class="lead mb-3">Dive deeper into AI literacy with our comprehensive resources for higher education professionals. The starter kit includes practical guidelines, case studies, and a detailed glossary of AI terms.</p>
             <div class="d-flex flex-wrap gap-2">
-              <a target="_blank" href="/resources/starter-kit/AI-HED Starter Kit_ Full.pdf" class="btn btn-primary">
+              <a target="_blank" href="/resources/starter-kit/AI-HED Starter Kit_ Full.pdf" class="btn btn-primary" data-umami-event="download--starter-kit-full">
                 <i class="fas fa-file-pdf me-2"></i>Download PDF
               </a>
-              <a target="_blank" href="/resources/starter-kit/" class="btn btn-secondary">
+              <a target="_blank" href="/resources/starter-kit/" class="btn btn-secondary" data-umami-event="click--browse-resources">
                 Browse Resources <i class="fas fa-arrow-right ms-1"></i>
               </a>
-              <a target="_blank" href="https://zenodo.org/records/15447156" class="btn btn-info">
+              <a target="_blank" href="https://zenodo.org/records/15447156" class="btn btn-info" data-umami-event="click--external-zenodo">
                 Zenodo <i class="fas fa-external-link-alt" aria-hidden="true"></i>
               </a>
             </div>
