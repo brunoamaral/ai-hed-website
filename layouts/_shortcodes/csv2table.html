@@ -129,7 +129,7 @@
 			{{- if eq . "Tool" -}}
 				{{- $toolName := index $row "Tool" | string -}}
 				{{- $linkString := index $row "Link" | string -}}
-				{{- $html = $html | append (printf "<td><a href=\"%s\">%s</a></td>" $linkString $toolName) -}}
+				{{- $html = $html | append (printf "<td><a href=\"%s\" data-umami-event=\"click--external-ai-tool-%s\">%s</a></td>" $linkString (replaceRE "[^a-zA-Z0-9]+" "-" $toolName | lower) $toolName) -}}
 			{{- else if ne . "Link" -}}
 				{{- $html = $html | append (printf "<td>%s</td>" (index $row .)) -}}
 			{{- end -}}
