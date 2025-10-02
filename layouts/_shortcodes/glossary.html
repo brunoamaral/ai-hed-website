@@ -122,9 +122,9 @@
 		{{- $example := index $row "Example" -}}
 		{{- $firstLetter := upper (substr $concept 0 1) -}}
 
-		{{- /* Parse links in the source fields */ -}}
-		{{- $source1Parsed := replaceRE "(https?://[^[:space:]]+)" "<a href=\"$1\">$1</a>" $source1 -}}
-		{{- $source2Parsed := replaceRE "(https?://[^[:space:]]+)" "<a href=\"$1\">$1</a>" $source2 -}}
+		{{- /* Parse links in the source fields with Umami tracking */ -}}
+		{{- $source1Parsed := replaceRE "(https?://[^[:space:]]+)" "<a href=\"$1\" data-umami-event=\"click--glossary-source\">$1</a>" $source1 -}}
+		{{- $source2Parsed := replaceRE "(https?://[^[:space:]]+)" "<a href=\"$1\" data-umami-event=\"click--glossary-source\">$1</a>" $source2 -}}
 
 		{{- /* Output term and definition, each tagged with the first letter */ -}}
 		{{- $html = $html | append (printf "<dt data-letter=\"%s\" class='mt-5 pt-5 border-top'>%s</dt>" $firstLetter $concept) -}}
@@ -153,6 +153,15 @@ document.addEventListener("DOMContentLoaded", function() {
 	const searchBox = document.getElementById("glossarySearch");
 	// Use only the term elements (dt) for searching
 	const terms = document.querySelectorAll(".glossary dt");
+	
+	// Track search with debouncing to avoid too many events
+	let searchTimeout;
+	const trackSearch = function(searchTerm) {
+		if (searchTerm.length >= 3 && window.umami) {
+			umami.track('glossary-search', { term: searchTerm });
+		}
+	};
+	
 	// On load, show all items
 	terms.forEach(term => {
 		term.style.display = "";
@@ -167,9 +176,15 @@ document.addEventListener("DOMContentLoaded", function() {
 			e.preventDefault();
 			// Only react if link is clickable (has data-letter attribute)
 			if(!this.hasAttribute("data-letter")) return;
+			
+			// Track letter click
+			const letter = this.getAttribute("data-letter");
+			if (window.umami) {
+				umami.track('glossary-letter-click', { letter: letter });
+			}
+			
 			// Clear search box when using the index
 			searchBox.value = "";
-			const letter = this.getAttribute("data-letter");
 			indexLinks.forEach(l => l.classList.remove("active"));
 			this.classList.add("active");
 			terms.forEach(term => {
@@ -191,6 +206,13 @@ document.addEventListener("DOMContentLoaded", function() {
 	// Search filtering: only filter by term (dt)
 	searchBox.addEventListener("input", function() {
 		const searchVal = this.value.toLowerCase();
+		
+		// Debounce tracking to avoid too many events
+		clearTimeout(searchTimeout);
+		if (searchVal.length >= 3) {
+			searchTimeout = setTimeout(() => trackSearch(searchVal), 1000);
+		}
+		
 		indexLinks.forEach(l => l.classList.remove("active"));
 		if(searchVal.length > 0) {
 			terms.forEach(term => {
