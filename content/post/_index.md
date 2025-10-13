@@ -1,10 +1,11 @@
 ---
-title: News and Updates 
+title: Project Updates 
 description: 
 menu:
   main:
-    name: News and Updates
-    weight: 3
+    name: Project Updates
+    parent: News and Updates
+    weight: 1
 resources:
   - src: thisisengineering-BYYz-5LdxaM-unsplash.jpg
     name: header

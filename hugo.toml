@@ -72,6 +72,9 @@ logo = "/images/ai-hed-shorthandlogo.svg"
     name = "About"
     weight = 1
   [[menu.main]]
+    name = "News and Updates"
+    weight = 3
+  [[menu.main]]
     name = "Key Areas of AI"
     url = "/ai-higher-education/key-areas-of-ai/"
     parent = "AI in Higher Education"
