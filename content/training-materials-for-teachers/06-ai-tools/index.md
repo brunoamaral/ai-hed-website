@@ -9,8 +9,7 @@ url: /resources/training-materials-for-teachers/06-ai-tools/
 authors:
 - dietmar
 disable_comments: true
-summary: "Access recommended AI tools for teaching and learning, along with comprehensive references and expert contributions to these guidelines."
-description: "Discover recommended AI tools for educational use and explore the comprehensive references and expert contributions that informed these guidelines."
+summary: "Access our curated list of AI tools suitable for teaching and learning, with links to comprehensive resources and references."
 layout: page
 aliases:
 resources:

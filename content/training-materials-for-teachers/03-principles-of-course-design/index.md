@@ -9,8 +9,7 @@ url: /resources/training-materials-for-teachers/03-principles-of-course-design/
 authors:
 - dietmar
 disable_comments: true
-summary: "Learn key principles for designing AI-enhanced courses, including constructive alignment, cultivating critical thinking, and fostering academic integrity."
-description: "Understand the fundamental principles of course design when integrating AI, focusing on constructive alignment, critical thinking development, and maintaining academic integrity."
+summary: "Understand how to integrate AI into the constructive alignment approach, cultivate critical thinking, and foster academic integrity in your courses."
 layout: page
 aliases:
 resources:

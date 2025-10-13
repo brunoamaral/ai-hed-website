@@ -9,8 +9,7 @@ url: /resources/training-materials-for-teachers/05-legal-compliance/
 authors:
 - dietmar
 disable_comments: true
-summary: "Understand the legal requirements and ethical considerations for using AI in education, including data protection, copyright, and responsible use practices."
-description: "Learn about legal compliance and ethical responsibility when using AI in academic settings, covering data protection, intellectual property, and responsible AI practices."
+summary: "Ensure you understand the legal requirements and ethical considerations when using AI in teaching, including data protection, copyright, and responsible use practices."
 layout: page
 aliases:
 resources:

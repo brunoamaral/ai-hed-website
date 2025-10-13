@@ -9,8 +9,7 @@ url: /resources/training-materials-for-teachers/04-designing-courses/
 authors:
 - dietmar
 disable_comments: true
-summary: "Comprehensive guide to designing AI-enhanced courses, including didactic scenarios, assessment strategies, and practical implementation methods."
-description: "Learn how to design courses that effectively integrate AI, covering student-centered learning, didactic scenarios, assessment methods, academic integrity, and tool selection."
+summary: "Explore practical didactic scenarios, teaching methods, assessment strategies, and grading approaches when using AI in your courses. Includes comprehensive guidance on evaluation and tool selection."
 layout: page
 aliases:
 resources:

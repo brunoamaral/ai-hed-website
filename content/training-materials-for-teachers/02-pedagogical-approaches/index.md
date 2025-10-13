@@ -9,8 +9,7 @@ url: /resources/training-materials-for-teachers/02-pedagogical-approaches/
 authors:
 - dietmar
 disable_comments: true
-summary: "Learn about human-centered approaches to integrating AI in education, ensuring accessibility, equity, and inclusion for all students."
-description: "Discover pedagogical approaches for adopting AI in academic education, focusing on using AI as a tool while maintaining human-centered design and ensuring inclusive learning environments."
+summary: "Discover human-centered approaches to course design with AI, focusing on accessibility, equity, and inclusion. Learn how to use AI as a tool while keeping students at the center of learning."
 layout: page
 aliases:
 resources:

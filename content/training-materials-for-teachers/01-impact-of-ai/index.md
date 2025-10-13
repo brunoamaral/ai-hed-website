@@ -9,8 +9,7 @@ url: /resources/training-materials-for-teachers/01-impact-of-ai/
 authors:
 - dietmar
 disable_comments: true
-summary: "Discover how AI is fundamentally transforming higher education, from being a game-changer to requiring new teaching skills and understanding different types of AI systems."
-description: "Learn about AI's impact on academic education, including how it's changing teaching practices, what skills teachers need to develop, and the different types of AI relevant to education."
+summary: "Learn how AI is transforming higher education, why it’s a game-changer, and what skills teachers need to develop. This section covers the different types of AI and how to stay current with developments."
 layout: page
 aliases:
 resources:
