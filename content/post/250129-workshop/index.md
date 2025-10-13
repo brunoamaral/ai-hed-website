@@ -15,6 +15,9 @@ categories:
   - Events
   - Training
 slug: ai-hed-training-workshop
+url: /post/ai-hed-training-workshop/
+aliases:
+  - /post/250129-workshop/
 layout: single
 
 

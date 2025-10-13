@@ -7,6 +7,9 @@ resources:
 - src: images/thisisengineering-sGwoXcxKbcE-unsplash.jpg
   name: "header"
 slug:
+url: /post/eu-funding/
+aliases:
+  - /post/241127-eu-funding/
 layout: single
 
 subtitle:  Artificial Intelligence in Higher Education Teaching and Learning

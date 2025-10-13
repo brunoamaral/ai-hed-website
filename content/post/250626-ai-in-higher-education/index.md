@@ -16,6 +16,9 @@ tags:
 categories:
   - Project Updates
 slug:
+url: /post/ai-in-higher-education/
+aliases:
+  - /post/250626-ai-in-higher-education/
 
 resources:
   - src: images/ai-literacy.png

@@ -15,6 +15,9 @@ tags:
 categories:
   - Guest Articles
 slug:
+url: /post/ai-personalized-learning/
+aliases:
+  - /post/250210-ai-personalized-learning/
 layout: single
 
 

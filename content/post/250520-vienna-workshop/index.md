@@ -10,6 +10,9 @@ resources:
 - src:
   name: slide-1
 slug:
+url: /post/vienna-workshop/
+aliases:
+  - /post/250520-vienna-workshop/
 subtitle: 
 tags: 
   - 

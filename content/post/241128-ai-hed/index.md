@@ -7,6 +7,9 @@ resources:
 - src: images/ai-hed-team.jpeg
   name: "header"
 slug:
+url: /post/ai-hed/
+aliases:
+  - /post/241128-ai-hed/
 subtitle:  Artificial Intelligence in Higher Education Teaching and Learning
 tags: 
   - ai

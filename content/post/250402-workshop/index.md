@@ -11,6 +11,9 @@ tags:
 categories:
   - Updates
 slug:
+url: /post/workshop/
+aliases:
+  - /post/250402-workshop/
 
 resources:
   - src: gallery/01-foi.jpeg

@@ -18,6 +18,9 @@ tags:
 categories:
 - updates
 slug:
+url: /post/ureka-connects-helsinki/
+aliases:
+  - /post/250522-ureka-connects-helsinki/
 
 resources:
   - src: images/20250522_140249.jpg

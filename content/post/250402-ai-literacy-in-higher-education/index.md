@@ -15,6 +15,9 @@ tags:
 categories:
   - Guest Articles
 slug:
+url: /post/ai-literacy-in-higher-education/
+aliases:
+  - /post/250402-ai-literacy-in-higher-education/
 
 resources:
   - src: images/getty-images-iv8JZoX1Wg8-unsplash.jpg

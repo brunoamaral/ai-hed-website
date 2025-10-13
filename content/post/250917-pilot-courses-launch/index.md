@@ -17,6 +17,9 @@ tags:
 categories:
   - Updates
 slug: pilot-courses-launch
+url: /post/pilot-courses-launch/
+aliases:
+  - /post/250917-pilot-courses-launch/
 
 resources:
   - src: images/pilot-course-photo.jpeg
