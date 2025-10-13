@@ -110,8 +110,8 @@ disable_comments: true
             <div class="card-body p-4">
               <h3 class="h4">Find AI-Based tools to help you develop these key areas</h3>
               <div class="d-flex flex-wrap gap-2">
-                <a target="_blank" href="/resources/starter-kit/AI-HED%20Starter%20Kit_%20Full.pdf" class="btn btn-primary font-weight-bold" data-umami-event="download--starter-kit-full">
-                  <i class="fas fa-file-pdf mr-2"></i>Open the Starter Kit
+                <a target="_blank" href="/resources/ai-tools-list/" class="btn btn-primary font-weight-bold" data-umami-event="download--starter-kit-full">
+                  <i class="fas fa-file-pdf mr-2"></i>Open the Tools Database
                 </a>
                 <a target="_blank" href="/resources/starter-kit/" class="btn btn-secondary" data-umami-event="click--browse-resources">
                   Browse More Resources <i class="fas fa-arrow-right ms-1"></i>
