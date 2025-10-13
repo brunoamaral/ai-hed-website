@@ -26,7 +26,5 @@ Email: <b.d.smeenk@hva.nl>
 
 Bernard Smeenk is an international relations manager and policy advisor at the International Centre of FBE, Hogeschool van Amsterdam (Amsterdam University of Applied Sciences). He is an experienced project manager specializing in Erasmus+ Strategic Partnerships, Cooperation Partnerships, and Capacity Building projects. Bernard has served in both coordinator and partner roles, demonstrating his expertise in managing and fostering international collaborations.
 
-**Role in Projects**:
+**Role in Project**:
 Bernard is responsible for project management and contributes to the writing and coordination team.
-
-He collaborates with [Margit Varga Van Kibéd en Makfalva](Margit%20Varga%20Van%20Kibéd%20en%20Makfalva.md).
