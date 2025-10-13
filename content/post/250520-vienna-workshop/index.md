@@ -14,7 +14,7 @@ subtitle:
 tags: 
   - 
 categories: 
-  - 
+  - Updates
 title: "Workshop on Preparation of Pilot Courses successfully held in Vienna"
 layout: single
 options:
