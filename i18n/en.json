@@ -1,3 +1,4 @@
 [
-  { "id": "last_updated", "translation": "Last updated" }
+  { "id": "last_updated", "translation": "Last updated" },
+  { "id": "footer1", "translation": "Quick links" }
 ]
