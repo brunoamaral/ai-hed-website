@@ -5,15 +5,16 @@ date: 2025-02-13T15:11:28Z
 draft: false
 toc: true
 categories: 
-url: /resources/training-materials-for-teachers/01-impact-of-ai/
+url: /ai-higher-education/adopting-ai-in-teaching/01-impact-of-ai/
 authors:
 - dietmar
 disable_comments: true
-summary: "Learn how AI is transforming higher education, why it’s a game-changer, and what skills teachers need to develop. This section covers the different types of AI and how to stay current with developments."
+summary: "Learn how AI is transforming higher education, why it's a game-changer, and what skills teachers need to develop. This section covers the different types of AI and how to stay current with developments."
 layout: page
 aliases:
+- /resources/training-materials-for-teachers/01-impact-of-ai/
 resources:
-  - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
+  - src: ai-impact.jpeg
     name: "header"
 options:
   header: small
@@ -28,10 +29,10 @@ options:
 navigation:
   prev:
     title: "Guidelines Overview"
-    url: "/resources/training-materials-for-teachers/"
+    url: "/ai-higher-education/adopting-ai-in-teaching/"
   next:
     title: "2. Pedagogical Approaches"
-    url: "/resources/training-materials-for-teachers/02-pedagogical-approaches/"
+    url: "/ai-higher-education/adopting-ai-in-teaching/02-pedagogical-approaches/"
 ---
 
 <div class="row">

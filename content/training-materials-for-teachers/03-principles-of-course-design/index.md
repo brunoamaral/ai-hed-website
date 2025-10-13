@@ -13,7 +13,7 @@ summary: "Understand how to integrate AI into the constructive alignment approac
 layout: page
 aliases:
 resources:
-  - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
+  - src: ai-design.jpeg
     name: "header"
   - src: Picture1.png
     name: "constructive-alignment"

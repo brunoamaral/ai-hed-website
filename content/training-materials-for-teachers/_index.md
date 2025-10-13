@@ -5,7 +5,7 @@ date: 2025-02-13T15:11:28Z
 draft: false
 toc: true
 categories: 
-url: /resources/training-materials-for-teachers/
+url: /ai-higher-education/adopting-ai-in-teaching/
 authors:
 - dietmar
 disable_comments: true
@@ -13,6 +13,7 @@ summary: " "
 description:
 
 aliases:
+- /resources/training-materials-for-teachers/
 resources:
   - src: markus-winkler-igoytGVfdxw-unsplash.jpg
     name: "header"

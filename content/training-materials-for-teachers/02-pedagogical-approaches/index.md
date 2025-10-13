@@ -5,15 +5,16 @@ date: 2025-02-13T15:11:28Z
 draft: false
 toc: true
 categories: 
-url: /resources/training-materials-for-teachers/02-pedagogical-approaches/
+url: /ai-higher-education/adopting-ai-in-teaching/02-pedagogical-approaches/
 authors:
 - dietmar
 disable_comments: true
 summary: "Discover human-centered approaches to course design with AI, focusing on accessibility, equity, and inclusion. Learn how to use AI as a tool while keeping students at the center of learning."
 layout: page
 aliases:
+- /resources/training-materials-for-teachers/02-pedagogical-approaches/
 resources:
-  - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
+  - src: ai-adopt.jpeg
     name: "header"
 options:
   header: small
@@ -28,10 +29,10 @@ options:
 navigation:
   prev:
     title: "1. Impact of AI"
-    url: "/resources/training-materials-for-teachers/01-impact-of-ai/"
+    url: "/ai-higher-education/adopting-ai-in-teaching/01-impact-of-ai/"
   next:
     title: "3. Principles of Course Design"
-    url: "/resources/training-materials-for-teachers/03-principles-of-course-design/"
+    url: "/ai-higher-education/adopting-ai-in-teaching/03-principles-of-course-design/"
 ---
 
 <div class="row">
