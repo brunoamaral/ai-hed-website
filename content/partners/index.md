@@ -72,7 +72,7 @@ menu:
               <h3 class="h2 mb-3">School of Communication and Media Studies</h3>
               <h4 class="h6 text-muted mb-3">Polytechnic University of Lisbon</h4>
               <p class="mb-4">
-                The School of Communication and Media Studies (ESCS) in Lisbon provides exceptional education in public relations, journalism, and communication, shaping future leaders in the media industry.
+                Located in Lisbon, ESCS is focused on applied scientific knowledge, training highly qualified professionals at graduate and postgraduate levels in the areas of Audiovisual and Multimedia, Journalism, Advertising and Marketing, and Public Relations and Corporate Communication.
               </p>
               <a href="https://escs.ipl.pt/en/home" target="_blank" class="btn btn-outline-primary rounded-pill px-4" data-umami-event="click--partner-website-escs-ipl">Visit Website <i class="fas fa-external-link-alt ms-2"></i></a>
             </div>
