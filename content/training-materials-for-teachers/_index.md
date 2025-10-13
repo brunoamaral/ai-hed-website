@@ -11,7 +11,7 @@ authors:
 disable_comments: true
 summary: " "
 description:
-layout: page
+
 aliases:
 resources:
   - src: markus-winkler-igoytGVfdxw-unsplash.jpg
@@ -82,37 +82,11 @@ suited for promoting specific skills, a well-documented list of
 recommendable AI tools, and a collection of good practices in teaching
 with AI.
 
-## Guidelines Overview
 
-These comprehensive guidelines are organized into six main sections:
-
-### [1. The Impact of AI on Academic Education](./01-impact-of-ai/)
-Learn how AI is transforming higher education, why it's a game-changer, and what skills teachers need to develop. This section covers the different types of AI and how to stay current with developments.
-
-### [2. Pedagogical Approaches](./02-pedagogical-approaches/)
-Discover human-centered approaches to course design with AI, focusing on accessibility, equity, and inclusion. Learn how to use AI as a tool while keeping students at the center of learning.
-
-### [3. Principles of Course Design](./03-principles-of-course-design/)
-Understand how to integrate AI into the constructive alignment approach, cultivate critical thinking, and foster academic integrity in your courses.
-
-### [4. Designing Courses](./04-designing-courses/)
-Explore practical didactic scenarios, teaching methods, assessment strategies, and grading approaches when using AI in your courses. Includes comprehensive guidance on evaluation and tool selection.
-
-### [5. Legal Compliance and Ethical Responsibility](./05-legal-compliance/)
-Ensure you understand the legal requirements and ethical considerations when using AI in teaching, including data protection, copyright, and responsible use practices.
-
-### [6. Recommended AI Tools](./06-ai-tools/)
-Access our curated list of AI tools suitable for teaching and learning, with links to comprehensive resources and references.
 
 ---
 
 ## About These Guidelines
-
-**Dietmar Paier, UAS BFI Vienna**
-
-```callout {level="info" }
-These guidelines were developed in work package 3 of the AI-HED project. The author expresses his gratitude and appreciation to all experts and to all members of the AI-HED project who have greatly contributed to the development of this document. Any shortcomings or errors remain the sole responsibility of the author.
-```
 
 *Note: Each section includes detailed expert insights, practical examples, and implementation guidance. Use the navigation above to explore the areas most relevant to your teaching context.*
 
