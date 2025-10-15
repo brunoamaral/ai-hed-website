@@ -83,13 +83,7 @@ suited for promoting specific skills, a well-documented list of
 recommendable AI tools, and a collection of good practices in teaching
 with AI.
 
-
-
 ---
-
-## About These Guidelines
-
-*Note: Each section includes detailed expert insights, practical examples, and implementation guidance. Use the navigation above to explore the areas most relevant to your teaching context.*
 
 </div>
 </div>
