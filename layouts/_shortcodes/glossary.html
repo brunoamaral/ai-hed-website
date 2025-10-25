@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	{{- $html = $html | append $script -}}
 
 	{{- .Scratch.Set "htmlGlossary" (delimit $html "") -}}
-	{{- markdownify (.Scratch.Get "htmlGlossary") -}}
+	{{- .Scratch.Get "htmlGlossary" | safeHTML -}}
 {{- else -}}
 	{{- /* Markdown output remains unchanged; interactive filtering requires HTML/JS */ -}}
 	{{- $md := slice -}}
