@@ -79,6 +79,11 @@ logo = "/images/ai-hed-shorthandlogo.svg"
     url = "/ai-higher-education/key-areas-of-ai/"
     parent = "AI in Higher Education"
     weight = 2
+  [[menu.main]]
+    name = "Adopting AI in Teaching"
+    url = "/ai-higher-education/adopting-ai-in-teaching/"
+    parent = "AI in Higher Education"
+    weight = 3
   [[menu.footer_two]]
     name = "LinkedIn"
     url = "https://www.linkedin.com/company/ai-hed/"
