@@ -13,7 +13,7 @@ summary: "Access our curated list of AI tools suitable for teaching and learning
 layout: page
 aliases:
 resources:
-  - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
+  - src: tools.jpeg
     name: "header"
 options:
   header: small

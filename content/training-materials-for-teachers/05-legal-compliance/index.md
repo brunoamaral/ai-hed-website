@@ -13,7 +13,7 @@ summary: "Ensure you understand the legal requirements and ethical consideration
 layout: page
 aliases:
 resources:
-  - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
+  - src: legal.jpeg
     name: "header"
 options:
   header: small

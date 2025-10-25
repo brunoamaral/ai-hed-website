@@ -13,7 +13,7 @@ summary: "Explore practical didactic scenarios, teaching methods, assessment str
 layout: page
 aliases:
 resources:
-  - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
+  - src: course.jpeg
     name: "header"
 options:
   header: small
