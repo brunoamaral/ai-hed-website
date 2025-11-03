@@ -1,7 +1,7 @@
 ---
 title: "Putting AI to Academic Use"
 subtitle: "From Research to the Classroom"
-lead: ""
+summary: AI won't replace your academic work—but learning to work with it effectively requires rethinking how you organize research, manage knowledge, and approach your computer as more than just a word processor.
 description: ""
 
 date: 2025-11-03T19:18:53Z
