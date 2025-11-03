@@ -31,7 +31,7 @@ options:
   hideSubscribeForm: false
   header: small
 scripts:
-  -
+  - <script src="lightbox.js" defer="true"></script>
 ---
 
 Most of us were not taught how to use the computer to its full potential. We do not know that there is a fundamental difference between `variable1 = 12` and `variable2 = "12"` because we grew up with full-featured apps like MS Word and Excel. In contrast, IT students feel empowered by their grasp of code and their understanding that variable1 is an integer number while variable2 is a string of characters that can't be used in any mathematical operation.
@@ -207,22 +207,22 @@ That's why 80% of my workflow is in gathering and organising research, not in pr
 
 Does this translate to spending less time on a task? Not always, but I do have some rules of thumb.
 
-1.  Automate what you can
+1.  **Automate what you can**   
     My personal bookmarks also sync with Obsidian, and this allows me to leverage the app's ability to make automatic connections between notes.
 
-When my own thoughts feel too disconnected, I ask an LLM to review the note and restructure it.
+    When my own thoughts feel too disconnected, I ask an LLM to review the note and restructure it.
 
-My computer runs a few shortcuts for repetitive tasks that were created using a Coding Agent. Basic things like resizing images or converting documents.
+    My computer runs a few shortcuts for repetitive tasks that were created using a Coding Agent. Basic things like resizing images or converting documents.
 
-2.  Use templates and frameworks
+2.  **Use templates and frameworks**   
     When possible, I try to make my work reproducible with as little effort as possible. That sometimes means spending a bit more time thinking about how a document can be turned into a template, but it pays off as soon as someone else asks for something similar.
 
-3.  Build agents if you can
+3.  **Build agents if you can**   
     An agent is an AI or a script that sits out of sight and reacts to what is important for you. One of my agents is [Gregory-MS](https://gregory-ms.com/), an AI assistant that keeps me up to date on Multiple Sclerosis research that can improve my quality of life.
 
-Another agent is Johnny Five, a friendly robot that notifies me of important emails, files my invoices, and helps me search private databases.
+    Another agent is Johnny Five, a friendly robot that notifies me of important emails, files my invoices, and helps me search private databases.
 
-Agents like these can be built with low-code tools like [N8N](https://n8n.io/), and [Make](https://www.make.com/en). One use case for these tools is to help us manage repetitive tasks or make it easier to schedule face-to-face time with students.
+    Agents like these can be built with low-code tools like [N8N](https://n8n.io/), and [Make](https://www.make.com/en). One use case for these tools is to help us manage repetitive tasks or make it easier to schedule face-to-face time with students.
 
 ## Abandon the Hype
 
