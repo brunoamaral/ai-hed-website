@@ -100,7 +100,7 @@ Academic journals and libraries are still our best sources of knowledge, but suf
 
 In no particular order, here are a few that are worth exploring.
 
-### [Connected Papers](https://www.connectedpapers.com/)
+<h3><a href="https://www.connectedpapers.com/">Connected Papers</a></h3>
 
 This tool doesn't use AI. It allows you to search a topic or a specific paper and explore how different papers are linked through their citations.
 
@@ -108,7 +108,7 @@ You can use it to explore a network graph of research, to make sure your researc
 
 ![](images/f7db7589b5bd81b309f4e2c87075156363ed751d.png)
 
-### [Elicit](https://elicit.com/)
+<h3><a href="https://elicit.com/">Elicit</a></h3>
 
 One way to avoid AI hallucinations is to ground the tool to existing documents; that's what this tool does. Using Elicit, we can find papers from their database or upload our own set of files to conduct a systematic review of the literature.
 
@@ -125,7 +125,7 @@ This doesn't mean we don't have to read the full text, but it does help filter o
   </a>
 </div>
 
-### [ResearchRabbit](https://www.researchrabbit.ai/)
+<h3><a href="https://www.researchrabbit.ai/">ResearchRabbit</a></h3>
 
 For those of us who get lost in reading paper after paper, ResearchRabbit is the map that helps us get out of Wonderland. Search for a topic, save the pieces that make sense for your research, and use the "similarity button" to find new ideas and counterpoints.
 
@@ -134,7 +134,7 @@ It's a step up from ConnectedPapers, because here you can see the graph where th
 Again, you can import and export to Zotero or Mendeley.
 ![](images/c895026281eb64fb75c4ec3027ffbfa72637200d.png)
 
-### [Perplexity](https://www.perplexity.ai/)
+<h3><a href="https://www.perplexity.ai/">Perplexity</a></h3>
 
 The first tool that came to answer the problem of fake sources was Perplexity, with a promise of traceability.
 
@@ -162,7 +162,7 @@ If I were attempting to generate innovative work, I could stop here and just exp
 
 For preparing courses and classes where we are not obliged to innovate, we can create variations of academic literature that are more accessible to students.
 
-### [NotebookLM](https://notebooklm.google.com/)
+<h3><a href="https://notebooklm.google.com/">NotebookLM</a></h3>
 
 Frighteningly good. When we upload a collection of files, Google's NotebookLM turns it into a video, a podcast, flashcards and quizzes. It also does a good job creating mind maps of the concepts present in the literature.
 
