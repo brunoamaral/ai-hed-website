@@ -3,6 +3,7 @@ title: "Launch of the AI-HED Pilot Courses: Pioneering the Future of AI in Highe
 subtitle: "24 pilot courses across four European institutions explore AI integration in teaching and learning"
 lead: "We are pleased to announce the launch of the AI-HED Pilot Courses, a key milestone in the Erasmus+ project Artificial Intelligence in Higher Education Teaching and Learning (AI-HED)."
 description: "The AI-HED project launches 24 pilot courses across four partner institutions in Europe, involving 32 lecturers and approximately 800 students to explore responsible AI integration in higher education."
+summary: "The AI-HED project launches 24 pilot courses across four partner institutions in Europe, involving 32 lecturers and approximately 800 students to explore responsible AI integration in higher education."
 
 date: 2025-09-17T10:00:00Z
 authors:
