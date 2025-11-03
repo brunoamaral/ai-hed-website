@@ -329,3 +329,27 @@ td br {
 	content: "";
 	margin-bottom: 0.5em;
 }
+
+// BLOCKQUOTE TAG STYLING
+blockquote {
+	border-left: 5px solid #628c68;
+	border-right: none;
+	border-top: none;
+	border-bottom: none;
+	padding: 0 0 0 20px;
+	margin: 1.5em 0;
+	font-size: 1em;
+	line-height: 1.61em;
+	font-style: italic;
+
+	// Source attribution - not italic
+	a {
+		font-style: normal;
+	}
+
+	small {
+		font-style: normal;
+		font-size: $font-size-small;
+		text-transform: uppercase;
+	}
+}
