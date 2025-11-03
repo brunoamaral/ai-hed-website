@@ -2,7 +2,7 @@
 title: "Putting AI to Academic Use"
 subtitle: "From Research to the Classroom"
 summary: AI won't replace your academic work—but learning to work with it effectively requires rethinking how you organize research, manage knowledge, and approach your computer as more than just a word processor.
-description: ""
+description: "A practical guide to integrating AI into academic work without losing agency. Learn how to build a sustainable research workflow using tools like Zotero, Obsidian, and specialized AI search engines—prioritizing organization and context over clever prompts."
 
 date: 2025-11-03T19:18:53Z
 authors:
