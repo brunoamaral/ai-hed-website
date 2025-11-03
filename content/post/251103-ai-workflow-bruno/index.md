@@ -116,7 +116,14 @@ The tool uses AI to read the full text and allows you to have a conversation wit
 
 This doesn't mean we don't have to read the full text, but it does help filter out papers that don't have relevant information for our goal. Elicit is your pre-screening assistant, not your replacement. And remember that you can also export the results so that you can save them to Zotero or use them in any other tool.
 
-![](images/33a6996a9ddb7cb8427d6f33ee14b82eb9e75007.png) ![](images/61105c1f3f71c7d3c5e5eb378b44f1ac6f6246b8.png)
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.5em 0;">
+  <a href="images/33a6996a9ddb7cb8427d6f33ee14b82eb9e75007.png" target="_blank" style="display: block; overflow: hidden; border-radius: 4px;">
+    <img src="images/33a6996a9ddb7cb8427d6f33ee14b82eb9e75007.png" alt="Elicit interface - search results" style="width: 100%; height: auto; display: block; cursor: pointer;">
+  </a>
+  <a href="images/61105c1f3f71c7d3c5e5eb378b44f1ac6f6246b8.png" target="_blank" style="display: block; overflow: hidden; border-radius: 4px;">
+    <img src="images/61105c1f3f71c7d3c5e5eb378b44f1ac6f6246b8.png" alt="Elicit interface - custom columns" style="width: 100%; height: auto; display: block; cursor: pointer;">
+  </a>
+</div>
 
 ### [ResearchRabbit](https://www.researchrabbit.ai/)
 
@@ -135,9 +142,17 @@ While I don't find it as easy to export the results as other tools, their output
 
 My method relies on concentrating all the notes and resources into Obsidian, and that is still my advice for others whose work is researching and communicating ideas. But if these tools don't feel right for you, then Perplexity is your one-stop shop for putting it all together.
 
-![](images/d885a0c587fec3d9a58f9e724c6e253c39a1a78d.png)
-![](images/42225ae00eef63a2b59955594cbda28af10194f4.png)
-![](images/968d9d0cc52d872217b2b2cb70b7c736bb98db55.png)
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 1.5em 0;">
+  <a href="images/d885a0c587fec3d9a58f9e724c6e253c39a1a78d.png" target="_blank" style="display: block; overflow: hidden; border-radius: 4px;">
+    <img src="images/d885a0c587fec3d9a58f9e724c6e253c39a1a78d.png" alt="Perplexity research interface" style="width: 100%; height: auto; display: block; cursor: pointer;">
+  </a>
+  <a href="images/42225ae00eef63a2b59955594cbda28af10194f4.png" target="_blank" style="display: block; overflow: hidden; border-radius: 4px;">
+    <img src="images/42225ae00eef63a2b59955594cbda28af10194f4.png" alt="Perplexity results view" style="width: 100%; height: auto; display: block; cursor: pointer;">
+  </a>
+  <a href="images/968d9d0cc52d872217b2b2cb70b7c736bb98db55.png" target="_blank" style="display: block; overflow: hidden; border-radius: 4px;">
+    <img src="images/968d9d0cc52d872217b2b2cb70b7c736bb98db55.png" alt="Perplexity sources and insights" style="width: 100%; height: auto; display: block; cursor: pointer;">
+  </a>
+</div>
 
 ## Putting AI to Use
 
