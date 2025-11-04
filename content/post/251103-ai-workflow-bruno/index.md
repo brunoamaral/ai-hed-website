@@ -19,7 +19,7 @@ url: /post/ai-academic-use/
 aliases:
 
 resources:
-  - src: images/cedrik-wesche-EG8zqnMi1g4-unsplash.jpg
+  - src: images/origami-crane.jpeg
     name: "header"
 layout: single 
 
