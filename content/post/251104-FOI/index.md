@@ -1,3 +1,42 @@
+---
+title: "Pilot Courses at FOI, University of Zagreb, Croatia"
+subtitle: "Four pilot courses exploring AI integration across business, technology, and communication"
+lead: "The Faculty of Organization and Informatics (FOI), University of Zagreb, has launched its Pilot Course Units under the AI-HED project, exploring how Artificial Intelligence can be integrated into higher education in a critical, responsible, and future-oriented way."
+description: "FOI launches four pilot courses across digital transformation, business management, and communication to explore responsible AI integration in higher education within the AI-HED project."
+summary: "FOI launches four pilot courses across digital transformation, business management, and communication to explore responsible AI integration in higher education within the AI-HED project."
+
+date: 2025-11-04T10:00:00Z
+authors:
+- tatiana-nunes
+draft: false
+tags:
+  - AI in Education
+  - Higher Education
+  - Pilot Courses
+  - Erasmus+
+  - Teaching with AI
+categories:
+  - Updates
+slug: pilot-courses-foi
+url: /post/pilot-courses-foi/
+aliases:
+  - /post/251104-FOI/
+
+
+resources:
+  - src: images/foi_zgrada_bt.jpg
+    name: "header"
+
+layout: single
+options:
+  unlisted: false
+  showHeader: true
+  hideFooter: false
+  hideSubscribeForm: false
+  header: small
+
+---
+
 ## **Pilot Courses at FOI, University of Zagreb, Croatia**
 
 The **Faculty of Organization and Informatics (FOI), University of Zagreb / Sveučilište u Zagrebu**, has launched its Pilot Course Units under the *Artificial Intelligence in Higher Education Teaching and Learning (AI-HED)* project, co-funded by the European Commission through the Erasmus+ programme.

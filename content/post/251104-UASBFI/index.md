@@ -1,3 +1,37 @@
+---
+title: "Pilot Courses at UAS BFI Vienna, Austria"
+subtitle: "Eight pilot courses exploring responsible AI integration across business, communication, and management studies"
+lead: "The University of Applied Sciences BFI Vienna (UAS BFI Vienna) has launched its Pilot Courses within the AI-HED project, exploring how Artificial Intelligence can be embedded into higher education in a responsible, inclusive, and practice-oriented way."
+description: "UAS BFI Vienna launches eight pilot courses across business, languages, political science, and management to explore responsible AI integration in higher education within the AI-HED project."
+summary: "UAS BFI Vienna launches eight pilot courses across business, languages, political science, and management to explore responsible AI integration in higher education within the AI-HED project."
+
+date: 2025-11-05T11:41:03Z 
+authors:
+- tatiana-nunes
+draft: false
+tags:
+  - AI in Education
+  - Higher Education
+  - Pilot Courses
+  - Erasmus+
+  - Teaching with AI
+categories:
+  - Updates
+slug: pilot-courses-uasbfi
+url: /post/pilot-courses-uasbfi/
+aliases:
+  - /post/251104-UASBFI/
+
+layout: single
+options:
+  unlisted: false
+  showHeader: true
+  hideFooter: false
+  hideSubscribeForm: false
+  header: small
+
+---
+
 ## **Pilot Courses at UAS BFI Vienna, Austria**
 
 The **University of Applied Sciences BFI Vienna (UAS BFI Vienna)** has launched its Pilot Courses within the *Artificial Intelligence in Higher Education Teaching and Learning (AI-HED)* project, co-funded by the European Commission through the Erasmus+ programme.

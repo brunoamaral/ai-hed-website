@@ -1,3 +1,38 @@
+---
+title: "Pilot Courses at Amsterdam University of Applied Sciences, Netherlands"
+subtitle: "Six diverse pilot courses integrating AI across marketing, business, and languages"
+lead: "Amsterdam University of Applied Sciences (AUAS) has launched six Pilot Courses exploring how Artificial Intelligence can be integrated into higher education in a critical, responsible, and practice-driven way."
+description: "AUAS launches six pilot courses across marketing, business, and language studies to explore responsible AI integration in higher education within the AI-HED project."
+summary: "AUAS launches six pilot courses across marketing, business, and language studies to explore responsible AI integration in higher education within the AI-HED project."
+
+date: 2025-11-04T10:00:00Z
+
+authors:
+- tatiana-nunes
+draft: false
+tags:
+  - AI in Education
+  - Higher Education
+  - Pilot Courses
+  - Erasmus+
+  - Teaching with AI
+categories:
+  - Updates
+slug: pilot-courses-auas
+url: /post/pilot-courses-auas/
+aliases:
+  - /post/251104-AUAS/
+
+layout: single
+options:
+  unlisted: false
+  showHeader: true
+  hideFooter: false
+  hideSubscribeForm: false
+  header: small
+
+---
+
 ## **Pilot Courses at Amsterdam University of Applied Sciences, Netherlands**
 
 The **Amsterdam University of Applied Sciences (AUAS)** has launched its Pilot Courses within the *Artificial Intelligence in Higher Education Teaching and Learning (AI-HED)* project, co-funded by the European Commission through the Erasmus+ programme.
