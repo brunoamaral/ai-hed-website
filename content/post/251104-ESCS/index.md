@@ -8,7 +8,7 @@ summary: "ESCS launches eight pilot courses across journalism, communication, an
 date: 2025-11-04T10:00:00Z
 authors:
 - tatiana-nunes
-draft: false
+draft: true
 tags:
   - AI in Education
   - Higher Education

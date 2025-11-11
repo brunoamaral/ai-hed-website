@@ -9,7 +9,10 @@ date: 2025-11-04T10:00:00Z
 
 authors:
 - tatiana-nunes
-draft: false
+draft: true
+resources:
+  - src: images/HvAFborg-03.jpg
+    name: header
 tags:
   - AI in Education
   - Higher Education

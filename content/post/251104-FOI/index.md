@@ -8,7 +8,7 @@ summary: "FOI launches four pilot courses across digital transformation, busines
 date: 2025-11-04T10:00:00Z
 authors:
 - tatiana-nunes
-draft: false
+draft: true
 tags:
   - AI in Education
   - Higher Education
