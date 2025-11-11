@@ -4,7 +4,7 @@ name: Izabela Oletić Tušek
 email: "izabela.oletic@foi.unizg.hr"
 summary: "Head of International Relations Office at the Faculty of Organization and Informatics (FOI) with expertise in internationalization and EU project management."
 authorlink: ""
-subtitle: Experienced in managing international partnerships and mobility programs
+subtitle: Experienced in Managing International Partnerships and Mobility Programs
 twitterUsername: ""
 weight: 6
 params:
