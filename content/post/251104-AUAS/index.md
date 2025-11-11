@@ -42,7 +42,7 @@ As one of the four European partners, AUAS explores how **Artificial Intelligenc
 
 ###  **Pilot Courses at AUAS**
 
-At AUAS, six Pilot Courses were selected to represent diverse perspectives within the fields of **marketing, business, and languages**, involving lecturers from the **Faculty of Business and Economics**:
+At AUAS, 5 Pilot Courses were selected to represent diverse perspectives within the fields of **marketing, business, and languages**, involving 10 lecturers from the **Faculty of Business and Economics**:
 
 * **Project: Marketing Consultant** — [Wilco Verdoold](https://www.linkedin.com/in/wilco/) and [Reineke Reitsma](https://www.linkedin.com/in/reineke-reitsma/)
 
