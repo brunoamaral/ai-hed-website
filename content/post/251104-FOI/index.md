@@ -37,8 +37,6 @@ options:
 
 ---
 
-## **Pilot Courses at FOI, University of Zagreb, Croatia**
-
 The **Faculty of Organization and Informatics (FOI), University of Zagreb / Sveučilište u Zagrebu**, has launched its Pilot Course Units under the *Artificial Intelligence in Higher Education Teaching and Learning (AI-HED)* project, co-funded by the European Commission through the Erasmus+ programme.
 
 As part of this European initiative, FOI’s pilot courses explore how Artificial Intelligence (AI) can be integrated into higher education in a **critical, responsible, and future-oriented** way, preparing students for the digital transformation of business, communication, and innovation.

@@ -36,8 +36,6 @@ options:
 
 ---
 
-## **Pilot Courses at Amsterdam University of Applied Sciences, Netherlands**
-
 The **Amsterdam University of Applied Sciences (AUAS)** has launched its Pilot Courses within the *Artificial Intelligence in Higher Education Teaching and Learning (AI-HED)* project, co-funded by the European Commission through the Erasmus+ programme.
 
 As one of the four European partners, AUAS explores how **Artificial Intelligence (AI)** can be integrated into higher education in a **critical, responsible, and practice-driven** way — enhancing business education and preparing students for the challenges of the digital economy.

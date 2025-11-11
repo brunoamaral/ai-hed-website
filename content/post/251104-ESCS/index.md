@@ -33,8 +33,6 @@ options:
   header: small
 ---
 
-## **Pilot Courses at ESCS, Polytechnic University of Lisbon, Portugal**
-
 The **School of Communication and Media Studies – Polytechnic University of Lisbon (ESCS-IPL)** has launched its Pilot Course Units under the *Artificial Intelligence in Higher Education Teaching and Learning (AI-HED)* project, co-funded by the European Commission through the Erasmus+ programme.
 
 These pilots represent a key step in **pedagogical innovation**, integrating Artificial Intelligence (AI) into teaching and learning in a **critical, responsible, and future-oriented** way.
