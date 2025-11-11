@@ -74,7 +74,7 @@ The FOI pilots are part of a collaborative effort involving four European higher
 
 * University of Zagreb, Faculty of Organization and Informatics (Croatia)
 
-In total, **26 Pilot Courses** are being implemented across the consortium, engaging **over 30 lecturers** and **around 800 students**.
+In total, **26 Pilot Courses** are being implemented across the consortium, engaging **37 lecturers** and **around 800 students**.
 
 At the end of this phase, the project will share **results, best practices, and recommendations** to help other universities responsibly integrate AI into teaching and learning.
 

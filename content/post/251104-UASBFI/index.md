@@ -67,8 +67,6 @@ The Pilot Courses are **existing curricular units** that have been redesigned to
 
 This initiative enables lecturers to reflect on the **pedagogical and ethical implications** of AI, while helping students gain practical experience in applying AI in academic and professional contexts.
 
-### 
-
 ###  **AI-HED Across Europe**
 
 UAS BFI Vienna’s pilots are part of a broader collaboration between four European higher education institutions:
@@ -81,7 +79,7 @@ UAS BFI Vienna’s pilots are part of a broader collaboration between four Europ
 
 * University of Zagreb, Faculty of Organization and Informatics (Croatia)
 
-Together, these partners are implementing **26 Pilot Courses**, engaging **over 30 lecturers** and **around 800 students**. The shared goal: to explore how AI can enhance higher education while ensuring **responsible and human-centred innovation**.
+Together, these partners are implementing **26 Pilot Courses**, engaging **37 lecturers** and **around 800 students**. The shared goal: to explore how AI can enhance higher education while ensuring **responsible and human-centred innovation**.
 
 **Follow AI-HED on [LinkedIn](https://www.linkedin.com/company/ai-hed-project)** for updates and stories from the pilot teams across Europe.
 

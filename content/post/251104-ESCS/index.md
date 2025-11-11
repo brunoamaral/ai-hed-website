@@ -67,7 +67,7 @@ Through this approach, lecturers and students engage in testing the potential of
 
  AI-HED Across Europe
 
-In total, **26 Pilot Courses** are being implemented this semester across the AI-HED consortium, involving **over 30 lecturers** and **around 800 students** from:
+In total, **26 Pilot Courses** are being implemented this semester across the AI-HED consortium, involving **37 lecturers** and **around 800 students** from:
 
 * Amsterdam University of Applied Sciences (Netherlands)
 

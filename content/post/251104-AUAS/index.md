@@ -76,7 +76,7 @@ The AUAS pilots are part of a joint initiative connecting four European higher e
 
 * **University of Zagreb, Faculty of Organization and Informatics** (Croatia)
 
-Together, these institutions are delivering **26 Pilot Courses**, engaging **more than 30 lecturers** and **around 800 students** across Europe. The pilots aim to identify **best practices** and **ethical guidelines** for the responsible use of AI in higher education.
+Together, these institutions are delivering **26 Pilot Courses**, engaging **37 lecturers** and **around 800 students** across Europe. The pilots aim to identify **best practices** and **ethical guidelines** for the responsible use of AI in higher education.
 
 **Follow AI-HED on [LinkedIn](https://www.linkedin.com/company/ai-hed-project)** to stay updated on pilot activities and insights from across Europe.
 
