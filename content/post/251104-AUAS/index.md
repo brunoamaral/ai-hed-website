@@ -9,7 +9,7 @@ date: 2025-11-04T10:00:00Z
 
 authors:
 - tatiana-nunes
-draft: true
+draft: false
 resources:
   - src: images/HvAFborg-03.jpg
     name: header

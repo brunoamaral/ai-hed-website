@@ -8,7 +8,7 @@ summary: "UAS BFI Vienna launches eight pilot courses across business, languages
 date: 2025-11-05T11:41:03Z 
 authors:
 - tatiana-nunes
-draft: true
+draft: false
 tags:
   - AI in Education
   - Higher Education
