@@ -23,6 +23,9 @@ aliases:
   - /post/251104-UASBFI/
 
 layout: single
+resources: 
+- src: images/Hochschule_Header.jpeg
+  name: header
 options:
   unlisted: false
   showHeader: true
@@ -31,8 +34,6 @@ options:
   header: small
 
 ---
-
-## **Pilot Courses at UAS BFI Vienna, Austria**
 
 The **University of Applied Sciences BFI Vienna (UAS BFI Vienna)** has launched its Pilot Courses within the *Artificial Intelligence in Higher Education Teaching and Learning (AI-HED)* project, co-funded by the European Commission through the Erasmus+ programme.
 
@@ -46,11 +47,11 @@ Eight Pilot Courses have been selected, representing a broad range of discipline
 
 * **Introduction to Political Science** —  [Bernhard Zeilinger](https://www.linkedin.com/in/bernhard-zeilinger-948894125/)
 
-* **Public Affairs in der EU: Handlungsfelder und Instrumente** —  [Bernhard Zeilinger](https://www.linkedin.com/in/bernhard-zeilinger-948894125/)
+* Public Affairs in the EU: Fields of action and instruments —  [Bernhard Zeilinger](https://www.linkedin.com/in/bernhard-zeilinger-948894125/)
 
-* **Projektmanagement – Prozesse & Tools** — [Christian Steinreiber](https://www.linkedin.com/in/christian-steinreiber-4385654a/)
+* Project Management Processes & Tools — [Christian Steinreiber](https://www.linkedin.com/in/christian-steinreiber-4385654a/)
 
-* **Project 1** — [Kai Erenli](https://www.linkedin.com/in/erenli/), [Chrisopher Kronenberg](https://www.linkedin.com/in/christopherkronenberg/), and [Maximilian Mayerl](https://www.linkedin.com/in/maximilian-mayerl-750b58335/) 
+* Interactive Media Games (IMG) \- **Project 1** — [Kai Erenli](https://www.linkedin.com/in/erenli/), [Chrisopher Kronenberg](https://www.linkedin.com/in/christopherkronenberg/), and [Maximilian Mayerl](https://www.linkedin.com/in/maximilian-mayerl-750b58335/) 
 
 * **Scientific Writing** — [Dietmar Paier](https://www.linkedin.com/in/dietmar-paier-56b90a125/)
 
