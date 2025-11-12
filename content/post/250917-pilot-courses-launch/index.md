@@ -1,9 +1,9 @@
 ---
 title: "Launch of the AI-HED Pilot Courses: Pioneering the Future of AI in Higher Education"
-subtitle: "24 pilot courses across four European institutions explore AI integration in teaching and learning"
+subtitle: "26 pilot courses across four European institutions explore AI integration in teaching and learning"
 lead: "We are pleased to announce the launch of the AI-HED Pilot Courses, a key milestone in the Erasmus+ project Artificial Intelligence in Higher Education Teaching and Learning (AI-HED)."
-description: "The AI-HED project launches 24 pilot courses across four partner institutions in Europe, involving 32 lecturers and approximately 800 students to explore responsible AI integration in higher education."
-summary: "The AI-HED project launches 24 pilot courses across four partner institutions in Europe, involving 32 lecturers and approximately 800 students to explore responsible AI integration in higher education."
+description: "The AI-HED project launches 26 pilot courses across four partner institutions in Europe, involving 32 lecturers and approximately 800 students to explore responsible AI integration in higher education."
+summary: "The AI-HED project launches 26 pilot courses across four partner institutions in Europe, involving 32 lecturers and approximately 800 students to explore responsible AI integration in higher education."
 
 date: 2025-09-17T10:00:00Z
 authors:
@@ -40,7 +40,7 @@ scripts:
 
 We are pleased to announce the launch of the **AI-HED Pilot Courses**, a key milestone in the Erasmus+ project *Artificial Intelligence in Higher Education Teaching and Learning (AI-HED)*.
 
-Over the coming academic year, **24 pilot courses** will be delivered at four partner institutions across Europe. These courses explore how artificial intelligence (AI) can be meaningfully and responsibly integrated into everyday teaching and learning.
+Over the coming academic year, **26 pilot courses** will be delivered at four partner institutions across Europe. These courses explore how artificial intelligence (AI) can be meaningfully and responsibly integrated into everyday teaching and learning.
 
 ### What Are the Pilot Courses?
 
@@ -50,7 +50,7 @@ The pilot courses are not only an opportunity for experimentation but are part o
 
 ### Key Facts
 
-- **Number of pilot courses**: 24
+- **Number of pilot courses**: 26
 - **Institutions involved**:
   - *Amsterdam University of Applied Sciences (AUAS), Netherlands*
   - *University of Applied Sciences BFI Vienna, Austria*
