@@ -4,7 +4,7 @@ name: Ana Raposo
 email: "araposo@escs.ipl.pt"
 summary: "Professor, researcher, and consultant specializing in strategic communication and Public Relations."
 authorlink: ""
-subtitle: professor at the IPL School of Communication and Media Studies
+subtitle: Professor at the IPL School of Communication and Media Studies
 twitterUsername: ""
 params:
   kind: team-member

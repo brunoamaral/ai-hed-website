@@ -8,7 +8,7 @@ summary: "UAS BFI Vienna launches eight pilot courses across business, languages
 date: 2025-11-05T11:41:03Z 
 authors:
 - tatiana-nunes
-draft: true
+draft: false
 tags:
   - AI in Education
   - Higher Education
@@ -41,19 +41,20 @@ As part of this European initiative, UAS BFI Vienna’s lecturers are exploring 
 
 ### **Pilot Courses at UAS BFI Vienna**
 
-Eight Pilot Courses have been selected, representing a broad range of disciplines and teaching approaches:
+Eight Pilot Courses have been selected, representing a broad range of disciplines and teaching approaches.
+Each course is being piloted by the following teachers:
 
 * **Business English I** — [Barbara Ebersberger](https://www.linkedin.com/in/barbara-ebersberger-20230835b/)
 
 * **Introduction to Political Science** —  [Bernhard Zeilinger](https://www.linkedin.com/in/bernhard-zeilinger-948894125/)
 
-* Public Affairs in the EU: Fields of action and instruments —  [Bernhard Zeilinger](https://www.linkedin.com/in/bernhard-zeilinger-948894125/)
+* **Public Affairs in the EU: Fields of action and instruments** —  [Bernhard Zeilinger](https://www.linkedin.com/in/bernhard-zeilinger-948894125/)
 
-* Project Management Processes & Tools — [Christian Steinreiber](https://www.linkedin.com/in/christian-steinreiber-4385654a/)
+* **Project Management Processes & Tools** — [Christian Steinreiber](https://www.linkedin.com/in/christian-steinreiber-4385654a/)
 
-* Interactive Media Games (IMG) \- **Project 1** — [Kai Erenli](https://www.linkedin.com/in/erenli/), [Chrisopher Kronenberg](https://www.linkedin.com/in/christopherkronenberg/), and [Maximilian Mayerl](https://www.linkedin.com/in/maximilian-mayerl-750b58335/) 
+* **Interactive Media Games (IMG) - Project 1** — [Kai Erenli](https://www.linkedin.com/in/erenli/), [Chrisopher Kronenberg](https://www.linkedin.com/in/christopherkronenberg/), and [Maximilian Mayerl](https://www.linkedin.com/in/maximilian-mayerl-750b58335/) 
 
-* **Scientific Writing** — [Dietmar Paier](https://www.linkedin.com/in/dietmar-paier-56b90a125/)
+* **Scientific Working** — [Dietmar Paier](https://www.linkedin.com/in/dietmar-paier-56b90a125/)
 
 * **Process Management** — [Friedrich Stallinger](https://www.linkedin.com/in/fritz-stallinger/)
 
@@ -67,8 +68,6 @@ The Pilot Courses are **existing curricular units** that have been redesigned to
 
 This initiative enables lecturers to reflect on the **pedagogical and ethical implications** of AI, while helping students gain practical experience in applying AI in academic and professional contexts.
 
-### 
-
 ###  **AI-HED Across Europe**
 
 UAS BFI Vienna’s pilots are part of a broader collaboration between four European higher education institutions:
@@ -81,7 +80,7 @@ UAS BFI Vienna’s pilots are part of a broader collaboration between four Europ
 
 * University of Zagreb, Faculty of Organization and Informatics (Croatia)
 
-Together, these partners are implementing **26 Pilot Courses**, engaging **over 30 lecturers** and **around 800 students**. The shared goal: to explore how AI can enhance higher education while ensuring **responsible and human-centred innovation**.
+Together, these partners are implementing **26 Pilot Courses**, engaging **37 lecturers** and **around 800 students**. The shared goal: to explore how AI can enhance higher education while ensuring **responsible and human-centred innovation**.
 
 **Follow AI-HED on [LinkedIn](https://www.linkedin.com/company/ai-hed-project)** for updates and stories from the pilot teams across Europe.
 

@@ -8,7 +8,7 @@ summary: "ESCS launches eight pilot courses across journalism, communication, an
 date: 2025-11-04T10:00:00Z
 authors:
 - tatiana-nunes
-draft: true
+draft: false
 tags:
   - AI in Education
   - Higher Education
@@ -39,7 +39,9 @@ These pilots represent a key step in **pedagogical innovation**, integrating Art
 
 ### **Pilot Courses at ESCS**
 
-At ESCS, eight Pilot Courses were selected to represent diverse disciplinary areas across Public Relations and Corporate Communication, Journalism, and Audiovisual and Multimedia Studies:
+At ESCS, eight Pilot Courses were selected to represent diverse disciplinary areas across Public Relations and Corporate Communication, Journalism, and Audiovisual and Multimedia Studies.
+
+Each course is being piloted by the following teachers:
 
 * **Multiplatform Journalism Workshop** — [Vera Moutinho](https://www.linkedin.com/in/veramoutinho)
 
@@ -67,7 +69,7 @@ Through this approach, lecturers and students engage in testing the potential of
 
  AI-HED Across Europe
 
-In total, **26 Pilot Courses** are being implemented this semester across the AI-HED consortium, involving **over 30 lecturers** and **around 800 students** from:
+In total, **26 Pilot Courses** are being implemented this semester across the AI-HED consortium, involving **37 lecturers** and **around 800 students** from:
 
 * Amsterdam University of Applied Sciences (Netherlands)
 

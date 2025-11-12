@@ -8,7 +8,7 @@ summary: "FOI launches four pilot courses across digital transformation, busines
 date: 2025-11-04T10:00:00Z
 authors:
 - tatiana-nunes
-draft: true
+draft: false
 tags:
   - AI in Education
   - Higher Education
@@ -43,7 +43,9 @@ As part of this European initiative, FOI’s pilot courses explore how Artificia
 
 ###  **Pilot Courses at FOI**
 
-At FOI, four Pilot Course Units were selected to represent diverse perspectives on technology, management, and communication in business contexts:
+At FOI, four Pilot Course Units were selected to represent diverse perspectives on technology, management, and communication in business contexts.
+
+Each course is being piloted by the following teachers:
 
 * **Digital Transformation** —  [Martina Tomicic Furjan](https://www.linkedin.com/in/martina-tomicic-furjan-8a003b1/), [Ana Kutnjak](https://www.linkedin.com/in/ana-kutnjak-500340218/), [Larisa Hrustek](https://www.linkedin.com/in/larisa-hrustek-b93618170/)
 
@@ -74,7 +76,7 @@ The FOI pilots are part of a collaborative effort involving four European higher
 
 * University of Zagreb, Faculty of Organization and Informatics (Croatia)
 
-In total, **26 Pilot Courses** are being implemented across the consortium, engaging **over 30 lecturers** and **around 800 students**.
+In total, **26 Pilot Courses** are being implemented across the consortium, engaging **37 lecturers** and **around 800 students**.
 
 At the end of this phase, the project will share **results, best practices, and recommendations** to help other universities responsibly integrate AI into teaching and learning.
 

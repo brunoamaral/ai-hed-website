@@ -9,7 +9,7 @@ date: 2025-11-04T10:00:00Z
 
 authors:
 - tatiana-nunes
-draft: true
+draft: false
 resources:
   - src: images/HvAFborg-03.jpg
     name: header
@@ -42,7 +42,9 @@ As one of the four European partners, AUAS explores how **Artificial Intelligenc
 
 ###  **Pilot Courses at AUAS**
 
-At AUAS, six Pilot Courses were selected to represent diverse perspectives within the fields of **marketing, business, and languages**, involving lecturers from the **Faculty of Business and Economics**:
+At AUAS, six Pilot Courses were selected to represent diverse perspectives within the fields of **marketing, business, and languages**, involving 10 lecturers from the **Faculty of Business and Economics**.
+
+Each course is being piloted by the following teachers:
 
 * **Project: Marketing Consultant** — [Wilco Verdoold](https://www.linkedin.com/in/wilco/) and [Reineke Reitsma](https://www.linkedin.com/in/reineke-reitsma/)
 
@@ -76,7 +78,7 @@ The AUAS pilots are part of a joint initiative connecting four European higher e
 
 * **University of Zagreb, Faculty of Organization and Informatics** (Croatia)
 
-Together, these institutions are delivering **26 Pilot Courses**, engaging **more than 30 lecturers** and **around 800 students** across Europe. The pilots aim to identify **best practices** and **ethical guidelines** for the responsible use of AI in higher education.
+Together, these institutions are delivering **26 Pilot Courses**, engaging **37 lecturers** and **around 800 students** across Europe. The pilots aim to identify **best practices** and **ethical guidelines** for the responsible use of AI in higher education.
 
 **Follow AI-HED on [LinkedIn](https://www.linkedin.com/company/ai-hed-project)** to stay updated on pilot activities and insights from across Europe.
 

@@ -4,7 +4,7 @@ name: Dietmar Paier
 email: "dietmar.paier@fh-vie.ac.at"
 summary: "Head of the Teaching & Learning Center at UAS-BFI and expert in university didactics and teaching innovation."
 authorlink: ""
-subtitle: Leader of AI-focused projects and expert in teaching, learning, and research innovation
+subtitle: Leader of AI-Focused Projects and Expert in Teaching, Learning, and Research Innovation
 twitterUsername: ""
 weight: 9
 params:
