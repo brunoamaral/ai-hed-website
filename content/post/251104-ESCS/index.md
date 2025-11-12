@@ -39,7 +39,9 @@ These pilots represent a key step in **pedagogical innovation**, integrating Art
 
 ### **Pilot Courses at ESCS**
 
-At ESCS, eight Pilot Courses were selected to represent diverse disciplinary areas across Public Relations and Corporate Communication, Journalism, and Audiovisual and Multimedia Studies:
+At ESCS, eight Pilot Courses were selected to represent diverse disciplinary areas across Public Relations and Corporate Communication, Journalism, and Audiovisual and Multimedia Studies.
+
+Each course is being piloted by the following teachers:
 
 * **Multiplatform Journalism Workshop** — [Vera Moutinho](https://www.linkedin.com/in/veramoutinho)
 

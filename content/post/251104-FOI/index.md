@@ -43,7 +43,9 @@ As part of this European initiative, FOI’s pilot courses explore how Artificia
 
 ###  **Pilot Courses at FOI**
 
-At FOI, four Pilot Course Units were selected to represent diverse perspectives on technology, management, and communication in business contexts:
+At FOI, four Pilot Course Units were selected to represent diverse perspectives on technology, management, and communication in business contexts.
+
+Each course is being piloted by the following teachers:
 
 * **Digital Transformation** —  [Martina Tomicic Furjan](https://www.linkedin.com/in/martina-tomicic-furjan-8a003b1/), [Ana Kutnjak](https://www.linkedin.com/in/ana-kutnjak-500340218/), [Larisa Hrustek](https://www.linkedin.com/in/larisa-hrustek-b93618170/)
 
