@@ -6,7 +6,7 @@ description: "A progress report on the AI-HED project after one year: achievemen
 
 date: 2025-12-12T10:00:00Z
 authors:
-- bruno-amaral
+- bernard
 draft: false
 tags:
   - AI in Education
