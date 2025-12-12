@@ -20,7 +20,7 @@ url: /post/ai-hed-one-year-in/
 aliases:
 
 resources:
-  - src: images/header.jpeg
+  - src: images/getty-images-SoUfN1XM1SY-unsplash.jpg
     name: "header"
 layout: single 
 
