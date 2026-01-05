@@ -1,0 +1,93 @@
+{{/* 
+  Latest Posts Shortcode
+  Displays the latest 3 posts from a specific category
+  
+  Usage: {{< latest-posts category="Guest Articles" title="Guest Articles" >}}
+  
+  Parameters:
+  - category: The category to filter posts by (required)
+  - title: Section title to display (optional, defaults to category name)
+  - link: URL to "view all" page (optional)
+  - linkText: Text for the "view all" button (optional, defaults to "View All")
+*/}}
+
+{{ $category := .Get "category" }}
+{{ $title := .Get "title" | default $category }}
+{{ $link := .Get "link" }}
+{{ $linkText := .Get "linkText" | default "View All" }}
+
+{{ $posts := where site.RegularPages "Section" "post" }}
+{{ $posts = where $posts "Params.categories" "intersect" (slice $category) }}
+{{ $posts = $posts | first 3 }}
+
+<div class="section py-5 bg-light">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-10 text-center mb-4">
+        <h2 class="title">{{ $title }}</h2>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      {{ range $posts }}
+      <div class="col-md-4">
+        <div class="card card-plain card-blog h-100">
+          <div class="card-image">
+            <a href="{{ .Permalink }}">
+              {{ $image := "" }}
+              {{ with .Resources.GetMatch "header" }}
+                {{ $image = (.Fill "350x233").Permalink }}
+              {{ else }}
+                {{ $image = site.Params.defaultImage }}
+              {{ end }}
+              <img class="img rounded img-raised" src="{{ $image }}" alt="{{ .Title }}" loading="lazy" />
+            </a>
+          </div>
+          <div class="card-body">
+            {{ if isset .Params "categories" }}
+              {{ range $index, $cat := .Params.categories }}
+                <span class="h6 category text-primary text-left {{ $cat | urlize }}">{{ $cat }}</span>
+              {{ end }}
+            {{ end }}
+            <h4 class="card-title">
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </h4>
+            <p class="card-description">
+              {{ .Summary | truncate 120 }}
+              <a href="{{ .Permalink }}">{{ i18n "read_more" | default "Read more" }}</a>
+            </p>
+            {{ range .Params.authors }}
+              {{ $author := (site.GetPage (printf "/authors/%s/" .)) }}
+              {{ with $author }}
+              <div class="author">
+                {{- with .Resources.GetMatch "avatar" -}}
+                  {{- $avatar := .Fill "200x200" -}}
+                  <a href="{{ $author.Permalink }}" title="{{ $author.Params.name }}">
+                    <img src="{{ $avatar.Permalink }}" alt="{{ $author.Params.name }}" class="avatar img-raised">
+                  </a>
+                {{ end }}
+                <span><a href="{{ $author.Permalink }}">{{ $author.Params.name }}</a></span>
+              </div>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+      </div>
+      {{ else }}
+      <div class="col-md-8 text-center">
+        <p class="text-muted">No posts found in this category.</p>
+      </div>
+      {{ end }}
+    </div>
+
+    {{ with $link }}
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-4 text-center">
+        <a href="{{ . }}" class="btn btn-success btn-round btn-lg font-weight-bold">
+          {{ $linkText }} <i class="fas fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
