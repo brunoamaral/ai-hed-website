@@ -14,7 +14,7 @@ tags:
   - Teaching with AI
   - AI-HED Project
 categories:
-  - Project Updates
+  - Updates
 slug: ai-hed-one-year-in
 url: /post/ai-hed-one-year-in/
 aliases:
