@@ -17,7 +17,9 @@ tags:
 categories: 
   - 
 title: "Exploring AI in the Classroom: Takeaways from the AMSIB Academy Days"
-
+url: /post/amsib-acaddemy-days/
+aliases:
+- /post/260216-workshop/
 options:
   unlisted: false
   showHeader: true
