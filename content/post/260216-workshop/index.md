@@ -16,7 +16,7 @@ tags:
   - 
 categories: 
   - 
-title: "Exploring AI in the Classroom: Takeaways from the AI-HED Workshop"
+title: "Exploring AI in the Classroom: Takeaways from the AMSIB Academy Days"
 
 options:
   unlisted: false
