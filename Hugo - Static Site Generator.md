@@ -1330,6 +1330,42 @@ This is a **warning** message.
 {{< /notice >}} */}}
 ```
 
+### Gallery Shortcode (Project-Specific)
+Display a responsive image gallery from a subfolder in a page bundle.
+
+**Location:** `themes/Hugo-Now-UI-Pro/layouts/_shortcodes/gallery.html`
+
+**Parameters:**
+- `folder` (required): The subfolder name containing gallery images (must end with `/`)
+- `title` (optional): A heading displayed above the gallery
+
+**Setup:**
+1. Create a `gallery/` subfolder inside your page bundle (e.g., `content/post/my-post/gallery/`)
+2. Place images (JPG, PNG) in that folder
+3. Use the shortcode in your content file
+
+**Usage:**
+```markdown
+{{< gallery folder="gallery/" >}}
+
+{{< gallery folder="gallery/" title="Workshop Photos" >}}
+```
+
+**How it works:**
+The shortcode uses `.Page.Resources.Match` to find all files starting with the folder prefix, generates 320px thumbnails automatically, and renders them in a responsive gallery with lightbox support.
+
+**Example file structure:**
+```
+content/post/260216-workshop/
+├── index.md
+├── images/
+│   └── header.jpg
+└── gallery/
+    ├── 1.jpg
+    ├── 2.jpg
+    └── 3.jpg
+```
+
 ## Summary
 
 Hugo serves as a comprehensive solution for building modern static websites with exceptional performance characteristics. Its primary use cases span documentation sites, corporate websites, blogs, portfolios, and complex multi-language platforms. The framework excels in scenarios requiring fast build times, where even large sites with thousands of pages can be generated in seconds. Hugo's asset pipeline handles image optimization, JavaScript bundling, and CSS preprocessing natively, eliminating the need for separate build tools. The template system provides extensive built-in functions for content manipulation, data processing, and conditional rendering without requiring external plugins.
