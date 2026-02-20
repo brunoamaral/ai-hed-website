@@ -33,6 +33,8 @@ scripts:
 
 On 27 January, during the [AMSIB](https://www.amsterdamuas.com/amsib) Academy Day, teaching staff came together for an AI-HED Workshop on AI in Teaching and Learning. The goal was to explore how artificial intelligence can be meaningfully integrated into higher education, from a practical and pedagogical standpoint.
 
+<!--more-->
+
 ### From evidence to practice
 
 We presented insights from our primary research with the pre-course survey and a focus group, and our use case on Consumer Branding lectures.
