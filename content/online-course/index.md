@@ -31,13 +31,17 @@ menu:
     weight: 2
   footer_one:
     name: Online Course
+cta:
+  - label: Start Now <i class="fas fa-arrow-circle-right"></i>
+    url: https://learn.foi.hr/course/view.php?id=80
+    classes: btn btn-success btn-round btn-lg font-weight-bold
+
 ---
 
 <!-- Hero / Intro -->
 <div class="container-fluid py-5">
   <div class="row justify-content-center">
     <div class="col-md-8 text-center">
-      <h2 class="title mb-3">A Free Online Course on AI in Higher Education</h2>
       <p class="lead font-weight-normal">
         This massive open online course (MOOC) provides lecturers and educators with the fundamental toolkit for exploring Artificial Intelligence in higher education — its principles, ethical dimensions, and practical applications in teaching and learning.
       </p>
@@ -45,7 +49,7 @@ menu:
         Organised into seven co-dependent modules, the course covers everything from AI fundamentals to future trends, with a focus on responsible, critical, and inclusive integration of AI in higher education institutions.
       </p>
       <a
-        href="https://learn.foi.hr/"
+        href="https://learn.foi.hr/course/view.php?id=80"
         class="btn btn-success btn-round btn-lg font-weight-bold mt-3"
         target="_blank"
         rel="noopener"
@@ -68,15 +72,15 @@ menu:
             <ul class="list-unstyled">
               <li class="mb-3">
                 <i class="fas fa-check-circle text-success mr-2"></i>
-                Recognise the key principles and foundational terms of AI in education
+                Key principles and foundational terms of AI in education
               </li>
               <li class="mb-3">
                 <i class="fas fa-check-circle text-success mr-2"></i>
-                Explain the ethical considerations involved in using AI in higher education
+                The ethical considerations involved in using AI in higher education
               </li>
               <li class="mb-3">
                 <i class="fas fa-check-circle text-success mr-2"></i>
-                Demonstrate practical applications of AI tools in educational scenarios
+                Practical applications of AI tools in educational scenarios
               </li>
             </ul>
           </div>
@@ -84,15 +88,15 @@ menu:
             <ul class="list-unstyled">
               <li class="mb-3">
                 <i class="fas fa-check-circle text-success mr-2"></i>
-                Critically analyse AI-generated outputs for educational appropriateness
+                Critical thinking to analyse AI-generated outputs for education
               </li>
               <li class="mb-3">
                 <i class="fas fa-check-circle text-success mr-2"></i>
-                Judge the effectiveness of AI tools for specific educational goals
+                Judge the effectiveness of AI tools for specific goals
               </li>
               <li class="mb-3">
                 <i class="fas fa-check-circle text-success mr-2"></i>
-                Design educational activities and curricula that integrate AI technologies
+                Design activities and curricula that integrate AI
               </li>
             </ul>
           </div>
