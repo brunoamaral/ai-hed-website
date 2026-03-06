@@ -13,7 +13,7 @@ aliases:
 authors:
 - bogdan
 resources:
-  - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
+  - src: images/getty-images-N82kbsD3KYQ-unsplash.jpg
     name: "header"
   - src: heatmap-data.json
     name: "heatmap-data.json"
