@@ -1,13 +1,13 @@
 ---
-title: "Open Access Course"
-subtitle: "Giving Educators Power Over AI"
+title: "Open Access AI Course for Educators"
+subtitle: "Giving You Power Over AI"
 date: 2026-03-06T00:00:00Z
 draft: false
 categories:
 type: "page"
 layout: page
 disable_comments: true
-url: /online-course/
+url: /ai-course-educators/
 description: "A free massive open online course (MOOC) on Artificial Intelligence in Higher Education, designed for lecturers and educators. Seven modules covering AI fundamentals, ethics, digital literacy, critical thinking, and future trends."
 aliases:
 
