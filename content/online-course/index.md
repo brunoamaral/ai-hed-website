@@ -43,10 +43,10 @@ cta:
   <div class="row justify-content-center">
     <div class="col-md-8 text-center">
       <p class="lead font-weight-normal">
-        This massive open online course (MOOC) provides lecturers and educators with the fundamental toolkit for exploring Artificial Intelligence in higher education — its principles, ethical dimensions, and practical applications in teaching and learning.
+        This massive open online course (MOOC) provides lecturers and educators with the fundamental toolkit for exploring Artificial Intelligence in higher education — its principles, ethical dimensions, and practical applications.
       </p>
       <p class="font-weight-normal">
-        Organised into seven co-dependent modules, the course covers everything from AI fundamentals to future trends, with a focus on responsible, critical, and inclusive integration of AI in higher education institutions.
+        Organised into seven modules, the course covers everything from AI fundamentals to future trends, with a focus on responsible, critical, and inclusive integration of AI in higher education institutions.
       </p>
       <a
         href="https://learn.foi.hr/course/view.php?id=80"
