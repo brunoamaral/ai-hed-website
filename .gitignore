@@ -6,3 +6,4 @@ resources/_gen
 scripts/202509/
 scripts/newsletter-reports/
 scripts/subscribers-reports/
+node_modules/
