@@ -1,31 +1,30 @@
 ---
 title: AI Tools Heatmap
-subtitle: Guides, Use Cases, and Other Teaching Tools
-date: 2025-02-13T15:11:28Z 
-draft: true
-categories: 
+subtitle: AI-based tools mapped to DigComp 2.2 competencies and Bloom's Taxonomy
+date: 2025-02-13T15:11:28Z
+draft: false
+layout: page-heatmap
+categories:
 type: "page"
 disable_comments: true
-summary: " "
-description:
+summary: "An interactive heatmap mapping 44 AI-based tools against the 21 DigComp 2.2 digital competencies and Bloom's Taxonomy levels."
+description: "An interactive heatmap mapping 44 AI-based tools against the 21 DigComp 2.2 digital competencies and Bloom's Taxonomy levels."
 aliases:
 authors:
 - bogdan
 resources:
   - src: microsoft-365-hC_796Wu-VY-unsplash.jpg
     name: "header"
+  - src: heatmap-data.json
+    name: "heatmap-data.json"
 options:
   header: small
   headerHeight:
   unlisted: false
   showHeader: true
-  hideSubscribeForm: false
+  hideSubscribeForm: true
   disable_sharebuttons: true
   hideShareButtons: true
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
   hide_date_reading_time: true
-
-
 ---
-
-### To Be Available Soon

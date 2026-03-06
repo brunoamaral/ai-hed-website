@@ -1,0 +1,754 @@
+{{ define "bodyclasses" }}single page page-heatmap{{ end }}
+
+{{ define "data-attributes" }}
+	data-contentgrouptype="{{ .Section }}" data-contentgroupname="{{ .Title }}"
+{{ end }}
+
+{{ define "description" }}
+	{{ partial "description.html" . }}
+{{ end }}
+
+{{ define "head" }}
+<style>
+/* ── Desktop-only guard ───────────────────────────────────────────────── */
+#heatmap-mobile-notice { display: none; }
+@media (max-width: 1024px) {
+  #heatmap-wrap { display: none !important; }
+  #heatmap-mobile-notice { display: block; }
+}
+
+/* ── Page section ─────────────────────────────────────────────────────── */
+.heatmap-section {
+  padding: 20px 0 40px;
+  overflow-x: auto;
+}
+
+/* ── Filter bar ───────────────────────────────────────────────────────── */
+#heatmap-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+#heatmap-filters label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: #555;
+  margin-bottom: 3px;
+  display: block;
+}
+#heatmap-filters select,
+#heatmap-filters input[type="search"] {
+  font-size: 13px;
+  padding: 5px 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  background: #fff;
+  min-width: 180px;
+}
+#heatmap-filters .filter-group { display: flex; flex-direction: column; }
+#heatmap-reset {
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  align-self: flex-end;
+}
+#heatmap-reset:hover { background: #e9ecef; }
+
+/* Match count badge */
+#heatmap-match-count {
+  font-size: 11px;
+  color: #666;
+  align-self: flex-end;
+  padding-bottom: 6px;
+}
+
+/* ── Grid wrapper ─────────────────────────────────────────────────────── */
+#heatmap-grid-wrap {
+  overflow-x: auto;
+  position: relative;
+}
+#heatmap-grid {
+  display: grid;
+  /* column widths set via JS after data loads */
+  border-collapse: collapse;
+  min-width: max-content;
+}
+
+/* ── Cells ────────────────────────────────────────────────────────────── */
+.hm-cell {
+  width: 34px;
+  height: 28px;
+  box-sizing: border-box;
+  border: 1.5px solid #fff;
+  position: relative;
+  cursor: default;
+}
+.hm-cell-data {
+  transition: filter .12s;
+}
+.hm-cell-data:hover {
+  filter: brightness(0.82);
+  z-index: 2;
+  outline: 2px solid rgba(0,0,0,.35);
+}
+/* Sticky tool-name column */
+.hm-cell-label {
+  width: 150px;
+  min-width: 150px;
+  background: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0 8px 0 4px;
+  display: flex;
+  align-items: center;
+  height: 28px;
+  position: sticky;
+  left: 0;
+  z-index: 3;
+  border: none;
+  border-right: 2px solid #e0e0e0;
+  cursor: default;
+}
+.hm-cell-label:hover { background: #f0f4f0; }
+/* Sticky header row */
+.hm-header-row .hm-cell {
+  height: 60px;
+  width: 34px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 4px;
+}
+.hm-header-row .hm-cell-col-label {
+  height: 60px;
+  width: 34px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  font-size: 10px;
+  font-weight: 700;
+  transition: background .1s;
+  cursor: default;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 4;
+}
+.hm-header-row .hm-cell-col-label:hover { filter: brightness(0.88); }
+.hm-header-corner {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  background: #fff;
+  width: 150px;
+  min-width: 150px;
+  height: 60px;
+  border-right: 2px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 0 8px 4px 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+
+/* Group gap columns */
+.hm-group-gap {
+  width: 8px;
+  min-width: 8px;
+  background: transparent;
+  border: none;
+}
+
+/* Row / column highlight */
+.hm-row-highlight .hm-cell-data { filter: brightness(0.78); }
+.hm-col-highlight { outline: 2px solid rgba(0,0,0,.3); }
+
+/* Hidden rows/columns (filters) */
+.hm-row-hidden { display: none !important; }
+.hm-col-hidden { display: none !important; }
+
+/* Dimmed cells (level filter) */
+.hm-cell-dimmed {
+  opacity: .15;
+}
+
+/* ── Color + pattern classes ──────────────────────────────────────────── */
+/* 5 groups × 7 levels = 35 color classes */
+/* Pattern overlays via pseudo-element */
+.hm-cell-data::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Pattern 0 – no pattern */
+.hm-p0::after { background: none; }
+
+/* Pattern 1 – vertical lines */
+.hm-p1::after {
+  background-image: repeating-linear-gradient(
+    90deg, rgba(255,255,255,.55) 0px, rgba(255,255,255,.55) 1.5px,
+    transparent 1.5px, transparent 5px
+  );
+}
+/* Pattern 2 – backslash diagonal */
+.hm-p2::after {
+  background-image: repeating-linear-gradient(
+    -45deg, rgba(255,255,255,.55) 0px, rgba(255,255,255,.55) 1.5px,
+    transparent 1.5px, transparent 6px
+  );
+}
+/* Pattern 3 – dots */
+.hm-p3::after {
+  background-image: radial-gradient(circle, rgba(255,255,255,.75) 1.2px, transparent 1.2px);
+  background-size: 5px 5px;
+}
+/* Pattern 4 – forward slash diagonal */
+.hm-p4::after {
+  background-image: repeating-linear-gradient(
+    45deg, rgba(255,255,255,.55) 0px, rgba(255,255,255,.55) 1.5px,
+    transparent 1.5px, transparent 6px
+  );
+}
+/* Pattern 5 – horizontal lines */
+.hm-p5::after {
+  background-image: repeating-linear-gradient(
+    0deg, rgba(255,255,255,.55) 0px, rgba(255,255,255,.55) 1.5px,
+    transparent 1.5px, transparent 5px
+  );
+}
+/* Pattern 6 – crosshatch */
+.hm-p6::after {
+  background-image:
+    repeating-linear-gradient(
+      45deg, rgba(255,255,255,.5) 0px, rgba(255,255,255,.5) 1.5px,
+      transparent 1.5px, transparent 6px
+    ),
+    repeating-linear-gradient(
+      -45deg, rgba(255,255,255,.5) 0px, rgba(255,255,255,.5) 1.5px,
+      transparent 1.5px, transparent 6px
+    );
+}
+
+/* ── Legend ───────────────────────────────────────────────────────────── */
+#heatmap-legend {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+.legend-section { flex: 0 0 auto; }
+.legend-section h6 {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 8px;
+  color: #444;
+}
+.legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #333;
+}
+.legend-swatch {
+  width: 22px;
+  height: 16px;
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px #ccc;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.legend-swatch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* ── Tooltip ──────────────────────────────────────────────────────────── */
+#hm-tooltip {
+  position: fixed;
+  z-index: 9999;
+  background: rgba(30,30,30,.92);
+  color: #fff;
+  font-size: 11.5px;
+  line-height: 1.5;
+  padding: 8px 12px;
+  border-radius: 5px;
+  pointer-events: none;
+  max-width: 280px;
+  display: none;
+  box-shadow: 0 3px 12px rgba(0,0,0,.3);
+}
+#hm-tooltip strong { font-size: 12.5px; }
+#hm-tooltip .tt-group {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 3px;
+  color: #fff;
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div class="wrapper">
+	{{ if or (eq .Params.options.header "small") (eq .Params.options.header "mini") (eq .Params.options.header nil ) }}
+		{{ partial "header-small.html" . }}
+	{{ else if eq $.Params.options.header "full" }}
+		{{ partial "header-full.html" . }}
+	{{ end }}
+
+	<div class="section heatmap-section">
+		<div class="container-fluid px-3">
+
+			<div id="heatmap-mobile-notice" class="alert alert-info" role="alert">
+				<strong>Best viewed on desktop.</strong> This interactive heatmap requires a wider screen. Please open this page on a laptop or desktop computer.
+			</div>
+
+			<div id="heatmap-wrap">
+				<!-- Filter bar -->
+				<div id="heatmap-filters">
+					<div class="filter-group">
+						<label for="filter-group">Competency Group</label>
+						<select id="filter-group">
+							<option value="">All groups</option>
+						</select>
+					</div>
+					<div class="filter-group">
+						<label for="filter-bloom">Bloom Taxonomy Level</label>
+						<select id="filter-bloom">
+							<option value="">All levels</option>
+						</select>
+					</div>
+					<div class="filter-group">
+						<label for="filter-tool">Search Tool</label>
+						<input type="search" id="filter-tool" placeholder="e.g. ChatGPT…" autocomplete="off">
+					</div>
+					<button id="heatmap-reset">Reset</button>
+					<span id="heatmap-match-count"></span>
+				</div>
+
+				<!-- Grid -->
+				<div id="heatmap-grid-wrap">
+					<div id="heatmap-grid" role="grid" aria-label="AI Tools vs DigComp 2.2 Competencies Heatmap"></div>
+				</div>
+
+				<!-- Legend -->
+				<div id="heatmap-legend">
+					<div class="legend-section" id="legend-groups">
+						<h6>DigComp 2.2 Competency Groups</h6>
+						<div class="legend-items" id="legend-groups-items"></div>
+					</div>
+					<div class="legend-section" id="legend-bloom">
+						<h6>Bloom Taxonomy Levels</h6>
+						<div class="legend-items" id="legend-bloom-items"></div>
+					</div>
+				</div>
+			</div><!-- /#heatmap-wrap -->
+
+		</div><!-- /.container-fluid -->
+	</div><!-- /.section -->
+</div><!-- /.wrapper -->
+
+<!-- Tooltip -->
+<div id="hm-tooltip" role="tooltip" aria-live="polite"></div>
+{{ end }}
+
+{{ define "list-javascript" }}
+<script>
+(function () {
+  'use strict';
+
+  const DATA_URL = '{{ ((.Resources.GetMatch "heatmap-data.json").RelPermalink) }}';
+
+  // ── Map group numbers to heatmap.py colour palettes (1-indexed) ──────────
+  // heatmap.py colours array order: orange(1), teal(2), red(3), green(4), purple(5)
+  // But competency groups are: 1=InfoDataLit(orange), 2=CommCollab(teal),
+  // 3=DigContent(red), 4=Safety(green), 5=ProbSolving(purple) — same order!
+
+  let state = {
+    data: null,
+    filterGroup: '',
+    filterBloom: '',
+    filterTool: '',
+  };
+
+  // ── Utility ─────────────────────────────────────────────────────────────
+  function el(tag, cls, attrs) {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (attrs) Object.entries(attrs).forEach(([k, v]) => e.setAttribute(k, v));
+    return e;
+  }
+
+  // ── Build grid ──────────────────────────────────────────────────────────
+  function buildGrid(data) {
+    const grid = document.getElementById('heatmap-grid');
+    grid.innerHTML = '';
+
+    const comps = data.competencies; // sorted 1.1…5.4
+    const tools = data.tools;
+
+    // Determine group boundaries to insert gap columns
+    // Gap after 1.3, 2.6, 3.4, 4.4
+    const gapAfter = new Set(['1.3', '2.6', '3.4', '4.4']);
+
+    // Build column template:
+    // 150px (label) + for each comp: 34px [+ 8px gap if applicable]
+    let colTemplate = '150px';
+    comps.forEach(c => {
+      colTemplate += ' 34px';
+      if (gapAfter.has(c.code)) colTemplate += ' 8px';
+    });
+    grid.style.gridTemplateColumns = colTemplate;
+
+    // ── Header row ──────────────────────────────────────────────────────
+    const headerRow = el('div', 'hm-header-row');
+    headerRow.style.display = 'contents';
+
+    // Corner cell
+    const corner = el('div', 'hm-header-corner');
+    corner.textContent = 'Tool';
+    headerRow.appendChild(corner);
+
+    comps.forEach(c => {
+      const groupNr = c.groupNr;
+      const groupColor = data.groups[String(groupNr)].color;
+
+      const cell = el('div', 'hm-cell-col-label', {
+        'data-col': c.code,
+        'title': c.name,
+        'role': 'columnheader',
+        'aria-label': c.code + ' ' + c.name,
+      });
+      cell.style.borderBottom = '4px solid ' + groupColor;
+      cell.textContent = c.code;
+      headerRow.appendChild(cell);
+
+      if (gapAfter.has(c.code)) {
+        const gap = el('div', 'hm-group-gap hm-header-row');
+        gap.style.height = '60px';
+        headerRow.appendChild(gap);
+      }
+    });
+    grid.appendChild(headerRow);
+
+    // ── Data rows ────────────────────────────────────────────────────────
+    tools.forEach(tool => {
+      const row = el('div', 'hm-data-row', {
+        'data-tool': tool,
+        'role': 'row',
+        'aria-label': tool,
+      });
+      row.style.display = 'contents';
+
+      // Tool name label cell
+      const labelCell = el('div', 'hm-cell hm-cell-label', { 'aria-label': tool, 'role': 'rowheader' });
+      labelCell.textContent = tool;
+      labelCell.title = tool;
+      row.appendChild(labelCell);
+
+      comps.forEach(c => {
+        const level = (data.data[tool] && data.data[tool][c.code]) != null
+          ? data.data[tool][c.code] : 0;
+        const groupNr = c.groupNr;
+        const palette = data.colors[String(groupNr)];
+        const bgColor = palette[level];
+
+        const cell = el('div', `hm-cell hm-cell-data hm-p${level}`, {
+          'data-tool': tool,
+          'data-comp': c.code,
+          'data-group': groupNr,
+          'data-level': level,
+          'role': 'gridcell',
+          'aria-label': `${tool} – ${c.code} – Level ${level}: ${data.bloomLevels[level]}`,
+        });
+        cell.style.backgroundColor = bgColor;
+        row.appendChild(cell);
+
+        if (gapAfter.has(c.code)) {
+          const gap = el('div', 'hm-group-gap');
+          gap.style.height = '28px';
+          row.appendChild(gap);
+        }
+      });
+
+      grid.appendChild(row);
+    });
+  }
+
+  // ── Build legends ────────────────────────────────────────────────────────
+  function buildLegends(data) {
+    const groupsEl = document.getElementById('legend-groups-items');
+    const bloomEl = document.getElementById('legend-bloom-items');
+    groupsEl.innerHTML = '';
+    bloomEl.innerHTML = '';
+
+    // Competency group legend
+    Object.entries(data.groups).forEach(([nr, g]) => {
+      const item = el('div', 'legend-item');
+      const swatch = el('div', 'legend-swatch');
+      swatch.style.backgroundColor = g.color;
+      const label = document.createElement('span');
+      label.textContent = g.name;
+      item.appendChild(swatch);
+      item.appendChild(label);
+      groupsEl.appendChild(item);
+    });
+
+    // Bloom taxonomy legend – use group 1 (orange) palette for color, show pattern
+    const orangePalette = data.colors['1'];
+    data.bloomLevels.forEach((label, level) => {
+      const item = el('div', 'legend-item');
+      const swatch = el('div', `legend-swatch hm-p${level}`);
+      swatch.style.backgroundColor = orangePalette[level];
+      const lbl = document.createElement('span');
+      lbl.textContent = `${level}: ${label}`;
+      item.appendChild(swatch);
+      item.appendChild(lbl);
+      bloomEl.appendChild(item);
+    });
+  }
+
+  // ── Populate filter dropdowns ────────────────────────────────────────────
+  function populateFilters(data) {
+    const groupSel = document.getElementById('filter-group');
+    const bloomSel = document.getElementById('filter-bloom');
+
+    Object.entries(data.groups).forEach(([nr, g]) => {
+      const opt = document.createElement('option');
+      opt.value = nr;
+      opt.textContent = g.name;
+      groupSel.appendChild(opt);
+    });
+
+    data.bloomLevels.forEach((label, level) => {
+      const opt = document.createElement('option');
+      opt.value = level;
+      opt.textContent = `${level}: ${label}`;
+      bloomSel.appendChild(opt);
+    });
+  }
+
+  // ── Apply active filters to the DOM ─────────────────────────────────────
+  function applyFilters(data) {
+    const { filterGroup, filterBloom, filterTool } = state;
+    const grid = document.getElementById('heatmap-grid');
+
+    const toolLower = filterTool.toLowerCase().trim();
+    let visibleTools = 0;
+
+    // Rows
+    grid.querySelectorAll('.hm-data-row').forEach(row => {
+      const tool = row.getAttribute('data-tool');
+      const toolMatch = !toolLower || tool.toLowerCase().includes(toolLower);
+      if (!toolMatch) {
+        row.classList.add('hm-row-hidden');
+      } else {
+        row.classList.remove('hm-row-hidden');
+        visibleTools++;
+      }
+    });
+
+    // Columns: hide/show col-label cells + data cells + gap cells
+    // Rebuild visibility based on group filter
+    const comps = data.competencies;
+    const gapAfter = new Set(['1.3', '2.6', '3.4', '4.4']);
+
+    comps.forEach(c => {
+      const colHidden = filterGroup && String(c.groupNr) !== filterGroup;
+      // Header label
+      const headerCell = grid.querySelector(`.hm-cell-col-label[data-col="${c.code}"]`);
+      if (headerCell) headerCell.classList.toggle('hm-col-hidden', colHidden);
+      // All data cells in this column
+      grid.querySelectorAll(`.hm-cell-data[data-comp="${c.code}"]`).forEach(cell => {
+        cell.classList.toggle('hm-col-hidden', colHidden);
+      });
+      // Gap after this column (if any) – select the gap sibling
+      if (gapAfter.has(c.code) && headerCell) {
+        const gapH = headerCell.nextElementSibling;
+        if (gapH && gapH.classList.contains('hm-group-gap')) gapH.classList.toggle('hm-col-hidden', colHidden);
+      }
+    });
+
+    // Bloom level filter: dim non-matching cells
+    grid.querySelectorAll('.hm-cell-data').forEach(cell => {
+      if (!filterBloom) {
+        cell.classList.remove('hm-cell-dimmed');
+      } else {
+        const level = cell.getAttribute('data-level');
+        cell.classList.toggle('hm-cell-dimmed', level !== filterBloom);
+      }
+    });
+
+    // Update count badge
+    const total = data.tools.length;
+    const countEl = document.getElementById('heatmap-match-count');
+    if (toolLower || filterGroup || filterBloom) {
+      countEl.textContent = `${visibleTools} of ${total} tools shown`;
+    } else {
+      countEl.textContent = '';
+    }
+  }
+
+  // ── Tooltip ──────────────────────────────────────────────────────────────
+  const tooltip = document.getElementById('hm-tooltip');
+
+  function showTooltip(e, data) {
+    const cell = e.target.closest('.hm-cell-data');
+    if (!cell) { tooltip.style.display = 'none'; return; }
+
+    const tool = cell.getAttribute('data-tool');
+    const compCode = cell.getAttribute('data-comp');
+    const level = parseInt(cell.getAttribute('data-level'), 10);
+    const groupNr = cell.getAttribute('data-group');
+
+    const compMeta = data.competencies.find(c => c.code === compCode);
+    const groupMeta = data.groups[groupNr];
+    const bloomLabel = data.bloomLevels[level];
+
+    tooltip.innerHTML = `
+      <strong>${tool}</strong><br>
+      <b>${compCode}</b> ${compMeta ? compMeta.name : ''}<br>
+      Bloom Level <b>${level}</b>: ${bloomLabel}
+      <br><span class="tt-group" style="background:${groupMeta ? groupMeta.color : '#888'}">${groupMeta ? groupMeta.name : ''}</span>
+    `;
+    tooltip.style.display = 'block';
+    positionTooltip(e);
+  }
+
+  function positionTooltip(e) {
+    const pad = 12;
+    const tw = tooltip.offsetWidth;
+    const th = tooltip.offsetHeight;
+    let x = e.clientX + pad;
+    let y = e.clientY + pad;
+    if (x + tw > window.innerWidth - 10) x = e.clientX - tw - pad;
+    if (y + th > window.innerHeight - 10) y = e.clientY - th - pad;
+    tooltip.style.left = x + 'px';
+    tooltip.style.top = y + 'px';
+  }
+
+  // ── Row / column hover highlight ─────────────────────────────────────────
+  let activeRowEl = null;
+
+  function setupHoverHighlights(grid) {
+    grid.addEventListener('mouseover', function(e) {
+      const cell = e.target.closest('.hm-cell-data');
+      const label = e.target.closest('.hm-cell-label');
+      const colLabel = e.target.closest('.hm-cell-col-label');
+
+      // Clear previous row highlight
+      if (activeRowEl) {
+        activeRowEl.querySelectorAll('.hm-cell-data').forEach(c => c.classList.remove('hm-row-highlight-cell'));
+        activeRowEl = null;
+      }
+
+      if (cell) {
+        const row = cell.closest('.hm-data-row');
+        if (row) {
+          activeRowEl = row;
+          row.querySelectorAll('.hm-cell-data').forEach(c => c.style.outline = '');
+        }
+      }
+    });
+  }
+
+  // ── Initialise ───────────────────────────────────────────────────────────
+  async function init() {
+    let data;
+    try {
+      const resp = await fetch(DATA_URL);
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      data = await resp.json();
+    } catch (err) {
+      document.getElementById('heatmap-wrap').innerHTML =
+        '<div class="alert alert-danger">Failed to load heatmap data: ' + err.message + '</div>';
+      return;
+    }
+
+    state.data = data;
+
+    buildGrid(data);
+    buildLegends(data);
+    populateFilters(data);
+
+    const grid = document.getElementById('heatmap-grid');
+
+    // Tooltip events
+    grid.addEventListener('mousemove', e => {
+      showTooltip(e, data);
+      positionTooltip(e);
+    });
+    grid.addEventListener('mouseleave', () => { tooltip.style.display = 'none'; });
+
+    setupHoverHighlights(grid);
+
+    // Filter events
+    document.getElementById('filter-group').addEventListener('change', function() {
+      state.filterGroup = this.value;
+      applyFilters(data);
+    });
+    document.getElementById('filter-bloom').addEventListener('change', function() {
+      state.filterBloom = this.value;
+      applyFilters(data);
+    });
+    document.getElementById('filter-tool').addEventListener('input', function() {
+      state.filterTool = this.value;
+      applyFilters(data);
+    });
+    document.getElementById('heatmap-reset').addEventListener('click', function() {
+      state.filterGroup = ''; state.filterBloom = ''; state.filterTool = '';
+      document.getElementById('filter-group').value = '';
+      document.getElementById('filter-bloom').value = '';
+      document.getElementById('filter-tool').value = '';
+      applyFilters(data);
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+{{ end }}
