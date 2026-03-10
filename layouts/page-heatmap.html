@@ -464,7 +464,7 @@
       headerRow.appendChild(cell);
 
       if (gapAfter.has(c.code)) {
-        const gap = el('div', 'hm-group-gap hm-header-row');
+        const gap = el('div', 'hm-group-gap hm-header-row', {'data-gap-after': c.code});
         gap.style.height = '60px';
         headerRow.appendChild(gap);
       }
@@ -505,7 +505,7 @@
         row.appendChild(cell);
 
         if (gapAfter.has(c.code)) {
-          const gap = el('div', 'hm-group-gap');
+          const gap = el('div', 'hm-group-gap', {'data-gap-after': c.code});
           gap.style.height = '28px';
           row.appendChild(gap);
         }
@@ -593,6 +593,10 @@
     const comps = data.competencies;
     const gapAfter = new Set(['1.3', '2.6', '3.4', '4.4']);
 
+    // Rebuild gridTemplateColumns to only include visible column tracks,
+    // so auto-placed cells always land in correctly-sized tracks.
+    let newColTemplate = '150px';
+
     comps.forEach(c => {
       const colHidden = filterGroup && String(c.groupNr) !== filterGroup;
       // Header label
@@ -602,12 +606,20 @@
       grid.querySelectorAll(`.hm-cell-data[data-comp="${c.code}"]`).forEach(cell => {
         cell.classList.toggle('hm-col-hidden', colHidden);
       });
-      // Gap after this column (if any) – select the gap sibling
-      if (gapAfter.has(c.code) && headerCell) {
-        const gapH = headerCell.nextElementSibling;
-        if (gapH && gapH.classList.contains('hm-group-gap')) gapH.classList.toggle('hm-col-hidden', colHidden);
+      // Gap after this column (if any) – hide/show in header AND every data row
+      if (gapAfter.has(c.code)) {
+        grid.querySelectorAll(`.hm-group-gap[data-gap-after="${c.code}"]`).forEach(gapEl => {
+          gapEl.classList.toggle('hm-col-hidden', colHidden);
+        });
+      }
+      // Accumulate template only for visible tracks
+      if (!colHidden) {
+        newColTemplate += ' 34px';
+        if (gapAfter.has(c.code)) newColTemplate += ' 8px';
       }
     });
+
+    grid.style.gridTemplateColumns = newColTemplate;
 
     // Bloom level filter: dim non-matching cells
     grid.querySelectorAll('.hm-cell-data').forEach(cell => {
