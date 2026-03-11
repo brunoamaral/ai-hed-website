@@ -30,7 +30,7 @@ const VIEWPORT    = { width: 1920, height: 1080 };
 //   Disclaimer:   4.70s – 5.30s
 //   Partner logos: 4.70s – 5.30s
 // Hold 1.5s after everything has settled.
-const RECORD_DURATION_MS = 7000;
+const RECORD_DURATION_MS = 5000;
 
 (async () => {
   fs.mkdirSync(VIDEO_DIR, { recursive: true });
