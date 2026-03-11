@@ -25,12 +25,12 @@ options:
   navbar: navbar navbar-expand-lg bg-white fixed-top font-weight-bold
   title_align: center
   hide_date_reading_time: true
-menu:
-  main:
-    name: Online Course
-    weight: 2
-  footer_one:
-    name: Online Course
+# menu:
+#   main:
+#     name: Online Course
+#     weight: 2
+#   footer_one:
+#     name: Online Course
 # cta:
 #   - label: Start Now <i class="fas fa-arrow-circle-right"></i>
 #     url: https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=header-cta
