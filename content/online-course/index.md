@@ -8,14 +8,14 @@ type: "page"
 layout: page
 disable_comments: true
 url: /ai-course-educators/
-description: "A free massive open online course (MOOC) on Artificial Intelligence in Higher Education, designed for lecturers and educators. Seven modules covering AI fundamentals, ethics, digital literacy, critical thinking, and future trends."
+description: "A free Massive Open Online Course (MOOC) on Artificial Intelligence in Higher Education, designed for lecturers and educators. Seven modules covering AI fundamentals, ethics, digital literacy, critical thinking, and future trends."
 aliases:
 
 resources:
   - src: images/tran-mau-tri-tam-tZnbakTUcTI-unsplash.jpg
     name: "header"
 options:
-  header: mini
+  header: small
   headerHeight:
   unlisted: false
   showHeader: true
@@ -31,10 +31,10 @@ menu:
     weight: 2
   footer_one:
     name: Online Course
-cta:
-  - label: Start Now <i class="fas fa-arrow-circle-right"></i>
-    url: https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=header-cta
-    classes: btn btn-success btn-round btn-lg font-weight-bold
+# cta:
+#   - label: Start Now <i class="fas fa-arrow-circle-right"></i>
+#     url: https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=header-cta
+#     classes: btn btn-success btn-round btn-lg font-weight-bold
 
 ---
 
@@ -46,7 +46,7 @@ cta:
         This massive open online course (MOOC) provides lecturers and educators with the fundamental toolkit for exploring Artificial Intelligence in higher education — its principles, ethical dimensions, and practical applications.
       </p>
       <p class="font-weight-normal">
-        Organised into seven modules, the course covers everything from AI fundamentals to future trends, with a focus on responsible, critical, and inclusive integration of AI in higher education institutions.
+        Organised into seven modules, the course covers AI fundamentals to future trends, with a focus on responsible, critical, and inclusive integration of AI in higher education institutions.
       </p>
       <a
         href="https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=hero"
