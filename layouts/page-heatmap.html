@@ -79,6 +79,8 @@
 #heatmap-grid-wrap {
   overflow-x: auto;
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 #heatmap-grid {
   display: grid;
@@ -258,7 +260,7 @@
 
 /* ── Legend ───────────────────────────────────────────────────────────── */
 #heatmap-legend {
-  margin-top: 24px;
+  margin-bottom: 24px;
   display: flex;
   flex-wrap: wrap;
   gap: 32px;
@@ -344,6 +346,18 @@
 			</div>
 
 			<div id="heatmap-wrap">
+				<!-- Legend -->
+				<div id="heatmap-legend">
+					<div class="legend-section" id="legend-groups">
+						<h6>DigComp 2.2 Competency Groups</h6>
+						<div class="legend-items" id="legend-groups-items"></div>
+					</div>
+					<div class="legend-section" id="legend-bloom">
+						<h6>Bloom Taxonomy Levels</h6>
+						<div class="legend-items" id="legend-bloom-items"></div>
+					</div>
+				</div>
+
 				<!-- Filter bar -->
 				<div id="heatmap-filters">
 					<div class="filter-group">
@@ -369,18 +383,6 @@
 				<!-- Grid -->
 				<div id="heatmap-grid-wrap">
 					<div id="heatmap-grid" role="grid" aria-label="AI Tools vs DigComp 2.2 Competencies Heatmap"></div>
-				</div>
-
-				<!-- Legend -->
-				<div id="heatmap-legend">
-					<div class="legend-section" id="legend-groups">
-						<h6>DigComp 2.2 Competency Groups</h6>
-						<div class="legend-items" id="legend-groups-items"></div>
-					</div>
-					<div class="legend-section" id="legend-bloom">
-						<h6>Bloom Taxonomy Levels</h6>
-						<div class="legend-items" id="legend-bloom-items"></div>
-					</div>
 				</div>
 			</div><!-- /#heatmap-wrap -->
 
