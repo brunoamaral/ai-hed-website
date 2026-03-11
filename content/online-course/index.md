@@ -33,7 +33,7 @@ menu:
     name: Online Course
 cta:
   - label: Start Now <i class="fas fa-arrow-circle-right"></i>
-    url: https://learn.foi.hr/course/view.php?id=80
+    url: https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=header-cta
     classes: btn btn-success btn-round btn-lg font-weight-bold
 
 ---
@@ -49,7 +49,7 @@ cta:
         Organised into seven modules, the course covers everything from AI fundamentals to future trends, with a focus on responsible, critical, and inclusive integration of AI in higher education institutions.
       </p>
       <a
-        href="https://learn.foi.hr/course/view.php?id=80"
+        href="https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=hero"
         class="btn btn-success btn-round btn-lg font-weight-bold mt-3"
         target="_blank"
         rel="noopener"
@@ -259,7 +259,7 @@ cta:
       <div class="col-md-8 text-center">
         <h2 class="title mb-3">Get Started</h2>
         <a
-          href="https://learn.foi.hr/"
+          href="https://learn.foi.hr/?utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=bottom-cta"
           class="btn btn-success btn-round btn-lg font-weight-bold"
           target="_blank"
           rel="noopener"
