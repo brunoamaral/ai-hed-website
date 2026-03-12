@@ -341,6 +341,14 @@
 	<div class="section heatmap-section">
 		<div class="container-fluid px-3">
 
+			{{ if .Content }}
+			<div class="row justify-content-center mb-4">
+				<div class="col-12 col-lg-10">
+					{{ .Content }}
+				</div>
+			</div>
+			{{ end }}
+
 			<div id="heatmap-mobile-notice" class="alert alert-info" role="alert">
 				<strong>Best viewed on desktop.</strong> This interactive heatmap requires a wider screen. Please open this page on a laptop or desktop computer.
 			</div>
