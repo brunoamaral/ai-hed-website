@@ -24,7 +24,7 @@
 							<div class="card-body">
 								<h4 class="card-title"><a href="{{ .Permalink }}" data-umami-event="click--{{.Params.name}}">{{ .Params.name }}</a></h4>
 								{{ with .Params.subtitle }}
-								<h6 class="category">{{ . }}</h6>
+								<h6 class="category">{{ . | safeHTML }}</h6>
 								{{ end }}
 								<p class="card-description">
 									{{ $truncatedSummary := truncate 100 .Content | plainify }}

@@ -32,7 +32,7 @@
 					<h1 class="title" itemprop="headline d-print-block">{{ .Title }}</h1>
 					{{ end }}
 					{{- with .Params.subtitle }}
-						<h2 itemprop="subtitle d-print-block">{{ . }}</h2>
+						<h2 itemprop="subtitle d-print-block">{{ . | safeHTML }}</h2>
 					{{- end }}
 					{{- with .Params.cta }}
 						{{ range . }}

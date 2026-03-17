@@ -270,7 +270,7 @@
 				<div class="col-md-12">
 					<h2 class="title">{{ .CurrentSection.Title }}</h2> 
 					{{ with .CurrentSection.Params.subtitle }}
-					<h3>{{ . }}</h3>							
+					<h3>{{ . | safeHTML }}</h3>							
 					{{ end }}
 					<p>{{ i18n "select_one_of_the_pages_in_this_story" }}</p>
 

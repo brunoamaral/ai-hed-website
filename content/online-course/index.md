@@ -1,6 +1,15 @@
 ---
 title: "Open Access AI Course for Educators"
-subtitle: "Giving You Power Over AI"
+subtitle: |
+ <span style="display:inline-flex;align-items:center;gap:5px;
+ background:#e8f5e2;border:1px solid #5a9e30;border-radius:99px;
+ padding:3px 10px 3px 8px;font-size:11px;font-weight:600;
+ color:#2d6010;letter-spacing:.04em;text-transform:uppercase;
+ white-space:nowrap;">
+ <span style="width:6px;height:6px;border-radius:50%;
+ background:#4c9020;flex-shrink:0;"></span>
+ Preview
+ </span>
 date: 2026-03-06T00:00:00Z
 draft: false
 categories:
