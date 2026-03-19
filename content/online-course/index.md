@@ -144,10 +144,10 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 2</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
-            <h4 class="h5 font-weight-bold">Using AI-based Tools in Teaching and Learning</h4>
-            <p class="text-muted">An overview of AI-based tools available for teaching and learning, how they can support instruction, and how to integrate them into existing practices.</p>
+            <h4 class="h5 font-weight-bold">Ethical Considerations</h4>
+            <p class="text-muted">The key ethical dimensions of using AI in education, with guidance on how to address ethical considerations in practice.</p>
           </div>
         </div>
       </div>
@@ -170,10 +170,10 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 4</span>
-              <span class="badge badge-success">Available</span>
+              <span class="badge badge-secondary">Coming Soon</span>
             </div>
-            <h4 class="h5 font-weight-bold">Ethical Considerations</h4>
-            <p class="text-muted">The key ethical dimensions of using AI in education, with guidance on how to address ethical considerations in practice.</p>
+            <h4 class="h5 font-weight-bold">Using AI-based Tools in Teaching and Learning</h4>
+            <p class="text-muted">An overview of AI-based tools available for teaching and learning, how they can support instruction, and how to integrate them into existing practices.</p>
           </div>
         </div>
       </div>
@@ -185,8 +185,8 @@ options:
               <span class="mooc-module-number">Module 5</span>
               <span class="badge badge-secondary">Coming Soon</span>
             </div>
-            <h4 class="h5 font-weight-bold">Critical Thinking</h4>
-            <p class="text-muted">The critical thinking skills needed to evaluate the use of AI in education — why they matter and how to develop them.</p>
+            <h4 class="h5 font-weight-bold">Case Studies and Practical Examples</h4>
+            <p class="text-muted">Real-world case studies of how AI has been used in higher education across different settings, with outcomes and lessons learned.</p>
           </div>
         </div>
       </div>
@@ -198,8 +198,8 @@ options:
               <span class="mooc-module-number">Module 6</span>
               <span class="badge badge-secondary">Coming Soon</span>
             </div>
-            <h4 class="h5 font-weight-bold">Case Studies and Practical Examples</h4>
-            <p class="text-muted">Real-world case studies of how AI has been used in higher education across different settings, with outcomes and lessons learned.</p>
+            <h4 class="h5 font-weight-bold">Critical Thinking</h4>
+            <p class="text-muted">The critical thinking skills needed to evaluate the use of AI in education — why they matter and how to develop them.</p>
           </div>
         </div>
       </div>
