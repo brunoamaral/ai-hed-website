@@ -302,6 +302,18 @@
   pointer-events: none;
 }
 
+/* ── No-results notice ───────────────────────────────────────────────── */
+#heatmap-no-results {
+  display: none;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 5px;
+  font-size: 13px;
+  color: #664d03;
+}
+
 /* ── Tooltip ──────────────────────────────────────────────────────────── */
 #hm-tooltip {
   position: fixed;
@@ -386,6 +398,11 @@
 					</div>
 					<button id="heatmap-reset">Reset</button>
 					<span id="heatmap-match-count"></span>
+				</div>
+
+				<!-- No-results notice -->
+				<div id="heatmap-no-results" role="status" aria-live="polite">
+					No tools match the selected filters. Try adjusting your search or <button id="heatmap-no-results-reset" style="background:none;border:none;padding:0;color:#664d03;text-decoration:underline;cursor:pointer;font-size:inherit;">reset all filters</button>.
 				</div>
 
 				<!-- Grid -->
@@ -649,6 +666,14 @@
     } else {
       countEl.textContent = '';
     }
+
+    // Show/hide no-results notice
+    const noResults = document.getElementById('heatmap-no-results');
+    const hasActiveFilter = toolLower || filterGroup || filterBloom;
+    const anyNonDimmedVisible = grid.querySelectorAll(
+      '.hm-data-row:not(.hm-row-hidden) .hm-cell-data:not(.hm-cell-dimmed):not(.hm-col-hidden)'
+    ).length > 0;
+    noResults.style.display = (hasActiveFilter && !anyNonDimmedVisible) ? 'block' : 'none';
   }
 
   // ── Tooltip ──────────────────────────────────────────────────────────────
@@ -755,6 +780,13 @@
     });
     document.getElementById('filter-tool').addEventListener('input', function() {
       state.filterTool = this.value;
+      applyFilters(data);
+    });
+    document.getElementById('heatmap-no-results-reset').addEventListener('click', function() {
+      state.filterGroup = ''; state.filterBloom = ''; state.filterTool = '';
+      document.getElementById('filter-group').value = '';
+      document.getElementById('filter-bloom').value = '';
+      document.getElementById('filter-tool').value = '';
       applyFilters(data);
     });
     document.getElementById('heatmap-reset').addEventListener('click', function() {

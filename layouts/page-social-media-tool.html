@@ -1,0 +1,710 @@
+{{ define "bodyclasses" }}single page page-social-media-tool{{ end }}
+
+{{ define "data-attributes" }}
+	data-contentgrouptype="{{ .Section }}" data-contentgroupname="{{ .Title }}"
+{{ end }}
+
+{{ define "description" }}
+	{{ partial "description.html" . }}
+{{ end }}
+
+{{ define "head" }}
+<style>
+/* ── Section ─────────────────────────────────────────────────────────────── */
+.smt-section { padding: 20px 0 60px; }
+
+/* ── Panel cards ─────────────────────────────────────────────────────────── */
+.smt-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  margin-bottom: 24px;
+}
+.smt-panel-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+
+/* ── Form fields ─────────────────────────────────────────────────────────── */
+.smt-field { margin-bottom: 20px; }
+.smt-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #555;
+  margin-bottom: 6px;
+}
+.smt-input,
+.smt-textarea {
+  width: 100%;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fafafa;
+  transition: border-color .2s;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.smt-input:focus,
+.smt-textarea:focus {
+  border-color: #628c68;
+  background: #fff;
+}
+.smt-textarea { resize: vertical; min-height: 80px; }
+.smt-hint {
+  font-size: 12px;
+  color: #999;
+  margin: 6px 0;
+  text-align: center;
+}
+
+/* ── Size toggle ─────────────────────────────────────────────────────────── */
+.smt-size-toggle {
+  display: flex;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.smt-size-btn {
+  flex: 1;
+  padding: 10px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  background: #fafafa;
+  color: #888;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  border-right: 1px solid #e0e0e0;
+}
+.smt-size-btn:last-child { border-right: none; }
+.smt-size-btn span { font-size: 10px; font-weight: 400; color: #bbb; }
+.smt-size-btn.active { background: #628c68; color: #fff; }
+.smt-size-btn.active span { color: rgba(255,255,255,.75); }
+
+/* ── Row layout ──────────────────────────────────────────────────────────── */
+.smt-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.smt-row .smt-input { flex: 1; }
+.smt-checkbox-label {
+  white-space: nowrap;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ── Drop zone ───────────────────────────────────────────────────────────── */
+.smt-drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+.smt-drop-zone:hover,
+.smt-drop-zone.drag-over {
+  border-color: #628c68;
+  background: rgba(98,140,104,.05);
+}
+.smt-file-link {
+  color: #628c68;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* ── Colour swatches ─────────────────────────────────────────────────────── */
+.smt-swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+.smt-swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,.12);
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+  padding: 0;
+}
+.smt-swatch:hover { transform: scale(1.1); }
+.smt-swatch.active {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #628c68;
+}
+
+/* ── Overlay controls ────────────────────────────────────────────────────── */
+.smt-overlay-row {
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.smt-opacity-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 150px;
+}
+.smt-sublabel { font-size: 11px; color: #999; white-space: nowrap; }
+.smt-opacity-wrap input[type="range"] { flex: 1; accent-color: #628c68; }
+.smt-opacity-wrap span { font-size: 12px; color: #555; min-width: 32px; }
+
+/* ── Download button ─────────────────────────────────────────────────────── */
+.smt-download-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  transition: background .2s;
+}
+.smt-download-btn:hover { background: #333; }
+.smt-download-btn svg { flex-shrink: 0; }
+
+/* ── Quick tips ──────────────────────────────────────────────────────────── */
+.smt-tips {
+  margin-top: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 13px;
+  color: #555;
+}
+.smt-tips strong { display: block; margin-bottom: 6px; }
+.smt-tips ul { margin: 0; padding-left: 0; list-style: none; }
+.smt-tips li { margin-bottom: 4px; }
+.smt-tips li::before { content: "\2022\00a0"; }
+
+/* ── Preview panel ───────────────────────────────────────────────────────── */
+.smt-preview-panel {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+  position: sticky;
+  top: 90px;
+}
+.smt-canvas-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+#previewCanvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 6px 30px rgba(0,0,0,.18);
+  border-radius: 4px;
+}
+.smt-dimensions {
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .smt-preview-panel {
+    position: static;
+    margin-bottom: 24px;
+  }
+  .smt-section .row {
+    flex-direction: column-reverse;
+  }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div class="wrapper">
+	{{ if or (eq .Params.options.header "small") (eq .Params.options.header "mini") (eq .Params.options.header nil) }}
+		{{ partial "header-small.html" . }}
+	{{ else if eq $.Params.options.header "full" }}
+		{{ partial "header-full.html" . }}
+	{{ end }}
+
+	<div class="section smt-section">
+		<div class="container">
+			<div class="row">
+				<!-- ─── Left: Customize Content ─────────────────────────────────── -->
+				<div class="col-12 col-lg-5">
+					<div class="smt-panel">
+						<h5 class="smt-panel-title">Customize Content</h5>
+
+						<!-- Post Size -->
+						<div class="smt-field">
+							<label class="smt-label">Post Size</label>
+							<div class="smt-size-toggle" id="sizeToggle">
+								<button class="smt-size-btn active" data-size="square" type="button">Square <span>1:1 (Instagram)</span></button>
+								<button class="smt-size-btn" data-size="landscape" type="button">Landscape <span>1.91:1 (FB/X)</span></button>
+								<button class="smt-size-btn" data-size="story" type="button">Story <span>9:16 (Stories)</span></button>
+							</div>
+						</div>
+
+						<!-- Event Title -->
+						<div class="smt-field">
+							<label class="smt-label" for="eventTitle">Event Title</label>
+							<input type="text" id="eventTitle" class="smt-input" placeholder="Enter event title" value="National Multiplier Event Title">
+						</div>
+
+						<!-- Description -->
+						<div class="smt-field">
+							<label class="smt-label" for="eventDesc">Description</label>
+							<textarea id="eventDesc" class="smt-textarea" placeholder="Enter description" rows="3">Practical skills to apply AI tools and techniques in Higher-Education</textarea>
+						</div>
+
+						<!-- Button Text + Toggle -->
+						<div class="smt-field">
+							<label class="smt-label" for="btnText">Button Text</label>
+							<div class="smt-row">
+								<input type="text" id="btnText" class="smt-input" placeholder="e.g. Register now" value="Register now">
+								<label class="smt-checkbox-label">
+									<input type="checkbox" id="showBtn" checked> Show
+								</label>
+							</div>
+						</div>
+
+						<!-- Background Image -->
+						<div class="smt-field">
+							<label class="smt-label">Background Image</label>
+							<input type="text" id="bgUrl" class="smt-input" placeholder="Paste image URL...">
+							<p class="smt-hint">Leave empty for no background image &mdash; or upload below</p>
+							<div class="smt-drop-zone" id="dropZone">
+								<span>Drop an image here or <label for="bgFile" class="smt-file-link">browse</label></span>
+								<input type="file" id="bgFile" accept="image/*" style="display:none">
+							</div>
+						</div>
+
+						<!-- Overlay -->
+						<div class="smt-field">
+							<label class="smt-label">Image Overlay</label>
+							<div class="smt-row smt-overlay-row">
+								<div class="smt-swatches" id="overlayColorSwatches">
+									<button class="smt-swatch active" data-color="#ffffff" style="background:#ffffff" title="White" type="button"></button>
+									<button class="smt-swatch" data-color="#000000" style="background:#000000" title="Black" type="button"></button>
+									<button class="smt-swatch" data-color="#628c68" style="background:#628c68" title="Brand Green" type="button"></button>
+								</div>
+								<div class="smt-opacity-wrap">
+									<label class="smt-sublabel">Opacity</label>
+									<input type="range" id="overlayOpacity" min="0" max="90" value="55" step="5">
+									<span id="overlayOpacityVal">55%</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Accent Colour -->
+						<div class="smt-field">
+							<label class="smt-label">Accent Colour</label>
+							<div class="smt-swatches" id="accentSwatches">
+								<button class="smt-swatch active" data-color="#628c68" style="background:#628c68" title="Primary Green" type="button"></button>
+								<button class="smt-swatch" data-color="#63a376" style="background:#63a376" title="Light Green" type="button"></button>
+								<button class="smt-swatch" data-color="#2c4d36" style="background:#2c4d36" title="Dark Green" type="button"></button>
+								<button class="smt-swatch" data-color="#000000" style="background:#000000" title="Black" type="button"></button>
+							</div>
+						</div>
+
+						<!-- Footer Text -->
+						<div class="smt-field">
+							<label class="smt-label" for="footerText">Footer Text</label>
+							<input type="text" id="footerText" class="smt-input" value="Erasmus+ KA2 Project. 2024-1-NL01-KA220-HED-000248874">
+						</div>
+
+						<!-- Download Button -->
+						<button class="smt-download-btn" id="downloadBtn" type="button">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+								<path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+								<path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+							</svg>
+							Download Post
+						</button>
+
+						<!-- Quick Tips -->
+						<div class="smt-tips">
+							<strong>Quick Tips</strong>
+							<ul>
+								<li>Keep titles concise for better readability</li>
+								<li>Use high-quality background images</li>
+								<li>Test different sizes for various platforms</li>
+								<li>Adjust overlay opacity to ensure text contrast</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<!-- ─── Right: Preview ──────────────────────────────────────────── -->
+				<div class="col-12 col-lg-7">
+					<div class="smt-preview-panel">
+						<h5 class="smt-panel-title">Preview</h5>
+						<div class="smt-canvas-wrap">
+							<canvas id="previewCanvas"></canvas>
+						</div>
+						<p class="smt-dimensions" id="dimensions">1080 &times; 1080 px</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{ end }}
+
+{{ define "list-javascript" }}
+<script>
+(function () {
+	'use strict';
+
+	/* ── Constants ──────────────────────────────────────────────────────── */
+	var SIZES = {
+		square:    { w: 1080, h: 1080, label: '1080 \u00d7 1080 px' },
+		landscape: { w: 1200, h: 628,  label: '1200 \u00d7 628 px'  },
+		story:     { w: 1080, h: 1920, label: '1080 \u00d7 1920 px' }
+	};
+
+	/* ── DOM refs ───────────────────────────────────────────────────────── */
+	var canvas      = document.getElementById('previewCanvas');
+	var ctx         = canvas.getContext('2d');
+	var dimLabel    = document.getElementById('dimensions');
+	var opacityVal  = document.getElementById('overlayOpacityVal');
+	var dropZone    = document.getElementById('dropZone');
+
+	/* ── State ──────────────────────────────────────────────────────────── */
+	var state = {
+		size:           'square',
+		title:          document.getElementById('eventTitle').value,
+		desc:           document.getElementById('eventDesc').value,
+		btnText:        document.getElementById('btnText').value,
+		showBtn:        true,
+		bgImage:        null,
+		overlayColor:   '#ffffff',
+		overlayOpacity: 55,
+		accentColor:    '#628c68',
+		footerText:     document.getElementById('footerText').value
+	};
+
+	/* ── Pre-load logo ──────────────────────────────────────────────────── */
+	var logoImg = new Image();
+	logoImg.src = '/images/ai-hed-logo-full-green-gradient.svg';
+	logoImg.onload  = redraw;
+	logoImg.onerror = redraw;
+
+	/* ── Helpers ────────────────────────────────────────────────────────── */
+	function hexToRgb(hex) {
+		return {
+			r: parseInt(hex.slice(1, 3), 16),
+			g: parseInt(hex.slice(3, 5), 16),
+			b: parseInt(hex.slice(5, 7), 16)
+		};
+	}
+
+	function getWrappedLines(context, text, maxWidth) {
+		if (!text) return [];
+		var paragraphs = text.split('\n');
+		var allLines   = [];
+		for (var p = 0; p < paragraphs.length; p++) {
+			var words = paragraphs[p].split(/\s+/).filter(Boolean);
+			if (!words.length) { allLines.push(''); continue; }
+			var line = '';
+			for (var i = 0; i < words.length; i++) {
+				var test = line ? line + ' ' + words[i] : words[i];
+				if (context.measureText(test).width > maxWidth && line) {
+					allLines.push(line);
+					line = words[i];
+				} else {
+					line = test;
+				}
+			}
+			if (line) allLines.push(line);
+		}
+		return allLines;
+	}
+
+	function drawPill(context, x, y, w, h, r) {
+		context.beginPath();
+		context.moveTo(x + r, y);
+		context.lineTo(x + w - r, y);
+		context.quadraticCurveTo(x + w, y, x + w, y + r);
+		context.lineTo(x + w, y + h - r);
+		context.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+		context.lineTo(x + r, y + h);
+		context.quadraticCurveTo(x, y + h, x, y + h - r);
+		context.lineTo(x, y + r);
+		context.quadraticCurveTo(x, y, x + r, y);
+		context.closePath();
+	}
+
+	/* ── Main draw ──────────────────────────────────────────────────────── */
+	function redraw() {
+		var sz  = SIZES[state.size];
+		var w   = sz.w;
+		var h   = sz.h;
+		canvas.width  = w;
+		canvas.height = h;
+
+		var ref = Math.min(w, h);
+		var pad = Math.round(ref * 0.056);
+		var textW = w - pad * 2;
+
+		/* Scaling factors */
+		var titleSize  = Math.round(ref * 0.073);
+		var descSize   = Math.round(ref * 0.046);
+		var footerSize = Math.round(ref * 0.026);
+		var logoH      = Math.round(ref * 0.075);
+
+		ctx.textBaseline = 'top';
+
+		/* 1. Background fill */
+		ctx.fillStyle = '#d0d0d0';
+		ctx.fillRect(0, 0, w, h);
+
+		/* 2. Background image (cover) */
+		if (state.bgImage) {
+			var iw    = state.bgImage.naturalWidth;
+			var ih    = state.bgImage.naturalHeight;
+			var scale = Math.max(w / iw, h / ih);
+			ctx.drawImage(
+				state.bgImage,
+				(w - iw * scale) / 2,
+				(h - ih * scale) / 2,
+				iw * scale,
+				ih * scale
+			);
+		}
+
+		/* 3. Overlay */
+		var rgb = hexToRgb(state.overlayColor);
+		ctx.fillStyle = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + (state.overlayOpacity / 100) + ')';
+		ctx.fillRect(0, 0, w, h);
+
+		var y = pad;
+
+		/* 4. Logo */
+		if (logoImg.complete && logoImg.naturalWidth > 0) {
+			var logoW = Math.round(logoH * logoImg.naturalWidth / logoImg.naturalHeight);
+			ctx.drawImage(logoImg, pad, y, logoW, logoH);
+			y += logoH + Math.round(ref * 0.042);
+		} else {
+			y += Math.round(ref * 0.13);
+		}
+
+		/* 5. Title */
+		if (state.title) {
+			ctx.font      = 'bold ' + titleSize + 'px Arial, Helvetica, sans-serif';
+			ctx.fillStyle = '#000000';
+			var titleLines = getWrappedLines(ctx, state.title, textW);
+			for (var t = 0; t < titleLines.length; t++) {
+				ctx.fillText(titleLines[t], pad, y);
+				y += Math.round(titleSize * 1.15);
+			}
+			y += Math.round(ref * 0.022);
+		}
+
+		/* 6. Description */
+		if (state.desc) {
+			ctx.font      = descSize + 'px Arial, Helvetica, sans-serif';
+			ctx.fillStyle = state.accentColor;
+			var descLines = getWrappedLines(ctx, state.desc, textW);
+			for (var d = 0; d < descLines.length; d++) {
+				ctx.fillText(descLines[d], pad, y);
+				y += Math.round(descSize * 1.3);
+			}
+			y += Math.round(ref * 0.038);
+		}
+
+		/* 7. CTA button */
+		if (state.showBtn && state.btnText.trim()) {
+			var btnLabel  = state.btnText + ' \u2192';
+			var btnH      = Math.round(ref * 0.062);
+			var btnFont   = Math.round(btnH * 0.42);
+			ctx.font      = 'bold ' + btnFont + 'px Arial, Helvetica, sans-serif';
+			var tw        = ctx.measureText(btnLabel).width;
+			var padX      = btnH * 0.9;
+			var btnW      = tw + padX * 2;
+			var btnR      = btnH / 2;
+
+			ctx.fillStyle = state.accentColor;
+			drawPill(ctx, pad, y, btnW, btnH, btnR);
+			ctx.fill();
+
+			ctx.fillStyle    = '#ffffff';
+			ctx.textAlign    = 'center';
+			ctx.textBaseline = 'middle';
+			ctx.fillText(btnLabel, pad + btnW / 2, y + btnH / 2);
+			ctx.textAlign    = 'left';
+			ctx.textBaseline = 'top';
+		}
+
+		/* 8. Footer */
+		if (state.footerText) {
+			ctx.font         = footerSize + 'px Arial, Helvetica, sans-serif';
+			ctx.fillStyle    = state.accentColor;
+			ctx.textAlign    = 'center';
+			ctx.textBaseline = 'bottom';
+			ctx.fillText(state.footerText, w / 2, h - pad);
+			ctx.textAlign    = 'left';
+			ctx.textBaseline = 'top';
+		}
+	}
+
+	/* ── Event wiring ───────────────────────────────────────────────────── */
+
+	/* Size toggle */
+	var sizeBtns = document.querySelectorAll('.smt-size-btn');
+	for (var i = 0; i < sizeBtns.length; i++) {
+		sizeBtns[i].addEventListener('click', function () {
+			for (var j = 0; j < sizeBtns.length; j++) sizeBtns[j].classList.remove('active');
+			this.classList.add('active');
+			state.size = this.getAttribute('data-size');
+			dimLabel.textContent = SIZES[state.size].label;
+			redraw();
+		});
+	}
+
+	/* Text inputs */
+	var fieldMap = {
+		eventTitle: 'title',
+		eventDesc:  'desc',
+		btnText:    'btnText',
+		footerText: 'footerText'
+	};
+	Object.keys(fieldMap).forEach(function (id) {
+		document.getElementById(id).addEventListener('input', function (e) {
+			state[fieldMap[id]] = e.target.value;
+			redraw();
+		});
+	});
+
+	/* Show / hide button */
+	document.getElementById('showBtn').addEventListener('change', function (e) {
+		state.showBtn = e.target.checked;
+		document.getElementById('btnText').disabled = !e.target.checked;
+		redraw();
+	});
+
+	/* Background URL (debounced) */
+	var bgUrlTimer;
+	document.getElementById('bgUrl').addEventListener('input', function (e) {
+		clearTimeout(bgUrlTimer);
+		var url = e.target.value.trim();
+		if (!url) { state.bgImage = null; redraw(); return; }
+		bgUrlTimer = setTimeout(function () {
+			var img = new Image();
+			img.crossOrigin = 'anonymous';
+			img.onload  = function () { state.bgImage = img; redraw(); };
+			img.onerror = function () {};
+			img.src = url;
+		}, 700);
+	});
+
+	/* File upload helper */
+	function handleFile(file) {
+		if (!file || !file.type.startsWith('image/')) return;
+		var reader = new FileReader();
+		reader.onload = function (ev) {
+			var img = new Image();
+			img.onload = function () { state.bgImage = img; redraw(); };
+			img.src = ev.target.result;
+			document.getElementById('bgUrl').value = '';
+			dropZone.querySelector('span').textContent = file.name;
+		};
+		reader.readAsDataURL(file);
+	}
+
+	document.getElementById('bgFile').addEventListener('change', function (e) {
+		handleFile(e.target.files[0]);
+	});
+
+	/* Drag & drop */
+	dropZone.addEventListener('dragover', function (e) {
+		e.preventDefault();
+		dropZone.classList.add('drag-over');
+	});
+	dropZone.addEventListener('dragleave', function () {
+		dropZone.classList.remove('drag-over');
+	});
+	dropZone.addEventListener('drop', function (e) {
+		e.preventDefault();
+		dropZone.classList.remove('drag-over');
+		handleFile(e.dataTransfer.files[0]);
+	});
+
+	/* Overlay colour swatches */
+	var overlaySw = document.querySelectorAll('#overlayColorSwatches .smt-swatch');
+	for (var oi = 0; oi < overlaySw.length; oi++) {
+		overlaySw[oi].addEventListener('click', function () {
+			for (var k = 0; k < overlaySw.length; k++) overlaySw[k].classList.remove('active');
+			this.classList.add('active');
+			state.overlayColor = this.getAttribute('data-color');
+			redraw();
+		});
+	}
+
+	/* Overlay opacity slider */
+	document.getElementById('overlayOpacity').addEventListener('input', function (e) {
+		state.overlayOpacity = parseInt(e.target.value, 10);
+		opacityVal.textContent = e.target.value + '%';
+		redraw();
+	});
+
+	/* Accent colour swatches */
+	var accentSw = document.querySelectorAll('#accentSwatches .smt-swatch');
+	for (var ai = 0; ai < accentSw.length; ai++) {
+		accentSw[ai].addEventListener('click', function () {
+			for (var k = 0; k < accentSw.length; k++) accentSw[k].classList.remove('active');
+			this.classList.add('active');
+			state.accentColor = this.getAttribute('data-color');
+			redraw();
+		});
+	}
+
+	/* Download */
+	document.getElementById('downloadBtn').addEventListener('click', function () {
+		redraw();
+		var sz = SIZES[state.size];
+		try {
+			var link = document.createElement('a');
+			link.download = 'ai-hed-post-' + state.size + '-' + sz.w + 'x' + sz.h + '.png';
+			link.href = canvas.toDataURL('image/png');
+			link.click();
+		} catch (err) {
+			alert(
+				'Download failed: the background image may be blocked by cross-origin restrictions.\n\n' +
+				'Please use the file upload option to add your background image instead of a URL.'
+			);
+		}
+	});
+
+	/* Initial render */
+	redraw();
+
+})();
+</script>
+{{ end }}
