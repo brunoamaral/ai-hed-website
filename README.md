@@ -1,82 +1,112 @@
-# AI-HED Website
+# NetNewsWire to Obsidian
 
-Hugo-based website for the AI-HED project (Artificial Intelligence in Higher Education Teaching and Learning).
+Sync your NetNewsWire starred articles to an Obsidian vault as markdown files.
 
----
+## How it works
 
-## Prerequisites
+This tool reads starred articles directly from NetNewsWire's local SQLite database on macOS and writes them as markdown files (with YAML frontmatter) into a folder of your choice — typically inside your Obsidian vault.
 
-- [Hugo extended](https://gohugo.io/installation/) v0.100+
-- Python 3.10+ (only needed to regenerate heatmap data)
+- **One-way sync**: starred articles are exported; un-starring does not delete the file.
+- **Idempotent**: if a file already exists, it is skipped.
+- **Configurable**: choose which NetNewsWire accounts to sync.
 
----
+## Requirements
 
-## Development
+- macOS (NetNewsWire stores its database locally)
+- Python 3.10+
+- NetNewsWire (with at least one account set up)
 
-```bash
-hugo server --disableFastRender
-```
-
-The site is served at `http://localhost:1313`.
-
-## Build
+## Installation
 
 ```bash
-hugo --minify
+pip install .
 ```
 
-Output is written to `public/`.
-
----
-
-## AI Tools Heatmap
-
-The interactive heatmap at `/resources/ai-tools-heatmap/` maps 44 AI-based tools against the 21 DigComp 2.2 competencies and Bloom's Taxonomy levels. The source data lives outside this repository in the `HeatMap v3` project folder.
-
-### Data files
-
-| File | Description |
-|------|-------------|
-| `HeatMap v3/data.csv` | Source matrix — 44 tools × 21 competency codes, values are Bloom levels 0–6 |
-| `HeatMap v3/Data/competencies.py` | Competency metadata (full names, group labels, descriptions) |
-| `content/resources/ai-tools-heatmap/heatmap-data.json` | Generated JSON consumed by the browser — **do not edit by hand** |
-
-### Regenerating the heatmap data
-
-Run this whenever `data.csv` or `competencies.py` is updated:
+Or for development:
 
 ```bash
-cd "/path/to/HeatMap v3"
-python generate_json.py
+pip install -e ".[dev]"
 ```
 
-The script writes `heatmap-data.json` directly into the Hugo page bundle at:
+## Quick Start
 
-```
-content/resources/ai-tools-heatmap/heatmap-data.json
-```
-
-Then rebuild the site:
+1. Copy and edit the config file:
 
 ```bash
-cd /path/to/ai-hed-website
-hugo --minify
+mkdir -p ~/.config/nnw-obsidian-sync
+cp config.example.yaml ~/.config/nnw-obsidian-sync/config.yaml
+# Edit output_dir to point to your Obsidian vault folder
 ```
 
-### How the heatmap works
+2. List your NetNewsWire accounts:
 
-- **Layout template**: `layouts/page-heatmap.html` — contains all CSS, HTML, and JavaScript inline. No extra build steps or npm dependencies.
-- **Data loading**: the page fetches `heatmap-data.json` at runtime via `fetch()`.
-- **Colors**: 5 competency groups × 7 Bloom-level shades (defined in `HeatMap v3/heatmap.py` and mirrored in the layout).
-- **Patterns**: CSS gradient overlays reproduce the hatching patterns from the original PDF output (vertical lines, diagonals, dots, crosshatch, etc.).
-- **Filters**: group dropdown, Bloom level dropdown, and tool name search — all composable.
+```bash
+nnw-obsidian-sync --list-accounts
+```
 
+3. Run a dry-run to see what would be synced:
+
+```bash
+nnw-obsidian-sync --dry-run
+```
+
+4. Run the sync:
+
+```bash
+nnw-obsidian-sync
+```
+
+## Recurring Sync (launchd)
+
+Install a launchd plist to run the sync automatically:
+
+```bash
+nnw-obsidian-sync --install-launchd
+```
+
+This will sync every 30 minutes (configurable via `interval_minutes` in the config file). To remove it:
+
+```bash
+nnw-obsidian-sync --uninstall-launchd
+```
+
+Logs are written to `~/Library/Logs/nnw-obsidian-sync.log`.
+
+## CLI Reference
+
+```
+nnw-obsidian-sync [OPTIONS]
+
+--output-dir PATH     Override output directory
+--accounts NAME       Accounts to sync (repeatable)
+--config PATH         Custom config file path
+--dry-run             Show what would be synced without writing files
+--list-accounts       List available NetNewsWire accounts and exit
+--install-launchd     Install/update the launchd plist for recurring sync
+--uninstall-launchd   Remove the launchd plist
+--verbose, -v         Enable verbose logging
+--version             Show version and exit
+```
+
+## Output Format
+
+Each article is saved as a markdown file with YAML frontmatter:
+
+```markdown
+---
+title: "Article Title"
+author: "Author Name"
+date: 2026-04-01
+feed: "Feed Name"
+url: https://example.com/article
+feed_url: https://example.com/feed.xml
+article_id: "abc123"
+synced_at: 2026-04-05T10:30:00
 ---
 
-## Makefile targets
+Article content in markdown...
+```
 
-| Target | Description |
-|--------|-------------|
-| `make publish` | Push `main` branch to origin |
-| `make sync-main` | Pull latest `main` from origin |
-| `make sync-testing` | Merge `testing` into `main` |
+## License
+
+MIT
