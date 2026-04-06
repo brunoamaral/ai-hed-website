@@ -22,7 +22,7 @@
 					
 					<!-- Newsletter Grid -->
 					<div class="row g-5">
-						{{ $newsletters := hugo.Data.newsletter_archive }}
+						{{ $newsletters := .Site.Data.newsletter_archive }}
 						{{ range $newsletters }}
 						<!-- Newsletter Item -->
 						<div class="col-md-6 col-lg-4 mb-5">
