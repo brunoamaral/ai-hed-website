@@ -6,7 +6,7 @@ Hugo-based website for the AI-HED project (Artificial Intelligence in Higher Edu
 
 ## Prerequisites
 
-- [Hugo extended](https://gohugo.io/installation/) v0.100+
+- [Hugo extended](https://gohugo.io/installation/) v0.160+
 - Python 3.10+ (only needed to regenerate heatmap data)
 
 ---
