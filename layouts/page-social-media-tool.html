@@ -94,6 +94,71 @@
 .smt-size-btn.active { background: #628c68; color: #fff; }
 .smt-size-btn.active span { color: rgba(255,255,255,.75); }
 
+/* ── Content layout toggle ─────────────────────────────────────────────── */
+.smt-layout-toggle {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 8px;
+}
+.smt-layout-btn {
+	border: 1.5px solid #e0e0e0;
+	border-radius: 8px;
+	background: #fafafa;
+	color: #666;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 10px 8px;
+	cursor: pointer;
+	transition: border-color .15s, box-shadow .15s, color .15s;
+}
+.smt-layout-btn.active {
+	color: #1a1a1a;
+	border-color: #628c68;
+	box-shadow: 0 0 0 2px rgba(98,140,104,.15);
+}
+.smt-layout-fine {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 10px;
+}
+.smt-layout-fine-row {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	gap: 10px;
+}
+.smt-layout-fine-row label {
+	font-size: 11px;
+	color: #666;
+	min-width: 90px;
+}
+.smt-layout-fine-row input[type="range"] {
+	width: 100%;
+	accent-color: #628c68;
+}
+.smt-layout-fine-row span {
+	font-size: 11px;
+	color: #666;
+	min-width: 40px;
+	text-align: right;
+}
+.smt-reset-btn {
+	margin-top: 6px;
+	border: 1px solid #d8d8d8;
+	background: #f7f7f7;
+	color: #555;
+	border-radius: 8px;
+	padding: 8px 10px;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background .15s, border-color .15s;
+}
+.smt-reset-btn:hover {
+	background: #efefef;
+	border-color: #cfcfcf;
+}
+
 /* ── Row layout ──────────────────────────────────────────────────────────── */
 .smt-row {
   display: flex;
@@ -304,16 +369,50 @@
 							</div>
 						</div>
 
+						<!-- Content Layout -->
+						<div class="smt-field">
+							<label class="smt-label">Content Layout</label>
+							<div class="smt-layout-toggle" id="layoutToggle">
+								<button class="smt-layout-btn active" data-layout="top-left" type="button">Top Left</button>
+								<button class="smt-layout-btn" data-layout="center" type="button">Center</button>
+								<button class="smt-layout-btn" data-layout="bottom-left" type="button">Bottom Left</button>
+							</div>
+							<div class="smt-layout-fine">
+								<div class="smt-layout-fine-row">
+									<label for="contentYOffset">Vertical Offset</label>
+									<input type="range" id="contentYOffset" min="-20" max="20" step="1" value="0">
+									<span id="contentYOffsetVal">0%</span>
+								</div>
+								<div class="smt-layout-fine-row">
+									<label for="contentSidePad">Side Padding</label>
+									<input type="range" id="contentSidePad" min="0" max="20" step="1" value="0">
+									<span id="contentSidePadVal">0%</span>
+								</div>
+								<button class="smt-reset-btn" id="resetLayoutBtn" type="button">Reset Layout</button>
+							</div>
+						</div>
+
 						<!-- Event Title -->
 						<div class="smt-field">
 							<label class="smt-label" for="eventTitle">Event Title</label>
 							<input type="text" id="eventTitle" class="smt-input" placeholder="Enter event title" value="National Multiplier Event Title">
 						</div>
 
-						<!-- Description -->
+						<!-- Subtitle -->
 						<div class="smt-field">
-							<label class="smt-label" for="eventDesc">Description</label>
-							<textarea id="eventDesc" class="smt-textarea" placeholder="Enter description" rows="3">Practical skills to apply AI tools and techniques in Higher-Education</textarea>
+							<label class="smt-label" for="eventDesc">Subtitle</label>
+							<textarea id="eventDesc" class="smt-textarea" placeholder="Enter subtitle" rows="3">Practical skills to apply AI tools and techniques in Higher-Education</textarea>
+						</div>
+
+						<!-- Title Colour -->
+						<div class="smt-field">
+							<label class="smt-label">Title Colour</label>
+							<div class="smt-swatches" id="titleColorSwatches">
+								<button class="smt-swatch active" data-color="#000000" style="background:#000000" title="Black" type="button"></button>
+								<button class="smt-swatch" data-color="#ffffff" style="background:#ffffff" title="White" type="button"></button>
+								<button class="smt-swatch" data-color="#628c68" style="background:#628c68" title="Primary Green" type="button"></button>
+								<button class="smt-swatch" data-color="#2c4d36" style="background:#2c4d36" title="Dark Green" type="button"></button>
+							</div>
 						</div>
 
 						<!-- Button Text + Toggle -->
@@ -343,6 +442,13 @@
 									<img src="/images/logos-for-social-media/ai-hed-logo-full-white.svg" alt="AI-HED white logo">
 									White
 								</button>
+							</div>
+							<div class="smt-layout-fine" style="margin-top:10px;">
+								<div class="smt-layout-fine-row">
+									<label for="logoSize">Logo Size</label>
+									<input type="range" id="logoSize" min="60" max="180" step="5" value="100">
+									<span id="logoSizeVal">100%</span>
+								</div>
 							</div>
 						</div>
 
@@ -382,6 +488,7 @@
 								<button class="smt-swatch" data-color="#63a376" style="background:#63a376" title="Light Green" type="button"></button>
 								<button class="smt-swatch" data-color="#2c4d36" style="background:#2c4d36" title="Dark Green" type="button"></button>
 								<button class="smt-swatch" data-color="#000000" style="background:#000000" title="Black" type="button"></button>
+								<button class="smt-swatch" data-color="#ffffff" style="background:#ffffff" title="White" type="button"></button>
 							</div>
 						</div>
 
@@ -447,11 +554,19 @@
 	var dimLabel    = document.getElementById('dimensions');
 	var opacityVal  = document.getElementById('overlayOpacityVal');
 	var dropZone    = document.getElementById('dropZone');
+	var yOffsetVal  = document.getElementById('contentYOffsetVal');
+	var sidePadVal  = document.getElementById('contentSidePadVal');
+	var logoSizeVal = document.getElementById('logoSizeVal');
 
 	/* ── State ──────────────────────────────────────────────────────────── */
 	var state = {
 		size:           'square',
+		contentLayout:  'top-left',
+		contentYOffset: 0,
+		contentSidePad: 0,
+		logoScale:      100,
 		title:          document.getElementById('eventTitle').value,
+		titleColor:     '#000000',
 		desc:           document.getElementById('eventDesc').value,
 		btnText:        document.getElementById('btnText').value,
 		showBtn:        true,
@@ -518,6 +633,12 @@
 		context.closePath();
 	}
 
+	function updateLayoutFineLabels() {
+		yOffsetVal.textContent = state.contentYOffset + '%';
+		sidePadVal.textContent = state.contentSidePad + '%';
+		logoSizeVal.textContent = state.logoScale + '%';
+	}
+
 	/* ── Main draw ──────────────────────────────────────────────────────── */
 	function redraw() {
 		var sz  = SIZES[state.size];
@@ -528,13 +649,16 @@
 
 		var ref = Math.min(w, h);
 		var pad = Math.round(ref * 0.056);
-		var textW = w - pad * 2;
+		var textPad = pad + Math.round(ref * (state.contentSidePad / 100));
+		var textW = Math.max(Math.round(w * 0.25), w - textPad * 2);
 
 		/* Scaling factors */
 		var titleSize  = Math.round(ref * 0.073);
 		var descSize   = Math.round(ref * 0.046);
 		var footerSize = Math.round(ref * 0.026);
-		var logoH      = Math.round(ref * 0.075);
+		var logoH      = Math.round(ref * 0.075 * (state.logoScale / 100));
+		var titleStep  = Math.round(titleSize * 1.15);
+		var descStep   = Math.round(descSize * 1.3);
 
 		ctx.textBaseline = 'top';
 
@@ -572,52 +696,87 @@
 			y += Math.round(ref * 0.13);
 		}
 
-		/* 5. Title */
-		if (state.title) {
-			ctx.font      = 'bold ' + titleSize + 'px Arial, Helvetica, sans-serif';
-			ctx.fillStyle = '#000000';
-			var titleLines = getWrappedLines(ctx, state.title, textW);
+		/* 5-7. Title, subtitle and CTA with layout presets */
+		ctx.font = 'bold ' + titleSize + 'px Arial, Helvetica, sans-serif';
+		var titleLines = state.title ? getWrappedLines(ctx, state.title, textW) : [];
+		ctx.font = descSize + 'px Arial, Helvetica, sans-serif';
+		var descLines = state.desc ? getWrappedLines(ctx, state.desc, textW) : [];
+		var hasBtn = state.showBtn && state.btnText.trim();
+		var btnLabel = hasBtn ? state.btnText + ' \u2192' : '';
+		var btnH = Math.round(ref * 0.062);
+		var btnFont = Math.round(btnH * 0.42);
+		var btnPadX = btnH * 0.9;
+		var btnW = 0;
+		var btnR = btnH / 2;
+
+		if (hasBtn) {
+			ctx.font = 'bold ' + btnFont + 'px Arial, Helvetica, sans-serif';
+			btnW = ctx.measureText(btnLabel).width + btnPadX * 2;
+		}
+
+		var blockH = 0;
+		if (titleLines.length) blockH += titleLines.length * titleStep;
+		if (descLines.length) blockH += descLines.length * descStep;
+		if (titleLines.length && (descLines.length || hasBtn)) blockH += Math.round(ref * 0.022);
+		if (descLines.length && hasBtn) blockH += Math.round(ref * 0.038);
+		if (hasBtn) blockH += btnH;
+
+		var footerReserve = state.footerText ? footerSize + Math.round(ref * 0.05) : 0;
+		var startY = y;
+		var textX = textPad;
+		var textAlign = 'left';
+
+		if (state.contentLayout === 'center') {
+			textX = w / 2;
+			textAlign = 'center';
+			startY = Math.max(y, Math.round((h - footerReserve - blockH) / 2));
+		} else if (state.contentLayout === 'bottom-left') {
+			startY = Math.max(y, h - pad - footerReserve - blockH);
+		}
+
+		var offsetPx = Math.round(ref * (state.contentYOffset / 100));
+		var minStartY = y;
+		var maxStartY = Math.max(minStartY, h - pad - footerReserve - blockH);
+		startY = Math.min(maxStartY, Math.max(minStartY, startY + offsetPx));
+
+		var cy = startY;
+		ctx.textAlign = textAlign;
+		ctx.textBaseline = 'top';
+
+		if (titleLines.length) {
+			ctx.font = 'bold ' + titleSize + 'px Arial, Helvetica, sans-serif';
+			ctx.fillStyle = state.titleColor;
 			for (var t = 0; t < titleLines.length; t++) {
-				ctx.fillText(titleLines[t], pad, y);
-				y += Math.round(titleSize * 1.15);
+				ctx.fillText(titleLines[t], textX, cy);
+				cy += titleStep;
 			}
-			y += Math.round(ref * 0.022);
+			if (descLines.length || hasBtn) cy += Math.round(ref * 0.022);
 		}
 
-		/* 6. Description */
-		if (state.desc) {
-			ctx.font      = descSize + 'px Arial, Helvetica, sans-serif';
+		if (descLines.length) {
+			ctx.font = descSize + 'px Arial, Helvetica, sans-serif';
 			ctx.fillStyle = state.accentColor;
-			var descLines = getWrappedLines(ctx, state.desc, textW);
 			for (var d = 0; d < descLines.length; d++) {
-				ctx.fillText(descLines[d], pad, y);
-				y += Math.round(descSize * 1.3);
+				ctx.fillText(descLines[d], textX, cy);
+				cy += descStep;
 			}
-			y += Math.round(ref * 0.038);
+			if (hasBtn) cy += Math.round(ref * 0.038);
 		}
 
-		/* 7. CTA button */
-		if (state.showBtn && state.btnText.trim()) {
-			var btnLabel  = state.btnText + ' \u2192';
-			var btnH      = Math.round(ref * 0.062);
-			var btnFont   = Math.round(btnH * 0.42);
-			ctx.font      = 'bold ' + btnFont + 'px Arial, Helvetica, sans-serif';
-			var tw        = ctx.measureText(btnLabel).width;
-			var padX      = btnH * 0.9;
-			var btnW      = tw + padX * 2;
-			var btnR      = btnH / 2;
-
+		if (hasBtn) {
+			var btnX = textAlign === 'center' ? Math.round((w - btnW) / 2) : textPad;
 			ctx.fillStyle = state.accentColor;
-			drawPill(ctx, pad, y, btnW, btnH, btnR);
+			drawPill(ctx, btnX, cy, btnW, btnH, btnR);
 			ctx.fill();
 
-			ctx.fillStyle    = '#ffffff';
-			ctx.textAlign    = 'center';
+			ctx.font = 'bold ' + btnFont + 'px Arial, Helvetica, sans-serif';
+			ctx.fillStyle = '#ffffff';
+			ctx.textAlign = 'center';
 			ctx.textBaseline = 'middle';
-			ctx.fillText(btnLabel, pad + btnW / 2, y + btnH / 2);
-			ctx.textAlign    = 'left';
-			ctx.textBaseline = 'top';
+			ctx.fillText(btnLabel, btnX + btnW / 2, cy + btnH / 2);
 		}
+		ctx.textAlign = 'left';
+		ctx.textBaseline = 'top';
 
 		/* 8. Footer */
 		if (state.footerText) {
@@ -644,6 +803,52 @@
 			redraw();
 		});
 	}
+
+	/* Content layout toggle */
+	var layoutBtns = document.querySelectorAll('#layoutToggle .smt-layout-btn');
+	for (var ci = 0; ci < layoutBtns.length; ci++) {
+		layoutBtns[ci].addEventListener('click', function () {
+			for (var cj = 0; cj < layoutBtns.length; cj++) layoutBtns[cj].classList.remove('active');
+			this.classList.add('active');
+			state.contentLayout = this.getAttribute('data-layout');
+			redraw();
+		});
+	}
+
+	/* Layout fine controls */
+	document.getElementById('contentYOffset').addEventListener('input', function (e) {
+		state.contentYOffset = parseInt(e.target.value, 10);
+		updateLayoutFineLabels();
+		redraw();
+	});
+	document.getElementById('contentSidePad').addEventListener('input', function (e) {
+		state.contentSidePad = parseInt(e.target.value, 10);
+		updateLayoutFineLabels();
+		redraw();
+	});
+	document.getElementById('logoSize').addEventListener('input', function (e) {
+		state.logoScale = parseInt(e.target.value, 10);
+		updateLayoutFineLabels();
+		redraw();
+	});
+
+	/* Reset layout controls */
+	document.getElementById('resetLayoutBtn').addEventListener('click', function () {
+		state.contentLayout = 'top-left';
+		state.contentYOffset = 0;
+		state.contentSidePad = 0;
+		state.logoScale = 100;
+
+		document.getElementById('contentYOffset').value = '0';
+		document.getElementById('contentSidePad').value = '0';
+		document.getElementById('logoSize').value = '100';
+
+		for (var cj = 0; cj < layoutBtns.length; cj++) layoutBtns[cj].classList.remove('active');
+		layoutBtns[0].classList.add('active');
+
+		updateLayoutFineLabels();
+		redraw();
+	});
 
 	/* Text inputs */
 	var fieldMap = {
@@ -752,6 +957,17 @@
 		});
 	}
 
+	/* Title colour swatches */
+	var titleSw = document.querySelectorAll('#titleColorSwatches .smt-swatch');
+	for (var ti = 0; ti < titleSw.length; ti++) {
+		titleSw[ti].addEventListener('click', function () {
+			for (var tk = 0; tk < titleSw.length; tk++) titleSw[tk].classList.remove('active');
+			this.classList.add('active');
+			state.titleColor = this.getAttribute('data-color');
+			redraw();
+		});
+	}
+
 	/* Download */
 	document.getElementById('downloadBtn').addEventListener('click', function () {
 		redraw();
@@ -770,6 +986,7 @@
 	});
 
 	/* Initial render */
+	updateLayoutFineLabels();
 	redraw();
 
 })();
