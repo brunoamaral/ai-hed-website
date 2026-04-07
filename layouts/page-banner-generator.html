@@ -1,0 +1,820 @@
+{{ define "bodyclasses" }}single page page-banner-generator{{ end }}
+
+{{ define "data-attributes" }}
+	data-contentgrouptype="{{ .Section }}" data-contentgroupname="{{ .Title }}"
+{{ end }}
+
+{{ define "description" }}
+	{{ partial "description.html" . }}
+{{ end }}
+
+{{ define "head" }}
+<style>
+.bgt-section { padding: 20px 0 60px; }
+.bgt-panel,
+.bgt-preview-panel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,.08);
+}
+.bgt-panel { margin-bottom: 24px; }
+.bgt-preview-panel {
+  position: sticky;
+  top: 90px;
+  background: linear-gradient(180deg, #f7f8f7 0%, #eef2ee 100%);
+}
+.bgt-panel-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+.bgt-field { margin-bottom: 20px; }
+.bgt-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #555;
+  margin-bottom: 6px;
+}
+.bgt-format-toggle {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 8px;
+}
+.bgt-format-btn {
+	border: 1.5px solid #e0e0e0;
+	border-radius: 8px;
+	background: #fafafa;
+	color: #666;
+	font-size: 12px;
+	font-weight: 600;
+	padding: 10px 8px;
+	text-align: center;
+	cursor: pointer;
+	transition: border-color .15s, box-shadow .15s, color .15s;
+}
+.bgt-format-btn span {
+	display: block;
+	font-size: 10px;
+	font-weight: 400;
+	color: #9a9a9a;
+}
+.bgt-format-btn.active {
+	color: #1a1a1a;
+	border-color: #628c68;
+	box-shadow: 0 0 0 2px rgba(98,140,104,.15);
+}
+.bgt-input,
+.bgt-textarea {
+  width: 100%;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #fafafa;
+  transition: border-color .2s;
+  outline: none;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.bgt-input:focus,
+.bgt-textarea:focus {
+  border-color: #628c68;
+  background: #fff;
+}
+.bgt-textarea { resize: vertical; min-height: 88px; }
+.bgt-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.bgt-row .bgt-input { flex: 1; }
+.bgt-checkbox-label {
+  white-space: nowrap;
+  font-size: 13px;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.bgt-drop-zone {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+.bgt-drop-zone:hover,
+.bgt-drop-zone.drag-over {
+  border-color: #628c68;
+  background: rgba(98,140,104,.05);
+}
+.bgt-file-link {
+  color: #628c68;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 13px;
+}
+.bgt-hint {
+  font-size: 12px;
+  color: #999;
+  margin: 6px 0;
+  text-align: center;
+}
+.bgt-swatches { display: flex; gap: 8px; flex-wrap: wrap; }
+.bgt-swatch {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,.12);
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+  padding: 0;
+}
+.bgt-swatch:hover { transform: scale(1.1); }
+.bgt-swatch.active { box-shadow: 0 0 0 3px #fff, 0 0 0 5px #628c68; }
+.bgt-logo-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.bgt-logo-btn {
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  background: #fafafa;
+  color: #555;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: border-color .15s, background .15s, color .15s;
+}
+.bgt-logo-btn img {
+  display: block;
+  width: 100%;
+  height: 28px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+.bgt-logo-btn.bgt-logo-dark-preview {
+  background: #1f2a23;
+  color: #f5f5f5;
+}
+.bgt-logo-btn.active {
+  border-color: #628c68;
+  box-shadow: 0 0 0 2px rgba(98,140,104,.15);
+}
+.bgt-control-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.bgt-control-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+}
+.bgt-control-row label {
+  font-size: 11px;
+  color: #666;
+  min-width: 110px;
+}
+.bgt-control-row input[type="range"] {
+  width: 100%;
+  accent-color: #628c68;
+}
+.bgt-control-row span {
+  font-size: 11px;
+  color: #666;
+  min-width: 46px;
+  text-align: right;
+}
+.bgt-download-btn,
+.bgt-reset-btn {
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.bgt-download-btn {
+  width: 100%;
+  padding: 14px;
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.bgt-download-btn:hover { background: #333; }
+.bgt-reset-btn {
+  margin-top: 4px;
+  padding: 8px 10px;
+  color: #555;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+}
+.bgt-canvas-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+}
+#bannerPreviewCanvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  box-shadow: 0 16px 42px rgba(22,28,24,.18);
+  border-radius: 8px;
+}
+.bgt-dimensions {
+  text-align: center;
+  font-size: 12px;
+  color: #7a7a7a;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+.bgt-tips {
+  margin-top: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 13px;
+  color: #555;
+}
+.bgt-tips strong { display: block; margin-bottom: 6px; }
+.bgt-tips ul { margin: 0; padding-left: 0; list-style: none; }
+.bgt-tips li { margin-bottom: 4px; }
+.bgt-tips li::before { content: "\2022\00a0"; }
+@media (max-width: 991px) {
+  .bgt-preview-panel {
+    position: static;
+    margin-bottom: 24px;
+  }
+  .bgt-section .row {
+    flex-direction: column-reverse;
+  }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+<div class="wrapper">
+	{{ if or (eq .Params.options.header "small") (eq .Params.options.header "mini") (eq .Params.options.header nil) }}
+		{{ partial "header-small.html" . }}
+	{{ else if eq $.Params.options.header "full" }}
+		{{ partial "header-full.html" . }}
+	{{ end }}
+
+	<div class="section bgt-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-lg-5">
+					<div class="bgt-panel">
+						<h5 class="bgt-panel-title">Banner Settings</h5>
+
+						<div class="bgt-field">
+							<label class="bgt-label">Banner Format</label>
+							<div class="bgt-format-toggle" id="bannerFormatToggle">
+								<button class="bgt-format-btn active" data-format="website" type="button">Website<span>1400 × 400</span></button>
+								<button class="bgt-format-btn" data-format="linkedin" type="button">LinkedIn Cover<span>1584 × 396</span></button>
+								<button class="bgt-format-btn" data-format="hero" type="button">Hero Banner<span>1920 × 600</span></button>
+								<button class="bgt-format-btn" data-format="wide" type="button">Wide Banner<span>1600 × 500</span></button>
+							</div>
+						</div>
+
+						<div class="bgt-field">
+							<label class="bgt-label" for="bannerTitle">Title</label>
+							<input type="text" id="bannerTitle" class="bgt-input" value="National Multiplier Event Title" placeholder="Enter banner title">
+						</div>
+
+						<div class="bgt-field">
+							<label class="bgt-label" for="bannerSubtitle">Subtitle</label>
+							<textarea id="bannerSubtitle" class="bgt-textarea" rows="3" placeholder="Enter subtitle">Practical skills to apply AI tools and techniques in Higher-Education</textarea>
+						</div>
+
+						<div class="bgt-field">
+							<label class="bgt-label">Title Colour</label>
+							<div class="bgt-swatches" id="bannerTitleColorSwatches">
+								<button class="bgt-swatch active" data-color="#000000" style="background:#000000" title="Black" type="button"></button>
+								<button class="bgt-swatch" data-color="#ffffff" style="background:#ffffff" title="White" type="button"></button>
+								<button class="bgt-swatch" data-color="#628c68" style="background:#628c68" title="Primary Green" type="button"></button>
+							</div>
+						</div>
+
+						<div class="bgt-field">
+							<label class="bgt-label">Accent Colour</label>
+							<div class="bgt-swatches" id="bannerAccentSwatches">
+								<button class="bgt-swatch active" data-color="#628c68" style="background:#628c68" title="Primary Green" type="button"></button>
+								<button class="bgt-swatch" data-color="#63a376" style="background:#63a376" title="Light Green" type="button"></button>
+								<button class="bgt-swatch" data-color="#2c4d36" style="background:#2c4d36" title="Dark Green" type="button"></button>
+								<button class="bgt-swatch" data-color="#000000" style="background:#000000" title="Black" type="button"></button>
+								<button class="bgt-swatch" data-color="#ffffff" style="background:#ffffff" title="White" type="button"></button>
+							</div>
+						</div>
+
+						<div class="bgt-field">
+							<label class="bgt-label" for="bannerBtnText">Button Text</label>
+							<div class="bgt-row">
+								<input type="text" id="bannerBtnText" class="bgt-input" value="Register now" placeholder="e.g. Register now">
+								<label class="bgt-checkbox-label">
+									<input type="checkbox" id="bannerShowBtn" checked> Show
+								</label>
+							</div>
+						</div>
+
+						<div class="bgt-field">
+							<label class="bgt-label">Logo</label>
+							<div class="bgt-logo-options" id="bannerLogoOptions">
+								<button class="bgt-logo-btn active" data-logo="/images/logos-for-social-media/ai-hed-logo-full-green-gradient.svg" type="button">
+									<img src="/images/logos-for-social-media/ai-hed-logo-full-green-gradient.svg" alt="AI-HED gradient logo">
+									Gradient
+								</button>
+								<button class="bgt-logo-btn" data-logo="/images/logos-for-social-media/ai-hed-logo-full-default-black.svg" type="button">
+									<img src="/images/logos-for-social-media/ai-hed-logo-full-default-black.svg" alt="AI-HED black logo">
+									Black
+								</button>
+								<button class="bgt-logo-btn bgt-logo-dark-preview" data-logo="/images/logos-for-social-media/ai-hed-logo-full-white.svg" type="button">
+									<img src="/images/logos-for-social-media/ai-hed-logo-full-white.svg" alt="AI-HED white logo">
+									White
+								</button>
+							</div>
+							<div class="bgt-control-grid" style="margin-top:10px;">
+								<div class="bgt-control-row">
+									<label for="bannerLogoSize">Logo Size</label>
+									<input type="range" id="bannerLogoSize" min="70" max="180" step="5" value="100">
+									<span id="bannerLogoSizeVal">100%</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="bgt-field">
+							<label class="bgt-label">Background Image</label>
+							<input type="text" id="bannerBgUrl" class="bgt-input" placeholder="Paste image URL...">
+							<p class="bgt-hint">Leave empty for no image, or upload below</p>
+							<div class="bgt-drop-zone" id="bannerDropZone">
+								<span>Drop an image here or <label for="bannerBgFile" class="bgt-file-link">browse</label></span>
+								<input type="file" id="bannerBgFile" accept="image/*" style="display:none">
+							</div>
+						</div>
+
+						<div class="bgt-field">
+							<label class="bgt-label">Image Overlay</label>
+							<div class="bgt-row" style="align-items:flex-start; flex-wrap:wrap; gap:14px;">
+								<div class="bgt-swatches" id="bannerOverlaySwatches">
+									<button class="bgt-swatch active" data-color="#ffffff" style="background:#ffffff" title="White" type="button"></button>
+									<button class="bgt-swatch" data-color="#000000" style="background:#000000" title="Black" type="button"></button>
+									<button class="bgt-swatch" data-color="#628c68" style="background:#628c68" title="Brand Green" type="button"></button>
+								</div>
+								<div class="bgt-control-row" style="grid-template-columns:auto 1fr auto; flex:1; min-width:170px;">
+									<label for="bannerOverlayOpacity">Opacity</label>
+									<input type="range" id="bannerOverlayOpacity" min="0" max="90" step="5" value="15">
+									<span id="bannerOverlayOpacityVal">15%</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="bgt-field">
+							<label class="bgt-label">Composition</label>
+							<div class="bgt-control-grid">
+								<div class="bgt-control-row">
+									<label for="bannerImageStart">Image Start</label>
+									<input type="range" id="bannerImageStart" min="58" max="82" step="1" value="74">
+									<span id="bannerImageStartVal">74%</span>
+								</div>
+								<div class="bgt-control-row">
+									<label for="bannerDiagonalDepth">Diagonal Angle</label>
+									<input type="range" id="bannerDiagonalDepth" min="4" max="22" step="1" value="14">
+									<span id="bannerDiagonalDepthVal">14%</span>
+								</div>
+								<div class="bgt-control-row">
+									<label for="bannerContentWidth">Text Width</label>
+									<input type="range" id="bannerContentWidth" min="34" max="58" step="1" value="46">
+									<span id="bannerContentWidthVal">46%</span>
+								</div>
+							</div>
+							<button class="bgt-reset-btn" id="bannerResetBtn" type="button">Reset Banner Layout</button>
+						</div>
+
+						<div class="bgt-field">
+							<label class="bgt-label" for="bannerFooterText">Footer Text</label>
+							<input type="text" id="bannerFooterText" class="bgt-input" value="Erasmus+ KA2 Project. 2024-1-NL01-KA220-HED-000248874">
+						</div>
+
+						<button class="bgt-download-btn" id="bannerDownloadBtn" type="button">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+								<path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+								<path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+							</svg>
+							Download Banner
+						</button>
+
+						<div class="bgt-tips">
+							<strong>Quick Tips</strong>
+							<ul>
+								<li>Use high-resolution horizontal photography for cleaner diagonal crops</li>
+								<li>Keep the title short so the banner stays legible at smaller screen sizes</li>
+								<li>Use darker overlays when placing white logos or white title text over bright photos</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-12 col-lg-7">
+					<div class="bgt-preview-panel">
+						<h5 class="bgt-panel-title">Preview</h5>
+						<div class="bgt-canvas-wrap">
+							<canvas id="bannerPreviewCanvas"></canvas>
+						</div>
+						<p class="bgt-dimensions" id="bannerDimensions">1400 × 400 px</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{ end }}
+
+{{ define "list-javascript" }}
+<script>
+(function () {
+	'use strict';
+
+	var BANNER_FORMATS = {
+		website: { w: 1400, h: 400, label: '1400 × 400 px' },
+		linkedin: { w: 1584, h: 396, label: '1584 × 396 px' },
+		hero: { w: 1920, h: 600, label: '1920 × 600 px' },
+		wide: { w: 1600, h: 500, label: '1600 × 500 px' }
+	};
+	var canvas = document.getElementById('bannerPreviewCanvas');
+	var ctx = canvas.getContext('2d');
+	var overlayOpacityVal = document.getElementById('bannerOverlayOpacityVal');
+	var logoSizeVal = document.getElementById('bannerLogoSizeVal');
+	var imageStartVal = document.getElementById('bannerImageStartVal');
+	var diagonalDepthVal = document.getElementById('bannerDiagonalDepthVal');
+	var contentWidthVal = document.getElementById('bannerContentWidthVal');
+	var dropZone = document.getElementById('bannerDropZone');
+	var dimLabel = document.getElementById('bannerDimensions');
+
+	var state = {
+		format: 'website',
+		title: document.getElementById('bannerTitle').value,
+		subtitle: document.getElementById('bannerSubtitle').value,
+		titleColor: '#000000',
+		accentColor: '#628c68',
+		buttonText: document.getElementById('bannerBtnText').value,
+		showButton: true,
+		logoPath: '/images/logos-for-social-media/ai-hed-logo-full-green-gradient.svg',
+		logoScale: 100,
+		bgImage: null,
+		overlayColor: '#ffffff',
+		overlayOpacity: 15,
+		imageStart: 74,
+		diagonalDepth: 14,
+		contentWidth: 46,
+		footerText: document.getElementById('bannerFooterText').value
+	};
+
+	var logoImg = new Image();
+	function loadLogo(path) {
+		state.logoPath = path;
+		logoImg.onload = redraw;
+		logoImg.onerror = redraw;
+		logoImg.src = path;
+	}
+	loadLogo(state.logoPath);
+
+	function hexToRgb(hex) {
+		return {
+			r: parseInt(hex.slice(1, 3), 16),
+			g: parseInt(hex.slice(3, 5), 16),
+			b: parseInt(hex.slice(5, 7), 16)
+		};
+	}
+
+	function getWrappedLines(context, text, maxWidth) {
+		if (!text) return [];
+		var words = text.split(/\s+/).filter(Boolean);
+		var lines = [];
+		var line = '';
+		for (var i = 0; i < words.length; i++) {
+			var test = line ? line + ' ' + words[i] : words[i];
+			if (context.measureText(test).width > maxWidth && line) {
+				lines.push(line);
+				line = words[i];
+			} else {
+				line = test;
+			}
+		}
+		if (line) lines.push(line);
+		return lines;
+	}
+
+	function drawPill(context, x, y, w, h, r) {
+		context.beginPath();
+		context.moveTo(x + r, y);
+		context.lineTo(x + w - r, y);
+		context.quadraticCurveTo(x + w, y, x + w, y + r);
+		context.lineTo(x + w, y + h - r);
+		context.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+		context.lineTo(x + r, y + h);
+		context.quadraticCurveTo(x, y + h, x, y + h - r);
+		context.lineTo(x, y + r);
+		context.quadraticCurveTo(x, y, x + r, y);
+		context.closePath();
+	}
+
+	function drawImagePanelPath(context, width, height, startX, diagonalDepth) {
+		var topX = Math.round(width * (startX / 100));
+		var bottomX = Math.round(width * ((startX - diagonalDepth) / 100));
+		context.beginPath();
+		context.moveTo(topX, 0);
+		context.lineTo(width, 0);
+		context.lineTo(width, height);
+		context.lineTo(bottomX, height);
+		context.closePath();
+		return { topX: topX, bottomX: bottomX };
+	}
+
+	function updateControlLabels() {
+		overlayOpacityVal.textContent = state.overlayOpacity + '%';
+		logoSizeVal.textContent = state.logoScale + '%';
+		imageStartVal.textContent = state.imageStart + '%';
+		diagonalDepthVal.textContent = state.diagonalDepth + '%';
+		contentWidthVal.textContent = state.contentWidth + '%';
+	}
+
+	function getCurrentFormat() {
+		return BANNER_FORMATS[state.format] || BANNER_FORMATS.website;
+	}
+
+	function redraw() {
+		var fmt = getCurrentFormat();
+		var w = fmt.w;
+		var h = fmt.h;
+		canvas.width = w;
+		canvas.height = h;
+		dimLabel.textContent = fmt.label;
+
+		ctx.clearRect(0, 0, w, h);
+		ctx.fillStyle = '#ffffff';
+		ctx.fillRect(0, 0, w, h);
+
+		var padX = Math.round(w * 0.038);
+		var padTop = Math.round(h * 0.05);
+		var padBottom = Math.round(h * 0.04);
+		var panel = drawImagePanelPath(ctx, w, h, state.imageStart, state.diagonalDepth);
+
+		if (state.bgImage) {
+			ctx.save();
+			drawImagePanelPath(ctx, w, h, state.imageStart, state.diagonalDepth);
+			ctx.clip();
+			var iw = state.bgImage.naturalWidth;
+			var ih = state.bgImage.naturalHeight;
+			var scale = Math.max(w / iw, h / ih);
+			ctx.drawImage(state.bgImage, (w - iw * scale) / 2, (h - ih * scale) / 2, iw * scale, ih * scale);
+			var rgb = hexToRgb(state.overlayColor);
+			ctx.fillStyle = 'rgba(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ',' + (state.overlayOpacity / 100) + ')';
+			ctx.fillRect(0, 0, w, h);
+			ctx.restore();
+		} else {
+			ctx.save();
+			drawImagePanelPath(ctx, w, h, state.imageStart, state.diagonalDepth);
+			ctx.clip();
+			ctx.fillStyle = '#dfe7e1';
+			ctx.fillRect(0, 0, w, h);
+			ctx.restore();
+		}
+
+		var logoY = padTop;
+		var logoBaseH = Math.round(h * 0.12 * (state.logoScale / 100));
+		if (logoImg.complete && logoImg.naturalWidth > 0) {
+			var logoW = Math.round(logoBaseH * logoImg.naturalWidth / logoImg.naturalHeight);
+			ctx.drawImage(logoImg, padX, logoY, logoW, logoBaseH);
+		}
+
+		var textLeft = padX;
+		var textTop = logoY + logoBaseH + Math.round(h * 0.09);
+		var textRightLimit = Math.min(Math.round(w * (state.contentWidth / 100)), panel.bottomX - Math.round(w * 0.025));
+		var textWidth = Math.max(280, textRightLimit - textLeft);
+
+		var titleSize = Math.round(h * 0.105);
+		var subtitleSize = Math.round(h * 0.078);
+		var footerSize = Math.round(h * 0.04);
+		var buttonH = Math.round(h * 0.18);
+		var buttonFont = Math.round(buttonH * 0.36);
+
+		ctx.textBaseline = 'top';
+		ctx.font = '700 ' + titleSize + 'px Helvetica, Arial, sans-serif';
+		var titleLines = getWrappedLines(ctx, state.title, textWidth);
+		var y = textTop;
+		ctx.fillStyle = state.titleColor;
+		for (var t = 0; t < titleLines.length; t++) {
+			ctx.fillText(titleLines[t], textLeft, y);
+			y += Math.round(titleSize * 1.05);
+		}
+
+		y += Math.round(h * 0.02);
+		ctx.font = subtitleSize + 'px Helvetica, Arial, sans-serif';
+		ctx.fillStyle = state.accentColor;
+		var subtitleLines = getWrappedLines(ctx, state.subtitle, textWidth);
+		for (var s = 0; s < subtitleLines.length; s++) {
+			ctx.fillText(subtitleLines[s], textLeft, y);
+			y += Math.round(subtitleSize * 1.22);
+		}
+
+		if (state.showButton && state.buttonText.trim()) {
+			y += Math.round(h * 0.06);
+			ctx.font = '700 ' + buttonFont + 'px Helvetica, Arial, sans-serif';
+			var btnLabel = state.buttonText + ' →';
+			var btnW = Math.round(ctx.measureText(btnLabel).width + buttonH * 1.35);
+			ctx.fillStyle = state.accentColor;
+			drawPill(ctx, textLeft, y, btnW, buttonH, Math.round(buttonH / 2));
+			ctx.fill();
+			ctx.fillStyle = '#ffffff';
+			ctx.textAlign = 'center';
+			ctx.textBaseline = 'middle';
+			ctx.fillText(btnLabel, textLeft + btnW / 2, y + buttonH / 2);
+			ctx.textAlign = 'left';
+			ctx.textBaseline = 'top';
+		}
+
+		if (state.footerText) {
+			ctx.font = footerSize + 'px Helvetica, Arial, sans-serif';
+			ctx.fillStyle = state.accentColor;
+			ctx.fillText(state.footerText, padX, h - padBottom - footerSize);
+		}
+	}
+
+	function bindTextInput(id, stateKey) {
+		document.getElementById(id).addEventListener('input', function (e) {
+			state[stateKey] = e.target.value;
+			redraw();
+		});
+	}
+
+	function bindRangeInput(id, stateKey) {
+		document.getElementById(id).addEventListener('input', function (e) {
+			state[stateKey] = parseInt(e.target.value, 10);
+			updateControlLabels();
+			redraw();
+		});
+	}
+
+	bindTextInput('bannerTitle', 'title');
+	bindTextInput('bannerSubtitle', 'subtitle');
+	bindTextInput('bannerBtnText', 'buttonText');
+	bindTextInput('bannerFooterText', 'footerText');
+	bindRangeInput('bannerLogoSize', 'logoScale');
+	bindRangeInput('bannerOverlayOpacity', 'overlayOpacity');
+	bindRangeInput('bannerImageStart', 'imageStart');
+	bindRangeInput('bannerDiagonalDepth', 'diagonalDepth');
+	bindRangeInput('bannerContentWidth', 'contentWidth');
+
+	var formatBtns = document.querySelectorAll('#bannerFormatToggle .bgt-format-btn');
+	for (var fi = 0; fi < formatBtns.length; fi++) {
+		formatBtns[fi].addEventListener('click', function () {
+			for (var fj = 0; fj < formatBtns.length; fj++) formatBtns[fj].classList.remove('active');
+			this.classList.add('active');
+			state.format = this.getAttribute('data-format');
+			redraw();
+		});
+	}
+
+	document.getElementById('bannerShowBtn').addEventListener('change', function (e) {
+		state.showButton = e.target.checked;
+		document.getElementById('bannerBtnText').disabled = !e.target.checked;
+		redraw();
+	});
+
+	var logoBtns = document.querySelectorAll('#bannerLogoOptions .bgt-logo-btn');
+	for (var li = 0; li < logoBtns.length; li++) {
+		logoBtns[li].addEventListener('click', function () {
+			for (var lj = 0; lj < logoBtns.length; lj++) logoBtns[lj].classList.remove('active');
+			this.classList.add('active');
+			loadLogo(this.getAttribute('data-logo'));
+		});
+	}
+
+	var titleSw = document.querySelectorAll('#bannerTitleColorSwatches .bgt-swatch');
+	for (var ti = 0; ti < titleSw.length; ti++) {
+		titleSw[ti].addEventListener('click', function () {
+			for (var tk = 0; tk < titleSw.length; tk++) titleSw[tk].classList.remove('active');
+			this.classList.add('active');
+			state.titleColor = this.getAttribute('data-color');
+			redraw();
+		});
+	}
+
+	var accentSw = document.querySelectorAll('#bannerAccentSwatches .bgt-swatch');
+	for (var ai = 0; ai < accentSw.length; ai++) {
+		accentSw[ai].addEventListener('click', function () {
+			for (var ak = 0; ak < accentSw.length; ak++) accentSw[ak].classList.remove('active');
+			this.classList.add('active');
+			state.accentColor = this.getAttribute('data-color');
+			redraw();
+		});
+	}
+
+	var overlaySw = document.querySelectorAll('#bannerOverlaySwatches .bgt-swatch');
+	for (var oi = 0; oi < overlaySw.length; oi++) {
+		overlaySw[oi].addEventListener('click', function () {
+			for (var ok = 0; ok < overlaySw.length; ok++) overlaySw[ok].classList.remove('active');
+			this.classList.add('active');
+			state.overlayColor = this.getAttribute('data-color');
+			redraw();
+		});
+	}
+
+	function handleFile(file) {
+		if (!file || !file.type.startsWith('image/')) return;
+		var reader = new FileReader();
+		reader.onload = function (ev) {
+			var img = new Image();
+			img.onload = function () { state.bgImage = img; redraw(); };
+			img.src = ev.target.result;
+			document.getElementById('bannerBgUrl').value = '';
+			dropZone.querySelector('span').textContent = file.name;
+		};
+		reader.readAsDataURL(file);
+	}
+
+	document.getElementById('bannerBgFile').addEventListener('change', function (e) {
+		handleFile(e.target.files[0]);
+	});
+
+	dropZone.addEventListener('dragover', function (e) {
+		e.preventDefault();
+		dropZone.classList.add('drag-over');
+	});
+	dropZone.addEventListener('dragleave', function () {
+		dropZone.classList.remove('drag-over');
+	});
+	dropZone.addEventListener('drop', function (e) {
+		e.preventDefault();
+		dropZone.classList.remove('drag-over');
+		handleFile(e.dataTransfer.files[0]);
+	});
+
+	var bgUrlTimer;
+	document.getElementById('bannerBgUrl').addEventListener('input', function (e) {
+		clearTimeout(bgUrlTimer);
+		var url = e.target.value.trim();
+		if (!url) { state.bgImage = null; redraw(); return; }
+		bgUrlTimer = setTimeout(function () {
+			var img = new Image();
+			img.crossOrigin = 'anonymous';
+			img.onload = function () { state.bgImage = img; redraw(); };
+			img.onerror = function () {};
+			img.src = url;
+		}, 700);
+	});
+
+	document.getElementById('bannerResetBtn').addEventListener('click', function () {
+		state.logoScale = 100;
+		state.overlayOpacity = 15;
+		state.imageStart = 74;
+		state.diagonalDepth = 14;
+		state.contentWidth = 46;
+		document.getElementById('bannerLogoSize').value = '100';
+		document.getElementById('bannerOverlayOpacity').value = '15';
+		document.getElementById('bannerImageStart').value = '74';
+		document.getElementById('bannerDiagonalDepth').value = '14';
+		document.getElementById('bannerContentWidth').value = '46';
+		updateControlLabels();
+		redraw();
+	});
+
+	document.getElementById('bannerDownloadBtn').addEventListener('click', function () {
+		redraw();
+		try {
+			var fmt = getCurrentFormat();
+			var link = document.createElement('a');
+			link.download = 'ai-hed-banner-' + state.format + '-' + fmt.w + 'x' + fmt.h + '.png';
+			link.href = canvas.toDataURL('image/png');
+			link.click();
+		} catch (err) {
+			alert(
+				'Download failed: the background image may be blocked by cross-origin restrictions.\n\n' +
+				'Please use the file upload option to add your background image instead of a URL.'
+			);
+		}
+	});
+
+	updateControlLabels();
+	redraw();
+})();
+</script>
+{{ end }}
