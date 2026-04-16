@@ -5,6 +5,7 @@ title = 'AI-HED'
 theme = "Hugo-Now-UI-Pro"
 [params]
 logo = "/images/ai-hed-shorthandlogo.svg"
+defaultImage = "https://ai-hed.eu/images/ai-hed-og-default.jpg"
   [params.umami]
   active = true
   siteId = 'dc13752c-d59c-44c8-95bc-e15254ed9425'
