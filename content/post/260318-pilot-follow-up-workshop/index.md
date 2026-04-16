@@ -126,20 +126,29 @@ More than a technological tool, AI is becoming a structural element in how we te
 ---
 
 <style>
-.croatia-gallery .gallery-item {
+.workshop-gallery .gallery-item {
   break-inside: avoid;
   -webkit-column-break-inside: avoid;
   width: 100%;
   margin: 0 0 4px;
 }
-.croatia-gallery .gallery-item img {
+.workshop-gallery .gallery-item img {
   width: 100%;
   height: auto;
   display: block;
 }
 </style>
-<div style="background:#628c68;margin:2rem -15px 0;padding:48px 24px 40px;border-radius:4px;">
-  <h3 style="color:#fff;text-align:center;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin:0 0 6px;">Workshop in Photos</h3>
-  <p style="color:rgba(255,255,255,0.75);text-align:center;margin:0 0 32px;font-size:0.95rem;">Zagreb · March 2026</p>
-  <div class="croatia-gallery">{{< gallery folder="images/croatia/" >}}</div>
+<div style="margin:2rem -15px 0;">
+  <h3 style="text-align:center;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;margin:0 0 8px;">Workshop in Photos</h3>
+  <p style="text-align:center;color:#666;margin:0 0 32px;font-size:0.95rem;">March 2026</p>
+
+  <div style="background:#628c68;padding:40px 24px 32px;border-radius:4px;margin-bottom:1rem;">
+    <p style="color:rgba(255,255,255,0.9);text-align:center;font-weight:600;margin:0 0 24px;font-size:1rem;text-transform:uppercase;letter-spacing:0.04em;">Zagreb</p>
+    <div class="workshop-gallery">{{< gallery folder="images/croatia/" >}}</div>
+  </div>
+
+  <div style="background:#3a5f8a;padding:40px 24px 32px;border-radius:4px;">
+    <p style="color:rgba(255,255,255,0.9);text-align:center;font-weight:600;margin:0 0 24px;font-size:1rem;text-transform:uppercase;letter-spacing:0.04em;">Amsterdam</p>
+    <div class="workshop-gallery">{{< gallery folder="images/netherlands/" >}}</div>
+  </div>
 </div>
