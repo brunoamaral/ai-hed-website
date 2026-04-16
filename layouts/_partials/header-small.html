@@ -1,0 +1,57 @@
+{{ $headerSize := $.Params.options.header }}
+
+{{ if eq $headerSize nil }}
+	{{ $headerSize = "small" }}
+{{ end }}
+
+{{- $overlayColor   := $.Params.options.overlay_color -}}
+{{- $overlayOpacity := 50 -}}
+{{- with $.Params.options.overlay_opacity -}}
+	{{- $overlayOpacity = . -}}
+{{- end -}}
+
+{{- $overlayRGB   := "0,0,0" -}}
+{{- if eq $overlayColor "white" -}}
+	{{- $overlayRGB = "255,255,255" -}}
+{{- end -}}
+
+{{- $overlayAlpha := printf "%.2f" (mul (float $overlayOpacity) 0.01) -}}
+
+<style>
+	@media (-webkit-device-pixel-ratio: 1.5), (device-pixel-ratio: 1.5) {
+		.page-header .page-header-image {
+			background-position: center calc(50% + 70px) !important;
+		}
+	}
+</style>
+<div class="page-header page-header-{{ $headerSize }}">
+	<div class="page-header-image d-print-none" data-parallax="true" style="background-image: url('{{ partial "header-image.html" . }}');">
+	</div>
+	{{- if $overlayColor }}
+	<div aria-hidden="true" style="position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba({{ $overlayRGB }},{{ $overlayAlpha }});z-index:1;pointer-events:none;"></div>
+	{{- end }}
+	<div class="content-center">
+		<div class="container">
+			<div class="px-0
+			{{ with $.Params.options.title_align }}
+			col-md-12 text-{{.}}
+			{{ else }}
+			col-md-12 mx-auto text-center
+			{{ end }}
+
+				">
+				{{- if (ne .Params.options.showTitle false)  }}
+				<h1 class="title" itemprop="headline d-print-block">{{ .Title | safeHTML }}</h1> {{ .Params.options.showTitle}}
+				{{ end }}
+				{{- with .Params.subtitle }}
+					<h2 itemprop="subtitle d-print-block">{{ . | safeHTML }}</h2>
+				{{- end }}
+				{{- with .Params.cta }}
+					{{ range . }}
+						<a href="{{ with .url }} {{ . }}{{ end }}" class="btn {{ with .classes }}{{ . }}{{ else }} btn-primary{{ end }}"{{ with .umami }} data-umami-event="{{ . }}"{{ end }}>{{ with .label }}{{ . | safeHTML }}{{ end }}</a>
+					{{ end }}
+				{{- end }}
+			</div>
+		</div>
+	</div>
+</div>
