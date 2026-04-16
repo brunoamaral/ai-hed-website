@@ -147,8 +147,13 @@ More than a technological tool, AI is becoming a structural element in how we te
     <div class="workshop-gallery">{{< gallery folder="images/croatia/" >}}</div>
   </div>
 
-  <div style="background:#3a5f8a;padding:40px 24px 32px;border-radius:4px;">
+  <div style="background:#3a5f8a;padding:40px 24px 32px;border-radius:4px;margin-bottom:1rem;">
     <p style="color:rgba(255,255,255,0.9);text-align:center;font-weight:600;margin:0 0 24px;font-size:1rem;text-transform:uppercase;letter-spacing:0.04em;">Amsterdam</p>
     <div class="workshop-gallery">{{< gallery folder="images/netherlands/" >}}</div>
+  </div>
+
+  <div style="background:#8a4a3a;padding:40px 24px 32px;border-radius:4px;">
+    <p style="color:rgba(255,255,255,0.9);text-align:center;font-weight:600;margin:0 0 24px;font-size:1rem;text-transform:uppercase;letter-spacing:0.04em;">Lisbon</p>
+    <div class="workshop-gallery">{{< gallery folder="images/portugal/" >}}</div>
   </div>
 </div>
