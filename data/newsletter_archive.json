@@ -4,34 +4,41 @@
     "displayDate": "February, 2026",
     "title": "Building Confidence and Clarity Around AI in Higher Education",
     "image": "images/05.jpg",
-    "link": "https://preview.mailerlite.io/emails/webview/1232886/179858923415668626"
+    "link": "pdf/newsletter-06-date-february-2026.pdf"
+  },
+  {
+    "date": "2025-11-01",
+    "displayDate": "November, 2025",
+    "title": "Launch of the AI-HED Pilot Courses",
+    "image": "images/image-newsletter-november-2025.jpg",
+    "link": "pdf/newsletter-05-date-november-2025.pdf"
   },
   {
     "date": "2025-06-30",
     "displayDate": "June, 2025",
     "title": "Adopting AI in Higher Education: Guidelines for course development",
-    "image": "images/04.png",
-    "link": "https://preview.mailerlite.io/preview/1232886/emails/154292289229816971"
+    "image": "images/04.jpeg",
+    "link": "pdf/newsletter-04-date-may-2025.pdf"
   },
   {
     "date": "2025-04-11",
     "displayDate": "April, 2025",
     "title": "Empowering Higher Education with AI: New Updates & Resources",
     "image": "images/03.jpg",
-    "link": "https://preview.mailerlite.io/preview/1232886/emails/150592284700706085"
+    "link": "pdf/newsletter-03-date-april-2025.pdf"
   },
   {
     "date": "2025-02-24",
     "displayDate": "February, 2025",
     "title": "Is AI the missing piece in your classroom? Hear from our invited expert Philippe Borremans",
-    "image": "images/02.png",
-    "link": "https://preview.mailerlite.io/preview/1232886/emails/146960427872421271"
+    "image": "images/02.jpeg",
+    "link": "pdf/newsletter-02-date-feb-2025.pdf"
   },
   {
     "date": "2025-01-16",
     "displayDate": "January, 2025",
     "title": "Invitation to join AI-HED, Artificial Intelligence for Higher Education",
     "image": "images/01.jpg",
-    "link": "https://preview.mailerlite.io/preview/1232886/emails/144140095419581797"
+    "link": "pdf/newsletter-01-date-jan-2025.pdf"
   }
 ]
