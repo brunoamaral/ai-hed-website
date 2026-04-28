@@ -1,0 +1,31 @@
+{{/*
+  profile-section.html
+  Renders a narrative section with an h2 heading.
+  Handles both plain-text content and the challenges list fallback.
+
+  Params (dict):
+    .heading    — i18n key string for the <h2>
+    .content    — string (narrative text, may be HTML)
+    .challenges — slice of {challenge, management} objects (optional;
+                  renders as <dl> pairs when present, overrides .content)
+*/}}
+{{ $heading := .heading }}
+{{ $content := .content }}
+{{ $challenges := .challenges }}
+
+<section class="ftc-section">
+  <h2>{{ i18n $heading }}</h2>
+
+  {{ if $challenges }}
+    <dl class="ftc-challenges">
+      {{ range $challenges }}
+      <div class="ftc-challenges__item">
+        <dt>{{ .challenge }}</dt>
+        <dd>{{ .management }}</dd>
+      </div>
+      {{ end }}
+    </dl>
+  {{ else if $content }}
+    <p>{{ $content | safeHTML }}</p>
+  {{ end }}
+</section>

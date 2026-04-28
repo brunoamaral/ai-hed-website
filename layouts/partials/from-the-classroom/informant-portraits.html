@@ -1,0 +1,51 @@
+{{/*
+  informant-portraits.html
+  Renders portrait image(s) with a fallback tile when images are absent.
+
+  Params (dict):
+    .informants      — array of informant objects (name, portrait, role)
+    .size            — int, dimension in px (default 160)
+    .overlap         — bool, apply negative margin for duo overlap (default false)
+    .institutionLogo — path to institution logo (passed to fallback)
+    .eager           — bool, use eager loading (default false)
+*/}}
+{{ $informants := .informants }}
+{{ $size := .size | default 160 }}
+{{ $overlap := .overlap | default false }}
+{{ $logo := .institutionLogo }}
+{{ $eager := .eager | default false }}
+{{ $loading := "lazy" }}
+{{ if $eager }}{{ $loading = "eager" }}{{ end }}
+
+{{ $isDuo := gt (len $informants) 1 }}
+
+<div class="ftc-portrait-wrap{{ if and $isDuo $overlap }} ftc-portrait-duo{{ end }}">
+  {{ range $informants }}
+    {{ $portraitPath := "" }}
+    {{ if .portrait }}
+      {{ $portraitPath = strings.TrimPrefix "/" .portrait }}
+    {{ end }}
+    {{ $img := false }}
+    {{ if $portraitPath }}
+      {{ $img = resources.Get $portraitPath }}
+    {{ end }}
+    {{ if $img }}
+      {{ $resized := $img.Fill (printf "%dx%d Center q85 webp" $size $size) }}
+      <img
+        class="ftc-portrait img-raised"
+        style="width:{{ $size }}px; height:{{ $size }}px;"
+        src="{{ $resized.RelPermalink }}"
+        alt="Portrait of {{ .name }}"
+        loading="{{ $loading }}"
+        width="{{ $size }}"
+        height="{{ $size }}"
+      >
+    {{ else }}
+      {{ partial "from-the-classroom/informant-portrait-fallback.html" (dict
+        "informant" .
+        "size" $size
+        "institutionLogo" $logo
+      ) }}
+    {{ end }}
+  {{ end }}
+</div>

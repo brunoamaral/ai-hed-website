@@ -1,0 +1,56 @@
+{{/*
+  profile-hero.html
+  Renders the hero strip for a profile page.
+
+  Param: full data object (metadata + raw + edited)
+*/}}
+{{ $data := . }}
+{{ $meta := $data.metadata }}
+{{ $raw := $data.raw }}
+{{ $informants := $meta.informants }}
+{{ $isDuo := gt (len $informants) 1 }}
+{{ $size := 160 }}
+{{ if $isDuo }}{{ $size = 140 }}{{ end }}
+
+<div class="ftc-hero">
+  <div class="ftc-hero__portraits">
+    {{ partial "from-the-classroom/informant-portraits.html" (dict
+      "informants" $informants
+      "size" $size
+      "overlap" $isDuo
+      "institutionLogo" $meta.institution_logo
+      "eager" true
+    ) }}
+  </div>
+
+  <div class="ftc-hero__meta">
+    <h1 class="ftc-hero__title">{{ $meta.course_title }}</h1>
+
+    <p class="ftc-hero__byline">
+      {{ if $isDuo }}
+        {{ printf (i18n "ftc_byline_duo") (index $informants 0).name (index $informants 1).name }}
+      {{ else }}
+        {{ printf (i18n "ftc_byline_solo") (index $informants 0).name }}
+      {{ end }}
+    </p>
+
+    <div class="ftc-hero__institution">
+      <img
+        src="{{ $meta.institution_logo }}"
+        alt="{{ $meta.institution }}"
+        height="36"
+        loading="lazy"
+      >
+      <span class="ftc-hero__institution-name">{{ $meta.institution_short }}</span>
+    </div>
+
+    {{ with $raw.course_overview }}
+    <p class="ftc-hero__course-meta">
+      {{ .level -}}
+      {{ with .ects_credits }} &middot; {{ . }} ECTS{{ end -}}
+      {{ with .semester }} &middot; {{ . }}{{ end -}}
+      {{ with .num_students }} &middot; {{ . }} students{{ end }}
+    </p>
+    {{ end }}
+  </div>
+</div>

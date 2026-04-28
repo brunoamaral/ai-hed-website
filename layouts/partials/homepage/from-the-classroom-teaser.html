@@ -1,0 +1,93 @@
+{{/*
+  from-the-classroom-teaser.html
+  Homepage teaser for the "From the Classroom" section.
+  Reads hugo.Data.from_the_classroom directly.
+  Renders nothing when the data directory is empty.
+*/}}
+{{ $allProfiles := slice }}
+{{ range $key, $val := hugo.Data.from_the_classroom }}
+  {{ $allProfiles = $allProfiles | append $val }}
+{{ end }}
+
+{{/* Sort desc (newest first) and take up to 3 */}}
+{{ $allProfiles = sort $allProfiles "metadata.date" "desc" }}
+{{ $profiles := first 3 $allProfiles }}
+
+{{ if gt (len $profiles) 0 }}
+<section class="section ftc-teaser py-5" id="ftc-teaser">
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-md-10 text-center">
+        <h2 class="title">{{ i18n "ftc_section_title" }}</h2>
+        <p class="lead font-weight-normal">{{ i18n "ftc_section_subtitle" }}</p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+      {{ range $profiles }}
+        {{ $meta := .metadata }}
+        {{ $informants := $meta.informants }}
+        {{ $isDuo := gt (len $informants) 1 }}
+        {{ $profileURL := printf "/from-the-classroom/%s/" $meta.slug }}
+
+        <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex">
+          <a
+            href="{{ $profileURL }}"
+            class="ftc-teaser-card w-100"
+            data-umami-event="ftc_homepage_card_click"
+            data-umami-event-slug="{{ $meta.slug }}"
+          >
+            <div class="ftc-teaser-card__portraits">
+              {{ partial "from-the-classroom/informant-portraits.html" (dict
+                "informants" $informants
+                "size" 80
+                "overlap" $isDuo
+                "institutionLogo" $meta.institution_logo
+                "eager" false
+              ) }}
+            </div>
+
+            <div class="ftc-teaser-card__body">
+              <p class="ftc-teaser-card__name">
+                {{ range $i, $inf := $informants -}}
+                  {{- if gt $i 0 }} &amp; {{ end -}}
+                  {{- $inf.name -}}
+                {{- end }}
+              </p>
+              <p class="ftc-teaser-card__course">{{ $meta.course_title }}</p>
+              <p class="ftc-teaser-card__institution">{{ $meta.institution_short }}</p>
+              {{ with $meta.hook }}<p class="ftc-teaser-card__hook">{{ . }}</p>{{ end }}
+            </div>
+          </a>
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="row justify-content-center mt-3">
+      <div class="col-md-4 text-center">
+        <a
+          href="/from-the-classroom/"
+          class="btn btn-primary btn-round btn-lg font-weight-bold"
+          data-umami-event="ftc_homepage_cta"
+        >
+          {{ i18n "ftc_homepage_cta" }} <i class="fas fa-arrow-circle-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var el = document.getElementById('ftc-teaser');
+  if (!el || !window.IntersectionObserver) return;
+  var fired = false;
+  new IntersectionObserver(function(entries){
+    if (!fired && entries[0].isIntersecting) {
+      fired = true;
+      if (window.umami) window.umami.track('ftc_homepage_teaser_view');
+    }
+  }, { threshold: 0.5 }).observe(el);
+})();
+</script>
+{{ end }}

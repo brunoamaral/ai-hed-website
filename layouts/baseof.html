@@ -42,8 +42,9 @@
 
 	{{- $bootstrap := resources.Get "css/bootstrap.min.css" -}}
 	{{- $nowUi := resources.Get "scss/now-ui-kit.scss" | toCSS (dict "enableSourceMap" false "outputStyle" "compressed") -}}
+	{{- $ftcCss := resources.Get "scss/sections/_from-the-classroom.scss" | toCSS (dict "enableSourceMap" false "outputStyle" "compressed") -}}
 
-	{{ $styles := slice $bootstrap $nowUi $montserrat $fontawesome $brands $regular $solid | resources.Concat "css/style.css" |  minify | fingerprint  -}}
+	{{ $styles := slice $bootstrap $nowUi $ftcCss $montserrat $fontawesome $brands $regular $solid | resources.Concat "css/style.css" |  minify | fingerprint  -}}
 
 	<link rel="stylesheet" href="{{$styles.RelPermalink}}">
 

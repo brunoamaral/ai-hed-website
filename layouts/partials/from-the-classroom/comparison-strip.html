@@ -1,0 +1,112 @@
+{{/*
+  comparison-strip.html
+  Desktop: accessible <table>. Mobile: <dl> card stack.
+  Both representations are in the DOM; CSS hides the unused one per breakpoint.
+
+  Param: slice of profile data objects (pre-sorted by caller)
+*/}}
+{{ $profiles := . }}
+
+<div class="ftc-comparison">
+
+  {{/* ── Desktop table (>= 992px) ── */}}
+  <div class="d-none d-lg-block">
+    <table class="ftc-comparison__table table">
+      <caption>{{ i18n "ftc_landing_comparison_caption" }}</caption>
+      <thead>
+        <tr>
+          <th scope="col">{{ i18n "ftc_col_course" }}</th>
+          <th scope="col">{{ i18n "ftc_col_educator_plural" }}</th>
+          <th scope="col">{{ i18n "ftc_col_institution" }}</th>
+          <th scope="col">{{ i18n "ftc_col_level" }}</th>
+          <th scope="col">{{ i18n "ftc_col_students" }}</th>
+          <th scope="col">{{ i18n "ftc_col_tools" }}</th>
+          <th scope="col">{{ i18n "ftc_col_assessed" }}</th>
+          <th scope="col">{{ i18n "ftc_col_risk_managed" }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{ range $profiles }}
+          {{ $meta := .metadata }}
+          {{ $raw := .raw }}
+          {{ $informants := $meta.informants }}
+          {{ $profileURL := printf "/from-the-classroom/%s/" $meta.slug }}
+          {{ $educatorNames := slice }}
+          {{ range $informants }}{{ $educatorNames = $educatorNames | append .name }}{{ end }}
+          <tr>
+            <th scope="row">
+              <a
+                href="{{ $profileURL }}"
+                data-umami-event="ftc_comparison_row_click"
+                data-umami-event-slug="{{ $meta.slug }}"
+              >{{ $raw.course_overview.title }}</a>
+            </th>
+            <td>{{ delimit $educatorNames ", " }}</td>
+            <td>{{ $meta.institution_short }}</td>
+            <td>{{ $raw.course_overview.level }}</td>
+            <td>{{ $raw.course_overview.num_students }}</td>
+            <td>{{ delimit $raw.implementation_details.tools_used ", " }}</td>
+            <td>
+              {{ if $raw.implementation_details.part_of_assessment }}{{ i18n "ftc_yes" }}{{ else }}{{ i18n "ftc_no" }}{{ end }}
+            </td>
+            <td>
+              {{ if $raw.evaluation_and_risk_management.risk_management.in_place }}{{ i18n "ftc_yes" }}{{ else }}{{ i18n "ftc_no" }}{{ end }}
+            </td>
+          </tr>
+        {{ end }}
+      </tbody>
+    </table>
+  </div>
+
+  {{/* ── Mobile DL cards (< 992px) ── */}}
+  <div class="d-lg-none ftc-comparison__mobile">
+    {{ range $profiles }}
+      {{ $meta := .metadata }}
+      {{ $raw := .raw }}
+      {{ $informants := $meta.informants }}
+      {{ $profileURL := printf "/from-the-classroom/%s/" $meta.slug }}
+      {{ $educatorNames := slice }}
+      {{ range $informants }}{{ $educatorNames = $educatorNames | append .name }}{{ end }}
+
+      <div class="ftc-comparison__card">
+        <a
+          href="{{ $profileURL }}"
+          class="ftc-comparison__card-link"
+          data-umami-event="ftc_comparison_row_click"
+          data-umami-event-slug="{{ $meta.slug }}"
+        >
+          <dl>
+            <dt>{{ i18n "ftc_col_course" }}</dt>
+            <dd>{{ $raw.course_overview.title }}</dd>
+
+            <dt>{{ i18n "ftc_col_educator_plural" }}</dt>
+            <dd>{{ delimit $educatorNames ", " }}</dd>
+
+            <dt>{{ i18n "ftc_col_institution" }}</dt>
+            <dd>{{ $meta.institution_short }}</dd>
+
+            <dt>{{ i18n "ftc_col_level" }}</dt>
+            <dd>{{ $raw.course_overview.level }}</dd>
+
+            <dt>{{ i18n "ftc_col_students" }}</dt>
+            <dd>{{ $raw.course_overview.num_students }}</dd>
+
+            <dt>{{ i18n "ftc_col_tools" }}</dt>
+            <dd>{{ delimit $raw.implementation_details.tools_used ", " }}</dd>
+
+            <dt>{{ i18n "ftc_col_assessed" }}</dt>
+            <dd>
+              {{ if $raw.implementation_details.part_of_assessment }}{{ i18n "ftc_yes" }}{{ else }}{{ i18n "ftc_no" }}{{ end }}
+            </dd>
+
+            <dt>{{ i18n "ftc_col_risk_managed" }}</dt>
+            <dd>
+              {{ if $raw.evaluation_and_risk_management.risk_management.in_place }}{{ i18n "ftc_yes" }}{{ else }}{{ i18n "ftc_no" }}{{ end }}
+            </dd>
+          </dl>
+        </a>
+      </div>
+    {{ end }}
+  </div>
+
+</div>
