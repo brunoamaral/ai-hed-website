@@ -437,7 +437,8 @@
     }
 
     thead th {
-      font-size: 0.78rem;
+      font-size: 0.785rem !important;
+			font-weight: bold !important;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #737373;
@@ -508,7 +509,7 @@
 
 .ftc-teaser {
   position: relative;
-  background-image: url('/images/from-the-classroom/educators/kubra-arslaner-n4PnQBHNuEY-unsplash.jpg');
+  background-image: url('/images/from-the-classroom/kubra-arslaner-n4PnQBHNuEY-unsplash.jpg');
   background-size: cover;
   background-position: center;
 
