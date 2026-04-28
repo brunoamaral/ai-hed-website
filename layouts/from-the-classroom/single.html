@@ -79,8 +79,8 @@
           {{ end }}
 
           {{/* Pull quote 1 */}}
-          {{ if $edited.quotes }}
-            {{ with index $edited.quotes 0 }}
+          {{ if $edited.pull_quotes }}
+            {{ with index $edited.pull_quotes 0 }}
               {{ partial "from-the-classroom/profile-pullquote.html" . }}
             {{ end }}
           {{ end }}
@@ -122,8 +122,8 @@
           {{ end }}
 
           {{/* Pull quote 2 */}}
-          {{ if $edited.quotes }}
-            {{ with index $edited.quotes 1 }}
+          {{ if $edited.pull_quotes }}
+            {{ with index $edited.pull_quotes 1 }}
               {{ partial "from-the-classroom/profile-pullquote.html" . }}
             {{ end }}
           {{ end }}
