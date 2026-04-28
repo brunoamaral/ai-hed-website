@@ -2,12 +2,11 @@
   profile-pullquote.html
   Renders a styled pull quote with attribution.
 
-  Param: dict with .quote (object with .text and .speaker)
+  Param: object with .text and .speaker
 */}}
-{{ $quote := .quote }}
 
 <blockquote class="ftc-pullquote">
   <span class="ftc-pullquote__glyph" aria-hidden="true">&ldquo;</span>
-  <p>{{ $quote.text }}</p>
-  <footer>&mdash; <cite>{{ $quote.speaker }}</cite></footer>
+  <p>{{ .text }}</p>
+  <footer>&mdash; <cite>{{ .speaker }}</cite></footer>
 </blockquote>
