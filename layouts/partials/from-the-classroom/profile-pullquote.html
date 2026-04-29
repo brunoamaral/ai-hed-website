@@ -7,6 +7,6 @@
 
 <blockquote class="ftc-pullquote">
   <span class="ftc-pullquote__glyph" aria-hidden="true">&ldquo;</span>
-  <p>{{ .text }}</p>
+  <p>{{ .text | safeHTML }}</p>
   <footer>&mdash; <cite>{{ .speaker }}</cite></footer>
 </blockquote>
