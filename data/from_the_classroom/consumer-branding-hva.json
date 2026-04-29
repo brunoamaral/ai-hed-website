@@ -1,0 +1,134 @@
+{
+	"metadata": {
+		"date": "2026-02-19",
+		"slug": "consumer-branding-hva",
+		"course_title": "Consumer Branding",
+		"institution": "Amsterdam University of Applied Sciences",
+		"institution_short": "HvA Amsterdam",
+		"institution_logo": "/images/partners/logo_amsterdam-uas.svg",
+		"informants": [
+			{
+				"name": "Alexandra Benitez",
+				"role": "Lecturer",
+				"portrait": "/images/from-the-classroom/educators/alexandra-benitez-burgos.webp",
+				"bio": ""
+			}
+		],
+		"hook": ""
+	},
+
+	"raw": {
+		"course_overview": {
+			"title": "Consumer Branding",
+			"university": "Amsterdam University of Applied Sciences",
+			"programme": "Business Economics — International Marketing & Sales",
+			"ects_credits": 5,
+			"level": "Bachelor",
+			"semester": "Semester 1, 2025-2026",
+			"num_students": 91,
+			"typical_student_background": "Third-year bachelor students who have completed Years 1 and 2 and selected the International Marketing & Sales specialization track. Skills: analytical thinking, primary research (surveys, interviews, data analysis), working with real-life case studies, translating research into strategic recommendations, academic writing. Prior knowledge includes marketing fundamentals, consumer behavior, market research principles, and strategic marketing.",
+			"prerequisites": "Successful completion of Years 1 and 2 of bachelor programme"
+		},
+		"ai_usage_summary": "AI is a fundamental tool in the project. Students define an AI persona grounded in primary research (interviews and surveys), then use it to simulate customer responses. The primary goal is twofold: help students understand which insights are needed to create their marketing strategy, and stimulate iterative concept development using the AI persona as a feedback partner and co-designer. Distinctive: AI use must be documented (prompts, outputs) and justified with an 'evidence pack'. AI does not replace primary research — evidence from research is used to generate the persona.",
+		"learning_outcomes": {
+			"outcomes": [
+				"Identify and justify the market potential of a brand using consumer research",
+				"Use consumer insights to create a customer profile",
+				"Design brand positioning concepts based on brand identity and consumer insights",
+				"Evaluate and select a brand strategy by testing generated brand concepts with the target audience",
+				"Define brand objectives and determine the most suitable persuasion route based on target audience insights",
+				"Create a compelling brand story that supports the customer's journey",
+				"Create a set of communication assets that collectively tell the brand story"
+			],
+			"ai_support_per_ilo": "ILO 2: Students create an AI persona grounded in primary research. ILO 3: AI supports generation and iteration of brand concepts by simulating how the defined AI persona might perceive and respond to positioning ideas (supported by second primary research). ILO 6: AI used to explore and structure storytelling options while checking alignment with the AI persona and brand positioning. ILO 7: AI assisted in generating draft content, visual directions, and touchpoint ideas, then refined and validated using research evidence.",
+			"skills_enhanced": [
+				"Persona development — using consumer research to build and simulate an AI persona representing the target audience",
+				"Concept development — AI-supported generation and refinement of brand positioning ideas and activation concepts as co-designer",
+				"Story and content creation — AI assisted in drafting brand stories and communication elements",
+				"Critical evaluation — documenting prompts, assessing AI outputs, and validating against research evidence with in-class critical thinking sessions"
+			],
+			"ai_specific_outcomes": false
+		},
+		"purpose_and_benefits": {
+			"main_reason": "To support students in simulating customer perspectives through an AI-generated persona. AI acted as a tool allowing faster iteration and insight generation without replacing primary research.",
+			"benefits_for_students": [
+				"Enhanced critical evaluation — practicing assessment of AI-generated content against research evidence, reinforcing analytical skills",
+				"Trained transparency and accountability in AI usage through the evidence pack requirement",
+				"Enhanced research application — translating consumer research into actionable digital profiles (AI persona)"
+			],
+			"benefits_for_lecturers": [
+				"Easier monitoring — AI outputs documented in evidence pack made student AI usage transparent throughout the semester; students also shared persona links with teachers",
+				"Support in judging originality — lecturers could focus on evaluating how students adapted AI-generated ideas creatively rather than grading basic ideation",
+				"Guiding coaching sessions — AI outputs allowed lecturers to focus feedback on strengthening analytical and evidence-based skills",
+				"AI personas simulate customer behavior, which complements or reduces the amount of primary research students must conduct"
+			]
+		},
+		"implementation_details": {
+			"how_used_in_class": "AI was used at four structured moments: (1) students created the AI persona based on research inputs with teacher instructions; (2) in a group session, teams evaluated and selected which AI persona would be most suitable as co-designer; (3) the selected AI persona was treated as an additional team member throughout the project for idea testing and campaign development; (4) during official presentations, students conducted a live AI demonstration showing how the persona was used in developing their branding strategy.",
+			"tools_used": [
+				"ChatGPT (free and paid versions)",
+				"InVideo (for commercial design)"
+			],
+			"access": "No paid version provided by HvA for this course. Students free to choose platforms.",
+			"guidance_provided": "Slide deck with detailed instructions for building an AI persona (prompting, adding information, generating/editing images, settings, interaction), shared via Brightspace and reinforced through screensharing. A critical thinking group session was organized to reflect on and evaluate AI-generated outputs with guided comparisons between AI persona outputs and primary research. Session was recorded.",
+			"part_of_assessment": true,
+			"assessment_details": "Student performance with AI formally assessed in both persona design and concept development. Assessment focused on: (1) whether AI use was documented (prompts, outputs, evidence pack); (2) whether AI outputs were aligned with primary and secondary research; (3) the extent to which AI enriched the persona, journey, brand concepts, storytelling, and activation. Students graded on ability to leverage AI strategically and responsibly. Feedback addressed both effectiveness of AI integration and critical evaluation of AI outputs."
+		},
+		"evaluation_and_risk_management": {
+			"impact_evaluated_how": "Through formal assessment rubrics for both course components.",
+			"metrics_or_kpis": true,
+			"metrics_details": "Primary research (post-course AI implementation survey) conducted at end of semester.",
+			"formal_institutional_evaluation": null,
+			"risk_management": {
+				"in_place": true,
+				"description": "Clear boundaries: AI could not replace primary research; students had to collect and use their own data. Mandatory documentation: all AI prompts and outputs included in the evidence pack for transparency. Assessment criteria: 'AI Integration' was a graded component focusing on appropriate, research-aligned, and critical use. Required extra teaching to clarify conceptual confusion between persona and AI persona, and to show students how to use their AI persona meaningfully."
+			}
+		},
+		"overall_impact": {
+			"impact_on_teaching_learning": "AI enhanced the learning process in terms of engagement and efficiency. Students interacted with the AI persona as a team member, supporting idea testing and concept development. AI allowed faster generation of draft concepts, stories, and visuals, enabling more time for strategic alignment and research integration. Clear boundaries were required to prevent over-reliance; effectiveness managed through assessment criteria requiring documentation and live demonstrations.",
+			"impact_on_student_outcomes": "Impact varied sharply by student tech orientation; some needed help getting started and learning to prompt well. A key trade-off was reduced time for other course concepts. Accountability through sharing persona links increased involvement and attention. Students also learned to question AI validity when outputs conflicted with their data.",
+			"main_challenges": [
+				{
+					"challenge": "Subscription inequality — differences in access to paid vs unpaid persona/agent features",
+					"management": "Not fully resolved; identified as a structural issue"
+				},
+				{
+					"challenge": "Differences in students' starting level and technical delays (slow video production)",
+					"management": "Extra teaching sessions and guidance"
+				},
+				{
+					"challenge": "Students need sufficient topic knowledge to evaluate AI outputs",
+					"management": "Critical thinking session and guided comparisons with primary research"
+				},
+				{
+					"challenge": "Group work complicated when only the persona creator could properly run early tests",
+					"management": "Recommendation to build shared access or rotate responsibility"
+				}
+			]
+		},
+		"scalability_and_transferability": {
+			"can_be_scaled": true,
+			"scaling_requirements": "AI as simulated stakeholder (personas, target consumers) works best in courses using personas repeatedly across a project, not as a one-off. Requirements: treat the persona as a reusable artifact iteratively enriched with data; force grounding in real evidence; prevent role drift by constraining persona behavior; ensure fair collaboration by building shared access or rotating responsibility.",
+			"key_advice": "Compare multiple student-built personas in class, select one, and agree on rules of use. Add a 'conflict check': if persona feedback contradicts primary research, students must reconcile it. Use an 'evidence pack' (persona version history, what data was added, how it changed decisions) for assessment-safe outputs. Include a short defence: 'Which 3 persona insights did you use, and why do you trust them?'"
+		}
+	},
+
+	"edited": {
+		"intro": "",
+		"why_we_used_ai": "",
+		"how_it_worked": "",
+		"what_changed": "",
+		"what_we_struggled_with": "",
+		"what_we_learned": "",
+		"pull_quotes": [
+			{
+				"text": "Our marketing bachelor students took their consumer behavior concepts and research much further using AI. They applied Large Language Models to build personas, craft compeling brand stories, and put their critical evaluation to the test.<br>We had to set clear boundaries to avoid relying too much on AI, and in return we gained higher engagement from students.",
+				"speaker": "Alexandra Benitez"
+			},
+			{
+				"text": "Classroom moves that helped<br>1. Compare multiple student-built personas in class, select one, and agree on “rules of use”.<br>2. Add a “conflict check”: if persona feedback contradicts primary re-search, students must reconcile it.<br>3. Assessment-safe outputs<br>4. An \"evidence pack\" (persona version history + what data was added and how it changed decisions).<br>5. A short defence: \"Which 3 persona insights did you use, and why do you trust them?\"",
+				"speaker": "Alexandra Benitez"
+			}
+		]
+	}
+}
