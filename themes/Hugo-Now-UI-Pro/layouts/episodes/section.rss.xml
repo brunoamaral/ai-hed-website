@@ -2,7 +2,7 @@
     <channel>
         <title>{{ .Site.Title }} - {{ .Site.Params.subtitle }}</title>
         <link>{{ .Permalink }}</link>
-        <language>{{ .Site.LanguageCode }}</language>
+        <language>{{ .Site.Language.Locale }}</language>
         <copyright>{{ .Site.Copyright }}</copyright>
         <description>{{ .Site.Params.description }}</description>
 
