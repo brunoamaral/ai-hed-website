@@ -524,7 +524,7 @@ Access and manipulate data from data files.
 }
 */}}
 
-{{ $authors := .Site.Data.authors }}
+{{ $authors := hugo.Data.authors }}
 {{ with index $authors "john" }}
   <div class="author">
     <h3>{{ .name }}</h3>
@@ -544,7 +544,7 @@ featured:
     license: "BSD"
 */}}
 
-{{ range .Site.Data.products.software.featured }}
+{{ range hugo.Data.products.software.featured }}
   <div class="product">
     <h4>{{ .name }} v{{ .version }}</h4>
     <span>License: {{ .license }}</span>
