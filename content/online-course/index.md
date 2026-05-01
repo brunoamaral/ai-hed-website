@@ -43,7 +43,7 @@ options:
 # cta:
 #   - label: Start Now <i class="fas fa-arrow-circle-right"></i>
 #     url: https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=header-cta
-#     classes: btn btn-success btn-round btn-lg font-weight-bold
+#     classes: btn btn-primary btn-round btn-lg font-weight-bold
 
 ---
 
@@ -59,7 +59,7 @@ options:
       </p>
       <a
         href="https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=hero"
-        class="btn btn-success btn-round btn-lg font-weight-bold mt-3"
+        class="btn btn-primary btn-round btn-lg font-weight-bold mt-3"
         target="_blank"
         rel="noopener"
         data-umami-event="click--mooc-enroll-hero"
@@ -269,7 +269,7 @@ options:
         <h2 class="title mb-3">Get Started</h2>
         <a
           href="https://learn.foi.hr/?utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=bottom-cta"
-          class="btn btn-success btn-round btn-lg font-weight-bold"
+          class="btn btn-primary btn-round btn-lg font-weight-bold"
           target="_blank"
           rel="noopener"
           data-umami-event="click--mooc-enroll-cta"
