@@ -40,7 +40,7 @@ options:
         </p>
         <a
           href="/ai-course-educators/"
-          class="btn btn-success btn-round btn-lg font-weight-bold"
+          class="btn btn-primary btn-round btn-lg font-weight-bold"
           data-umami-event="click--homepage-online-course"
         >
           Start Now <i class="fas fa-arrow-circle-right"></i>
