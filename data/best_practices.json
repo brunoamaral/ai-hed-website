@@ -1,0 +1,270 @@
+[
+	{
+		"metadata": {
+			"date": "2026-03-09",
+			"informant": "Larisa Hrustek and Ana Kutnjak",
+			"source_file": "241204_best_practices_template_Digital_Transformation.docx"
+		},
+		"course_overview": {
+			"title": "Digital Transformation",
+			"university": "University of Zagreb Faculty of Organization and Informatics",
+			"programme": "Information and Software Engineering, Informatics in Education, Business Systems Organization",
+			"ects_credits": 5,
+			"level": "Master",
+			"semester": "1st semester, 1st study year",
+			"num_students": 64,
+			"typical_student_background": "Majority completed undergraduate studies in Information and Business Systems at FOI Zagreb. Students acquired competencies in software/IS development, data analysis, machine learning, AI for business, IoT, and business systems design. No defined prerequisites.",
+			"prerequisites": "None"
+		},
+		"ai_usage_summary": "AI was integrated through seminar sessions where students used AI tools in their course projects — digital transformation proposals for real-world business cases. AI served as a support tool for deeper analyses, clarifying analytical results, creating visualizations of digital transformation models, developing conceptual prototype designs, and presenting selected analytical methods.",
+		"learning_outcomes": {
+			"outcomes": [
+				"ILO 1: Recommend appropriate digital technologies for business process transformation",
+				"ILO 2: Design a proposal for improving user experience",
+				"ILO 3: Evaluate the need for innovation for a given business problem",
+				"ILO 4: Develop innovations in business processes and business models",
+				"ILO 5: Design business process transformation based on organizational, process, and technological innovations",
+				"ILO 6: Propose specific technological innovations and create an integration plan",
+				"ILO 7: Assess the application of digital transformation methods in a selected case",
+				"ILO 8: Justify the need for upgrading software support as part of a transformation initiative",
+				"ILO 9: Construct a project implementation plan considering multiple resource types",
+				"ILO 10: Estimate costs and effects of business process improvement"
+			],
+			"ai_support_per_ilo": "AI supported ILO 1 and ILO 3 by assisting in technology and industry analysis, literature reviews, and identifying disruptions. It helped structure and refine conceptual solution models and prototypes (ILO 2), supported selection and visualization of analytical methods (ILO 7), and evaluated digital technologies for proposed transformation initiatives (ILO 8).",
+			"skills_enhanced": [
+				"Critical thinking",
+				"Creative thinking",
+				"Analytical skills",
+				"Decision-making skills"
+			],
+			"ai_specific_outcomes": false
+		},
+		"purpose_and_benefits": {
+			"main_reason": "Two-fold: (1) enable students to learn how to work effectively with AI tools, integrate results, and critically evaluate generated content; (2) help them understand AI as a learning companion for exploring possibilities and refining ideas.",
+			"benefits_for_students": "AI improved project work by enabling in-depth analysis of the current state of selected cases and supporting visualization of proposed digital transformation concepts and methods.",
+			"benefits_for_lecturers": "Lecturers strengthened their own AI competencies while preparing teaching materials and practical examples. Collaborative critical reflection during seminars fostered a shared learning environment evaluating reliability, relevance, and limitations of AI-generated results."
+		},
+		"implementation_details": {
+			"how_used_in_class": "AI tools were used in approximately six seminar sessions for group projects of 4–5 members. Applied for analyzing the current state of selected organizations, exploring digital technologies for specific needs, creating visualizations of digital transformation concepts, and visualizing methodological frameworks (Business Model Canvas, Value Proposition Canvas).",
+			"tools_used": [
+				"ChatGPT",
+				"Perplexity",
+				"Canva AI",
+				"Gemini"
+			],
+			"access": "Mix of free and paid versions; paid versions not required. When free tools hit usage limits, team members rotated queries.",
+			"guidance_provided": "Lecturers presented theoretical concepts first, then provided clear guidance on applying AI tools to specific methods, including live demonstrations. Students received instructions on referencing AI use and integrating AI-generated content into projects.",
+			"part_of_assessment": true,
+			"assessment_details": "AI use evaluated in relation to ILOs. ILO 1 and ILO 3: how students used AI for industry analysis and identifying disruptions. ILO 2, ILO 7, ILO 8: ability to develop conceptual models, visualize current state, and present solutions using AI-supported tools (e.g., Canva AI)."
+		},
+		"evaluation_and_risk_management": {
+			"impact_evaluated_how": "Through students' project work and seminar discussions. Projects required explicit description of AI tool usage, indicating which outputs were accepted, how they were refined, and how they contributed to final solutions. Regular seminar discussions with critical reflection.",
+			"metrics_or_kpis": false,
+			"formal_institutional_evaluation": false,
+			"risk_management": {
+				"in_place": true,
+				"description": "Students were consistently reminded of ethical and responsible AI use. AI was intended as a supporting companion, not the primary creator of student work. Projects entirely generated by AI were returned for revision, requiring students to demonstrate appropriate and responsible use."
+			}
+		},
+		"overall_impact": {
+			"impact_on_teaching_learning": "Mixed results. Some teams used AI appropriately and achieved high-quality, comprehensive outcomes. Other teams relied on AI-generated content without meaningful adaptation or critical evaluation. No noticeable impact on accessibility or personalization. Overall student effectiveness increased when AI was applied appropriately.",
+			"impact_on_student_outcomes": "Positive. Students recognized that AI outputs must be carefully evaluated. They learned to view AI as a supportive learning companion rather than a task-completion tool, strengthening critical thinking and problem-solving skills.",
+			"main_challenges": [
+				{
+					"challenge": "Irresponsible use of AI tools — submitting entirely AI-generated content, improper referencing, and propagating incorrect AI-generated information",
+					"management": "Discussions with students reviewing project mistakes; lecturers demonstrated with specific examples that AI can hallucinate, misinterpret, or produce biased results"
+				},
+				{
+					"challenge": "Fostering student awareness of responsible and conscientious AI use",
+					"management": "Despite efforts, some teams did not adequately evaluate AI-generated content quality"
+				}
+			]
+		},
+		"scalability_and_transferability": {
+			"can_be_scaled": true,
+			"scaling_requirements": "Applicable to other project-based courses. The Faculty has established Guidelines for AI Use in Teaching. Institution organizes regular workshops and training for lecturers on AI tools, with further planned activities on ethical AI use by students.",
+			"key_advice": "Students will inevitably use AI; educators should actively address it and promote ethical, responsible use. AI is a valuable learning partner for exploring ideas and developing skills, but should complement — not replace — student work. Integrating AI into course projects supports learning while strengthening critical thinking, engagement, and understanding of responsible AI use."
+		}
+	},
+	{
+		"metadata": {
+			"date": "2026-03-04",
+			"informant": "Magdalena Kuštelega",
+			"source_file": "241204_best_practices_template_Digital_marketing.docx"
+		},
+		"course_overview": {
+			"title": "Digital Marketing",
+			"university": "University of Zagreb, Faculty of Organization and Informatics",
+			"programme": "Information and Business Systems",
+			"ects_credits": 4,
+			"level": "Bachelor",
+			"semester": "5th semester, 3rd year",
+			"num_students": 61,
+			"typical_student_background": "Third-year undergraduate elective, open to all four modules (Development of Software Systems, AI in Business, Networked Systems and Computer Games, Analysis and Design of Business Systems). Students have strong organizational and communication skills, analytical mindset, high digital literacy, and interest in marketing strategy and ICT integration.",
+			"prerequisites": "None defined, but completion of all first- and second-year courses recommended"
+		},
+		"ai_usage_summary": "AI was used primarily as a supporting tool in developing a digital marketing plan for a new or innovative product/service. It was also incorporated into seminar classes where student teams used AI to explore and respond to discussion questions tied to case studies. The main objective was to enhance students' understanding of appropriate and effective AI use in digital marketing, while promoting critical evaluation of AI-generated answers.",
+		"learning_outcomes": {
+			"outcomes": [
+				"ILO 1: Propose marketing strategies for the observed company to achieve sustainable competitive advantage",
+				"ILO 2: Integrate information technologies in the marketing strategies of a company",
+				"ILO 3: Identify the elements of the digital marketing mix in the context of developing a digital marketing plan for a new/innovative product/service"
+			],
+			"ai_support_per_ilo": "ILO 1: AI covered all phases of digital marketing plan development with emphasis on current-state analysis, proposed appropriate marketing strategies, and synthesized findings. ILO 2: AI integrated ICT into marketing strategies, proposed suitable 4Ps components, and helped explain and evaluate key characteristics of proposed strategies during seminars. ILO 3: AI identified marketing mix elements with emphasis on the promotional mix, generated creative solutions and marketing tactics.",
+			"skills_enhanced": [
+				"Critical thinking — formulating specific search queries for high-quality information",
+				"Creativity — generating ideas and exploring beyond comfort zones",
+				"Analytical thinking — discovering that specific questions open further research threads",
+				"Time management — recognizing that AI does not always save time and requires careful combination with personal reflection"
+			],
+			"ai_specific_outcomes": false
+		},
+		"purpose_and_benefits": {
+			"main_reason": "To raise students' awareness of the benefits and responsibilities of using AI tools, encourage engagement and creativity, and develop critical thinking. AI was used as a support tool, not a primary data source.",
+			"benefits_for_students": "Assisted in analyzing and responding to case study discussion questions. Used as a supporting tool for visualizations: persona profile, customer journey map, SWOT analysis, BCG matrix, landing page, promotional mix visuals (social media posts, video content, email, flyers), logo, brand visual, slogan, product display, and pricing visuals.",
+			"benefits_for_lecturers": "Generated new relevant ideas for preparing case studies. Not used as a primary data source but to identify relevant global and local real-world examples, boosting creativity, critical thinking, and time efficiency. Required conversation transcripts simplified monitoring for AI misuse; instructor used AI to verify originality and relevance of student content."
+		},
+		"implementation_details": {
+			"how_used_in_class": "In seminar classes, student teams of up to 5 members collectively used a specific AI tool to generate responses to case study discussion questions. Used across all seminar sessions for every course unit. Students first independently read, analyzed, and responded to questions before using AI. Teams completed a 'Template for Using AI Tools' comparing AI answers to their own conclusions. Students also used AI throughout the semester to develop a digital marketing plan covering eight units.",
+			"tools_used": [
+				"ChatGPT",
+				"ChatGPT 5.0 (paid)",
+				"Perplexity (paid, provided by university)",
+				"Microsoft Copilot",
+				"DeepSeek",
+				"Google Gemini",
+				"Claude AI",
+				"Canva AI"
+			],
+			"access": "Students chose any AI tool they preferred, typically free versions or personal subscriptions. FOI provided free Perplexity Pro licenses in 2025/2026; some teams used it exclusively during seminars.",
+			"guidance_provided": "Each team submitted a completed 'Template for Using AI Tools' with four questions: tool used, full conversation transcript, total interaction time in minutes, and a comparison of AI answers versus team conclusions including an assessment of the extent of differences.",
+			"part_of_assessment": true,
+			"assessment_details": "2 points for AI usage out of 20 for ILO 1 and ILO 2 combined; 2 points for AI usage out of 20 for ILO 3. Lecturers specifically noted points awarded for AI tool utilization when evaluating digital marketing plans."
+		},
+		"evaluation_and_risk_management": {
+			"impact_evaluated_how": "Weekly team feedback via the 'Template for Using AI Tools' (question 4), comparing AI answers to team conclusions with critical reflections. Lecturer emphasized oral commentary, allowing teams to share views and gain diverse perspectives. Post-course survey on satisfaction and instruction quality including AI implementation.",
+			"metrics_or_kpis": true,
+			"metrics_details": "Post-survey completed by students at end of course delivery assessing satisfaction and quality of instruction with AI implementation.",
+			"formal_institutional_evaluation": false,
+			"risk_management": {
+				"in_place": true,
+				"description": "Primary risk: excessive, non-transparent, and unethical AI use leading to poorer learning outcomes. Rules set: AI permitted only after teams independently read, analyzed, and answered discussion questions. Teams must attach full AI conversation logs and clearly mark AI-assisted sections in plans, specifying the tool name."
+			}
+		},
+		"overall_impact": {
+			"impact_on_teaching_learning": "AI had no significant impact on the teaching process itself, which remained essentially unchanged. However, it had a significantly positive impact on the lecturer's own learning — enabling faster, more creative content generation and offering a new perspective on formulating clear, specific, and unambiguous prompts and assignments.",
+			"impact_on_student_outcomes": "Positive. AI helped students develop a broad understanding of AI applications in digital marketing, offered a new perspective for examining case studies, and fostered critical thinking and creativity. Students engaged more deeply with the material, enhancing analytical abilities and capacity to critically evaluate both AI responses and their own conclusions.",
+			"main_challenges": [
+				{
+					"challenge": "No significant technical, understanding, or integration difficulties encountered",
+					"management": "Timely and clear student communication about the specific manner and sequence of activities during seminars, along with clear consequences of irresponsible, unethical, and non-transparent AI use"
+				}
+			]
+		},
+		"scalability_and_transferability": {
+			"can_be_scaled": true,
+			"scaling_requirements": "Applicable to other courses with project assignment elements. AI can be engaged in writing specific sections of papers, generating ideas, stimulating creative problem-solving, graphically representing textual parts, or enhancing seminar instruction for creativity and critical thinking.",
+			"key_advice": "Educators should carefully consider the primary motivation and purpose of AI implementation before starting, and ensure AI aligns with defined learning outcomes. It is not necessary to integrate AI into every assessment element. Apply AI selectively where it can best enhance learning and teaching — sometimes less is more."
+		}
+	},
+	{
+		"metadata": {
+			"date": "2026-02-19",
+			"informant": "Alexandra Benitez",
+			"source_file": "261902_best_practices_template_CSB.docx"
+		},
+		"course_overview": {
+			"title": "Consumer Branding",
+			"university": "Amsterdam University of Applied Sciences",
+			"programme": "Business Economics — International Marketing & Sales",
+			"ects_credits": 5,
+			"level": "Bachelor",
+			"semester": "Semester 1, 2025-2026",
+			"num_students": 91,
+			"typical_student_background": "Third-year bachelor students who have completed Years 1 and 2 and selected the International Marketing & Sales specialization track. Skills: analytical thinking, primary research (surveys, interviews, data analysis), working with real-life case studies, translating research into strategic recommendations, academic writing. Prior knowledge includes marketing fundamentals, consumer behavior, market research principles, and strategic marketing.",
+			"prerequisites": "Successful completion of Years 1 and 2 of bachelor programme"
+		},
+		"ai_usage_summary": "AI is a fundamental tool in the project. Students define an AI persona grounded in primary research (interviews and surveys), then use it to simulate customer responses. The primary goal is twofold: help students understand which insights are needed to create their marketing strategy, and stimulate iterative concept development using the AI persona as a feedback partner and co-designer. Distinctive: AI use must be documented (prompts, outputs) and justified with an 'evidence pack'. AI does not replace primary research — evidence from research is used to generate the persona.",
+		"learning_outcomes": {
+			"outcomes": [
+				"ILO 1: Identify and justify the market potential of a brand using consumer research",
+				"ILO 2: Use consumer insights to create a customer profile",
+				"ILO 3: Design brand positioning concepts based on brand identity and consumer insights",
+				"ILO 4: Evaluate and select a brand strategy by testing generated brand concepts with the target audience",
+				"ILO 5: Define brand objectives and determine the most suitable persuasion route based on target audience insights",
+				"ILO 6: Create a compelling brand story that supports the customer's journey",
+				"ILO 7: Create a set of communication assets that collectively tell the brand story"
+			],
+			"ai_support_per_ilo": "ILO 2: Students create an AI persona grounded in primary research. ILO 3: AI supports generation and iteration of brand concepts by simulating how the defined AI persona might perceive and respond to positioning ideas (supported by second primary research). ILO 6: AI used to explore and structure storytelling options while checking alignment with the AI persona and brand positioning. ILO 7: AI assisted in generating draft content, visual directions, and touchpoint ideas, then refined and validated using research evidence.",
+			"skills_enhanced": [
+				"Persona development — using consumer research to build and simulate an AI persona representing the target audience",
+				"Concept development — AI-supported generation and refinement of brand positioning ideas and activation concepts as co-designer",
+				"Story and content creation — AI assisted in drafting brand stories and communication elements",
+				"Critical evaluation — documenting prompts, assessing AI outputs, and validating against research evidence with in-class critical thinking sessions"
+			],
+			"ai_specific_outcomes": false
+		},
+		"purpose_and_benefits": {
+			"main_reason": "To support students in simulating customer perspectives through an AI-generated persona. AI acted as a tool allowing faster iteration and insight generation without replacing primary research.",
+			"benefits_for_students": [
+				"Enhanced critical evaluation — practicing assessment of AI-generated content against research evidence, reinforcing analytical skills",
+				"Trained transparency and accountability in AI usage through the evidence pack requirement",
+				"Enhanced research application — translating consumer research into actionable digital profiles (AI persona)"
+			],
+			"benefits_for_lecturers": [
+				"Easier monitoring — AI outputs documented in evidence pack made student AI usage transparent throughout the semester; students also shared persona links with teachers",
+				"Support in judging originality — lecturers could focus on evaluating how students adapted AI-generated ideas creatively rather than grading basic ideation",
+				"Guiding coaching sessions — AI outputs allowed lecturers to focus feedback on strengthening analytical and evidence-based skills",
+				"AI personas simulate customer behavior, which complements or reduces the amount of primary research students must conduct"
+			]
+		},
+		"implementation_details": {
+			"how_used_in_class": "AI was used at four structured moments: (1) students created the AI persona based on research inputs with teacher instructions; (2) in a group session, teams evaluated and selected which AI persona would be most suitable as co-designer; (3) the selected AI persona was treated as an additional team member throughout the project for idea testing and campaign development; (4) during official presentations, students conducted a live AI demonstration showing how the persona was used in developing their branding strategy.",
+			"tools_used": [
+				"ChatGPT (free and paid versions)",
+				"InVideo (for commercial design)"
+			],
+			"access": "No paid version provided by HvA for this course. Students free to choose platforms.",
+			"guidance_provided": "Slide deck with detailed instructions for building an AI persona (prompting, adding information, generating/editing images, settings, interaction), shared via Brightspace and reinforced through screensharing. A critical thinking group session was organized to reflect on and evaluate AI-generated outputs with guided comparisons between AI persona outputs and primary research. Session was recorded.",
+			"part_of_assessment": true,
+			"assessment_details": "Student performance with AI formally assessed in both persona design and concept development. Assessment focused on: (1) whether AI use was documented (prompts, outputs, evidence pack); (2) whether AI outputs were aligned with primary and secondary research; (3) the extent to which AI enriched the persona, journey, brand concepts, storytelling, and activation. Students graded on ability to leverage AI strategically and responsibly. Feedback addressed both effectiveness of AI integration and critical evaluation of AI outputs."
+		},
+		"evaluation_and_risk_management": {
+			"impact_evaluated_how": "Through formal assessment rubrics for both course components.",
+			"metrics_or_kpis": true,
+			"metrics_details": "Primary research (post-course AI implementation survey) conducted at end of semester.",
+			"formal_institutional_evaluation": null,
+			"risk_management": {
+				"in_place": true,
+				"description": "Clear boundaries: AI could not replace primary research; students had to collect and use their own data. Mandatory documentation: all AI prompts and outputs included in the evidence pack for transparency. Assessment criteria: 'AI Integration' was a graded component focusing on appropriate, research-aligned, and critical use. Required extra teaching to clarify conceptual confusion between persona and AI persona, and to show students how to use their AI persona meaningfully."
+			}
+		},
+		"overall_impact": {
+			"impact_on_teaching_learning": "AI enhanced the learning process in terms of engagement and efficiency. Students interacted with the AI persona as a team member, supporting idea testing and concept development. AI allowed faster generation of draft concepts, stories, and visuals, enabling more time for strategic alignment and research integration. Clear boundaries were required to prevent over-reliance; effectiveness managed through assessment criteria requiring documentation and live demonstrations.",
+			"impact_on_student_outcomes": "Impact varied sharply by student tech orientation; some needed help getting started and learning to prompt well. A key trade-off was reduced time for other course concepts. Accountability through sharing persona links increased involvement and attention. Students also learned to question AI validity when outputs conflicted with their data.",
+			"main_challenges": [
+				{
+					"challenge": "Subscription inequality — differences in access to paid vs unpaid persona/agent features",
+					"management": "Not fully resolved; identified as a structural issue"
+				},
+				{
+					"challenge": "Differences in students' starting level and technical delays (slow video production)",
+					"management": "Extra teaching sessions and guidance"
+				},
+				{
+					"challenge": "Students need sufficient topic knowledge to evaluate AI outputs",
+					"management": "Critical thinking session and guided comparisons with primary research"
+				},
+				{
+					"challenge": "Group work complicated when only the persona creator could properly run early tests",
+					"management": "Recommendation to build shared access or rotate responsibility"
+				}
+			]
+		},
+		"scalability_and_transferability": {
+			"can_be_scaled": true,
+			"scaling_requirements": "AI as simulated stakeholder (personas, target consumers) works best in courses using personas repeatedly across a project, not as a one-off. Requirements: treat the persona as a reusable artifact iteratively enriched with data; force grounding in real evidence; prevent role drift by constraining persona behavior; ensure fair collaboration by building shared access or rotating responsibility.",
+			"key_advice": "Compare multiple student-built personas in class, select one, and agree on rules of use. Add a 'conflict check': if persona feedback contradicts primary research, students must reconcile it. Use an 'evidence pack' (persona version history, what data was added, how it changed decisions) for assessment-safe outputs. Include a short defence: 'Which 3 persona insights did you use, and why do you trust them?'"
+		}
+	}
+]
