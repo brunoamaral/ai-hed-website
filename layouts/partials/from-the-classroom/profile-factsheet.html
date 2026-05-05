@@ -39,19 +39,7 @@
     </dl>
   </section>
 
-  {{/* 2. Learning outcomes */}}
-  {{ with $los.outcomes }}
-  <section class="ftc-factsheet__section">
-    <h3>{{ i18n "ftc_factsheet_outcomes" }}</h3>
-    <ol>
-      {{ range . }}
-      <li>{{ . }}</li>
-      {{ end }}
-    </ol>
-  </section>
-  {{ end }}
-
-  {{/* 3. AI tools */}}
+  {{/* 2. AI tools */}}
   {{ with $impl.tools_used }}
   <section class="ftc-factsheet__section">
     <h3>{{ i18n "ftc_factsheet_tools" }}</h3>
@@ -62,82 +50,6 @@
     </ul>
   </section>
   {{ end }}
-
-  {{/* 4. Assessment */}}
-  <section class="ftc-factsheet__section">
-    <h3>{{ i18n "ftc_factsheet_assessment" }}</h3>
-    {{ if $impl.part_of_assessment }}
-      <span class="ftc-badge ftc-badge--yes">{{ i18n "ftc_yes" }}</span>
-    {{ else }}
-      <span class="ftc-badge ftc-badge--no">{{ i18n "ftc_no" }}</span>
-    {{ end }}
-    {{ with $impl.assessment_details }}
-    <p class="mt-2">{{ . }}</p>
-    {{ end }}
-  </section>
-
-  {{/* 5. Evaluation */}}
-  <section class="ftc-factsheet__section">
-    <h3>{{ i18n "ftc_factsheet_evaluation" }}</h3>
-    {{ with $eval.impact_evaluated_how }}<p>{{ . }}</p>{{ end }}
-    <ul>
-      <li>
-        KPIs tracked:
-        {{ if $eval.metrics_or_kpis }}
-          <span class="ftc-badge ftc-badge--yes">{{ i18n "ftc_yes" }}</span>
-          {{ with $eval.metrics_details }} — {{ . }}{{ end }}
-        {{ else }}
-          <span class="ftc-badge ftc-badge--no">{{ i18n "ftc_no" }}</span>
-        {{ end }}
-      </li>
-      <li>
-        Formal institutional evaluation:
-        {{ if $eval.formal_institutional_evaluation }}
-          <span class="ftc-badge ftc-badge--yes">{{ i18n "ftc_yes" }}</span>
-        {{ else }}
-          <span class="ftc-badge ftc-badge--no">{{ i18n "ftc_no" }}</span>
-        {{ end }}
-      </li>
-    </ul>
-  </section>
-
-  {{/* 6. Risk management */}}
-  <section class="ftc-factsheet__section">
-    <h3>{{ i18n "ftc_factsheet_risk" }}</h3>
-    {{ $risk := $eval.risk_management }}
-    {{ if $risk.in_place }}
-      <span class="ftc-badge ftc-badge--yes">{{ i18n "ftc_yes" }}</span>
-      {{ with $risk.description }}<p class="mt-2">{{ . }}</p>{{ end }}
-    {{ else }}
-      <span class="ftc-badge ftc-badge--no">{{ i18n "ftc_no" }}</span>
-    {{ end }}
-  </section>
-
-  {{/* 7. Challenges */}}
-  {{ with $impact.main_challenges }}
-  <section class="ftc-factsheet__section">
-    <h3>{{ i18n "ftc_factsheet_challenges" }}</h3>
-    <dl class="ftc-challenges">
-      {{ range . }}
-      <div class="ftc-challenges__item">
-        <dt>{{ .challenge }}</dt>
-        <dd>{{ .management }}</dd>
-      </div>
-      {{ end }}
-    </dl>
-  </section>
-  {{ end }}
-
-  {{/* 8. Scalability */}}
-  <section class="ftc-factsheet__section">
-    <h3>{{ i18n "ftc_factsheet_scalability" }}</h3>
-    {{ if $scale.can_be_scaled }}
-      <span class="ftc-badge ftc-badge--yes">{{ i18n "ftc_yes" }}</span>
-    {{ else }}
-      <span class="ftc-badge ftc-badge--no">{{ i18n "ftc_no" }}</span>
-    {{ end }}
-    {{ with $scale.scaling_requirements }}<p class="mt-2">{{ . }}</p>{{ end }}
-  </section>
 
 </aside>
 
