@@ -1,0 +1,136 @@
+{
+	"metadata": {
+		"date": "2026-04-28",
+		"slug": "process-management-uas-bfi",
+		"course_title": "Process Management",
+		"institution": "University of Applied Sciences BFI Vienna",
+		"institution_short": "UAS BFI Vienna",
+		"institution_logo": "/images/partners/FH_e_Logo_Blue_RGB.svg",
+		"informants": [
+			{
+				"name": "Friedrich Stallinger",
+				"role": "Lecturer",
+				"portrait": "",
+				"bio": ""
+			}
+		],
+		"hook": ""
+	},
+
+	"raw": {
+		"course_overview": {
+			"title": "Process Management",
+			"university": "University of Applied Sciences BFI Vienna",
+			"programme": "Project Management and Organisation (Master); Project Management and Data Analytics (Master) — same class delivered across both programmes",
+			"ects_credits": 3,
+			"level": "Master",
+			"semester": "1st semester",
+			"num_students": 67,
+			"typical_student_background": "First-semester master's students working and studying simultaneously, with mixed sectoral backgrounds and uneven prior knowledge in process management and AI usage.",
+			"prerequisites": "Bachelor-level process management knowledge and competencies. A preparatory tutorial is offered to students prior to the start of the class."
+		},
+		"ai_usage_summary": "AI was integrated across four connected assignments over roughly three months. Students first used a customized chatbot as a tutor for process lifecycle models, then worked with prescribed GenAI tools on process landscapes, BPMN-based process modelling, and investigations of technology trends in process management. The primary goal was to combine authentic, practice-oriented process work with critical reflection on AI use and AI output quality. What set the design apart was bounded comparability: two lecturer-written company cases, prescribed tools, and cross-group peer review made differences in AI use discussable.",
+		"learning_outcomes": {
+			"outcomes": [
+				"Describe selected process lifecycle models and explain their principles, structure, and context of application.",
+				"Describe current trends in process management and interpret their effects on process-oriented organisations.",
+				"Explain and distinguish process reference, process maturity, and process capability models.",
+				"Develop a process landscape in line with corporate strategy in simplified business contexts.",
+				"Acquire, model, and document processes using a standard notation.",
+				"Analyse and improve existing processes and work out key indicators for process measurement and controlling.",
+				"Relate process management to process-oriented quality management and integrated management systems."
+			],
+			"ai_support_per_ilo": "LO 1: A customized chatbot acted as an interactive tutor grounded in course reading. Students used it to work through two process lifecycle models, deepen understanding of theoretical texts, prepare a structured comparison of the models, and reflect on the adequacy, accuracy, and completeness of AI-supported explanations. LO 2: Groups used prescribed GenAI tools to investigate technology-driven trends such as AI-driven process mining or automation, with each group assigned different tools. They then compared results across groups and tools and assessed reliability and relevance. LO 4: Groups used assigned tools and lecturer-provided company cases to develop process landscapes and accompanying process descriptions; a guided peer review focused on strategic fit, coherence, consistency, and how prompt choices shaped the outputs. LO 5: Students experimentally used AI to derive and document processes in BPMN 2.0 from incomplete or partly inconsistent case material, then shared limitations and discussed possible ways to overcome AI's constraints around modelling languages.",
+			"skills_enhanced": [
+				"Process-specific analytical skills",
+				"Applied AI literacy",
+				"Critical evaluation of AI outputs",
+				"Cross-group comparison and peer review",
+				"Prompt design and documentation"
+			],
+			"ai_specific_outcomes": false
+		},
+		"purpose_and_benefits": {
+			"main_reason": "AI was introduced to connect process-management theory with authentic business-process tasks while exposing students to tools they are likely to encounter in practice. Didactically, the design aimed to make self-study more accessible and deeper, support a setting with highly heterogeneous prior knowledge, enable richer case-based work, and make AI use itself discussable through structured comparison and reflection.",
+			"benefits_for_students": "AI helped students tackle complex assignments, especially in a mixed-cohort master's setting with uneven prior knowledge — the same workload would not have been feasible without AI support. The customized tutor chatbot supported deeper understanding and reflection on lifecycle models; later, AI made it possible to investigate trends, build process landscapes, and explore BPMN modelling from realistic company cases within a limited timeframe. Students also benefited from cross-group comparison: they experienced first-hand that different results often come less from the tool itself than from how it was used. The course therefore supported both domain learning and AI literacy, including critical evaluation of outputs and insight into current limitations of AI-supported process modelling.",
+			"benefits_for_lecturers": "AI made it possible to design more ambitious, practice-oriented tasks and to demand broader, more coherent case outputs than before. The bounded setup — two AI-generated company cases plus prescribed AI tools — created a strong basis for cross-group comparison, peer review, and rich class discussion. In the technology-trend task, AI-supported presentations also enabled peer teaching, as many outputs were already well structured."
+		},
+		"implementation_details": {
+			"how_used_in_class": "AI was used across one individual and several group assignments. Students first completed an AI-supported self-study task on two process lifecycle models via a customized chatbot and discussed both content and tool reflection in class. Later, groups worked with lecturer-assigned combinations of two photovoltaic-company cases and three tools (ChatGPT, Gemini, Perplexity) to develop process landscapes and then experimentally model processes in BPMN 2.0. AI was also used to investigate technology-driven trends in process management. In class, students compared outputs in peer reviews, presented their results and AI outcomes, and discussed why solutions diverged and where the tools' limits became visible.",
+			"tools_used": [
+				"CustomGPT (custom tutor chatbot)",
+				"ChatGPT",
+				"Gemini",
+				"Perplexity"
+			],
+			"access": "Access was mixed. Some students encountered usage limits with the CustomGPT tutor bot when using the free version of ChatGPT. Students used prescribed public tools (ChatGPT, Gemini, Perplexity). Equal access could not be guaranteed because some students had employer-funded higher-tier licences and others did not.",
+			"guidance_provided": "Guidance was task-specific rather than generic. For the tutor chatbot, students were told it was meant to support self-study, not take over the writing assignment. For trend analysis, guiding questions were provided. For the peer review of process landscapes, students used a structured in-class questionnaire with 13 content questions and 6 AI-reflection questions. Across AI tasks, students were asked to document their usage as part of their reflections.",
+			"part_of_assessment": true,
+			"assessment_details": "Students received points for successful AI-related tasks. They submitted written reports and reflections on all AI-related assignments via Moodle. Assessment was mainly based on qualitative criteria highlighting students' own work: depth of investigation and insight, critical evaluation of AI outputs and AI tool usage, and documentation of AI usage. The lecturer gave feedback and up to 5 points per submission according to the respective assessment criteria. These points contributed to the final grade but did not replace the final exam, which was required to successfully complete the course."
+		},
+		"evaluation_and_risk_management": {
+			"impact_evaluated_how": "Impact was evaluated through the pilot logbook, in-class discussions after assignments, feedback from peer-review activities, written reflections and analyses, and a separate informal evaluation of the CustomGPT tutor conducted by the lecturer. A comparison of overall performance with previous years is also conducted to evaluate the impact of AI on learning outcomes.",
+			"metrics_or_kpis": true,
+			"metrics_or_kpis_description": "General KPIs: performance (grades) compared to previous years; level of engagement during in-class assignments and discussions; the kinds of questions students ask about topics, assignments, or AI tools. KPIs for written reflections — Self-study: clarity and comprehensiveness of the process lifecycle comparison, quality of AI tool evaluation regarding accuracy, completeness, and relevance of AI-generated output, depth of understanding of the tool's capabilities and limitations. Trends: depth of investigation and insight, quality of group presentation and collaboration, critical evaluation and reflection on AI tool usage, AI usage documentation. Landscape development: alignment with fictional corporate context, consistency and coherence of landscape, relevance of peer review feedback, and AI usage documentation. Modelling (BPMN 2.0): correctness and clarity of process modelling, critical discussion of limitations, and AI usage documentation.",
+			"formal_institutional_evaluation": false,
+			"risk_management": {
+				"in_place": true,
+				"description": "Risk management relied mainly on didactic design rather than formal compliance procedures. By introducing the customized chatbot explicitly as a tutor rather than a ghostwriter and explaining the purpose of the task, the risk of students submitting AI-generated texts instead of their own process landscape comparisons was mitigated. Specific company cases and AI tools were prescribed, and students had to document their AI usage to ensure comparability. Peer review surfaced differences in results and respective prompts. Unforeseen risks that emerged during the semester included students using non-prescribed tools or tools in unintended ways, uploading course materials and literature without reflecting on legal and property-right issues, and partly relying on AI in ways that could undermine hands-on competencies. These were mitigated by addressing the issues in class and explaining the purpose of tasks to students."
+			}
+		},
+		"overall_impact": {
+			"impact_on_teaching_learning": "Overall, the use of AI had a positive impact on student engagement, but it also required substantial time, preparation, and support from both teachers and students. It enabled authentic process management tasks, supported mixed-background students, and produced material for peer comparison and discussion. Students were generally satisfied, and overall performance remained comparable to previous years. However, the design also exposed major constraints: large mixed groups pushed much of the work into homework, leaving limited time for in-class reflection. AI-supported BPMN modelling remained technically and didactically problematic, as students ran into technical problems and reached the limits of current general generative AI tools for this specific task.",
+			"impact_on_student_outcomes": "Learning effects were positive overall, but not uniformly so across all AI-supported tasks. Students generally deepened their understanding of lifecycle models, produced structured trend analyses, and learned from comparing diverging AI-generated solutions for the same company cases. For LO 5, the effect was mixed: AI helped students discover processes and recognise current tool limitations, but it also prevented some students from gaining deeper hands-on modelling practice.",
+			"main_challenges": [
+				{
+					"challenge": "Scale and workload — two large groups meant many AI tasks had to happen outside class, reducing lecturer oversight and collective reflection time",
+					"management": "Tasks were structured with prescribed cases, tools, and peer review to maintain comparability despite limited in-class time."
+				},
+				{
+					"challenge": "Heavy preparation burden — customized chatbots, company cases, licences, tracking new AI tool developments, and copyright/material issues all required significant upfront work",
+					"management": "Managed through careful course design; identified as a structural need for institutional support in future iterations."
+				},
+				{
+					"challenge": "Students using non-prescribed tools or using tools in unintended ways",
+					"management": "Addressed in class by explaining the purpose of task constraints and discussing what went wrong."
+				},
+				{
+					"challenge": "Students uploading teaching materials and literature into AI tools without reflecting on legal and property-right implications",
+					"management": "Raised and discussed explicitly in class."
+				},
+				{
+					"challenge": "Technical and didactic limitations of AI for BPMN modelling",
+					"management": "Students were guided to share problems encountered and discuss limitations; the task now serves partly as a demonstration of current AI boundaries."
+				}
+			]
+		},
+		"scalability_and_transferability": {
+			"can_be_scaled": true,
+			"scaling_requirements": "The experience is transferable to other applied management or operations courses that use case work, comparative outputs, and reflection on AI-supported problem-solving. Its strongest transferable elements are the bounded design (prescribed cases and tools), the tutor chatbot for self-study, and the cross-group peer-review format. To scale well, the institution would need smaller class sizes, fewer AI-supported assignments with respective licences, more time for in-class debrief, legal and ethical guidance on uploads and materials prior to the course, and allocated time for developing and updating custom chatbots and class materials. Without this support, the design becomes too uncontrolled and too labour-intensive.",
+			"key_advice": "Less individual reflection is more: do not overload the course with too many individual reflection activities on AI — information overload lowers motivation. Be prepared to adapt: the number of AI activities in class depends partly on students' backgrounds and institutional contexts (class size, prior knowledge, experience with AI). Plan accordingly and be ready to adapt spontaneously. Plan enough time to check planned activities and respective tools shortly before class: the rapid development of AI technologies can have unforeseen impacts on your design, especially for more complex, subject-specific settings."
+		}
+	},
+
+	"edited": {
+		"intro": "",
+		"why_we_used_ai": "",
+		"how_it_worked": "",
+		"what_changed": "",
+		"what_we_struggled_with": "",
+		"what_we_learned": "",
+		"pull_quotes": [
+			{
+				"text": "Students experienced first-hand that different results often come less from the tool itself than from how it was used.",
+				"speaker": "Friedrich Stallinger"
+			},
+			{
+				"text": "The customized chatbot was introduced explicitly as a tutor instead of a ghostwriter.",
+				"speaker": "Friedrich Stallinger"
+			},
+			{
+				"text": "Less individual reflection is more — too many reflection activities, especially for many different AI activities, may lead to information overload and lower motivation.",
+				"speaker": "Friedrich Stallinger"
+			}
+		]
+	}
+}

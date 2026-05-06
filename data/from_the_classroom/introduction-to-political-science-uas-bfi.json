@@ -1,0 +1,149 @@
+{
+	"metadata": {
+		"date": "2026-04-14",
+		"slug": "introduction-to-political-science-uas-bfi",
+		"course_title": "Introduction to Political Science",
+		"institution": "University of Applied Sciences BFI Vienna",
+		"institution_short": "UAS BFI Vienna",
+		"institution_logo": "/images/partners/FH_e_Logo_Blue_RGB.svg",
+		"informants": [
+			{
+				"name": "Bernhard Zeilinger",
+				"role": "Lecturer",
+				"portrait": "/images/from-the-classroom/educators/Bernhard-Zeilinger.jpeg",
+				"bio": ""
+			}
+		],
+		"hook": ""
+	},
+
+	"raw": {
+		"course_overview": {
+			"title": "Introduction to Political Science",
+			"university": "University of Applied Sciences BFI Vienna",
+			"programme": "European Economy and Business Management",
+			"ects_credits": 3,
+			"level": "Bachelor",
+			"semester": "1st semester",
+			"num_students": 55,
+			"typical_student_background": "No or little university-level political science or AI training; highly international backgrounds.",
+			"prerequisites": "None"
+		},
+		"ai_usage_summary": "AI was integrated as both a teaching tool and an object of political-science critique. Students developed theory-based prompts to generate and compare election manifestos and speeches across multiple LLMs while using the same prompt in each LLM. They then reflected on bias, propaganda, hegemony, and the politics of information control contained within the generated manifestos. What sets this practice apart is that in addition to students' reflections, the prompt quality was also assessed, allowing students to simultaneously engage with course contents, improve prompt writing skills, and develop critical AI skills by experiencing and reflecting on the bias behind different LLMs.",
+		"learning_outcomes": {
+			"outcomes": [
+				"Describe and explain the main theories, concepts, and terms of political science.",
+				"Identify the main aspects of political-science problems.",
+				"Apply theoretical models and develop a critical, analytical way of thinking for interpreting and evaluating daily politics and social structures.",
+				"Summarize and interpret scientific texts, and identify and evaluate findings and key statements."
+			],
+			"ai_support_per_ilo": "LO 1: AI used as a tutor for concepts and definitions; students then formulated prompts/briefings grounded in course theory. LO 2: No AI support. LO 3: Application of theory through generating an electoral programme; creating a prompt for a virtual AI avatar according to the electoral programme; generating an electoral speech and a video or audio statement. LO 4: AI supported comparison and interpretation of texts.",
+			"skills_enhanced": [
+				"Prompt writing",
+				"Critical thinking",
+				"Political theory application",
+				"Digital and media competencies"
+			],
+			"ai_specific_outcomes": true,
+			"ai_specific_outcomes_description": "Not formally listed in the curriculum, but the course effectively built AI-specific capabilities: documenting prompts, comparing outputs from several LLMs, critically reflecting on bias and non-neutrality, using AI for text and multimodal political communication, and disclosing AI use transparently. Students also learned to recognise AI as a political instrument and to see the connection between hegemony and different LLM providers."
+		},
+		"purpose_and_benefits": {
+			"main_reason": "AI was used to connect political-science theory with contemporary AI-influenced political communication and to teach students to use AI critically. It also made ambitious, otherwise unrealistic tasks manageable within the course workload while exposing bias, propaganda, power asymmetries, and the political interests behind LLMs.",
+			"benefits_for_students": "AI let students complete realistic, work-intensive tasks within limited time: drafting manifestos, generating speeches, comparing multiple LLMs, and experimenting with multimodal political communication. It strengthened their ability to apply theory to practice, detect bias and propaganda, reflect on non-neutrality, and improve prompt, media, and digital competencies. Students no longer feel daunted by AI, since they now know how to use it — some had previously been hesitant out of fear of making a mistake. Students also seem to have developed more respect for AI as a tool that requires know-how rather than producing trustworthy output automatically.",
+			"benefits_for_lecturers": "AI made it feasible to run ambitious, realistic exercises and generate rich discussion material at a scale students could not have managed otherwise. Transparency about AI usage as well as the lecturer's own AI knowledge improved the lecturer-student relationship: students did not feel they were prohibited from using AI or had to hide their use of it. The lecturer's transparency was perceived as a sign of digital competence, which builds trust. AI also provided a fitting way to link and exemplify political theory, bias, hegemony, and information power. Finally, by assessing students' prompts rather than the final texts, the lecturer bypassed the difficulty of grading texts alone when distinguishing AI-generated content from student work."
+		},
+		"implementation_details": {
+			"how_used_in_class": "AI was used in several connected phases. Early sessions included debates on AI as a political instrument and students used a chatbot in Moodle as a tutor for definitions. Later, students drafted theory-based election manifestos for socialist, conservative, and liberal parties, entered the same prompt into ChatGPT, Mistral, DeepSeek, and Grok, and compared the outputs for bias. In a follow-up task, they turned one manifesto into a populist and a moderate speech, marked characteristic language, and created a text-to-video or text-to-speech version. AI use was embedded in class discussion, homework, comparison, and reflection rather than confined to one isolated exercise.",
+			"tools_used": [
+				"ChatGPT",
+				"Mistral",
+				"DeepSeek",
+				"Grok",
+				"AI Chatblock in Moodle",
+				"Sora",
+				"Powtoon",
+				"ElevenLabs",
+				"Canva",
+				"Google AI Studio",
+				"Pictory",
+				"Luma"
+			],
+			"access": "Students mainly used free versions. The lecturer explicitly avoided grading text or media quality alone because some students had paid versions and professional content-creation experience while others did not.",
+			"guidance_provided": "Students received brief prompting guidance, were referred to the possibility of improving prompts with ChatGPT, had to base prompts on course content, and were required to document their AI use. The lecturer provided information on political bias and propaganda in connection with AI, gave clear task instructions available on Moodle, named tools students could use, and used grading feedback to show what worked or did not. The main missing element, according to the focus group, was sufficient time for shared oral reflection afterwards.",
+			"part_of_assessment": true,
+			"assessment_details": "Documented prompts were a major reference for grading. The lecturer deliberately shifted assessment away from outputs and toward whether prompts were anchored in course theory, whether students could critically reflect on generated outputs, and whether they could explain and compare what different models produced. Assessment criteria included the extent to which the prompt refers to course content, whether it includes original definitions or paraphrases, and whether additional elements — such as the behaviour of fictional characters — have been incorporated into the prompt."
+		},
+		"evaluation_and_risk_management": {
+			"impact_evaluated_how": "Course assessments and the final exam functioned as evaluation: the lecturer examined prompts, reflections, and exam grades to assess whether AI helped students achieve the learning outcomes. Regular communication with students served as an additional measuring tool, including feedback after AI activities and students pointing out difficulties in AI tool usage — which led to a reduced workload for generating audiovisual media in order to refocus attention on course contents rather than individual tools.",
+			"metrics_or_kpis": true,
+			"metrics_or_kpis_description": "Indicators included weekly satisfaction ratings in the logbook; the quality of prompts and reflections in graded assignments (complexity and structure of prompts, inclusion of course content); and verbal feedback captured after grading.",
+			"formal_institutional_evaluation": false,
+			"risk_management": {
+				"in_place": true,
+				"description": "Risk management relied mainly on pedagogical rather than technical controls. Students had to disclose AI use, submit prompts, and reflect on outputs from different LLMs to prevent overreliance. To earn a good grade, prompts had to be carefully designed and grounded in course theory. AI was prohibited during the reflection phase, so most reflections took place in class. Where necessary, the lecturer reduced technical demands — for example, allowing students to create an audio file instead of a full video. Output quality was not graded heavily due to unequal access to paid tools and varying prior media expertise. A further risk was that students might use AI so extensively for prompt generation that distinguishing their own work from AI contributions became difficult; this was accepted given the expected benefits and will be addressed in future through a controlled environment that logs prompt development."
+			}
+		},
+		"overall_impact": {
+			"impact_on_teaching_learning": "Overall, AI had a clearly positive but also demanding impact. It enabled realistic, theory-connected exercises that would otherwise have been too work-intensive, and it made bias, propaganda, hegemony, and the politics of information control discussable in concrete ways. It also strengthened reflection on AI's non-neutrality. Students were content and motivated to tackle complex tasks with the help of AI, allowing for realistic and practical learning scenarios within a context that is typically highly theoretical. The main downside was workload and complexity: students sometimes felt overwhelmed, prompting quality varied widely, tool access was unequal, and there was too little time for shared post-task reflection. Assessment was also rather difficult. Still, the available evidence points to a strong enhancement of teaching and learning.",
+			"impact_on_student_outcomes": "Students used AI to apply political theory in prompts, compare models critically, identify ideological and rhetorical differences, and reflect on bias and propaganda. The final task explicitly targeted critical analysis of populist vs. moderate framing plus media and digital competence. The positive impact is best seen in students' prompts, which became progressively more complex and structured over the course of the semester.",
+			"main_challenges": [
+				{
+					"challenge": "Insufficient prompting quality",
+					"management": "Made prompts a core assessment object; used grading feedback to correct weak practice."
+				},
+				{
+					"challenge": "Students' occasional overreliance on AI",
+					"management": "Required theory-based prompting and AI documentation throughout."
+				},
+				{
+					"challenge": "Difficulty assessing effort and authorship",
+					"management": "Shifted assessment focus to prompts and reflections rather than final outputs."
+				},
+				{
+					"challenge": "Unequal access to paid tools",
+					"management": "De-emphasised output quality where access was unequal; flexibly adapted tasks."
+				},
+				{
+					"challenge": "Lecturer's own limited experience with some AI applications",
+					"management": "Tasks were flexibly adapted as experience grew during the course."
+				},
+				{
+					"challenge": "Too little time for live reflection after tasks",
+					"management": "Acknowledged as a gap; identified as a structural curriculum need for future iterations."
+				},
+				{
+					"challenge": "Distinguishing students' own contributions from AI contributions within prompts",
+					"management": "Accepted as a known risk; future plan is a phased approach where students first formulate prompts in class before refining them with AI."
+				}
+			]
+		},
+		"scalability_and_transferability": {
+			"can_be_scaled": true,
+			"scaling_requirements": "The design is highly transferable to courses dealing with discourse, ideology, communication, bias, public reasoning, or critical media literacy, and generally to all theory-based subjects that aim to establish a practical connection. It is also suitable for courses with limited time for in-class discussions or activities, such as large lectures. Reusable elements include theory-based prompting, same-prompt multi-model comparison, and assessment through reflection rather than output alone. To scale well, lecturers would need curated tool lists, extra time for live debriefing, support with prompt pedagogy and assessment, clear institutional guidance on documentation and disclosure, and possibly an AI-literacy foundation course for students. Flexible and individual support also matters, as technical confidence and access to advanced tools vary strongly across students.",
+			"key_advice": "Trial and error: don't be afraid to try out new teaching and learning scenarios with AI — even if it does not go as planned, you will benefit from the experience. Build transparency: be transparent about your own AI knowledge and competencies and about your expectations for students' AI usage. AI is a journey where lecturers and students are in the same boat — we are all learning from each other. Stay open and flexible: be ready to spontaneously readjust activities or to incorporate new tools students bring forward. Put yourself in the students' shoes: make a test run for tasks to see whether they are feasible and to adjust them beforehand if necessary."
+		}
+	},
+
+	"edited": {
+		"intro": "",
+		"why_we_used_ai": "",
+		"how_it_worked": "",
+		"what_changed": "",
+		"what_we_struggled_with": "",
+		"what_we_learned": "",
+		"pull_quotes": [
+			{
+				"text": "AI is a journey where lecturers and students are in the same boat — we are all learning from each other.",
+				"speaker": "Bernhard Zeilinger"
+			},
+			{
+				"text": "Students no longer feel daunted by the idea of using AI, since they now know how to do it. Students also seem to have developed more respect for AI as a tool that requires know-how rather than producing trustworthy output automatically.",
+				"speaker": "Bernhard Zeilinger"
+			},
+			{
+				"text": "By assessing the students' prompts rather than the final texts, the lecturer bypassed the problem of difficulty while grading texts alone.",
+				"speaker": "Bernhard Zeilinger"
+			}
+		]
+	}
+}
