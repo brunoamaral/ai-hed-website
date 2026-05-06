@@ -19,16 +19,16 @@
 		"ai_usage_summary": "AI was integrated through seminar sessions where students used AI tools in their course projects — digital transformation proposals for real-world business cases. AI served as a support tool for deeper analyses, clarifying analytical results, creating visualizations of digital transformation models, developing conceptual prototype designs, and presenting selected analytical methods.",
 		"learning_outcomes": {
 			"outcomes": [
-				"ILO 1: Recommend appropriate digital technologies for business process transformation",
-				"ILO 2: Design a proposal for improving user experience",
-				"ILO 3: Evaluate the need for innovation for a given business problem",
-				"ILO 4: Develop innovations in business processes and business models",
-				"ILO 5: Design business process transformation based on organizational, process, and technological innovations",
-				"ILO 6: Propose specific technological innovations and create an integration plan",
-				"ILO 7: Assess the application of digital transformation methods in a selected case",
-				"ILO 8: Justify the need for upgrading software support as part of a transformation initiative",
-				"ILO 9: Construct a project implementation plan considering multiple resource types",
-				"ILO 10: Estimate costs and effects of business process improvement"
+				"- Recommend appropriate digital technologies for business process transformation",
+				"- Design a proposal for improving user experience",
+				"- Evaluate the need for innovation for a given business problem",
+				"- Develop innovations in business processes and business models",
+				"- Design business process transformation based on organizational, process, and technological innovations",
+				"- Propose specific technological innovations and create an integration plan",
+				"- Assess the application of digital transformation methods in a selected case",
+				"- Justify the need for upgrading software support as part of a transformation initiative",
+				"- Construct a project implementation plan considering multiple resource types",
+				"- Estimate costs and effects of business process improvement"
 			],
 			"ai_support_per_ilo": "AI supported ILO 1 and ILO 3 by assisting in technology and industry analysis, literature reviews, and identifying disruptions. It helped structure and refine conceptual solution models and prototypes (ILO 2), supported selection and visualization of analytical methods (ILO 7), and evaluated digital technologies for proposed transformation initiatives (ILO 8).",
 			"skills_enhanced": [

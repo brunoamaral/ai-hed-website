@@ -101,6 +101,15 @@
 		"what_changed": "",
 		"what_we_struggled_with": "",
 		"what_we_learned": "",
-		"pull_quotes": []
+		"pull_quotes": [
+			{
+				"text": "Sometimes less is more. There is no need to force AI tool usage throughout the entire semester, but rather to apply it selectively to those lectures where it can best enhance the learning and teaching process.",
+				"speaker": "Magdalena Kuštelega"
+			},
+			{
+				"text": "Students became aware that the use of artificial intelligence tools does not always result in time savings, and that such tools need to be used carefully and combined with their own conclusions and reflections.",
+				"speaker": "Magdalena Kuštelega"
+			}
+		]
 	}
 }
