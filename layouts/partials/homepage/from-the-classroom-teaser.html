@@ -3,17 +3,17 @@
   Homepage teaser for the "From the Classroom" section.
   Reads hugo.Data.from_the_classroom directly.
   Renders nothing when the data directory is empty.
+  Shows 3 cards at a time; all entries are reachable via prev/next buttons.
 */}}
 {{ $allProfiles := slice }}
 {{ range $key, $val := hugo.Data.from_the_classroom }}
   {{ $allProfiles = $allProfiles | append $val }}
 {{ end }}
 
-{{/* Sort desc (newest first) and take up to 3 */}}
+{{/* Sort desc (newest first) */}}
 {{ $allProfiles = sort $allProfiles "metadata.date" "desc" }}
-{{ $profiles := first 3 $allProfiles }}
 
-{{ if gt (len $profiles) 0 }}
+{{ if gt (len $allProfiles) 0 }}
 <section class="section ftc-teaser py-5" id="ftc-teaser">
   <div class="container-fluid">
     <div class="row justify-content-center">
@@ -23,44 +23,61 @@
       </div>
     </div>
 
-    <div class="row justify-content-center mt-4">
-      {{ range $profiles }}
-        {{ $meta := .metadata }}
-        {{ $informants := $meta.informants }}
-        {{ $isDuo := gt (len $informants) 1 }}
-        {{ $profileURL := printf "/from-the-classroom/%s/" $meta.slug }}
+    <div class="ftc-carousel mt-4" aria-label="{{ i18n "ftc_section_title" }}">
+      <button
+        class="ftc-carousel__btn ftc-carousel__btn--prev"
+        id="ftc-carousel-prev"
+        aria-label="Previous"
+        disabled
+      ><i class="fas fa-chevron-left"></i></button>
 
-        <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex">
-          <a
-            href="{{ $profileURL }}"
-            class="ftc-teaser-card w-100"
-            data-umami-event="ftc_homepage_card_click"
-            data-umami-event-slug="{{ $meta.slug }}"
-          >
-            <div class="ftc-teaser-card__portraits">
-              {{ partial "from-the-classroom/informant-portraits.html" (dict
-                "informants" $informants
-                "size" 80
-                "overlap" $isDuo
-                "institutionLogo" $meta.institution_logo
-                "eager" false
-              ) }}
-            </div>
+      <div class="ftc-carousel__track-wrap" id="ftc-carousel-wrap">
+        <div class="ftc-carousel__track" id="ftc-carousel-track">
+          {{ range $allProfiles }}
+            {{ $meta := .metadata }}
+            {{ $informants := $meta.informants }}
+            {{ $isDuo := gt (len $informants) 1 }}
+            {{ $profileURL := printf "/from-the-classroom/%s/" $meta.slug }}
 
-            <div class="ftc-teaser-card__body">
-              <p class="ftc-teaser-card__name">
-                {{ range $i, $inf := $informants -}}
-                  {{- if gt $i 0 }} &amp; {{ end -}}
-                  {{- $inf.name -}}
-                {{- end }}
-              </p>
-              <p class="ftc-teaser-card__course">{{ $meta.course_title }}</p>
-              <p class="ftc-teaser-card__institution">{{ $meta.institution_short }}</p>
-              {{ with $meta.hook }}<p class="ftc-teaser-card__hook">{{ . }}</p>{{ end }}
+            <div class="ftc-carousel__slide">
+              <a
+                href="{{ $profileURL }}"
+                class="ftc-teaser-card w-100"
+                data-umami-event="ftc_homepage_card_click"
+                data-umami-event-slug="{{ $meta.slug }}"
+              >
+                <div class="ftc-teaser-card__portraits">
+                  {{ partial "from-the-classroom/informant-portraits.html" (dict
+                    "informants" $informants
+                    "size" 80
+                    "overlap" $isDuo
+                    "institutionLogo" $meta.institution_logo
+                    "eager" false
+                  ) }}
+                </div>
+
+                <div class="ftc-teaser-card__body">
+                  <p class="ftc-teaser-card__name">
+                    {{ range $i, $inf := $informants -}}
+                      {{- if gt $i 0 }} &amp; {{ end -}}
+                      {{- $inf.name -}}
+                    {{- end }}
+                  </p>
+                  <p class="ftc-teaser-card__course">{{ $meta.course_title }}</p>
+                  <p class="ftc-teaser-card__institution">{{ $meta.institution_short }}</p>
+                  {{ with $meta.hook }}<p class="ftc-teaser-card__hook">{{ . }}</p>{{ end }}
+                </div>
+              </a>
             </div>
-          </a>
+          {{ end }}
         </div>
-      {{ end }}
+      </div>
+
+      <button
+        class="ftc-carousel__btn ftc-carousel__btn--next"
+        id="ftc-carousel-next"
+        aria-label="Next"
+      ><i class="fas fa-chevron-right"></i></button>
     </div>
 
     <div class="row justify-content-center mt-3">
@@ -79,15 +96,76 @@
 
 <script>
 (function(){
+  var wrap  = document.getElementById('ftc-carousel-wrap');
+  var track = document.getElementById('ftc-carousel-track');
+  var prev  = document.getElementById('ftc-carousel-prev');
+  var next  = document.getElementById('ftc-carousel-next');
+
+  if (!wrap || !track || !prev || !next) return;
+
+  // Shuffle slides (Fisher-Yates) so order differs on every page load
+  var slides = Array.prototype.slice.call(track.querySelectorAll('.ftc-carousel__slide'));
+  for (var i = slides.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    track.appendChild(slides[j]);
+    var tmp = slides[i]; slides[i] = slides[j]; slides[j] = tmp;
+  }
+
+  var GAP = 16;
+  var TRACK_PAD = 24; // 12px left + 12px right padding on track-wrap
+
+  function perView() {
+    return window.innerWidth >= 992 ? 3 : window.innerWidth >= 576 ? 2 : 1;
+  }
+
+  function setSlideSizes() {
+    var n     = perView();
+    var width = (wrap.clientWidth - TRACK_PAD - GAP * (n - 1)) / n;
+    var slides = track.querySelectorAll('.ftc-carousel__slide');
+    slides.forEach(function(s) {
+      s.style.width = width + 'px';
+    });
+  }
+
+  function slideWidth() {
+    var first = track.querySelector('.ftc-carousel__slide');
+    return first ? first.offsetWidth + GAP : 0;
+  }
+
+  function updateButtons() {
+    prev.disabled = wrap.scrollLeft <= 1;
+    next.disabled = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 1;
+  }
+
+  prev.addEventListener('click', function() {
+    wrap.scrollBy({ left: -slideWidth() * perView(), behavior: 'smooth' });
+  });
+
+  next.addEventListener('click', function() {
+    wrap.scrollBy({ left: slideWidth() * perView(), behavior: 'smooth' });
+  });
+
+  wrap.addEventListener('scroll', updateButtons, { passive: true });
+
+  function init() {
+    setSlideSizes();
+    updateButtons();
+  }
+
+  window.addEventListener('resize', init);
+  init();
+
+  // Analytics: section viewed
   var el = document.getElementById('ftc-teaser');
-  if (!el || !window.IntersectionObserver) return;
-  var fired = false;
-  new IntersectionObserver(function(entries){
-    if (!fired && entries[0].isIntersecting) {
-      fired = true;
-      if (window.umami) window.umami.track('ftc_homepage_teaser_view');
-    }
-  }, { threshold: 0.5 }).observe(el);
+  if (el && window.IntersectionObserver) {
+    var fired = false;
+    new IntersectionObserver(function(entries){
+      if (!fired && entries[0].isIntersecting) {
+        fired = true;
+        if (window.umami) window.umami.track('ftc_homepage_teaser_view');
+      }
+    }, { threshold: 0.5 }).observe(el);
+  }
 })();
 </script>
 {{ end }}

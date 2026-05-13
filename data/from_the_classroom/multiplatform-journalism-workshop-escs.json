@@ -1,0 +1,128 @@
+{
+	"metadata": {
+		"date": "2026-02-24",
+		"slug": "multiplatform-journalism-workshop-escs",
+		"course_title": "Multiplatform Journalism Workshop",
+		"institution": "School of Communication and Media Studies - Polytechnic University of Lisbon",
+		"institution_short": "ESCS-IPL",
+		"institution_logo": "/images/partners/Logo_ESCS_vENG_color-ai.svg",
+		"informants": [
+			{
+				"name": "Vera Moutinho",
+				"role": "Lecturer",
+				"portrait": "/images/from-the-classroom/educators/Vera-Moutinho.jpg",
+				"bio": ""
+			}
+		],
+		"hook": ""
+	},
+
+	"raw": {
+		"course_overview": {
+			"title": "Multiplatform Journalism Workshop",
+			"university": "School of Communication and Media Studies - Polytechnic University of Lisbon",
+			"programme": "Media and Journalism",
+			"ects_credits": 5,
+			"level": "Bachelor",
+			"semester": "5th semester",
+			"num_students": 50,
+			"typical_student_background": "Undergraduate journalism students in their final year of the Bachelor's degree, with solid basic newswriting and some multimedia skills. Students have limited prior AI literacy but a high level of informal familiarity with ChatGPT as a general-purpose tool.",
+			"prerequisites": ""
+		},
+		"ai_usage_summary": "AI was integrated into a 5-week video module of the course to support the adaptation of written news into short-form social video (Reels/TikTok/Shorts). Students used generative AI to assist prompt-based scripting, storyboard development, and AI-assisted video production, combined with reflective documentation through an AI Diary. The primary goal was to enhance multiplatform storytelling while building AI literacy and ethical awareness. A distinctive element was the structured 'human-in-the-loop' workflow, requiring students to iteratively prompt, critically evaluate outputs, and document editorial decisions across the production process.",
+		"learning_outcomes": {
+			"outcomes": [
+				"Multiplatform newswriting and short-form video storytelling.",
+				"Editorial decision-making in AI-assisted workflows.",
+				"Technical execution of short-form video in AI-assisted workflows.",
+				"Reflective and ethical AI use (AI literacy)."
+			],
+			"ai_support_per_ilo": "Multiplatform newswriting: AI-supported scripting and iteration helped students adapt articles into concise, platform-appropriate video scripts. Editorial decision-making: Prompting exercises and AI Diaries foregrounded human judgment, accuracy checks, and iteration. Technical execution: InVideo enabled rapid prototyping of visuals, captions, and voice-overs, accelerating production cycles. Ethical AI use: Structured reflection and a class Charter fostered critical awareness, transparency, and human-centred practice.",
+			"skills_enhanced": [
+				"Prompt literacy",
+				"Short-form video scripting and audiovisual planning",
+				"Critical evaluation of AI outputs",
+				"Multiplatform storytelling and adaptation",
+				"Ethical and reflective AI use"
+			],
+			"ai_specific_outcomes": true,
+			"ai_specific_outcomes_description": "Students learned prompt-based journalism, critical evaluation of AI outputs, transparency in AI-assisted production, and ethical decision-making in AI workflows. The goal was not to learn AI engineering, but to develop responsible professional use of generative tools within journalistic practice — human-in-the-loop, verification, and disclosure."
+		},
+		"purpose_and_benefits": {
+			"main_reason": "The main goal was to build AI literacy by using the opportunity created by this project to address a gap in the existing curriculum. The integration of AI aimed to introduce prompt-based journalism so that students understand what AI is, how it works, its opportunities and risks, and how these tools are already reshaping newsroom practices and professional challenges.",
+			"benefits_for_students": "AI enabled rapid adaptation of scripts for mobile-first formats, iterative testing of narrative choices, and hands-on experimentation with short-form video formats. This supported engagement, creativity, and understanding of how written journalism translates into mobile-first audiovisual storytelling. Students reported increased prompt literacy, awareness of AI limitations, and stronger appreciation of human editorial responsibility.",
+			"benefits_for_lecturers": "AI supported course design and preparation — structuring slides, summarising tools, creating a Charter of Principles template — enabling more efficient planning and clearer scaffolding of complex workflows. In-class collaborative tools enhanced participation and structured reflection, improving engagement without replacing human-centred pedagogy."
+		},
+		"implementation_details": {
+			"how_used_in_class": "AI was integrated into a 5-week video module: prompt-based script development with ChatGPT; storyboard and audiovisual planning; AI-assisted video production in InVideo (text-to-video, captions, voice-overs); reflective documentation via an AI Diary; and collective ethical reflection culminating in a 'Charter of Principles for Journalism in the Age of AI.' Activities were sequenced across 5 sessions, combining lectures on AI literacy with hands-on production and structured reflection.",
+			"tools_used": [
+				"ChatGPT",
+				"InVideo",
+				"Google Docs (AI Diary)",
+				"Google Forms",
+				"Mentimeter",
+				"Figma/FigJam"
+			],
+			"access": "Students used free versions of tools. Lack of access to paid tools limited some functionalities, notably in video production, requiring task adaptation and greater emphasis on process over final output quality.",
+			"guidance_provided": "Students received lectures on AI literacy and structured assignments, a teacher-designed 'Journalistic Prompt Guide,' curated readings and newsroom examples, and reflection frameworks for the AI Diary covering process, learning, ethics, and personal reflection. In-class tutorials and collective prompt analysis supported effective, critical AI use.",
+			"part_of_assessment": true,
+			"assessment_details": "Assessment considered prompt-based scripting, AI-assisted production outputs, and reflective AI Diaries documenting iterations, editorial decisions, accuracy checks, and ethical considerations. The evaluation prioritised the learning process, students' reflective capacity about AI use, and the development of AI literacy, rather than focusing primarily on the quality of the final output."
+		},
+		"evaluation_and_risk_management": {
+			"impact_evaluated_how": "Through observation of engagement and learning during activities, analysis of student outputs (descriptive and reflective AI Diaries, scripts, videos), questionnaires on perceptions, class discussions, and quality of the final output.",
+			"metrics_or_kpis": false,
+			"metrics_or_kpis_description": "",
+			"formal_institutional_evaluation": true,
+			"risk_management": {
+				"in_place": true,
+				"description": "Key risks were tied to journalism-specific concerns, including over-reliance on AI and uncritical acceptance of outputs. Mitigation strategies included explicit 'human-in-the-loop' framing, mandatory AI Diaries, verification requirements, ethical guidelines, transparency discussions, and process-focused assessment. Limited access to paid tools was managed by adapting tasks to free versions and emphasising learning objectives over production quality."
+			}
+		},
+		"overall_impact": {
+			"impact_on_teaching_learning": "AI had a positive impact, increasing engagement, accelerating prototyping, and strengthening links between theory and practice in multiplatform storytelling. Challenges included managing students' AI illiteracy alongside their already strong functional and relational dependence on ChatGPT. Technical limits of free tools were addressed through reframing assessment toward process and editorial judgment.",
+			"impact_on_student_outcomes": "Students improved prompt literacy, short-form scripting, audiovisual planning, and critical awareness of AI limitations. Iterative workflows supported problem-solving with clearer understanding of human editorial responsibility.",
+			"main_challenges": [
+				{
+					"challenge": "Students showed strong functional dependence on ChatGPT — using it as a trigger or substitute for their own thinking — while paradoxically lacking basic understanding of how the tool works, including the concept of prompting.",
+					"management": "Addressed through foundational AI literacy sessions, structured prompting guides, and reflective AI Diaries. Continuous reminders reinforced verification and human oversight."
+				},
+				{
+					"challenge": "A relational dimension to over-reliance: some students interacted with ChatGPT as if it were a person or 'friend,' leading to uncritical trust in its outputs without fully exploiting its functional potential.",
+					"management": "Managed through ethical framing, structured reflection, and class-wide discussion of AI as a tool, not a collaborator."
+				},
+				{
+					"challenge": "Limited access to paid tools, especially for video production.",
+					"management": "Tasks were adapted to free versions, and assessment was reframed to emphasise process over final output quality."
+				}
+			]
+		},
+		"scalability_and_transferability": {
+			"can_be_scaled": true,
+			"scaling_requirements": "The approach can be transferred to other journalism and media courses. Scaling requires institutional support for tool access (ideally paid versions for video), teacher development in AI literacy, shared prompt and ethics guidelines, and time for reflective components. Curriculum alignment is needed to embed human-in-the-loop workflows and process-based assessment.",
+			"key_advice": "Start with AI literacy before hands-on production and ensure human-in-the-loop workflows — this is crucial for journalism courses. Assess process, not just outputs. Require reflective documentation, verification, and transparency. Anticipate tool limitations and adapt tasks to free versions if needed."
+		}
+	},
+
+	"edited": {
+		"intro": "",
+		"why_we_used_ai": "",
+		"how_it_worked": "",
+		"what_changed": "",
+		"what_we_struggled_with": "",
+		"what_we_learned": "",
+		"pull_quotes": [
+			{
+				"text": "Students showed strong functional dependence on ChatGPT, using it as a trigger or substitute for their own thinking, while paradoxically lacking basic understanding of how the tool works.",
+				"speaker": "Vera Moutinho"
+			},
+			{
+				"text": "Some students interacted with ChatGPT as if it were a person or 'friend,' leading to over-reliance and uncritical trust in its outputs.",
+				"speaker": "Vera Moutinho"
+			},
+			{
+				"text": "The goal was not to learn AI engineering, but to develop responsible professional use of generative tools within journalistic practice — human-in-the-loop, verification, disclosure.",
+				"speaker": "Vera Moutinho"
+			}
+		]
+	}
+}
