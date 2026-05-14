@@ -28,9 +28,12 @@
     <a
       href="{{ . }}"
       class="ftc-factsheet__download-btn"
-      download
+      target="_blank"
+      rel="noopener noreferrer"
       data-umami-event="ftc_profile_download_pdf"
       data-umami-event-slug="{{ $meta.slug }}"
+      data-umami-event-institution="{{ $meta.institution_short }}"
+      data-umami-event-course="{{ $meta.course_title }}"
     >
       <i class="fas fa-download" aria-hidden="true"></i>
       {{ i18n "ftc_download_button" }}
