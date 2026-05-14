@@ -68,3 +68,9 @@
   translation: "Previous"
 - id: ftc_next
   translation: "Next"
+- id: ftc_download_title
+  translation: "Download full case study"
+- id: ftc_download_description
+  translation: "Get the complete interview transcript and detailed analysis as a PDF."
+- id: ftc_download_button
+  translation: "Download PDF"

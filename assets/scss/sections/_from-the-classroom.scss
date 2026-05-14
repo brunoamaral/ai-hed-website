@@ -279,6 +279,60 @@
       margin-top: 0.5rem;
     }
   }
+
+  &__download {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-top: 3px solid var(--ftc-accent);
+    border-radius: 0.1875rem;
+  }
+
+  &__download-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--ftc-accent);
+    margin: 0 0 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__download-description {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin: 0 0 0.85rem;
+    line-height: 1.4;
+  }
+
+  &__download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    background: var(--ftc-accent);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.1875rem;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+  }
 }
 
 @media (min-width: 992px) {

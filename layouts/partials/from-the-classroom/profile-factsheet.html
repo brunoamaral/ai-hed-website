@@ -20,6 +20,24 @@
   id="ftc-factsheet-{{ $meta.slug }}"
   aria-labelledby="ftc-factsheet-title-{{ $meta.slug }}"
 >
+  {{/* Download callout */}}
+  {{ with $meta.download_pdf }}
+  <div class="ftc-factsheet__download">
+    <p class="ftc-factsheet__download-title">{{ i18n "ftc_download_title" }}</p>
+    <p class="ftc-factsheet__download-description">{{ i18n "ftc_download_description" }}</p>
+    <a
+      href="{{ . }}"
+      class="ftc-factsheet__download-btn"
+      download
+      data-umami-event="ftc_profile_download_pdf"
+      data-umami-event-slug="{{ $meta.slug }}"
+    >
+      <i class="fas fa-download" aria-hidden="true"></i>
+      {{ i18n "ftc_download_button" }}
+    </a>
+  </div>
+  {{ end }}
+
   <h2 class="ftc-factsheet__title" id="ftc-factsheet-title-{{ $meta.slug }}">
     {{ i18n "ftc_factsheet_title" }}
   </h2>

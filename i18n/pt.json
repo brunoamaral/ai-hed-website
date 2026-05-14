@@ -35,5 +35,8 @@
   { "id": "ftc_section_struggled", "translation": "" },
   { "id": "ftc_section_learned", "translation": "" },
   { "id": "ftc_prev", "translation": "" },
-  { "id": "ftc_next", "translation": "" }
+  { "id": "ftc_next", "translation": "" },
+  { "id": "ftc_download_title", "translation": "" },
+  { "id": "ftc_download_description", "translation": "" },
+  { "id": "ftc_download_button", "translation": "" }
 ]
