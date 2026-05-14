@@ -41,16 +41,7 @@
         height="36"
         loading="lazy"
       >
-      <span class="ftc-hero__institution-name">{{ $meta.institution_short }}</span>
     </div>
 
-    {{ with $raw.course_overview }}
-    <p class="ftc-hero__course-meta">
-      {{ .level -}}
-      {{ with .ects_credits }} &middot; {{ . }} ECTS{{ end -}}
-      {{ with .semester }} &middot; {{ . }}{{ end -}}
-      {{ with .num_students }} &middot; {{ . }} students{{ end }}
-    </p>
-    {{ end }}
   </div>
 </div>
