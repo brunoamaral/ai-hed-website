@@ -73,6 +73,10 @@ defaultImage = "https://ai-hed.eu/kateryna-hliznitsova-yE7hWGYte4A-unsplash.jpg"
     name = "About"
     weight = 1
   [[menu.main]]
+    name = "Events"
+    url = "/national-events/"
+    weight = 2
+  [[menu.main]]
     name = "News and Updates"
     weight = 3
   [[menu.main]]
