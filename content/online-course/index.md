@@ -157,7 +157,7 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 3</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
             <h4 class="h5 font-weight-bold">Digital Literacy</h4>
             <p class="text-muted">Key concepts and skills needed for digital literacy in the context of AI in education — what it is, why it matters, and how to develop it.</p>
@@ -170,7 +170,7 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 4</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
             <h4 class="h5 font-weight-bold">Using AI-based Tools in Teaching and Learning</h4>
             <p class="text-muted">An overview of AI-based tools available for teaching and learning, how they can support instruction, and how to integrate them into existing practices.</p>
@@ -183,7 +183,7 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 5</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
             <h4 class="h5 font-weight-bold">Case Studies and Practical Examples</h4>
             <p class="text-muted">Real-world case studies of how AI has been used in higher education across different settings, with outcomes and lessons learned.</p>
@@ -196,7 +196,7 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 6</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
             <h4 class="h5 font-weight-bold">Critical Thinking</h4>
             <p class="text-muted">The critical thinking skills needed to evaluate the use of AI in education — why they matter and how to develop them.</p>
@@ -209,7 +209,7 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 7</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
             <h4 class="h5 font-weight-bold">Future Trends</h4>
             <p class="text-muted">An overview of future trends in AI in education, and what the implications are for educators and education systems.</p>
