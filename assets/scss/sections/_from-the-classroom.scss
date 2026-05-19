@@ -635,21 +635,7 @@
 }
 
 .ftc-teaser {
-  position: relative;
-  background-image: url('/images/from-the-classroom/kubra-arslaner-n4PnQBHNuEY-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.82);
-  }
-
-  > * {
-    position: relative;
-  }
+  background-color: #EDF1ED;
 }
 
 .ftc-teaser-card {
