@@ -1,8 +1,8 @@
 {
 	"metadata": {
 		"date": "2026-02-24",
-		"slug": "multiplatform-journalism-workshop-escs",
-		"course_title": "Multiplatform Journalism Workshop",
+		"slug": "multiplatform-journalism-course-escs",
+		"course_title": "Multiplatform Journalism Course",
 		"institution": "School of Communication and Media Studies - Polytechnic University of Lisbon",
 		"institution_short": "ESCS-IPL",
 		"institution_logo": "/images/partners/Logo_ESCS_vENG_color-ai.svg",
@@ -15,12 +15,12 @@
 			}
 		],
 		"hook": "",
-		"download_pdf": "/downloads/from-the-classroom/Vera Moutinho - Multiplatform Journalism Workshop - ESCS.pdf"
+		"download_pdf": "/downloads/from-the-classroom/Vera Moutinho - Multiplatform Journalism Course - ESCS.pdf"
 	},
 
 	"raw": {
 		"course_overview": {
-			"title": "Multiplatform Journalism Workshop",
+			"title": "Multiplatform Journalism Course",
 			"university": "School of Communication and Media Studies - Polytechnic University of Lisbon",
 			"programme": "Media and Journalism",
 			"ects_credits": 5,
