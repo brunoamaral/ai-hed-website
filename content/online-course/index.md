@@ -290,11 +290,10 @@ options:
   .mooc-module-card {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
   }
   .mooc-module-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
   }
   .mooc-module-number {
     font-size: 0.85rem;
