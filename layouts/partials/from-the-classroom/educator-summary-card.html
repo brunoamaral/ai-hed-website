@@ -1,0 +1,82 @@
+{{/*
+  educator-summary-card.html
+  Full-surface linked card for the landing page educator list.
+
+  Param: full data object (metadata + raw + edited)
+*/}}
+{{ $data := . }}
+{{ $meta := $data.metadata }}
+{{ $edited := $data.edited }}
+{{ $raw := $data.raw }}
+{{ $informants := $meta.informants }}
+{{ $isDuo := gt (len $informants) 1 }}
+
+{{/* Lede: edited.intro first, fallback to raw.ai_usage_summary; truncate to ~50 words */}}
+{{ $ledeRaw := "" }}
+{{ if $edited.intro }}
+  {{ $ledeRaw = $edited.intro }}
+{{ else }}
+  {{ $ledeRaw = $raw.ai_usage_summary }}
+{{ end }}
+{{ $ledeWords := split ($ledeRaw | plainify) " " }}
+{{ $lede := delimit (first 50 $ledeWords) " " }}
+{{ if gt (len $ledeWords) 50 }}{{ $lede = printf "%s…" $lede }}{{ end }}
+
+{{/* CTA label using first name for solo, both names for duo */}}
+{{ $cta := "" }}
+{{ if $isDuo }}
+  {{ $cta = printf (i18n "ftc_read_story_duo") (index $informants 0).name (index $informants 1).name }}
+{{ else }}
+  {{ $firstName := index (split (index $informants 0).name " ") 0 }}
+  {{ $cta = printf (i18n "ftc_read_story_solo") $firstName }}
+{{ end }}
+
+{{ $profileURL := printf "/from-the-classroom/%s/" $meta.slug }}
+
+<article class="ftc-card">
+  <a
+    href="{{ $profileURL }}"
+    class="ftc-card__link"
+    data-umami-event="ftc_landing_card_click"
+    data-umami-event-slug="{{ $meta.slug }}"
+    aria-label="{{ $meta.course_title }} — {{ $cta }}"
+  >
+    <div class="ftc-card__inner">
+      <div class="ftc-card__portraits">
+        {{ partial "from-the-classroom/informant-portraits.html" (dict
+          "informants" $informants
+          "size" 120
+          "overlap" $isDuo
+          "institutionLogo" $meta.institution_logo
+          "eager" false
+        ) }}
+      </div>
+
+      <div class="ftc-card__body">
+        <h2 class="ftc-card__title">{{ $meta.course_title }}</h2>
+
+        <p class="ftc-card__byline">
+          {{ if $isDuo }}
+            {{ printf (i18n "ftc_byline_duo") (index $informants 0).name (index $informants 1).name }}
+          {{ else }}
+            {{ printf (i18n "ftc_byline_solo") (index $informants 0).name }}
+          {{ end }}
+          &nbsp;&middot;&nbsp;
+          <img
+            src="{{ $meta.institution_logo }}"
+            alt="{{ $meta.institution_short }}"
+            height="20"
+            loading="lazy"
+            style="vertical-align:middle;"
+          >
+        </p>
+
+        {{ with $meta.hook }}<p class="ftc-card__hook">{{ . }}</p>{{ end }}
+
+        <p class="ftc-card__lede">{{ $lede }}</p>
+
+        <span class="btn btn-primary btn-round btn-sm ftc-card__cta" aria-hidden="true">{{ $cta }}</span>
+      </div>
+    </div>
+  </a>
+</article>

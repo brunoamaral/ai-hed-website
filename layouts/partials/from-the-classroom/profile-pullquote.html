@@ -1,0 +1,12 @@
+{{/*
+  profile-pullquote.html
+  Renders a styled pull quote with attribution.
+
+  Param: object with .text and .speaker
+*/}}
+
+<blockquote class="ftc-pullquote">
+  <span class="ftc-pullquote__glyph" aria-hidden="true">&ldquo;</span>
+  <p>{{ .text | safeHTML }}</p>
+  <footer>&mdash; <cite>{{ .speaker }}</cite></footer>
+</blockquote>

@@ -1,0 +1,303 @@
+{{ define "bodyclasses" }}ftc-profile single from-the-classroom/single.html{{ end }}
+
+{{ define "data-attributes" }}
+	data-contentgrouptype="from-the-classroom" data-contentgroupname="From the Classroom" data-articletitle="{{ .Title }}"
+{{ end }}
+
+{{ define "description" }}
+	{{ partial "description.html" . }}
+{{ end }}
+
+{{ define "main" }}
+{{ $data := index hugo.Data.from_the_classroom .Params.dataFile }}
+{{ if not $data }}
+  <div class="section"><div class="container"><p class="text-danger">Profile data not found for key: {{ .Params.dataFile }}</p></div></div>
+{{ else }}
+{{ $meta := $data.metadata }}
+{{ $raw := $data.raw }}
+{{ $edited := $data.edited }}
+{{ $slug := $meta.slug }}
+
+{{/*
+  ── Prev / Next ──────────────────────────────────────────────────────────────
+  Collect all profiles, sort ascending by date, find current position, wrap.
+*/}}
+{{ $allProfiles := slice }}
+{{ range $key, $val := hugo.Data.from_the_classroom }}
+  {{ $allProfiles = $allProfiles | append $val }}
+{{ end }}
+{{ $allProfiles = sort $allProfiles "metadata.date" }}
+
+{{/* Find index of current profile */}}
+{{ $currentIdx := 0 }}
+{{ range $i, $p := $allProfiles }}
+  {{ if eq $p.metadata.slug $slug }}
+    {{ $currentIdx = $i }}
+  {{ end }}
+{{ end }}
+
+{{ $total := len $allProfiles }}
+{{ $prevIdx := mod (add (sub $currentIdx 1) $total) $total }}
+{{ $nextIdx := mod (add $currentIdx 1) $total }}
+{{ $prevProfile := index $allProfiles $prevIdx }}
+{{ $nextProfile := index $allProfiles $nextIdx }}
+
+<div class="wrapper">
+
+  <div class="ftc-breadcrumb-bar">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/from-the-classroom/">{{ i18n "ftc_section_title" }}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ $meta.course_title }}</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="section pb-4" style="padding-top: 130px;">
+    <div class="container">
+
+      <div class="row">
+
+        {{/* ── Main article column ── */}}
+        <main class="col-lg-8 ftc-profile-main" id="main-content">
+
+          {{/* Hero */}}
+          {{ partial "from-the-classroom/profile-hero.html" $data }}
+
+          {{/* Lede paragraph */}}
+          {{ $lede := "" }}
+          {{ if $edited.intro }}
+            {{ $lede = $edited.intro }}
+          {{ else if $raw.ai_usage_summary }}
+            {{ $lede = $raw.ai_usage_summary }}
+          {{ end }}
+          {{ with $lede }}
+          <p class="lead font-weight-normal mb-4">{{ . }}</p>
+          {{ end }}
+
+          {{/* Pull quote 1 */}}
+          {{ if $edited.pull_quotes }}
+            {{ with index $edited.pull_quotes 0 }}
+              {{ partial "from-the-classroom/profile-pullquote.html" . }}
+            {{ end }}
+          {{ end }}
+
+          {{/* Section: Why we used AI */}}
+          {{ $whyContent := "" }}
+          {{ if $edited.why_ai }}
+            {{ $whyContent = $edited.why_ai }}
+          {{ end }}
+          {{ if $whyContent }}
+            {{ partial "from-the-classroom/profile-section.html" (dict
+              "heading" "ftc_section_why"
+              "content" $whyContent
+            ) }}
+          {{ end }}
+
+          {{/* Section: How it worked in class */}}
+          {{ $howContent := "" }}
+          {{ if $edited.how_it_worked }}
+            {{ $howContent = $edited.how_it_worked }}
+          {{ end }}
+          {{ if $howContent }}
+            {{ partial "from-the-classroom/profile-section.html" (dict
+              "heading" "ftc_section_how"
+              "content" $howContent
+            ) }}
+          {{ end }}
+
+          {{/* Section: What changed for students */}}
+          {{ $changedContent := "" }}
+          {{ if $edited.what_changed }}
+            {{ $changedContent = $edited.what_changed }}
+          {{ end }}
+          {{ if $changedContent }}
+            {{ partial "from-the-classroom/profile-section.html" (dict
+              "heading" "ftc_section_changed"
+              "content" $changedContent
+            ) }}
+          {{ end }}
+
+          {{/* Pull quote 2 */}}
+          {{ if $edited.pull_quotes }}
+            {{ with index $edited.pull_quotes 1 }}
+              {{ partial "from-the-classroom/profile-pullquote.html" . }}
+            {{ end }}
+          {{ end }}
+
+          {{/* Section: What we struggled with — uses challenges slice */}}
+          {{ $challengesList := slice }}
+          {{ if $edited.struggles }}
+            {{ $challengesList = $edited.struggles }}
+          {{ else }}
+            {{/* Fallback: raw challenges */}}
+            {{ with $raw.overall_impact }}
+              {{ with .challenges }}
+                {{ $challengesList = . }}
+              {{ end }}
+            {{ end }}
+          {{ end }}
+          {{ if $challengesList }}
+            {{ partial "from-the-classroom/profile-section.html" (dict
+              "heading" "ftc_section_struggled"
+              "challenges" $challengesList
+            ) }}
+          {{ end }}
+
+          {{/* Section: What we learned */}}
+          {{ $learnedContent := "" }}
+          {{ if $edited.what_we_learned }}
+            {{ $learnedContent = $edited.what_we_learned }}
+          {{ end }}
+          {{ if $learnedContent }}
+            {{ partial "from-the-classroom/profile-section.html" (dict
+              "heading" "ftc_section_learned"
+              "content" $learnedContent
+            ) }}
+          {{ end }}
+
+          {{/* Sections: Learning Outcomes, Assessment, Evaluation, Risk Management */}}
+          {{ $impl := $raw.implementation_details }}
+          {{ $evalData := $raw.evaluation_and_risk_management }}
+          {{ $los := $raw.learning_outcomes }}
+
+          {{/* Learning Outcomes */}}
+          {{ with $los.outcomes }}
+          <section class="ftc-section">
+            <h2>{{ i18n "ftc_factsheet_outcomes" }}</h2>
+            <ol>
+              {{ range . }}
+              <li>{{ . }}</li>
+              {{ end }}
+            </ol>
+          </section>
+          {{ end }}
+
+          {{/* Assessment */}}
+          <section class="ftc-section">
+            <h2>{{ i18n "ftc_factsheet_assessment" }}</h2>
+            {{ if not $impl.part_of_assessment }}
+              <span class="ftc-badge ftc-badge--no">{{ i18n "ftc_no" }}</span>
+            {{ end }}
+            {{ with $impl.assessment_details }}
+            <p class="mt-2">{{ . }}</p>
+            {{ end }}
+          </section>
+
+          {{/* Evaluation */}}
+          <section class="ftc-section">
+            <h2>{{ i18n "ftc_factsheet_evaluation" }}</h2>
+            {{ with $evalData.impact_evaluated_how }}<p>{{ . }}</p>{{ end }}
+            <ul>
+              <li>
+                KPIs tracked:
+                {{ if $evalData.metrics_or_kpis }}
+                  <span class="ftc-badge ftc-badge--yes">{{ i18n "ftc_yes" }}</span>
+                  {{ with $evalData.metrics_details }} — {{ . }}{{ end }}
+                {{ else }}
+                  <span class="ftc-badge ftc-badge--no">{{ i18n "ftc_no" }}</span>
+                {{ end }}
+              </li>
+              <li>
+                Formal institutional evaluation:
+                {{ if $evalData.formal_institutional_evaluation }}
+                  <span class="ftc-badge ftc-badge--yes">{{ i18n "ftc_yes" }}</span>
+                {{ else }}
+                  <span class="ftc-badge ftc-badge--no">{{ i18n "ftc_no" }}</span>
+                {{ end }}
+              </li>
+            </ul>
+          </section>
+
+          {{/* Risk Management */}}
+          <section class="ftc-section">
+            <h2>{{ i18n "ftc_factsheet_risk" }}</h2>
+            {{ $risk := $evalData.risk_management }}
+            {{ if $risk.in_place }}
+              {{ with $risk.description }}<p class="mt-2">{{ . }}</p>{{ end }}
+            {{ else }}
+              <span class="ftc-badge ftc-badge--no">{{ i18n "ftc_no" }}</span>
+            {{ end }}
+          </section>
+
+          {{/* Challenges */}}
+          {{ $impact := $raw.overall_impact }}
+          {{ $scale := $raw.scalability_and_transferability }}
+          {{ with $impact.main_challenges }}
+          <section class="ftc-section">
+            <h2>{{ i18n "ftc_factsheet_challenges" }}</h2>
+            <dl class="ftc-challenges">
+              {{ range . }}
+              <div class="ftc-challenges__item">
+                <dt>{{ .challenge }}</dt>
+                <dd>{{ .management }}</dd>
+              </div>
+              {{ end }}
+            </dl>
+          </section>
+          {{ end }}
+
+          {{/* Scalability */}}
+          <section class="ftc-section">
+            <h2>{{ i18n "ftc_factsheet_scalability" }}</h2>
+            {{ if not $scale.can_be_scaled }}
+              <span class="ftc-badge ftc-badge--no">{{ i18n "ftc_no" }}</span>
+            {{ end }}
+            {{ with $scale.scaling_requirements }}<p class="mt-2">{{ . }}</p>{{ end }}
+          </section>
+
+          {{/* Prev / Next navigation */}}
+          {{ if gt $total 1 }}
+          <nav class="ftc-prevnext" aria-label="Profile navigation">
+            {{ if ne $prevIdx $currentIdx }}
+            <a
+              href="/from-the-classroom/{{ $prevProfile.metadata.slug }}/"
+              class="ftc-prevnext__item ftc-prevnext__item--prev"
+              data-umami-event="ftc_profile_prevnext_click"
+              data-umami-event-from_slug="{{ $slug }}"
+              data-umami-event-to_slug="{{ $prevProfile.metadata.slug }}"
+              data-umami-event-direction="prev"
+            >
+              <i class="fas fa-arrow-left" aria-hidden="true"></i>
+              <span class="ftc-prevnext__text">
+                <span class="ftc-prevnext__label">{{ i18n "ftc_prev" }}</span>
+                <span class="ftc-prevnext__title">{{ $prevProfile.metadata.course_title }}</span>
+              </span>
+            </a>
+            {{ end }}
+
+            {{ if ne $nextIdx $currentIdx }}
+            <a
+              href="/from-the-classroom/{{ $nextProfile.metadata.slug }}/"
+              class="ftc-prevnext__item ftc-prevnext__item--next"
+              data-umami-event="ftc_profile_prevnext_click"
+              data-umami-event-from_slug="{{ $slug }}"
+              data-umami-event-to_slug="{{ $nextProfile.metadata.slug }}"
+              data-umami-event-direction="next"
+            >
+              <span class="ftc-prevnext__text">
+                <span class="ftc-prevnext__label">{{ i18n "ftc_next" }}</span>
+                <span class="ftc-prevnext__title">{{ $nextProfile.metadata.course_title }}</span>
+              </span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            {{ end }}
+          </nav>
+          {{ end }}
+
+        </main>
+
+        {{/* ── Factsheet sidebar ── */}}
+        <aside class="col-lg-4 ftc-profile-sidebar">
+          {{ partial "from-the-classroom/profile-factsheet.html" $data }}
+        </aside>
+
+      </div>{{/* /row */}}
+    </div>{{/* /container */}}
+  </div>{{/* /section */}}
+</div>{{/* /wrapper */}}
+{{ end }}{{/* if $data */}}
+{{ end }}{{/* define "main" */}}

@@ -1,0 +1,76 @@
+- id: ftc_section_title
+  translation: "From the Classroom"
+- id: ftc_section_subtitle
+  translation: "Eight educators talk through how they integrated AI into their pilot courses."
+- id: ftc_homepage_cta
+  translation: "Read all stories"
+- id: ftc_landing_comparison_caption
+  translation: "Pilot-course comparison"
+- id: ftc_col_course
+  translation: "Course"
+- id: ftc_col_educator
+  translation: "Educator"
+- id: ftc_col_educator_plural
+  translation: "Educators"
+- id: ftc_col_institution
+  translation: "Institution"
+- id: ftc_col_level
+  translation: "Level"
+- id: ftc_col_students
+  translation: "Students"
+- id: ftc_col_tools
+  translation: "AI tools used"
+- id: ftc_col_assessed
+  translation: "AI use assessed"
+- id: ftc_col_risk_managed
+  translation: "Risk-managed"
+- id: ftc_yes
+  translation: "Yes"
+- id: ftc_no
+  translation: "No"
+- id: ftc_byline_solo
+  translation: "by %s"
+- id: ftc_byline_duo
+  translation: "by %s and %s"
+- id: ftc_read_story_solo
+  translation: "Read %s's story"
+- id: ftc_read_story_duo
+  translation: "Read %s and %s's story"
+- id: ftc_factsheet_title
+  translation: "Course factsheet"
+- id: ftc_factsheet_basics
+  translation: "Course basics"
+- id: ftc_factsheet_outcomes
+  translation: "Learning outcomes"
+- id: ftc_factsheet_tools
+  translation: "AI tools"
+- id: ftc_factsheet_assessment
+  translation: "Assessment"
+- id: ftc_factsheet_evaluation
+  translation: "Evaluation"
+- id: ftc_factsheet_risk
+  translation: "Risk management"
+- id: ftc_factsheet_challenges
+  translation: "Challenges"
+- id: ftc_factsheet_scalability
+  translation: "Scalability"
+- id: ftc_section_why
+  translation: "Why we used AI"
+- id: ftc_section_how
+  translation: "How it worked in class"
+- id: ftc_section_changed
+  translation: "What changed for students"
+- id: ftc_section_struggled
+  translation: "What we struggled with"
+- id: ftc_section_learned
+  translation: "What we learned"
+- id: ftc_prev
+  translation: "Previous"
+- id: ftc_next
+  translation: "Next"
+- id: ftc_download_title
+  translation: "Download full case study"
+- id: ftc_download_description
+  translation: "Get the complete interview analysis as a PDF."
+- id: ftc_download_button
+  translation: "Download PDF"

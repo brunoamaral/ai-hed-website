@@ -1,0 +1,89 @@
+{{/*
+  profile-factsheet.html
+  Renders the sticky sidebar with all raw course data.
+  Always uses raw.* — no edited fallback by design.
+
+  Param: full data object (metadata + raw + edited)
+*/}}
+{{ $data := . }}
+{{ $meta := $data.metadata }}
+{{ $raw := $data.raw }}
+{{ $co := $raw.course_overview }}
+{{ $impl := $raw.implementation_details }}
+{{ $eval := $raw.evaluation_and_risk_management }}
+{{ $impact := $raw.overall_impact }}
+{{ $scale := $raw.scalability_and_transferability }}
+{{ $los := $raw.learning_outcomes }}
+
+<aside
+  class="ftc-factsheet"
+  id="ftc-factsheet-{{ $meta.slug }}"
+  aria-labelledby="ftc-factsheet-title-{{ $meta.slug }}"
+>
+  {{/* Download callout */}}
+  {{ with $meta.download_pdf }}
+  <div class="ftc-factsheet__download">
+    <p class="ftc-factsheet__download-title">{{ i18n "ftc_download_title" }}</p>
+    <p class="ftc-factsheet__download-description">{{ i18n "ftc_download_description" }}</p>
+    <a
+      href="{{ . }}"
+      class="ftc-factsheet__download-btn"
+      target="_blank"
+      rel="noopener noreferrer"
+      data-umami-event="ftc_profile_download_pdf"
+      data-umami-event-slug="{{ $meta.slug }}"
+      data-umami-event-institution="{{ $meta.institution_short }}"
+      data-umami-event-course="{{ $meta.course_title }}"
+    >
+      <i class="fas fa-download" aria-hidden="true"></i>
+      {{ i18n "ftc_download_button" }}
+    </a>
+  </div>
+  {{ end }}
+
+  <h2 class="ftc-factsheet__title" id="ftc-factsheet-title-{{ $meta.slug }}">
+    {{ i18n "ftc_factsheet_title" }}
+  </h2>
+
+  {{/* 1. Course basics */}}
+  <section class="ftc-factsheet__section">
+    <h3>{{ i18n "ftc_factsheet_basics" }}</h3>
+    <dl>
+      {{ with $co.title }}<dt>Course</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with $co.university }}<dt>Institution</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with $co.programme }}<dt>Programme</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with $co.level }}<dt>Level</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with $co.ects_credits }}<dt>ECTS</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with $co.semester }}<dt>Semester</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with $co.num_students }}<dt>Students</dt><dd>{{ . }}</dd>{{ end }}
+      {{ with $co.prerequisites }}<dt>Prerequisites</dt><dd>{{ . }}</dd>{{ end }}
+    </dl>
+  </section>
+
+  {{/* 2. AI tools */}}
+  {{ with $impl.tools_used }}
+  <section class="ftc-factsheet__section">
+    <h3>{{ i18n "ftc_factsheet_tools" }}</h3>
+    <ul class="ftc-chip-list">
+      {{ range . }}
+      <li class="ftc-chip">{{ . }}</li>
+      {{ end }}
+    </ul>
+  </section>
+  {{ end }}
+
+</aside>
+
+<script>
+(function(){
+  var el = document.getElementById('ftc-factsheet-{{ $meta.slug }}');
+  if (!el || !window.IntersectionObserver) return;
+  var fired = false;
+  new IntersectionObserver(function(entries){
+    if (!fired && entries[0].isIntersecting) {
+      fired = true;
+      if (window.umami) window.umami.track('ftc_profile_factsheet_engagement', { slug: '{{ $meta.slug }}' });
+    }
+  }, { threshold: 0.25 }).observe(el);
+})();
+</script>

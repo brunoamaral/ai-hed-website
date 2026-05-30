@@ -1,0 +1,40 @@
+{{/*
+  informant-portrait-fallback.html
+  Renders a square typographic tile when no portrait image is available.
+
+  Params (dict):
+    .informant       — object with .name (string) and .role (string)
+    .size            — int, tile dimension in px (default 160)
+    .institutionLogo — path string to institution logo (from static/)
+*/}}
+{{ $informant := .informant }}
+{{ $size := .size | default 160 }}
+{{ $logo := .institutionLogo }}
+
+{{/* Derive initials: first char of each word, max 2 */}}
+{{ $initials := "" }}
+{{ $words := split $informant.name " " }}
+{{ range $i, $w := $words }}
+  {{ if and (lt $i 2) (gt (len $w) 0) }}
+    {{ $initials = printf "%s%s" $initials (substr $w 0 1) }}
+  {{ end }}
+{{ end }}
+{{ $initials = upper $initials }}
+
+<div
+  class="ftc-portrait ftc-portrait-fallback"
+  style="width:{{ $size }}px; height:{{ $size }}px;"
+  role="img"
+  aria-label="Portrait of {{ $informant.name }}"
+>
+  <span class="ftc-portrait-fallback__initials" aria-hidden="true">{{ $initials }}</span>
+  {{ with $logo }}
+  <img
+    class="ftc-portrait-fallback__logo"
+    src="{{ . }}"
+    alt=""
+    aria-hidden="true"
+    loading="lazy"
+  >
+  {{ end }}
+</div>

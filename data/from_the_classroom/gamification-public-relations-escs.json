@@ -1,0 +1,120 @@
+{
+	"metadata": {
+		"date": "2026-03-13",
+		"download_pdf": "/downloads/from-the-classroom/Antonio Azevedo - Gamification in PR Strategies - ESCS.pdf",
+		"slug": "gamification-public-relations-escs",
+		"course_title": "Gamification in Public Relations Strategies",
+		"institution": "School of Communication and Media Studies - Polytechnic University of Lisbon",
+		"institution_short": "ESCS-IPL",
+		"institution_logo": "/images/partners/Logo_ESCS_vENG_color-ai.svg",
+		"informants": [
+			{
+				"name": "António Azevedo",
+				"role": "Lecturer",
+				"portrait": "/images/from-the-classroom/educators/Antonio-Azevedo.jpg",
+				"bio": ""
+			}
+		],
+		"hook": ""
+	},
+
+	"raw": {
+		"course_overview": {
+			"title": "Gamification in Public Relations Strategies",
+			"university": "School of Communication and Media Studies - Polytechnic University of Lisbon",
+			"programme": "Public Relations and Corporate Communication",
+			"ects_credits": 5,
+			"level": "Bachelor",
+			"semester": "5th semester",
+			"num_students": 17,
+			"typical_student_background": "Final-year undergraduate students with a solid understanding of the core principles of communication and strategic public relations, still developing more specialised knowledge in specific areas. As an elective course, students typically enroll due to a particular interest in gaming, esports, and emerging digital communication environments.",
+			"prerequisites": "No prerequisites, just be part of the Bachelor's Programme."
+		},
+		"ai_usage_summary": "AI was integrated into the course as a creative and research support tool across several practical exercises and project development stages. Students used AI tools mainly for ideation, research, and structuring communication strategies within the gaming and esports ecosystem. The primary goal was to help students explore ideas faster while learning to critically evaluate and refine AI-generated outputs. A distinctive element was the combination of hands-on creative tasks — campaign ideation, customised campaign song commercials, and mind mapping — with structured reflection on the limitations and responsible use of AI.",
+		"learning_outcomes": {
+			"outcomes": [
+				"Describe the cultural relevance and economic impact of the gaming and esports industries.",
+				"Identify communication challenges and opportunities for brands in gaming environments.",
+				"Evaluate communication platforms, channels, and content formats used in gaming.",
+				"Design strategic communication plans adapted to gaming communities.",
+				"Create campaign proposals for endemic and non-endemic brands within the gaming ecosystem.",
+				"Analyse esports as a professional communication and branding environment.",
+				"Investigate emerging trends in gaming and assess their implications for brand strategies."
+			],
+			"ai_support_per_ilo": "ILO 1: AI tools supported early research stages by helping students identify relevant case studies, examples of brand activations, and recent developments in the gaming industry. Students used AI mainly to accelerate the discovery of examples and contextual information, which were later discussed and validated in class. ILO 3: AI helped students explore the communication potential of different platforms and formats used in gaming, such as livestreaming, creator collaborations, and in-game activations. Students quickly generated comparative insights and identified possible strategic uses, which were then refined through discussion and critical evaluation. ILO 4: AI was used mainly during the ideation phase of strategic exercises. Students brainstormed communication approaches, campaign narratives, and engagement strategies adapted to gaming audiences, with AI-supported drafts refined through class discussion, peer feedback, and instructor guidance. ILO 5: AI supported the creative development of campaign concepts, including brand activations, collaborations with gaming creators, and branded content ideas. Students used AI to explore different creative directions before refining their final proposals, keeping AI as a support tool for ideation rather than a replacement for strategic thinking.",
+			"skills_enhanced": [
+				"Creative ideation and strategic thinking",
+				"Prompt structuring and iteration",
+				"Critical evaluation of AI-generated outputs",
+				"Contextualisation of communication challenges in the gaming ecosystem"
+			],
+			"ai_specific_outcomes": false,
+			"ai_specific_outcomes_description": ""
+		},
+		"purpose_and_benefits": {
+			"main_reason": "The main motivation was pedagogical: to expose students to AI as a tool increasingly present in communication and in the creative industries. As part of the pilot programme, the goal was also to explore how AI could be meaningfully integrated into teaching and enhance the overall learning experience. Students were encouraged to experiment with AI while developing awareness of its potential, limitations, and role as a support tool rather than a replacement for critical thinking.",
+			"benefits_for_students": "AI allowed students to experiment with innovative tools that are increasingly present in the professional landscape. Students improved both their practical use of AI and their critical awareness of its limitations and potential biases. AI supported the creative process, helping students explore a wider range of ideas when developing campaign concepts and communication strategies, and in many cases helped them overcome creative blocks and accelerate early ideation stages. Class discussions and feedback encouraged students to critically evaluate AI-generated outputs, reinforcing the importance of human judgment.",
+			"benefits_for_lecturers": "AI did not significantly simplify the preparation or delivery of teaching activities. As a pilot programme, integrating AI actually required additional planning, experimentation, and attention. However, the process of exploring how AI could be well integrated into classroom activities encouraged reflection on new teaching approaches and helped identify alternative ways to engage students, stimulate creativity, and structure learning activities."
+		},
+		"implementation_details": {
+			"how_used_in_class": "AI was integrated mainly through in-class practical exercises designed around scenarios that simulated real-world communication briefs. Students were encouraged to use AI tools to support research, explore creative directions, and structure initial ideas while working on campaign concepts related to gaming and esports. These exercises were typically conducted during class time to allow guidance, discussion, and critical evaluation of AI-generated outputs. AI was also used as support for the main group project, mainly for mind mapping.",
+			"tools_used": [
+				"ChatGPT",
+				"Suno",
+				"MindMap AI"
+			],
+			"access": "All AI tools used in the course offered free versions, which were the recommended option to ensure equal access. There was no control over whether some students chose to use paid versions. The evaluation of AI-related activities focused primarily on how students used the tools rather than on the final output, ensuring that access to paid features did not create an advantage in assessment.",
+			"guidance_provided": "Guidance was provided mainly during in-class exercises where AI tools were used. Before starting activities, students received recommendations on how to use the tools effectively, including basic prompting practices and how to provide context to obtain more relevant outputs. At the end of activities, results were discussed collectively, encouraging students to reflect on the outputs, identify limitations, and explore how prompts could be refined.",
+			"part_of_assessment": true,
+			"assessment_details": "AI usage was included as part of continuous assessment through in-class exercises. Where the use of AI was required, evaluation focused less on the final output and more on how students used the tools. Students were assessed on the depth of their interaction with AI, the quality of their prompts, and their ability to critically evaluate and refine AI-generated suggestions."
+		},
+		"evaluation_and_risk_management": {
+			"impact_evaluated_how": "At the beginning of the course, students completed a pre-survey to assess their prior knowledge and usage of AI tools. At the end of the semester, a post-survey was conducted to understand how their perceptions and practices had evolved. Additionally, a focus group was organised with students from several courses participating in the pilot programme. Feedback was also collected informally throughout the semester.",
+			"metrics_or_kpis": false,
+			"metrics_or_kpis_description": "",
+			"formal_institutional_evaluation": false,
+			"risk_management": {
+				"in_place": true,
+				"description": "Most AI usage took place during in-class exercises, which allowed the lecturer to monitor how students interacted with the tools and ensure that AI supported learning rather than replacing critical thinking. Students were asked to share and discuss their prompts and interaction process, so assessment focused on how AI was used rather than only on the final outcome. Conducting AI-supported activities in a supervised classroom setting proved effective in maintaining engagement and preventing misuse of the tools."
+			}
+		},
+		"overall_impact": {
+			"impact_on_teaching_learning": "Overall, the impact of AI on teaching and learning was positive. When used appropriately, AI helped students explore a wider range of ideas and potential solutions, particularly during creative and strategic exercises. It supported ideation and encouraged experimentation, which contributed to student engagement. However, it did not radically transform the learning process. Integrating AI brought additional responsibility in ensuring that the tools were used appropriately and did not become a substitute for critical thinking or student effort.",
+			"impact_on_student_outcomes": "AI had a moderate but positive impact on student learning outcomes. It helped students accelerate the contextualisation and research phases of their work, allowing them to gather relevant examples and insights more efficiently. In several cases, AI also contributed to enriching projects by suggesting additional creative directions or strategic possibilities. The strongest ideas consistently originated from the students themselves, with AI mainly serving as a tool to expand, refine, and deepen those initial concepts.",
+			"main_challenges": [
+				{
+					"challenge": "Students inputting the assignment brief directly into AI tools and asking them to generate complete solutions, leading to similar prompts producing similar responses across students",
+					"management": "These situations were addressed directly with students, using them as examples to explain why this approach limited learning outcomes. The strategy was continuous reinforcement of proper AI usage, emphasising that the tools should support ideation and exploration rather than replace student effort. Individual feedback and class discussions encouraged deeper prompting and greater personalisation."
+				}
+			]
+		},
+		"scalability_and_transferability": {
+			"can_be_scaled": true,
+			"scaling_requirements": "AI is already a reality in basically all professional fields and can be relevant to a wide range of academic disciplines. One important requirement would be the development of institutional guidelines for responsible AI use. Additionally, as AI adoption grows, institutions could support integration by providing access to selected AI tools through institutional licences or educational partnerships, ensuring equitable access to platforms that may otherwise have limitations in their free versions.",
+			"key_advice": "Educators should first take time to familiarise themselves with the AI tools they plan to introduce, understanding both their capabilities and limitations. In classroom activities, it is useful to focus on how students use AI in the process, rather than only evaluating the final outcome. Demonstrating good examples of AI use during class can also help students understand how the tools can support their work. Finally, it is important to provide continuous feedback and intervene when students rely on AI as a shortcut rather than using it to genuinely enhance their thinking and learning process."
+		}
+	},
+
+	"edited": {
+		"intro": "",
+		"why_we_used_ai": "",
+		"how_it_worked": "",
+		"what_changed": "",
+		"what_we_struggled_with": "",
+		"what_we_learned": "",
+		"pull_quotes": [
+			{
+				"text": "The strongest ideas consistently originated from the students themselves, with AI mainly serving as a tool to expand, refine, and deepen those initial concepts.",
+				"speaker": "António Azevedo"
+			},
+			{
+				"text": "A distinctive element was the combination of hands-on creative tasks — campaign ideation, customised campaign song commercials, and mind mapping — with structured reflection on the limitations and responsible use of AI.",
+				"speaker": "António Azevedo"
+			},
+			{
+				"text": "It is important to provide continuous feedback and intervene when students rely on AI as a shortcut rather than using it to genuinely enhance their thinking and learning process.",
+				"speaker": "António Azevedo"
+			}
+		]
+	}
+}

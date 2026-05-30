@@ -1,0 +1,64 @@
+{{ define "bodyclasses" }}ftc-landing section-list from-the-classroom/list.html{{ end }}
+
+{{ define "data-attributes" }}
+	data-contentgrouptype="from-the-classroom" data-contentgroupname="From the Classroom" data-articletitle="{{ .Title }}"
+{{ end }}
+
+{{ define "description" }}
+	{{ partial "description.html" . }}
+{{ end }}
+
+{{ define "main" }}
+{{/*
+  Collect and sort all profiles by date ascending.
+*/}}
+{{ $allProfiles := slice }}
+{{ range $key, $val := hugo.Data.from_the_classroom }}
+  {{ $allProfiles = $allProfiles | append $val }}
+{{ end }}
+{{ $allProfiles = sort $allProfiles "metadata.date" }}
+
+<div class="wrapper">
+
+  <div class="section pb-5 mt-5">
+    <div class="container">
+
+      {{/* ── Section header ── */}}
+      <div class="row justify-content-center mb-4">
+        <div class="col-md-10 text-center">
+          <h1 class="title">{{ i18n "ftc_section_title" }}</h1>
+          <p class="lead font-weight-normal">{{ i18n "ftc_section_subtitle" }}</p>
+        </div>
+      </div>
+
+      {{/* ── Educator cards ── */}}
+      <div class="row">
+        {{ range $allProfiles }}
+          <div class="col-12 col-lg-10 offset-lg-1 mb-4">
+            {{ partial "from-the-classroom/educator-summary-card.html" . }}
+          </div>
+        {{ end }}
+      </div>
+
+			      {{/* ── Comparison strip ── */}}
+      {{ if gt (len $allProfiles) 1 }}
+      <div class="row justify-content-center mb-5">
+        <div class="col-md-12">
+          {{ partial "from-the-classroom/comparison-strip.html" $allProfiles }}
+        </div>
+      </div>
+      {{ end }}
+
+      {{/* ── Content from _index.md (if any editorial copy added later) ── */}}
+      {{ with .Content }}
+      <div class="row justify-content-center mt-4">
+        <div class="col-md-8">
+          {{ . }}
+        </div>
+      </div>
+      {{ end }}
+
+    </div>{{/* /container */}}
+  </div>{{/* /section */}}
+</div>{{/* /wrapper */}}
+{{ end }}
