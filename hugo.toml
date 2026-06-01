@@ -76,6 +76,10 @@ defaultImage = "https://ai-hed.eu/kateryna-hliznitsova-yE7hWGYte4A-unsplash.jpg"
     name = "News and Updates"
     weight = 3
   [[menu.main]]
+    name = "National Events"
+    url = "/national-events/"
+    weight = 4
+  [[menu.main]]
     name = "Key Areas of AI"
     url = "/ai-higher-education/key-areas-of-ai/"
     parent = "AI in Higher Education"
