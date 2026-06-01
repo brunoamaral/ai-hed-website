@@ -65,6 +65,9 @@ defaultImage = "https://ai-hed.eu/kateryna-hliznitsova-yE7hWGYte4A-unsplash.jpg"
     ordered = false
     startLevel = 1
 
+[security]
+  allowContent = '(?i)text/(html|plain|markdown)|application/json'
+
 [security.funcs]
   getenv = ['^HUGO_', '^CI$', '^SLUG$']
 
