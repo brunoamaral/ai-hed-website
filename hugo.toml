@@ -65,6 +65,9 @@ defaultImage = "https://ai-hed.eu/kateryna-hliznitsova-yE7hWGYte4A-unsplash.jpg"
     ordered = false
     startLevel = 1
 
+[security]
+  allowContent = '(?i)text/(html|plain|markdown)|application/json'
+
 [security.funcs]
   getenv = ['^HUGO_', '^CI$', '^SLUG$']
 
@@ -79,6 +82,10 @@ defaultImage = "https://ai-hed.eu/kateryna-hliznitsova-yE7hWGYte4A-unsplash.jpg"
   [[menu.main]]
     name = "News and Updates"
     weight = 3
+  [[menu.main]]
+    name = "National Events"
+    url = "/national-events/"
+    weight = 4
   [[menu.main]]
     name = "Key Areas of AI"
     url = "/ai-higher-education/key-areas-of-ai/"
