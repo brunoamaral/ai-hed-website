@@ -1,6 +1,6 @@
 #baseURL = 'https://ai-hed.com/'
 baseURL= 'https://ai-hed.eu/'
-languageCode = 'en-uk'
+locale = 'en-GB'
 title = 'AI-HED'
 theme = "Hugo-Now-UI-Pro"
 [params]
