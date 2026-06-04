@@ -70,7 +70,7 @@
 		},
 		"evaluation_and_risk_management": {
 			"impact_evaluated_how": "At the beginning of the course, students completed a pre-survey to assess their prior knowledge and usage of AI tools. At the end of the semester, a post-survey was conducted to understand how their perceptions and practices had evolved. Additionally, a focus group was organised with students from several courses participating in the pilot programme. Feedback was also collected informally throughout the semester.",
-			"metrics_or_kpis": false,
+			"metrics_or_kpis": true,
 			"metrics_or_kpis_description": "",
 			"formal_institutional_evaluation": false,
 			"risk_management": {
