@@ -47,15 +47,6 @@ options:
       <p class="font-weight-normal">
         Organised into seven modules, the course covers AI fundamentals to future trends, with a focus on responsible, critical, and inclusive integration of AI in higher education institutions.
       </p>
-      <a
-        href="https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=hero"
-        class="btn btn-primary btn-round btn-lg font-weight-bold mt-3"
-        target="_blank"
-        rel="noopener"
-        data-umami-event="click--mooc-enroll-hero"
-      >
-        Access the Course <i class="fas fa-arrow-circle-right"></i>
-      </a>
     </div>
   </div>
 </div>
@@ -100,6 +91,17 @@ options:
             </ul>
           </div>
         </div>
+      </div>
+      <div class="col-12 text-center mt-5">
+                  <a
+        href="https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=hero"
+        class="btn btn-primary btn-round btn-lg font-weight-bold mt-3"
+        target="_blank"
+        rel="noopener"
+        data-umami-event="click--mooc-enroll-hero"
+      >
+        Access the Course <i class="fas fa-arrow-circle-right"></i>
+      </a>
       </div>
     </div>
   </div>
