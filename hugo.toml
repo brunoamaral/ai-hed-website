@@ -97,6 +97,10 @@ defaultImage = "https://ai-hed.eu/kateryna-hliznitsova-yE7hWGYte4A-unsplash.jpg"
     url = "/from-the-classroom/"
     parent = "AI in Higher Education"
     weight = 4
+  [[menu.main]]
+    name = "Course"
+    url = "/ai-course-educators/"
+    weight = 5
   [[menu.footer_two]]
     name = "LinkedIn"
     url = "https://www.linkedin.com/company/ai-hed/"
