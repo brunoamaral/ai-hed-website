@@ -65,7 +65,7 @@ options:
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <h2 class="title text-center mb-4">What You Will Learn</h2>
+        <h2 class="title text-center mb-4" id="what-you-will-learn">What You Will Learn</h2>
         <div class="row">
           <div class="col-md-6">
             <ul class="list-unstyled">
