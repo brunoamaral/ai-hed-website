@@ -1,0 +1,107 @@
+{
+	"metadata": {
+		"download_pdf": "/downloads/from-the-classroom/Magdalena Kustelega - Digital Marketing - University of Zagreb FOI.pdf",
+		"date": "2026-03-04",
+		"slug": "digital-marketing-foi",
+		"course_title": "Digital Marketing",
+		"institution": "University of Zagreb, Faculty of Organization and Informatics",
+		"institution_short": "FOI Zagreb",
+		"institution_logo": "/images/partners/FOI_horiz_EN_color-ai.svg",
+		"informants": [
+			{
+				"name": "Magdalena Kuštelega",
+				"role": "Lecturer",
+				"portrait": "/images/from-the-classroom/educators/Magdalena-Kustelega.jpg",
+				"bio": ""
+			}
+		],
+		"hook": ""
+	},
+
+	"raw": {
+		"course_overview": {
+			"title": "Digital Marketing",
+			"university": "University of Zagreb, Faculty of Organization and Informatics",
+			"programme": "Information and Business Systems",
+			"ects_credits": 4,
+			"level": "Bachelor",
+			"semester": "5th semester, 3rd year",
+			"num_students": 61,
+			"typical_student_background": "Third-year undergraduate elective, open to all four modules (Development of Software Systems, AI in Business, Networked Systems and Computer Games, Analysis and Design of Business Systems). Students have strong organizational and communication skills, analytical mindset, high digital literacy, and interest in marketing strategy and ICT integration.",
+			"prerequisites": "None defined, but completion of all first- and second-year courses recommended"
+		},
+		"ai_usage_summary": "AI was used primarily as a supporting tool in developing a digital marketing plan for a new or innovative product/service. It was also incorporated into seminar classes where student teams used AI to explore and respond to discussion questions tied to case studies. The main objective was to enhance students' understanding of appropriate and effective AI use in digital marketing, while promoting critical evaluation of AI-generated answers.",
+		"learning_outcomes": {
+			"outcomes": [
+				"ILO 1: Propose marketing strategies for the observed company to achieve sustainable competitive advantage",
+				"ILO 2: Integrate information technologies in the marketing strategies of a company",
+				"ILO 3: Identify the elements of the digital marketing mix in the context of developing a digital marketing plan for a new/innovative product/service"
+			],
+			"ai_support_per_ilo": "ILO 1: AI covered all phases of digital marketing plan development with emphasis on current-state analysis, proposed appropriate marketing strategies, and synthesized findings. ILO 2: AI integrated ICT into marketing strategies, proposed suitable 4Ps components, and helped explain and evaluate key characteristics of proposed strategies during seminars. ILO 3: AI identified marketing mix elements with emphasis on the promotional mix, generated creative solutions and marketing tactics.",
+			"skills_enhanced": [
+				"Critical thinking — formulating specific search queries for high-quality information",
+				"Creativity — generating ideas and exploring beyond comfort zones",
+				"Analytical thinking — discovering that specific questions open further research threads",
+				"Time management — recognizing that AI does not always save time and requires careful combination with personal reflection"
+			],
+			"ai_specific_outcomes": false
+		},
+		"purpose_and_benefits": {
+			"main_reason": "To raise students' awareness of the benefits and responsibilities of using AI tools, encourage engagement and creativity, and develop critical thinking. AI was used as a support tool, not a primary data source.",
+			"benefits_for_students": "Assisted in analyzing and responding to case study discussion questions. Used as a supporting tool for visualizations: persona profile, customer journey map, SWOT analysis, BCG matrix, landing page, promotional mix visuals (social media posts, video content, email, flyers), logo, brand visual, slogan, product display, and pricing visuals.",
+			"benefits_for_lecturers": "Generated new relevant ideas for preparing case studies. Not used as a primary data source but to identify relevant global and local real-world examples, boosting creativity, critical thinking, and time efficiency. Required conversation transcripts simplified monitoring for AI misuse; instructor used AI to verify originality and relevance of student content."
+		},
+		"implementation_details": {
+			"how_used_in_class": "In seminar classes, student teams of up to 5 members collectively used a specific AI tool to generate responses to case study discussion questions. Used across all seminar sessions for every course unit. Students first independently read, analyzed, and responded to questions before using AI. Teams completed a 'Template for Using AI Tools' comparing AI answers to their own conclusions. Students also used AI throughout the semester to develop a digital marketing plan covering eight units.",
+			"tools_used": [
+				"ChatGPT",
+				"ChatGPT 5.0 (paid)",
+				"Perplexity",
+				"Microsoft Copilot",
+				"DeepSeek",
+				"Google Gemini",
+				"Claude AI",
+				"Canva AI"
+			],
+			"access": "Students chose any AI tool they preferred, typically free versions or personal subscriptions. FOI provided free Perplexity Pro licenses in 2025/2026; some teams used it exclusively during seminars.",
+			"guidance_provided": "Each team submitted a completed 'Template for Using AI Tools' with four questions: tool used, full conversation transcript, total interaction time in minutes, and a comparison of AI answers versus team conclusions including an assessment of the extent of differences.",
+			"part_of_assessment": true,
+			"assessment_details": "2 points for AI usage out of 20 for ILO 1 and ILO 2 combined; 2 points for AI usage out of 20 for ILO 3. Lecturers specifically noted points awarded for AI tool utilization when evaluating digital marketing plans."
+		},
+		"evaluation_and_risk_management": {
+			"impact_evaluated_how": "Weekly team feedback via the 'Template for Using AI Tools' (question 4), comparing AI answers to team conclusions with critical reflections. Lecturer emphasized oral commentary, allowing teams to share views and gain diverse perspectives. Post-course survey on satisfaction and instruction quality including AI implementation.",
+			"metrics_or_kpis": true,
+			"metrics_details": "Post-survey completed by students at end of course delivery assessing satisfaction and quality of instruction with AI implementation.",
+			"formal_institutional_evaluation": false,
+			"risk_management": {
+				"in_place": true,
+				"description": "Primary risk: excessive, non-transparent, and unethical AI use leading to poorer learning outcomes. Rules set: AI permitted only after teams independently read, analyzed, and answered discussion questions. Teams must attach full AI conversation logs and clearly mark AI-assisted sections in plans, specifying the tool name."
+			}
+		},
+		"overall_impact": {
+			"impact_on_teaching_learning": "AI had no significant impact on the teaching process itself, which remained essentially unchanged. However, it had a significantly positive impact on the lecturer's own learning — enabling faster, more creative content generation and offering a new perspective on formulating clear, specific, and unambiguous prompts and assignments.",
+			"impact_on_student_outcomes": "Positive. AI helped students develop a broad understanding of AI applications in digital marketing, offered a new perspective for examining case studies, and fostered critical thinking and creativity. Students engaged more deeply with the material, enhancing analytical abilities and capacity to critically evaluate both AI responses and their own conclusions.",
+			"main_challenges": [
+				{
+					"challenge": "No significant technical, understanding, or integration difficulties encountered",
+					"management": "Timely and clear student communication about the specific manner and sequence of activities during seminars, along with clear consequences of irresponsible, unethical, and non-transparent AI use"
+				}
+			]
+		},
+		"scalability_and_transferability": {
+			"can_be_scaled": true,
+			"scaling_requirements": "Applicable to other courses with project assignment elements. AI can be engaged in writing specific sections of papers, generating ideas, stimulating creative problem-solving, graphically representing textual parts, or enhancing seminar instruction for creativity and critical thinking.",
+			"key_advice": "Educators should carefully consider the primary motivation and purpose of AI implementation before starting, and ensure AI aligns with defined learning outcomes. It is not necessary to integrate AI into every assessment element. Apply AI selectively where it can best enhance learning and teaching — sometimes less is more."
+		}
+	},
+
+	"edited": {
+		"intro": "",
+		"why_we_used_ai": "",
+		"how_it_worked": "",
+		"what_changed": "",
+		"what_we_struggled_with": "",
+		"what_we_learned": "",
+		"pull_quotes": []
+	}
+}
