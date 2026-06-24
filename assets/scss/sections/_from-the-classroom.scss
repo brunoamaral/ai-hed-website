@@ -279,6 +279,60 @@
       margin-top: 0.5rem;
     }
   }
+
+  &__download {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-top: 3px solid var(--ftc-accent);
+    border-radius: 0.1875rem;
+  }
+
+  &__download-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--ftc-accent);
+    margin: 0 0 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  &__download-description {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin: 0 0 0.85rem;
+    line-height: 1.4;
+  }
+
+  &__download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    background: var(--ftc-accent);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.1875rem;
+    text-decoration: none;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+  }
 }
 
 @media (min-width: 992px) {
@@ -507,22 +561,81 @@
 
 // ── Homepage teaser ───────────────────────────────────────────────────────────
 
+// Carousel wrapper
+.ftc-carousel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 8px;
+
+  &__track-wrap {
+    flex: 1;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    // hide native scrollbar — navigation is handled by buttons
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    // padding-bottom creates space inside the scroll viewport for hover shadows
+    // padding-inline keeps cards clear of the wrapper edge
+    padding: 0 12px 20px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__track {
+    display: flex;
+    gap: 16px;
+    // Top padding so card shadows aren't clipped on that edge
+    padding-top: 8px;
+  }
+
+  &__slide {
+    flex: 0 0 auto; // width is set by JS relative to wrapper size
+    display: flex;  // stretch card to full slide height
+  }
+
+  &__btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--ftc-accent);
+    background: #fff;
+    color: var(--ftc-accent);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s, color 0.2s;
+
+    &:hover:not(:disabled) {
+      background: var(--ftc-accent);
+      color: #fff;
+    }
+
+    &:disabled {
+      opacity: 0.3;
+      cursor: default;
+    }
+
+    // On small screens shrink and move inside track area
+    @media (max-width: 575px) {
+      width: 32px;
+      height: 32px;
+      font-size: 0.85rem;
+    }
+  }
+}
+
 .ftc-teaser {
-  position: relative;
-  background-image: url('/images/from-the-classroom/kubra-arslaner-n4PnQBHNuEY-unsplash.jpg');
-  background-size: cover;
-  background-position: center;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.82);
-  }
-
-  > * {
-    position: relative;
-  }
+  background-color: #EDF1ED;
 }
 
 .ftc-teaser-card {
@@ -534,16 +647,17 @@
   color: inherit;
   padding: 20px 16px;
   border-radius: 0.1875rem;
-  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   background: #fff;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-color 0.2s ease-in-out;
 
   &:hover,
   &:focus {
     text-decoration: none;
     color: inherit;
     transform: translateY(-2px);
-    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.18);
+    border-color: transparent;
   }
 
   &__portraits {

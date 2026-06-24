@@ -1,15 +1,5 @@
 ---
 title: "Open Access AI Course for Educators"
-subtitle: |
- <span style="display:inline-flex;align-items:center;gap:5px;
- background:#e8f5e2;border:1px solid #5a9e30;border-radius:99px;
- padding:3px 10px 3px 8px;font-size:11px;font-weight:600;
- color:#2d6010;letter-spacing:.04em;text-transform:uppercase;
- white-space:nowrap;">
- <span style="width:6px;height:6px;border-radius:50%;
- background:#4c9020;flex-shrink:0;"></span>
- Preview
- </span>
 date: 2026-03-06T00:00:00Z
 draft: false
 categories:
@@ -57,15 +47,6 @@ options:
       <p class="font-weight-normal">
         Organised into seven modules, the course covers AI fundamentals to future trends, with a focus on responsible, critical, and inclusive integration of AI in higher education institutions.
       </p>
-      <a
-        href="https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=hero"
-        class="btn btn-primary btn-round btn-lg font-weight-bold mt-3"
-        target="_blank"
-        rel="noopener"
-        data-umami-event="click--mooc-enroll-hero"
-      >
-        Access the Course <i class="fas fa-arrow-circle-right"></i>
-      </a>
     </div>
   </div>
 </div>
@@ -75,7 +56,7 @@ options:
   <div class="container-fluid">
     <div class="row justify-content-center">
       <div class="col-md-8">
-        <h2 class="title text-center mb-4">What You Will Learn</h2>
+        <h2 class="title text-center mb-4" id="what-you-will-learn">What You Will Learn</h2>
         <div class="row">
           <div class="col-md-6">
             <ul class="list-unstyled">
@@ -110,6 +91,17 @@ options:
             </ul>
           </div>
         </div>
+      </div>
+      <div class="col-12 text-center mt-5">
+                  <a
+        href="https://learn.foi.hr/course/view.php?id=80&utm_source=ai-hed-eu&utm_medium=website&utm_campaign=ai-mooc&utm_content=hero"
+        class="btn btn-primary btn-round btn-lg font-weight-bold mt-3"
+        target="_blank"
+        rel="noopener"
+        data-umami-event="click--mooc-enroll-hero"
+      >
+        Access the Course <i class="fas fa-arrow-circle-right"></i>
+      </a>
       </div>
     </div>
   </div>
@@ -157,7 +149,7 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 3</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
             <h4 class="h5 font-weight-bold">Digital Literacy</h4>
             <p class="text-muted">Key concepts and skills needed for digital literacy in the context of AI in education — what it is, why it matters, and how to develop it.</p>
@@ -170,7 +162,7 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 4</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
             <h4 class="h5 font-weight-bold">Using AI-based Tools in Teaching and Learning</h4>
             <p class="text-muted">An overview of AI-based tools available for teaching and learning, how they can support instruction, and how to integrate them into existing practices.</p>
@@ -183,7 +175,7 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 5</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
             <h4 class="h5 font-weight-bold">Case Studies and Practical Examples</h4>
             <p class="text-muted">Real-world case studies of how AI has been used in higher education across different settings, with outcomes and lessons learned.</p>
@@ -196,7 +188,7 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 6</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
             <h4 class="h5 font-weight-bold">Critical Thinking</h4>
             <p class="text-muted">The critical thinking skills needed to evaluate the use of AI in education — why they matter and how to develop them.</p>
@@ -209,7 +201,7 @@ options:
           <div class="card-body p-4">
             <div class="d-flex justify-content-between align-items-start mb-2">
               <span class="mooc-module-number">Module 7</span>
-              <span class="badge badge-secondary">Coming Soon</span>
+              <span class="badge badge-success">Available</span>
             </div>
             <h4 class="h5 font-weight-bold">Future Trends</h4>
             <p class="text-muted">An overview of future trends in AI in education, and what the implications are for educators and education systems.</p>
@@ -300,11 +292,10 @@ options:
   .mooc-module-card {
     border: 1px solid #e0e0e0;
     border-radius: 8px;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: box-shadow 0.2s ease-in-out;
   }
   .mooc-module-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
   }
   .mooc-module-number {
     font-size: 0.85rem;

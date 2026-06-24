@@ -1,7 +1,7 @@
 - id: ftc_section_title
   translation: "From the Classroom"
 - id: ftc_section_subtitle
-  translation: "Four educators talk through how they integrated AI into their pilot courses."
+  translation: "Eight educators talk through how they integrated AI into their pilot courses."
 - id: ftc_homepage_cta
   translation: "Read all stories"
 - id: ftc_landing_comparison_caption
@@ -68,3 +68,9 @@
   translation: "Previous"
 - id: ftc_next
   translation: "Next"
+- id: ftc_download_title
+  translation: "Download full case study"
+- id: ftc_download_description
+  translation: "Get the complete interview analysis as a PDF."
+- id: ftc_download_button
+  translation: "Download PDF"
