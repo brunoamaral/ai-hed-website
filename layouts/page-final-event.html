@@ -1,0 +1,792 @@
+{{ define "bodyclasses" }}page-final-event{{ end }}
+
+{{ define "data-attributes" }}
+  data-contentgrouptype="{{ .Section }}" data-contentgroupname="{{ .CurrentSection.Title }}" data-articletitle="{{ .Title }}"
+{{ end }}
+
+{{ define "description" }}
+  {{ partial "description.html" . }}
+{{ end }}
+
+{{ define "head" }}
+<style>
+/* ── Final Event page ─────────────────────────────────────────────────────── */
+.fe-wrap {
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  color: #2c2c2c;
+}
+
+/* Hero */
+.fe-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  padding-top: 62px; /* clear fixed navbar */
+}
+.fe-hero__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.fe-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, rgba(27,61,47,.92) 0%, rgba(27,61,47,.55) 60%, rgba(27,61,47,.2) 100%);
+}
+.fe-hero__body {
+  position: relative;
+  padding: 48px 56px 52px;
+  color: #fff;
+  max-width: 800px;
+  width: 100%;
+}
+.fe-hero__eyebrow {
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #cfe6cf;
+  margin-bottom: 14px;
+}
+.fe-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: rgba(255,255,255,.16);
+  border: 1px solid rgba(255,255,255,.4);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: .85rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+.fe-hero__title {
+  color: #fff !important;
+  font-size: clamp(2.2rem, 4vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.12;
+  margin: 0 0 14px;
+  max-width: 16ch;
+}
+.fe-hero__lead {
+  color: rgba(255,255,255,.93);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 54ch;
+  margin: 0 0 26px;
+}
+.fe-hero__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.fe-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: #6b8b6b;
+  color: #fff !important;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none !important;
+  border: none;
+  cursor: pointer;
+  font-size: .95rem;
+  transition: background .18s;
+}
+.fe-btn-primary:hover { background: #7a9a7a; }
+.fe-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: transparent;
+  color: #fff !important;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  padding: 14px 28px;
+  border: 2px solid rgba(255,255,255,.7);
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: .95rem;
+  transition: background .18s, color .18s;
+}
+.fe-btn-ghost:hover { background: #fff; color: #2c4d36 !important; }
+
+/* Tab bar */
+.fe-tabs-bar {
+  background: #fff;
+  border-bottom: 1px solid #E3E3E3;
+  padding: 0 56px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  position: sticky;
+  top: 62px;
+  z-index: 100;
+}
+.fe-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 2px;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #737373;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  white-space: nowrap;
+  transition: color .18s, border-color .18s;
+}
+.fe-tab-btn:hover { color: #2c4d36; }
+.fe-tab-btn.is-active {
+  color: #2c4d36;
+  border-bottom-color: #6b8b6b;
+}
+.fe-tabs-bar__spacer { flex: 1; }
+.fe-tabs-bar__register {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #6b8b6b;
+  color: #fff !important;
+  font-weight: 700;
+  font-size: .78rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 9px 20px;
+  border-radius: 30px;
+  text-decoration: none !important;
+  margin: 8px 0;
+  transition: background .18s;
+}
+.fe-tabs-bar__register:hover { background: #7a9a7a; }
+
+/* Panels */
+.fe-panels {
+  padding: 48px 56px 56px;
+  background: #fafbfa;
+  min-height: 420px;
+}
+.fe-panel { display: none; }
+.fe-panel.is-active { display: block; }
+
+/* Panel headings */
+.fe-panel__title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: #2c2c2c;
+}
+.fe-panel__lead {
+  color: #737373;
+  margin: 0 0 28px;
+  line-height: 1.5;
+}
+
+/* Programme */
+.fe-programme { max-width: 760px; }
+.fe-prog-item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 16px 0;
+  border-bottom: 1px solid #eef0ee;
+}
+.fe-prog-item__time {
+  font-weight: 700;
+  font-size: .92rem;
+  color: #2c4d36;
+  font-variant-numeric: tabular-nums;
+}
+.fe-prog-item__body {
+  padding-left: 16px;
+  border-left: 3px solid #6b8b6b;
+}
+.fe-prog-item__title { font-weight: 700; }
+.fe-prog-item__desc { color: #737373; font-size: .9rem; margin-top: 2px; }
+
+/* Speakers */
+.fe-speakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+}
+.fe-speaker-card {
+  background: #fff;
+  border: 1px solid #E3E3E3;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+.fe-speaker-card__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #e9f0ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.fe-speaker-card__tag {
+  display: inline-block;
+  background: #e6f4ea;
+  color: #2c4d36;
+  font-size: .62rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+.fe-speaker-card__name { font-weight: 700; font-size: 1.02rem; }
+.fe-speaker-card__org { color: #6b8b6b; font-size: .84rem; font-weight: 600; margin-top: 2px; }
+.fe-speaker-card__bio { color: #737373; font-size: .86rem; line-height: 1.55; margin: 12px 0 0; }
+
+/* Venue */
+.fe-venue-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.fe-venue-map {
+  aspect-ratio: 4/3;
+  border-radius: 10px;
+  background: #eef2ee;
+  border: 2px dashed #b9ccba;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6b8b6b;
+  gap: 10px;
+}
+.fe-venue-name { font-weight: 700; font-size: 1.1rem; }
+.fe-venue-addr { color: #737373; line-height: 1.6; margin: 6px 0 18px; }
+.fe-travel-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 11px 0;
+  border-top: 1px solid #eef0ee;
+}
+.fe-travel-item__icon { color: #6b8b6b; width: 20px; text-align: center; margin-top: 3px; }
+.fe-travel-item__label { font-weight: 700; font-size: .9rem; }
+.fe-travel-item__text { color: #737373; font-size: .86rem; }
+
+/* Presentations */
+.fe-presentations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px;
+}
+.fe-pres-card {
+  background: #fff;
+  border: 1px solid #E3E3E3;
+  border-radius: 10px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 150px;
+}
+.fe-pres-card__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  background: #eef2ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a9bbab;
+}
+.fe-pres-card__title { font-weight: 700; font-size: .96rem; line-height: 1.3; }
+.fe-pres-card__locked {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #9aa89b;
+  font-size: .8rem;
+  font-weight: 600;
+}
+.fe-pres-notice {
+  margin-top: 26px;
+  padding: 16px 20px;
+  border-left: 6px solid #28a745;
+  background: #e6f4ea;
+  color: #1b3d2f;
+  border-radius: 8px;
+  font-size: .9rem;
+}
+
+/* Page footer (partner strip) */
+.fe-page-footer {
+  background: #fff;
+  padding: 44px 56px 36px;
+  border-top: 1px solid #E3E3E3;
+}
+.fe-page-footer__cols {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.fe-page-footer__about-text {
+  color: #737373;
+  font-size: .88rem;
+  line-height: 1.6;
+  margin: 6px 0 0;
+  max-width: 42ch;
+}
+.fe-page-footer__col-label {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #2c2c2c;
+}
+.fe-page-footer__links {
+  display: grid;
+  gap: 7px;
+}
+.fe-page-footer__links a {
+  color: #737373;
+  font-size: .9rem;
+  text-decoration: none;
+}
+.fe-page-footer__links a:hover { color: #2c4d36; }
+.fe-page-footer__socials { display: flex; gap: 10px; }
+.fe-social-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #6b8b6b;
+  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none !important;
+  transition: background .18s;
+}
+.fe-social-btn:hover { background: #2c4d36; }
+.fe-page-footer__rule {
+  border: none;
+  border-top: 1px solid #E3E3E3;
+  margin: 32px 0;
+}
+.fe-partner-strip {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.fe-partner-strip img {
+  max-height: 42px;
+  max-width: 130px;
+  object-fit: contain;
+  opacity: .85;
+}
+.fe-partner-strip img.fe-eu-badge { max-width: 150px; }
+.fe-page-footer__disclaimer {
+  margin-top: 24px;
+  color: #737373;
+  font-size: .76rem;
+  line-height: 1.55;
+  max-width: 720px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fe-hero__body { padding: 32px 24px 40px; }
+  .fe-tabs-bar { padding: 0 16px; gap: 16px; overflow-x: auto; }
+  .fe-panels { padding: 32px 24px 48px; }
+  .fe-venue-grid { grid-template-columns: 1fr; }
+  .fe-page-footer { padding: 36px 24px 28px; }
+  .fe-page-footer__cols { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 480px) {
+  .fe-hero__badge { font-size: .75rem; }
+  .fe-prog-item { grid-template-columns: 1fr; gap: 4px; }
+}
+</style>
+{{ end }}
+
+{{ define "main" }}
+{{ $formUrl := .Params.registration_url | default "https://forms.gle/aihed-final-event" }}
+{{ $eventDate := .Params.event_date | default "12 February 2027" }}
+{{ $eventBadge := .Params.event_badge | default "12 February 2027 · 13:00–17:30 · Lisbon · Hybrid" }}
+
+<div class="fe-wrap">
+
+  <!-- ── Hero ─────────────────────────────────────────────────────────────── -->
+  <div class="fe-hero">
+    <img class="fe-hero__bg" src="/images/hero-classroom.jpg" alt="">
+    <div class="fe-hero__overlay"></div>
+    <div class="fe-hero__body">
+      <div class="fe-hero__eyebrow">AI-HED · Final Event</div>
+      <div class="fe-hero__badge">
+        <i class="fas fa-calendar-day"></i>
+        <span>{{ $eventBadge }}</span>
+      </div>
+      <h1 class="fe-hero__title">Two years of AI in Higher Education — the results</h1>
+      <p class="fe-hero__lead">Join the AI-HED consortium for a half-day presenting the consolidated results of the project: best practices, pilot outcomes and hands-on workshops.</p>
+      <div class="fe-hero__actions">
+        <a href="{{ $formUrl }}" target="_blank" rel="noopener" class="fe-btn-primary">
+          Register now <i class="fas fa-arrow-up-right-from-square"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Tab bar ────────────────────────────────────────────────────────────── -->
+  <div class="fe-tabs-bar" role="tablist">
+    <button class="fe-tab-btn is-active" data-panel="programme" onclick="feTab(this)" role="tab" aria-selected="true">
+      <i class="fas fa-calendar-day"></i> Programme
+    </button>
+    <button class="fe-tab-btn" data-panel="speakers" onclick="feTab(this)" role="tab" aria-selected="false">
+      <i class="fas fa-user-group"></i> Speakers
+    </button>
+    <button class="fe-tab-btn" data-panel="venue" onclick="feTab(this)" role="tab" aria-selected="false">
+      <i class="fas fa-location-dot"></i> Venue
+    </button>
+    <button class="fe-tab-btn" data-panel="presentations" onclick="feTab(this)" role="tab" aria-selected="false">
+      <i class="fas fa-file-lines"></i> Presentations
+    </button>
+    <div class="fe-tabs-bar__spacer"></div>
+    <a href="{{ $formUrl }}" target="_blank" rel="noopener" class="fe-tabs-bar__register">
+      Register
+    </a>
+  </div>
+
+  <!-- ── Panels ─────────────────────────────────────────────────────────────── -->
+  <div class="fe-panels">
+
+    <!-- Programme -->
+    <div id="fe-panel-programme" class="fe-panel is-active" role="tabpanel">
+      <h2 class="fe-panel__title">Programme</h2>
+      <p class="fe-panel__lead">A half-day of results, best practices and hands-on workshops.</p>
+      <div class="fe-programme">
+
+        <div class="fe-prog-item">
+          <div class="fe-prog-item__time">13:00 – 13:30</div>
+          <div class="fe-prog-item__body" style="border-left-color:#cdd8cf;">
+            <div class="fe-prog-item__title">Arrival, coffee &amp; tea</div>
+            <div class="fe-prog-item__desc">Welcome with light refreshments</div>
+          </div>
+        </div>
+
+        <div class="fe-prog-item">
+          <div class="fe-prog-item__time">13:30 – 13:45</div>
+          <div class="fe-prog-item__body" style="border-left-color:#6b8b6b;">
+            <div class="fe-prog-item__title">Welcome</div>
+            <div class="fe-prog-item__desc">Opening words by management</div>
+          </div>
+        </div>
+
+        <div class="fe-prog-item">
+          <div class="fe-prog-item__time">13:45 – 14:30</div>
+          <div class="fe-prog-item__body" style="border-left-color:#6b8b6b;">
+            <div class="fe-prog-item__title">Introduction to the AI-HED project</div>
+            <div class="fe-prog-item__desc">Two years of work, in context</div>
+          </div>
+        </div>
+
+        <div class="fe-prog-item">
+          <div class="fe-prog-item__time">14:30 – 15:00</div>
+          <div class="fe-prog-item__body" style="border-left-color:#60CB3F;">
+            <div class="fe-prog-item__title">Keynote presentation</div>
+            <div class="fe-prog-item__desc">Guest keynote — to be announced</div>
+          </div>
+        </div>
+
+        <div class="fe-prog-item">
+          <div class="fe-prog-item__time">15:00 – 15:15</div>
+          <div class="fe-prog-item__body" style="border-left-color:#cdd8cf;">
+            <div class="fe-prog-item__title">Break</div>
+          </div>
+        </div>
+
+        <div class="fe-prog-item">
+          <div class="fe-prog-item__time">15:15 – 16:15</div>
+          <div class="fe-prog-item__body" style="border-left-color:#6b8b6b;">
+            <div class="fe-prog-item__title">Plenary: presentation of Best Practices</div>
+            <div class="fe-prog-item__desc">One per partner · max 10 min each · hybrid</div>
+          </div>
+        </div>
+
+        <div class="fe-prog-item">
+          <div class="fe-prog-item__time">16:15 – 16:30</div>
+          <div class="fe-prog-item__body" style="border-left-color:#cdd8cf;">
+            <div class="fe-prog-item__title">Short break</div>
+          </div>
+        </div>
+
+        <div class="fe-prog-item">
+          <div class="fe-prog-item__time">16:30 – 17:30</div>
+          <div class="fe-prog-item__body" style="border-left-color:#6b8b6b;">
+            <div class="fe-prog-item__title">Workshops</div>
+            <div class="fe-prog-item__desc">Hands-on parallel sessions</div>
+          </div>
+        </div>
+
+        <div class="fe-prog-item">
+          <div class="fe-prog-item__time">17:30 onwards</div>
+          <div class="fe-prog-item__body" style="border-left-color:#cdd8cf;">
+            <div class="fe-prog-item__title">Drinks &amp; networking</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Speakers -->
+    <div id="fe-panel-speakers" class="fe-panel" role="tabpanel">
+      <h2 class="fe-panel__title">Speakers</h2>
+      <p class="fe-panel__lead">Voices from across the consortium — full line-up to be confirmed.</p>
+      <div class="fe-speakers-grid">
+
+        <div class="fe-speaker-card">
+          <div class="fe-speaker-card__avatar"><i class="fas fa-user" style="color:#6b8b6b;font-size:22px;"></i></div>
+          <span class="fe-speaker-card__tag">Keynote</span>
+          <div class="fe-speaker-card__name">Keynote speaker</div>
+          <div class="fe-speaker-card__org">To be announced</div>
+          <p class="fe-speaker-card__bio">Bio coming soon. This speaker will share concrete results and lessons from the AI-HED pilots.</p>
+        </div>
+
+        <div class="fe-speaker-card">
+          <div class="fe-speaker-card__avatar"><i class="fas fa-user" style="color:#6b8b6b;font-size:22px;"></i></div>
+          <span class="fe-speaker-card__tag">Best Practice</span>
+          <div class="fe-speaker-card__name">Speaker — Netherlands</div>
+          <div class="fe-speaker-card__org">Amsterdam University of Applied Sciences</div>
+          <p class="fe-speaker-card__bio">Bio coming soon. This speaker will share concrete results and lessons from the AI-HED pilots.</p>
+        </div>
+
+        <div class="fe-speaker-card">
+          <div class="fe-speaker-card__avatar"><i class="fas fa-user" style="color:#6b8b6b;font-size:22px;"></i></div>
+          <span class="fe-speaker-card__tag">Best Practice</span>
+          <div class="fe-speaker-card__name">Speaker — Portugal</div>
+          <div class="fe-speaker-card__org">ESCS, Lisbon</div>
+          <p class="fe-speaker-card__bio">Bio coming soon. This speaker will share concrete results and lessons from the AI-HED pilots.</p>
+        </div>
+
+        <div class="fe-speaker-card">
+          <div class="fe-speaker-card__avatar"><i class="fas fa-user" style="color:#6b8b6b;font-size:22px;"></i></div>
+          <span class="fe-speaker-card__tag">Best Practice</span>
+          <div class="fe-speaker-card__name">Speaker — Austria</div>
+          <div class="fe-speaker-card__org">FH Vienna (UAS BFI)</div>
+          <p class="fe-speaker-card__bio">Bio coming soon. This speaker will share concrete results and lessons from the AI-HED pilots.</p>
+        </div>
+
+        <div class="fe-speaker-card">
+          <div class="fe-speaker-card__avatar"><i class="fas fa-user" style="color:#6b8b6b;font-size:22px;"></i></div>
+          <span class="fe-speaker-card__tag">Best Practice</span>
+          <div class="fe-speaker-card__name">Speaker — Croatia</div>
+          <div class="fe-speaker-card__org">FOI, University of Zagreb</div>
+          <p class="fe-speaker-card__bio">Bio coming soon. This speaker will share concrete results and lessons from the AI-HED pilots.</p>
+        </div>
+
+        <div class="fe-speaker-card">
+          <div class="fe-speaker-card__avatar"><i class="fas fa-user" style="color:#6b8b6b;font-size:22px;"></i></div>
+          <span class="fe-speaker-card__tag">Workshop</span>
+          <div class="fe-speaker-card__name">Workshop facilitators</div>
+          <div class="fe-speaker-card__org">AI-HED consortium</div>
+          <p class="fe-speaker-card__bio">Bio coming soon. This speaker will share concrete results and lessons from the AI-HED pilots.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Venue -->
+    <div id="fe-panel-venue" class="fe-panel" role="tabpanel">
+      <h2 class="fe-panel__title">Venue &amp; travel</h2>
+      <p class="fe-panel__lead">How to find us and get there.</p>
+      <div class="fe-venue-grid">
+        <div class="fe-venue-map">
+          <i class="fas fa-location-dot" style="font-size:34px;"></i>
+          <div style="font-weight:700;">Map</div>
+          <div style="font-size:.8rem;color:#8aa18c;">Interactive map coming soon</div>
+        </div>
+        <div>
+          <div class="fe-venue-name">ESCS — Escola Superior de Comunicação Social</div>
+          <div class="fe-venue-addr">Campus de Benfica do IPL<br>1549-014 Lisboa, Portugal</div>
+
+          <div class="fe-travel-item">
+            <i class="fas fa-train-subway fe-travel-item__icon"></i>
+            <div>
+              <div class="fe-travel-item__label">By metro</div>
+              <div class="fe-travel-item__text">Alto dos Moinhos (Blue line), ~5-minute walk</div>
+            </div>
+          </div>
+          <div class="fe-travel-item">
+            <i class="fas fa-car fe-travel-item__icon"></i>
+            <div>
+              <div class="fe-travel-item__label">By car</div>
+              <div class="fe-travel-item__text">On-site parking available</div>
+            </div>
+          </div>
+          <div class="fe-travel-item">
+            <i class="fas fa-plane fe-travel-item__icon"></i>
+            <div>
+              <div class="fe-travel-item__label">From the airport</div>
+              <div class="fe-travel-item__text">~20 minutes by taxi or metro</div>
+            </div>
+          </div>
+          <div class="fe-travel-item">
+            <i class="fas fa-universal-access fe-travel-item__icon"></i>
+            <div>
+              <div class="fe-travel-item__label">Accessibility</div>
+              <div class="fe-travel-item__text">Step-free access throughout the venue</div>
+            </div>
+          </div>
+          <div class="fe-travel-item">
+            <i class="fas fa-video fe-travel-item__icon"></i>
+            <div>
+              <div class="fe-travel-item__label">Hybrid option</div>
+              <div class="fe-travel-item__text">Plenary sessions streamed online</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Presentations -->
+    <div id="fe-panel-presentations" class="fe-panel" role="tabpanel">
+      <h2 class="fe-panel__title">Presentations</h2>
+      <p class="fe-panel__lead">Slides and recordings will be published here after the event.</p>
+      <div class="fe-presentations-grid">
+
+        <div class="fe-pres-card">
+          <div class="fe-pres-card__icon"><i class="fas fa-file-lines" style="font-size:18px;"></i></div>
+          <div class="fe-pres-card__title">Welcome &amp; introduction to AI-HED</div>
+          <div class="fe-pres-card__locked"><i class="fas fa-lock"></i> Available after the event</div>
+        </div>
+        <div class="fe-pres-card">
+          <div class="fe-pres-card__icon"><i class="fas fa-file-lines" style="font-size:18px;"></i></div>
+          <div class="fe-pres-card__title">Keynote presentation</div>
+          <div class="fe-pres-card__locked"><i class="fas fa-lock"></i> Available after the event</div>
+        </div>
+        <div class="fe-pres-card">
+          <div class="fe-pres-card__icon"><i class="fas fa-file-lines" style="font-size:18px;"></i></div>
+          <div class="fe-pres-card__title">Best Practice — Netherlands</div>
+          <div class="fe-pres-card__locked"><i class="fas fa-lock"></i> Available after the event</div>
+        </div>
+        <div class="fe-pres-card">
+          <div class="fe-pres-card__icon"><i class="fas fa-file-lines" style="font-size:18px;"></i></div>
+          <div class="fe-pres-card__title">Best Practice — Portugal</div>
+          <div class="fe-pres-card__locked"><i class="fas fa-lock"></i> Available after the event</div>
+        </div>
+        <div class="fe-pres-card">
+          <div class="fe-pres-card__icon"><i class="fas fa-file-lines" style="font-size:18px;"></i></div>
+          <div class="fe-pres-card__title">Best Practice — Austria</div>
+          <div class="fe-pres-card__locked"><i class="fas fa-lock"></i> Available after the event</div>
+        </div>
+        <div class="fe-pres-card">
+          <div class="fe-pres-card__icon"><i class="fas fa-file-lines" style="font-size:18px;"></i></div>
+          <div class="fe-pres-card__title">Best Practice — Croatia</div>
+          <div class="fe-pres-card__locked"><i class="fas fa-lock"></i> Available after the event</div>
+        </div>
+        <div class="fe-pres-card">
+          <div class="fe-pres-card__icon"><i class="fas fa-file-lines" style="font-size:18px;"></i></div>
+          <div class="fe-pres-card__title">Workshop materials</div>
+          <div class="fe-pres-card__locked"><i class="fas fa-lock"></i> Available after the event</div>
+        </div>
+
+      </div>
+      <div class="fe-pres-notice">Materials will be added here as speakers share them after the event.</div>
+    </div>
+
+  </div><!-- /fe-panels -->
+
+  <!-- ── Page-level footer (partner strip) ─────────────────────────────────── -->
+  <footer class="fe-page-footer">
+    <div class="fe-page-footer__cols">
+      <div>
+        <img src="/images/ai-hed-logo-full-green-gradient.svg" alt="AI-HED" style="height:34px;display:block;margin-bottom:8px;">
+        <p class="fe-page-footer__about-text">An Erasmus+ Cooperation Partnership co-funded by the European Commission. Sept 2024 → Feb 2027.</p>
+      </div>
+      <div>
+        <div class="fe-page-footer__col-label">Event</div>
+        <div class="fe-page-footer__links">
+          <a href="{{ $formUrl }}" target="_blank" rel="noopener">Register</a>
+          <a href="#fe-panel-programme" onclick="feShowPanel('programme');return false;">Programme</a>
+          <a href="#fe-panel-speakers" onclick="feShowPanel('speakers');return false;">Speakers</a>
+        </div>
+      </div>
+      <div>
+        <div class="fe-page-footer__col-label">Connect</div>
+        <div class="fe-page-footer__socials">
+          <a href="https://www.linkedin.com/company/ai-hed/" target="_blank" rel="noopener" class="fe-social-btn" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="/contact/" class="fe-social-btn" aria-label="Email">
+            <i class="far fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <hr class="fe-page-footer__rule">
+    <div class="fe-partner-strip">
+      <a href="https://www.amsterdamuas.com" target="_blank" rel="noopener">
+        <img src="/images/partners/logo_amsterdam-uas.svg" alt="Amsterdam University of Applied Sciences">
+      </a>
+      <a href="https://escs.ipl.pt/en/home" target="_blank" rel="noopener">
+        <img src="/images/partners/Logo_ESCS_vENG_color-ai.svg" alt="ESCS — Escola Superior de Comunicação Social">
+      </a>
+      <a href="https://www.fh-vie.ac.at/en/" target="_blank" rel="noopener">
+        <img src="/images/partners/FH_e_Logo_Blue_RGB.svg" alt="FH Vienna — UAS BFI">
+      </a>
+      <a href="https://www.foi.unizg.hr/en" target="_blank" rel="noopener">
+        <img src="/images/partners/FOI_horiz_EN_color-ai.svg" alt="FOI — University of Zagreb">
+      </a>
+      <img src="/images/partners/EN_Co-fundedbytheEU_RGB_POS.png" alt="Co-funded by the European Union" class="fe-eu-badge">
+    </div>
+    <p class="fe-page-footer__disclaimer">The European Commission's support for the production of this publication does not constitute an endorsement of the contents, which reflect the views only of the authors, and the Commission cannot be held responsible for any use which may be made of the information contained therein.</p>
+  </footer>
+
+</div><!-- /fe-wrap -->
+
+<script>
+function feTab(btn) {
+  document.querySelectorAll('.fe-tab-btn').forEach(function(b) {
+    b.classList.remove('is-active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  btn.classList.add('is-active');
+  btn.setAttribute('aria-selected', 'true');
+  feShowPanel(btn.dataset.panel);
+}
+
+function feShowPanel(key) {
+  document.querySelectorAll('.fe-panel').forEach(function(p) {
+    p.classList.remove('is-active');
+  });
+  var panel = document.getElementById('fe-panel-' + key);
+  if (panel) panel.classList.add('is-active');
+  // sync tab buttons
+  document.querySelectorAll('.fe-tab-btn').forEach(function(b) {
+    if (b.dataset.panel === key) {
+      b.classList.add('is-active');
+      b.setAttribute('aria-selected', 'true');
+    }
+  });
+}
+</script>
+{{ end }}
