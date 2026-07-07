@@ -268,13 +268,13 @@
   aspect-ratio: 4/3;
   border-radius: 10px;
   background: #eef2ee;
-  border: 2px dashed #b9ccba;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #6b8b6b;
-  gap: 10px;
+  overflow: hidden;
+}
+.fe-venue-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .fe-venue-name { font-weight: 700; font-size: 1.1rem; }
 .fe-venue-addr { color: #737373; line-height: 1.6; margin: 6px 0 18px; }
@@ -616,9 +616,9 @@
       <p class="fe-panel__lead">How to find us and get there.</p>
       <div class="fe-venue-grid">
         <div class="fe-venue-map">
-          <i class="fas fa-location-dot" style="font-size:34px;"></i>
-          <div style="font-weight:700;">Map</div>
-          <div style="font-size:.8rem;color:#8aa18c;">Interactive map coming soon</div>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Amsterdam,Fraijlemaborg,133" target="_blank" rel="noopener">
+            <img src="/images/final-event/map-Corry-Tendeloo-Building.png" alt="Map showing the location of the Corry Tendeloo Building">
+          </a>
         </div>
         <div>
           <div class="fe-venue-name">Corry Tendeloo Building, Amsterdam University of Applied Sciences</div>
