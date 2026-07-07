@@ -156,22 +156,34 @@
 }
 .fe-tabs-bar__spacer { flex: 1; }
 .fe-tabs-bar__register {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
   background: #6b8b6b;
   color: #fff !important;
-  font-weight: 700;
-  font-size: .78rem;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-  padding: 9px 20px;
-  border-radius: 30px;
-  text-decoration: none !important;
-  margin: 8px 0;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border-bottom: none;
   transition: background .18s;
 }
-.fe-tabs-bar__register:hover { background: #7a9a7a; }
+.fe-tabs-bar__register:hover { background: #7a9a7a; color: #fff !important; }
+.fe-tabs-bar__register.is-active { background: #2c4d36; color: #fff !important; }
+
+/* Register panel */
+.fe-register-form-wrap {
+  background: #fff;
+  border: 1px solid #E3E3E3;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+  max-width: 664px;
+  margin: 0 auto;
+}
+.fe-register-form-wrap iframe {
+  width: 100%;
+  max-width: 640px;
+  height: 2013px;
+  border: 0;
+  display: block;
+  margin: 0 auto;
+}
 
 /* Panels */
 .fe-panels {
@@ -430,7 +442,6 @@
 {{ end }}
 
 {{ define "main" }}
-{{ $formUrl := .Params.registration_url | default "https://forms.gle/aihed-final-event" }}
 {{ $eventDate := .Params.event_date | default "12 February 2027" }}
 {{ $eventBadge := .Params.event_badge | default "12 February 2027 · 13:00–17:30 · Lisbon · Hybrid" }}
 
@@ -449,9 +460,9 @@
       <h1 class="fe-hero__title">Two years of AI in Higher Education — the results</h1>
       <p class="fe-hero__lead">Join the AI-HED consortium for a half-day presenting the consolidated results of the project: best practices, pilot outcomes and hands-on workshops.</p>
       <div class="fe-hero__actions">
-        <a href="{{ $formUrl }}" target="_blank" rel="noopener" class="fe-btn-primary">
+        <button type="button" onclick="feGoRegister()" class="fe-btn-primary">
           Register now <i class="fas fa-arrow-up-right-from-square"></i>
-        </a>
+        </button>
       </div>
     </div>
   </div>
@@ -470,10 +481,10 @@
     <button class="fe-tab-btn" data-panel="presentations" onclick="feTab(this)" role="tab" aria-selected="false">
       <i class="fas fa-file-lines"></i> Presentations
     </button>
+    <button class="fe-tab-btn fe-tabs-bar__register" data-panel="register" onclick="feTab(this)" role="tab" aria-selected="false">
+      <i class="fas fa-pen-to-square"></i> Register
+    </button>
     <div class="fe-tabs-bar__spacer"></div>
-    <a href="{{ $formUrl }}" target="_blank" rel="noopener" class="fe-tabs-bar__register">
-      Register
-    </a>
   </div>
 
   <!-- ── Panels ─────────────────────────────────────────────────────────────── -->
@@ -709,6 +720,15 @@
       <div class="fe-pres-notice">Materials will be added here as speakers share them after the event.</div>
     </div>
 
+    <!-- Register -->
+    <div id="fe-panel-register" class="fe-panel" role="tabpanel">
+      <h2 class="fe-panel__title">Register</h2>
+      <p class="fe-panel__lead">Please fill in the form below to reserve your place.</p>
+      <div class="fe-register-form-wrap">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeG2FW7xhV1opY9K1kUNRtPgtAAp45KglIR9A0nUvOM4pQNKQ/viewform?embedded=true" width="640" height="2013" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+    </div>
+
   </div><!-- /fe-panels -->
 
   <!-- ── Page-level footer (partner strip) ─────────────────────────────────── -->
@@ -725,6 +745,13 @@ function feTab(btn) {
   btn.classList.add('is-active');
   btn.setAttribute('aria-selected', 'true');
   feShowPanel(btn.dataset.panel);
+}
+
+function feGoRegister() {
+  var tab = document.querySelector('.fe-tab-btn[data-panel="register"]');
+  if (tab) feTab(tab);
+  var panel = document.getElementById('fe-panel-register');
+  if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function feShowPanel(key) {
