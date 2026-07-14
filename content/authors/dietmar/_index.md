@@ -17,7 +17,7 @@ profiles:
   linkedin: 'https://www.linkedin.com/in/dietmar-paier-56b90a125/'
 resources:
     - name: avatar
-      src: dietmar.jpeg
+      src: dietmar-paier.jpg
     - name: header
       src: gregoryai_background.jpg
 
