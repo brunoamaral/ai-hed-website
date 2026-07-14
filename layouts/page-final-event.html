@@ -442,8 +442,8 @@
 {{ end }}
 
 {{ define "main" }}
-{{ $eventDate := .Params.event_date | default "12 February 2027" }}
-{{ $eventBadge := .Params.event_badge | default "12 February 2027 · 13:00–17:30 · Lisbon · Hybrid" }}
+{{ $eventDate := .Params.event_date | default "6 October 2026" }}
+{{ $eventBadge := .Params.event_badge | default "6 October 2026 · 13:00–18:30 CET · AUAS Amsterdam · Hybrid" }}
 
 <div class="fe-wrap">
 
@@ -492,7 +492,7 @@
 
     <!-- Programme -->
     <div id="fe-panel-programme" class="fe-panel is-active" role="tabpanel">
-      <h2 class="fe-panel__title">Programme</h2>
+      <h2 class="fe-panel__title">Draft Programme</h2>
       <p class="fe-panel__lead">A half-day of results, best practices and hands-on workshops.</p>
       <div class="fe-programme">
 
@@ -521,7 +521,6 @@
           <div class="fe-prog-item__time">14:20 – 15:20</div>
           <div class="fe-prog-item__body" style="border-left-color:#6b8b6b;">
             <div class="fe-prog-item__title">Best Practice presentations</div>
-            <div class="fe-prog-item__desc">One per partner · maximum 10 minutes each · hybrid</div>
           </div>
         </div>
 
@@ -550,7 +549,6 @@
           <div class="fe-prog-item__time">16:45 – 17:30</div>
           <div class="fe-prog-item__body" style="border-left-color:#6b8b6b;">
             <div class="fe-prog-item__title">Panel discussion</div>
-            <div class="fe-prog-item__desc">Management representative, project partner, teacher, student, and invited external expert</div>
           </div>
         </div>
 
