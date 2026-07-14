@@ -8,8 +8,8 @@ type: page
 url: /final-event/
 description: "Join the AI-HED consortium for a half-day presenting the consolidated results of the project: best practices, pilot outcomes and hands-on workshops. 12 February 2027, AUAS Amsterdam."
 registration_url: "https://forms.gle/aihed-final-event"
-event_date: "12 February 2027"
-event_badge: "12 February 2027 · 13:00–17:30 WET · AUAS Amsterdam · Hybrid"
+event_date: ""
+event_badge: 
 options:
   unlisted: false
   hideSubscribeForm: true
