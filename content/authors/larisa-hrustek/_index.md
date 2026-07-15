@@ -28,5 +28,3 @@ url: /team/larisa-hrustek
 Larisa Hrustek is a Senior Teaching Assistant at the University of Zagreb, Faculty of Organization and Informatics. She holds a PhD in Information Sciences, with research focused on digital technologies, sustainability, and organizational adaptability. She teaches courses in operations management, digital transformation, and process performance management. Her research interests include sustainability, digital transformation, business models, and business process management.
 
 She has participated in numerous international summer schools, Blended Intensive Programmes (BIPs), and eight research projects, including Horizon 2020 and Erasmus+. She has authored over 40 scientific publications and actively mentors students in sustainability and innovation initiatives, including the Global Goals Jam.
-
-*Photo to follow.*

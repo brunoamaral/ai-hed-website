@@ -29,5 +29,3 @@ Ana Kutnjak is a Senior Teaching Assistant at the University of Zagreb Faculty o
 Ana has authored and co-authored around 40 scientific publications and has participated in numerous national and international projects addressing digital transformation, sustainable business models, circular economy, artificial intelligence, digital skills development, internationalization competencies, and higher education innovation. She has actively participated in numerous international summer schools, workshops, training programmes, lectures, and other professional development activities, further strengthening her interdisciplinary perspective and international collaboration skills.
 
 She recently completed her PhD at the University of Zagreb Faculty of Organization and Informatics. Her doctoral research focused on extending the Business Model Canvas with digital transformation determinants, examining how digital transformation can strengthen the resilience of business models.
-
-*Photo to follow.*

@@ -26,5 +26,3 @@ url: /team/matija-sajn
 ---
 
 Matija Šajn is a researcher and lecturer at the University of Zagreb Faculty of Organization and Informatics. His work focuses on business process management, digital transformation, and the application of artificial intelligence in organizational and educational contexts. His current research explores AI-assisted business process modeling, while his professional experience spans educational technologies, web development, and digital innovation. By combining academic research with practical industry experience, he explores approaches that support the effective adoption of emerging digital technologies.
-
-*Photo to follow.*

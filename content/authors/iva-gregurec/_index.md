@@ -25,5 +25,3 @@ url: /team/iva-gregurec
 ---
 
 Iva Gregurec is an Associate Professor and the Head of the Department of Economics at the Faculty of Organization and Informatics, University of Zagreb. She got her PhD degree in Social Science, the scientific field of economics in 2014 by defending her doctoral thesis at the Faculty of Economics and Business, University of Zagreb. Her main areas of scientific interest are related to digital marketing, customer relationship management, database marketing, as well as digital transformation and the effect of digital technologies on marketing. She is the President of the Croatian Association for Direct and Interactive Marketing and an active member of the Croatian Marketing Association, in which she is a member of the Supervisory Board.
-
-*Photo to follow.*
