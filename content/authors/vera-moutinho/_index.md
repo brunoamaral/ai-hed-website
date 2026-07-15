@@ -1,10 +1,10 @@
 ---
-title: Tatiana Nunes
-name: Tatiana Nunes
-email: "tnunes@escs.ipl.pt"
-summary: "Professor, researcher, and consultant specializing in strategic communication and public relations."
+title: Vera Moutinho
+name: Vera Moutinho
+email: ""
+summary: ""
 authorlink: ""
-subtitle: Coordinator of the Bachelor’s Degree in Public Relations and Corporate Communication
+subtitle: 
 twitterUsername: ""
 weight: 4
 params:
