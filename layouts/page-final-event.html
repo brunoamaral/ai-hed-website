@@ -269,6 +269,141 @@
 .fe-speaker-card__org { color: #6b8b6b; font-size: .84rem; font-weight: 600; margin-top: 2px; }
 .fe-speaker-card__bio { color: #737373; font-size: .86rem; line-height: 1.55; margin: 12px 0 0; }
 
+/* Clickable (workshop) cards */
+.fe-speaker-card--clickable {
+  cursor: pointer;
+  transition: box-shadow .18s, border-color .18s, transform .18s;
+}
+.fe-speaker-card--clickable:hover,
+.fe-speaker-card--clickable:focus-visible {
+  box-shadow: 0 6px 18px rgba(44,77,54,.14);
+  border-color: #b8ccba;
+  transform: translateY(-2px);
+}
+.fe-speaker-card--clickable:focus-visible { outline: 2px solid #6b8b6b; outline-offset: 2px; }
+.fe-speaker-card__more {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #2c4d36;
+  font-size: .8rem;
+  font-weight: 700;
+}
+.fe-speaker-card__more i { font-size: .7rem; transition: transform .18s; }
+.fe-speaker-card--clickable:hover .fe-speaker-card__more i { transform: translateX(3px); }
+
+/* Workshop detail modal */
+.fe-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(20,32,24,.6);
+  z-index: 1050;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.fe-modal-overlay.is-active { display: flex; }
+.fe-modal {
+  background: #fff;
+  border-radius: 14px;
+  max-width: 720px;
+  width: 100%;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  position: relative;
+  padding: 40px 44px 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  animation: feModalIn .18s ease-out;
+}
+@keyframes feModalIn {
+  from { opacity: 0; transform: translateY(10px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.fe-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: #f0f3f0;
+  color: #737373;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .18s, color .18s;
+}
+.fe-modal__close:hover { background: #e6f4ea; color: #2c4d36; }
+.fe-modal__avatars { display: flex; gap: 8px; margin-bottom: 16px; }
+.fe-modal__avatars span {
+  width: 52px; height: 52px; border-radius: 50%; overflow: hidden;
+  background: #e9f0ec; display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.fe-modal__tag {
+  display: inline-block;
+  background: #e6f4ea;
+  color: #2c4d36;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+.fe-modal__title { font-size: 1.35rem; font-weight: 700; color: #2c2c2c; margin: 0 0 4px; line-height: 1.25; }
+.fe-modal__presenters { color: #6b8b6b; font-size: .92rem; font-weight: 600; margin: 0 0 22px; }
+.fe-modal__presenters a { color: inherit; }
+.fe-modal__section { margin-top: 22px; }
+.fe-modal__section:first-of-type { margin-top: 0; }
+.fe-modal__section h4 {
+  font-size: .76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: #737373;
+  margin: 0 0 8px;
+}
+.fe-modal__section p { color: #444; font-size: .92rem; line-height: 1.65; margin: 0 0 10px; }
+.fe-modal__section ol,
+.fe-modal__section ul { margin: 0; padding-left: 20px; color: #444; font-size: .92rem; line-height: 1.65; }
+.fe-modal__section li { margin-bottom: 6px; }
+.fe-modal__pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.fe-modal__pill {
+  background: #f0f3f0;
+  color: #2c4d36;
+  font-size: .78rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 30px;
+}
+.fe-modal__note {
+  margin-top: 22px;
+  padding: 12px 16px;
+  background: #f7f9f7;
+  border-left: 4px solid #6b8b6b;
+  border-radius: 6px;
+  color: #555;
+  font-size: .84rem;
+  line-height: 1.55;
+}
+.fe-modal__badge {
+  display: inline-block;
+  background: #fff3cd;
+  color: #7a5b00;
+  font-size: .72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
 /* Venue */
 .fe-venue-grid {
   display: grid;
@@ -437,6 +572,7 @@
 @media (max-width: 480px) {
   .fe-hero__badge { font-size: .75rem; }
   .fe-prog-item { grid-template-columns: 1fr; gap: 4px; }
+  .fe-modal { padding: 32px 20px 28px; max-height: 90vh; }
 }
 </style>
 {{ end }}
@@ -631,34 +767,37 @@
       <h3 class="h5 mt-5 mb-3" style="color:#2c4d36;">Workshops</h3>
       <div class="fe-speakers-grid">
 
-        <div class="fe-speaker-card">
+        <div class="fe-speaker-card fe-speaker-card--clickable" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for How Do We Assess in the Age of AI?" onclick="feOpenWorkshopModal('assess')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();feOpenWorkshopModal('assess');}">
           <div class="fe-speaker-card__avatar" style="width:auto;height:56px;background:none;border-radius:0;display:flex;gap:8px;">
             <span style="width:56px;height:56px;border-radius:50%;overflow:hidden;background:#e9f0ec;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{ partial "fe-avatar.html" (dict "slug" "erik" "size" 56) }}</span>
             <span style="width:56px;height:56px;border-radius:50%;overflow:hidden;background:#e9f0ec;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{ partial "fe-avatar.html" (dict "slug" "raul-casado-linares" "size" 56) }}</span>
           </div>
           <span class="fe-speaker-card__tag">Workshop</span>
           <div class="fe-speaker-card__name">How Do We Assess in the Age of AI?</div>
-          <div class="fe-speaker-card__org"><a href="/team/erik-kostelijk" style="color:inherit;text-decoration:none;">Erik Kostelijk</a> &amp; <a href="/team/raul-casado-linares" style="color:inherit;text-decoration:none;">Raúl Casado Linares</a> · AUAS</div>
+          <div class="fe-speaker-card__org"><a href="/team/erik-kostelijk" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">Erik Kostelijk</a> &amp; <a href="/team/raul-casado-linares" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">Raúl Casado Linares</a> · AUAS</div>
           <p class="fe-speaker-card__bio">An interactive workshop on real assessment dilemmas in the age of AI — exchanging experiences and practical approaches that make learning visible and support responsible AI use.</p>
+          <span class="fe-speaker-card__more">View details <i class="fas fa-arrow-right"></i></span>
         </div>
 
-        <div class="fe-speaker-card">
+        <div class="fe-speaker-card fe-speaker-card--clickable" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for Staying AI-HED: Innovating Teaching &amp; Curricula" onclick="feOpenWorkshopModal('aihed')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();feOpenWorkshopModal('aihed');}">
           <div class="fe-speaker-card__avatar">{{ partial "fe-avatar.html" (dict "slug" "dietmar" "size" 56) }}</div>
           <span class="fe-speaker-card__tag">Workshop</span>
           <div class="fe-speaker-card__name">Staying AI-HED: Innovating Teaching &amp; Curricula</div>
-          <div class="fe-speaker-card__org"><a href="/team/dietmar-paier" style="color:inherit;text-decoration:none;">Dietmar Paier</a> · UAS BFI Vienna</div>
+          <div class="fe-speaker-card__org"><a href="/team/dietmar-paier" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">Dietmar Paier</a> · UAS BFI Vienna</div>
           <p class="fe-speaker-card__bio">Findings from AI-HED's evaluation activities — surveys, focus groups and logbooks — translated into ideas for AI-infused teaching and curricular design.</p>
+          <span class="fe-speaker-card__more">View details <i class="fas fa-arrow-right"></i></span>
         </div>
 
-        <div class="fe-speaker-card">
+        <div class="fe-speaker-card fe-speaker-card--clickable" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for Putting AI to Academic Use" onclick="feOpenWorkshopModal('bruno')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();feOpenWorkshopModal('bruno');}">
           <div class="fe-speaker-card__avatar">{{ partial "fe-avatar.html" (dict "slug" "bruno-amaral" "size" 56) }}</div>
           <span class="fe-speaker-card__tag">Workshop</span>
           <div class="fe-speaker-card__name">Putting AI to Academic Use</div>
-          <div class="fe-speaker-card__org"><a href="/team/bruno-amaral" style="color:inherit;text-decoration:none;">Bruno Amaral</a> · ESCS-IPL, Lisbon</div>
+          <div class="fe-speaker-card__org"><a href="/team/bruno-amaral" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">Bruno Amaral</a> · ESCS-IPL, Lisbon</div>
           <p class="fe-speaker-card__bio">A hands-on workshop connecting three free tools — Zotero, Obsidian and Claude — into a simple research workflow for reviewing literature, building lesson plans and generating teaching materials.</p>
+          <span class="fe-speaker-card__more">View details <i class="fas fa-arrow-right"></i></span>
         </div>
 
-        <div class="fe-speaker-card">
+        <div class="fe-speaker-card fe-speaker-card--clickable" tabindex="0" role="button" aria-haspopup="dialog" aria-label="View details for Generative AI for University Educators: Adapting, Creating and Reflecting" onclick="feOpenWorkshopModal('genai')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();feOpenWorkshopModal('genai');}">
           <div class="fe-speaker-card__avatar" style="width:auto;height:auto;background:none;border-radius:0;display:flex;flex-wrap:wrap;gap:8px;">
             <span style="width:40px;height:40px;border-radius:50%;overflow:hidden;background:#e9f0ec;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{ partial "fe-avatar.html" (dict "slug" "ana-kutnjak" "size" 40) }}</span>
             <span style="width:40px;height:40px;border-radius:50%;overflow:hidden;background:#e9f0ec;display:flex;align-items:center;justify-content:center;flex-shrink:0;">{{ partial "fe-avatar.html" (dict "slug" "larisa-hrustek" "size" 40) }}</span>
@@ -668,11 +807,99 @@
           </div>
           <span class="fe-speaker-card__tag">Workshop</span>
           <div class="fe-speaker-card__name">Generative AI for University Educators: Adapting, Creating and Reflecting</div>
-          <div class="fe-speaker-card__org"><a href="/team/ana-kutnjak" style="color:inherit;text-decoration:none;">Ana Kutnjak</a>, <a href="/team/larisa-hrustek" style="color:inherit;text-decoration:none;">Larisa Hrustek</a>, <a href="/team/iva-gregurec" style="color:inherit;text-decoration:none;">Iva Gregurec</a>, <a href="/team/magdalena-kustelega" style="color:inherit;text-decoration:none;">Magdalena Kuštelega</a> &amp; <a href="/team/matija-sajn" style="color:inherit;text-decoration:none;">Matija Šajn</a> · FOI, University of Zagreb</div>
+          <div class="fe-speaker-card__org"><a href="/team/ana-kutnjak" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">Ana Kutnjak</a>, <a href="/team/larisa-hrustek" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">Larisa Hrustek</a>, <a href="/team/iva-gregurec" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">Iva Gregurec</a>, <a href="/team/magdalena-kustelega" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">Magdalena Kuštelega</a> &amp; <a href="/team/matija-sajn" style="color:inherit;text-decoration:none;" onclick="event.stopPropagation()">Matija Šajn</a> · FOI, University of Zagreb</div>
           <p class="fe-speaker-card__bio">This workshop starts from everyday classroom challenges rather than the technology itself, showing HEI teachers how generative AI can help adapt existing materials for learners with different prior knowledge, interests and learning styles. Working on their own teaching materials, participants will produce a new resource — a differentiated task, quiz, or audio/video summary — and leave with a clearer sense of where AI is genuinely useful and where a teacher's own judgement remains essential.</p>
+          <span class="fe-speaker-card__more">View details <i class="fas fa-arrow-right"></i></span>
         </div>
 
       </div>
+
+      <!-- Workshop detail templates (used to populate the modal) -->
+      <template id="fe-tpl-workshop-assess">
+        <div class="fe-modal__avatars">
+          <span>{{ partial "fe-avatar.html" (dict "slug" "erik" "size" 52) }}</span>
+          <span>{{ partial "fe-avatar.html" (dict "slug" "raul-casado-linares" "size" 52) }}</span>
+        </div>
+        <span class="fe-modal__tag">Workshop</span>
+        <h3 class="fe-modal__title" id="fe-modal-title">How Do We Assess in the Age of AI?</h3>
+        <p class="fe-modal__presenters"><a href="/team/erik-kostelijk">Erik Kostelijk</a> &amp; <a href="/team/raul-casado-linares">Raúl Casado Linares</a> · Amsterdam University of Applied Sciences</p>
+        <div class="fe-modal__section">
+          <h4>About this workshop</h4>
+          <p>Artificial Intelligence is reshaping assessment in higher education. As AI increasingly contributes to assignments, reports, and other learning products, educators face a fundamental question: how do we continue to assess meaningful student learning? In this interactive workshop, participants explore real assessment dilemmas from their own teaching practice, exchange experiences with colleagues, and discover insights from the AI-HED project. Together, participants discuss practical approaches that help make learning visible, strengthen student ownership, and support responsible AI use. Whether just starting to rethink assessments or already experimenting with AI, this workshop offers fresh ideas, practical inspiration, and peer learning.</p>
+        </div>
+        <div class="fe-modal__note">The precise format and activities are still being finalised — this description is intentionally kept general and will be refined closer to the event.</div>
+      </template>
+
+      <template id="fe-tpl-workshop-aihed">
+        <div class="fe-modal__avatars"><span>{{ partial "fe-avatar.html" (dict "slug" "dietmar" "size" 52) }}</span></div>
+        <span class="fe-modal__tag">Workshop</span>
+        <h3 class="fe-modal__title" id="fe-modal-title">Staying AI-HED: Innovating Teaching &amp; Curricula</h3>
+        <p class="fe-modal__presenters"><a href="/team/dietmar-paier">Dietmar Paier</a> · UAS BFI Vienna</p>
+        <div class="fe-modal__section">
+          <h4>About this workshop</h4>
+          <p>In the AI-HED project, a wide range of evaluation activities have been carried out — student surveys, focus groups with students and teachers, and analysis of teachers' course logbooks. Dietmar presents an overview of the evaluation findings, compares them with the current state of the art in AI-related teaching research, and outlines scenarios for the future direction of higher education. In the interactive part, participants develop ideas for designing AI-infused teaching courses and advancing curricular design of degree programs.</p>
+        </div>
+        <div class="fe-modal__section">
+          <h4>Learning outcomes</h4>
+          <ul>
+            <li>Identify future requirements for teaching competencies.</li>
+            <li>Define one's own role as an educator within socio-technical systems.</li>
+          </ul>
+        </div>
+        <div class="fe-modal__section">
+          <h4>Target groups</h4>
+          <div class="fe-modal__pills">
+            <span class="fe-modal__pill">Teachers</span>
+            <span class="fe-modal__pill">Managers of higher education institutions</span>
+            <span class="fe-modal__pill">Academic experts in curriculum development</span>
+            <span class="fe-modal__pill">Academic staff development</span>
+          </div>
+        </div>
+        <div class="fe-modal__section">
+          <h4>About the facilitator</h4>
+          <p>Dietmar Paier heads the Teaching &amp; Learning Center at the University of Applied Sciences BFI in Vienna. His work focuses on national and international projects on teaching innovation, continuing education in higher education pedagogy, and learning analytics. He teaches methods of social research and career development.</p>
+        </div>
+        <div class="fe-modal__note">Dietmar is also joining the panel discussion later in the programme — see the Panel discussion section below.</div>
+      </template>
+
+      <template id="fe-tpl-workshop-bruno">
+        <div class="fe-modal__avatars"><span>{{ partial "fe-avatar.html" (dict "slug" "bruno-amaral" "size" 52) }}</span></div>
+        <span class="fe-modal__tag">Workshop</span>
+        <h3 class="fe-modal__title" id="fe-modal-title">Putting AI to Academic Use</h3>
+        <p class="fe-modal__presenters"><a href="/team/bruno-amaral">Bruno Amaral</a> · ESCS-IPL, Lisbon</p>
+        <div class="fe-modal__section">
+          <h4>About this workshop</h4>
+          <p>Most of us were never taught to use our computers to their full potential, and generative AI risks widening that gap by turning us from collaborators into an audience. This hands-on workshop shows a practical way back to agency. Participants build a simple, reproducible research workflow that connects three free tools — Zotero for capturing and annotating sources, Obsidian for linked notes, and Claude for grounded generation. The core lesson is that the value is not in clever prompts but in how you collect and organise your own research. By the end, professors will have seen (and started to build) a workflow that lets them ask AI for a lesson plan grounded in their own reading, rather than in whatever the model happened to invent.</p>
+        </div>
+        <div class="fe-modal__section">
+          <h4>Learning outcomes</h4>
+          <p>By the end of the session, participants will be able to:</p>
+          <ol>
+            <li>Explain the "AI as assistant, not wizard" model, and why organising your own research matters more than clever prompting.</li>
+            <li>Install Obsidian and navigate a template-based note vault, recognising the core note types (Definitions, Literature Notes, Persons, Organisations, Clippings, Prompts).</li>
+            <li>Capture an academic source and take notes on it — highlights and comments — in Zotero using the browser connector.</li>
+            <li>Migrate Zotero notes into Obsidian as linked literature notes using the Zotero Integration plugin.</li>
+            <li>Connect an Obsidian vault to Claude and prompt for a lesson plan grounded in their own notes, using a structured Markdown prompt.</li>
+          </ol>
+        </div>
+      </template>
+
+      <template id="fe-tpl-workshop-genai">
+        <div class="fe-modal__avatars">
+          <span>{{ partial "fe-avatar.html" (dict "slug" "ana-kutnjak" "size" 52) }}</span>
+          <span>{{ partial "fe-avatar.html" (dict "slug" "larisa-hrustek" "size" 52) }}</span>
+          <span>{{ partial "fe-avatar.html" (dict "slug" "iva-gregurec" "size" 52) }}</span>
+          <span>{{ partial "fe-avatar.html" (dict "slug" "magdalena-kustelega" "size" 52) }}</span>
+          <span>{{ partial "fe-avatar.html" (dict "slug" "matija-sajn" "size" 52) }}</span>
+        </div>
+        <span class="fe-modal__tag">Workshop</span>
+        <h3 class="fe-modal__title" id="fe-modal-title">Generative AI for University Educators: Adapting, Creating and Reflecting</h3>
+        <p class="fe-modal__presenters"><a href="/team/ana-kutnjak">Ana Kutnjak</a>, <a href="/team/larisa-hrustek">Larisa Hrustek</a>, <a href="/team/iva-gregurec">Iva Gregurec</a>, <a href="/team/magdalena-kustelega">Magdalena Kuštelega</a> &amp; <a href="/team/matija-sajn">Matija Šajn</a> · FOI, University of Zagreb</p>
+        <div class="fe-modal__section">
+          <h4>About this workshop</h4>
+          <p>This workshop starts from everyday classroom challenges rather than the technology itself, showing HEI teachers how generative AI can help adapt existing materials for learners with different prior knowledge, interests and learning styles. Working on their own teaching materials, participants will produce a new resource — a differentiated task, quiz, or audio/video summary — and leave with a clearer sense of where AI is genuinely useful and where a teacher's own judgement remains essential.</p>
+        </div>
+      </template>
 
       <h3 class="h5 mt-5 mb-3" style="color:#2c4d36;">Panel discussion</h3>
       <div class="fe-speakers-grid">
@@ -823,7 +1050,15 @@
   </div><!-- /fe-panels -->
 
   <!-- ── Page-level footer (partner strip) ─────────────────────────────────── -->
-  
+
+
+  <!-- ── Workshop detail modal ──────────────────────────────────────────────── -->
+  <div class="fe-modal-overlay" id="fe-modal-overlay" onclick="if(event.target===this)feCloseWorkshopModal();">
+    <div class="fe-modal" role="dialog" aria-modal="true" aria-labelledby="fe-modal-title">
+      <button type="button" class="fe-modal__close" onclick="feCloseWorkshopModal()" aria-label="Close">&times;</button>
+      <div id="fe-modal-content"></div>
+    </div>
+  </div>
 
 </div><!-- /fe-wrap -->
 
@@ -859,5 +1094,38 @@ function feShowPanel(key) {
     }
   });
 }
+
+var feModalLastFocus = null;
+
+function feOpenWorkshopModal(key) {
+  var tpl = document.getElementById('fe-tpl-workshop-' + key);
+  var overlay = document.getElementById('fe-modal-overlay');
+  var content = document.getElementById('fe-modal-content');
+  if (!tpl || !overlay || !content) return;
+  content.innerHTML = '';
+  content.appendChild(tpl.content.cloneNode(true));
+  feModalLastFocus = document.activeElement;
+  overlay.classList.add('is-active');
+  document.body.style.overflow = 'hidden';
+  var closeBtn = overlay.querySelector('.fe-modal__close');
+  if (closeBtn) closeBtn.focus();
+}
+
+function feCloseWorkshopModal() {
+  var overlay = document.getElementById('fe-modal-overlay');
+  if (!overlay) return;
+  overlay.classList.remove('is-active');
+  document.body.style.overflow = '';
+  if (feModalLastFocus && typeof feModalLastFocus.focus === 'function') {
+    feModalLastFocus.focus();
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var overlay = document.getElementById('fe-modal-overlay');
+    if (overlay && overlay.classList.contains('is-active')) feCloseWorkshopModal();
+  }
+});
 </script>
 {{ end }}
