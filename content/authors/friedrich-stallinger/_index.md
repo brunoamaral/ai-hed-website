@@ -8,7 +8,7 @@ subtitle: Endowed Professor for Multi-Project Management and Integrated Manageme
 twitterUsername: ""
 weight: 14
 params:
-  kind: team-member
+  kind: speaker
 
 options:
   header: mini

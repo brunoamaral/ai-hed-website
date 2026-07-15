@@ -8,7 +8,7 @@ subtitle: Lecturer and Head of Political Science Department, UAS BFI Vienna
 twitterUsername: ""
 weight: 13
 params:
-  kind: team-member
+  kind: speaker
 
 options:
   header: mini

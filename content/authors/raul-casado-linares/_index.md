@@ -8,7 +8,7 @@ subtitle: Senior Lecturer, Amsterdam University of Applied Sciences
 twitterUsername: ""
 weight: 15
 params:
-  kind: team-member
+  kind: speaker
 
 options:
   header: mini
