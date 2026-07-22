@@ -1,0 +1,135 @@
+{
+	"metadata": {
+		"download_pdf": "/downloads/from-the-classroom/Antje van Essen-Hermans - Innovate for Impact - Amsterdam UAS.pdf",
+		"date": "2026-04-13",
+		"slug": "innovate-for-impact-hva",
+		"course_title": "Innovate for Impact",
+		"institution": "Amsterdam University of Applied Sciences",
+		"institution_short": "HvA Amsterdam",
+		"institution_logo": "/images/partners/logo_amsterdam-uas.svg",
+		"informants": [
+			{
+				"name": "Antje van Essen-Hermans",
+				"role": "Lecturer",
+				"portrait": "/images/from-the-classroom/educators/Antje-van-Essen-Hermans.jpg",
+				"bio": ""
+			}
+		],
+		"hook": ""
+	},
+
+	"raw": {
+		"course_overview": {
+			"title": "Innovate for Impact",
+			"university": "Amsterdam University of Applied Sciences",
+			"programme": "Marketing major (International Marketing & Sales)",
+			"ects_credits": 5,
+			"level": "Bachelor",
+			"semester": "Semester 1 (5th semester)",
+			"num_students": 70,
+			"typical_student_background": "A project-based bachelor elective bridging marketing strategy with real-world business challenges. Students work in teams to provide strategic (think out of the box), evidence-based marketing (research skills) and sales advice to companies, focusing on innovation and measurable value creation.",
+			"prerequisites": "Completion of all specialisation courses in the International Marketing & Sales Major."
+		},
+		"ai_usage_summary": "AI was integrated throughout the course as a support tool for ideation, research, analysis, and design. Students used tools such as ChatGPT, Research Rabbit, Gemini, Perplexity, Canva, and Qualtrics to develop marketing concepts, conduct research, analyse data, and create prototypes. A distinctive element was the use of AI as a 'devil's advocate' to challenge ideas and encourage reflection. The main goal was to enhance creativity and efficiency while keeping students critical and responsible in their use of AI.",
+		"learning_outcomes": {
+			"outcomes": [
+				"Imagine creative marketing opportunities with appeal to a target audience",
+				"Define a complex marketing problem in an international business setting",
+				"Develop a SMART method to approach complex marketing problems within a given timeframe",
+				"Integrate insights from academic and professional sources in the analysis of complex marketing problems",
+				"Design sustainable solutions to complex marketing problems by using the intervention cycle",
+				"Demonstrate an evidence-based line of reasoning using primary and secondary data",
+				"Use AI in the design and assessment of marketing solutions"
+			],
+			"ai_support_per_ilo": "ILOs 1 & 2: AI supported creativity by helping students generate and test ideas for sustainable category extensions, and helped structure problem statements, research questions, and planning. ILOs 3 & 4: AI tools supported literature review, survey design, data analysis, and visual prototyping. ILOs 5 & 6: AI supported the design of sustainable marketing solutions through visual prototyping and data analysis, including poster creation, intervention cycle templates, and survey data interpretation, and helped students build evidence-based reasoning by assisting with data analysis and structuring arguments grounded in primary and secondary research. ILO 7: Students were asked to document and reflect on AI use throughout the course, which supported critical evaluation and responsible application.",
+			"skills_enhanced": [
+				"Creativity and ideation",
+				"Research design and literature search",
+				"Survey development and data interpretation",
+				"Visual communication",
+				"Structuring complex tasks and working more independently",
+				"Growth area: students still needed support evaluating output quality, identifying bias, and avoiding overreliance on AI"
+			],
+			"ai_specific_outcomes": true,
+			"ai_specific_outcomes_description": "One explicit learning outcome is that students use AI in the design and assessment of marketing solutions. In addition, students are expected to document their AI use and reflect critically on how AI contributed to, limited, or biased their work."
+		},
+		"purpose_and_benefits": {
+			"main_reason": "The main reason was to support creativity, research, and design in a real-world marketing project. AI was used to help students work more efficiently and to develop their ability to use AI critically in professional practice.",
+			"benefits_for_students": [
+				"Generated ideas faster, structured research tasks, and created prototypes more easily",
+				"Increased engagement and made some parts of the course more accessible, especially for students who needed support with writing, design, or research logic",
+				"Encouraged experimentation and discussion",
+				"Learned that AI works best when combined with human judgment and reflection"
+			],
+			"benefits_for_lecturers": [
+				"Helped give clearer examples, support student ideation, and make discussions more concrete",
+				"Improved efficiency — students could produce draft ideas, analyses, and visual outputs more quickly, which made feedback more focused",
+				"Required extra time from lecturers to guide students in prompting, evaluation, and responsible use"
+			]
+		},
+		"implementation_details": {
+			"how_used_in_class": "AI was used across different phases of the course. In the early weeks, students used AI for brainstorming category extensions, team activities, and problem definition. Later, they used it for literature search, research planning, SWOT analysis, survey design, data analysis, poster creation, and final presentations. AI use took place in lectures, workshops, group work, and individual reflection tasks.",
+			"tools_used": [
+				"ChatGPT",
+				"Gemini",
+				"Claude",
+				"Perplexity",
+				"Research Rabbit",
+				"Qualtrics",
+				"Canva",
+				"Kittl"
+			],
+			"access": "Students mainly used a combination of free and paid versions of tools — in each group there would be students with paid versions. Free versions were available for all core tools, with paid subscriptions used optionally within student teams, giving mixed access to advanced features.",
+			"guidance_provided": "Students received presentations on available platforms, demonstrations of prompting, in-class coaching, and feedback on their outputs. Reflection tasks were also used to help students think critically about bias, quality, and reliability. Support was practical and ongoing, especially when students were new to specific tools.",
+			"part_of_assessment": true,
+			"assessment_details": "AI usage was part of the assessment through rubric-based criteria. Students were expected to use at least two AI tools, document their interactions, and reflect critically on how AI contributed to creativity, research, and design."
+		},
+		"evaluation_and_risk_management": {
+			"impact_evaluated_how": "The impact was evaluated through student AI usage logs, instructor reflections, feedback during coaching sessions, and review of student outputs. The course also planned pre- and post-course AI literacy surveys by the AI-HED team.",
+			"metrics_or_kpis": true,
+			"metrics_details": "Suggested indicators included student performance, engagement, quality of AI reflections, the total number of students reporting AI as helpful, and the number of AI-generated ideas that were used or revised. A post-course survey (N ≈ 37–39) produced an overall course evaluation of 3.85 / 5. Highlights: 'helped me use AI effectively in the course topic(s)' (4.10), 'helped me better understand complex concepts' (4.11), 'helped me apply knowledge in practical ways' (4.08), and 'helped me develop relevant skills for my future' (4.03). Lower scores were seen on teacher guidance items, e.g. 'the teacher guided us in using AI in a responsible way, following ethical considerations and privacy rules' (3.41).",
+			"formal_institutional_evaluation": true,
+			"risk_management": {
+				"in_place": true,
+				"description": "The main risks identified were overreliance on AI, uneven AI literacy, bias in outputs, superficial reflection, and technical or access issues. These were managed through lecturer guidance, peer support, structured prompting exercises, reflection tasks, and clear expectations that AI should support rather than replace student thinking. Students were encouraged to validate outputs and compare them with theory, evidence, and their own judgment."
+			}
+		},
+		"overall_impact": {
+			"impact_on_teaching_learning": "Overall, AI had a positive impact on both teaching and learning. It increased engagement, supported creativity, and made several tasks more efficient, especially in ideation, research, and design. It also helped students participate more actively and made some complex tasks feel more accessible. At the same time, the course showed that AI only adds value when students are guided to question outputs, reflect critically, and use the tools selectively. Challenges for lecturers included managing different student skill levels, supporting tool use, and dealing with technical limitations.",
+			"impact_on_student_outcomes": "AI supported student learning outcomes in a mainly positive way. It improved idea generation, research structuring, survey development, and visual communication. Students also became more aware of bias, prompting, and the need to evaluate AI outputs. The strongest gains were in creativity, efficiency, and engagement, while the weakest area remained critical reflection, which still needed continuous support.",
+			"main_challenges": [
+				{
+					"challenge": "Uneven student experience with AI and differing skill levels",
+					"management": "Addressed through demonstrations, in-class coaching, and peer learning"
+				},
+				{
+					"challenge": "Overreliance on AI outputs",
+					"management": "Managed by encouraging students to use AI as a co-creator rather than a ready-made answer machine, supported by reflection logs"
+				},
+				{
+					"challenge": "Limited free access to some tools and occasional technical issues",
+					"management": "Mixed free/paid access within teams, with lecturer guidance to work around limitations"
+				},
+				{
+					"challenge": "Difficulty judging output quality; some students felt overloaded by the number of available tools",
+					"management": "Reflection tasks and in-class coaching helped students evaluate AI outputs more critically"
+				}
+			]
+		},
+		"scalability_and_transferability": {
+			"can_be_scaled": true,
+			"scaling_requirements": "This experience can be scaled to other courses, especially project-based courses where students need support in ideation, research, analysis, and communication. To scale it well, lecturers would need basic training in AI tools and prompting, clear assessment criteria, and practical guidelines for responsible use.",
+			"key_advice": "Introduce AI as support for thinking, not as a substitute for it. Guide students early, especially on prompting, bias, and reflection. Start with a small number of tools and connect them clearly to the learning outcomes, showing good examples in class. Keep AI use purposeful and intervene when it becomes a shortcut — do not let the tool drive the course."
+		}
+	},
+
+	"edited": {
+		"intro": "",
+		"why_we_used_ai": "",
+		"how_it_worked": "",
+		"what_changed": "",
+		"what_we_struggled_with": "",
+		"what_we_learned": "",
+		"pull_quotes": []
+	}
+}
