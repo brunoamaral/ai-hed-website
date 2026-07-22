@@ -1,0 +1,17 @@
+{{/* Renders a circular author photo if the author page (content/authors/<slug>) has an "avatar" resource, else a placeholder icon. Params: slug (required), size (px, default 56). */}}
+{{ $slug := .slug }}
+{{ $size := .size | default 56 }}
+{{ $author := site.GetPage (printf "authors/%s/" $slug) }}
+{{ $avatar := "" }}
+{{ if $author }}
+  {{ with $author.Resources.GetMatch "avatar" }}
+    {{ $avatar = . }}
+  {{ end }}
+{{ end }}
+{{ if $avatar }}
+  {{ $px := mul $size 2 }}
+  {{ $img := $avatar.Fill (printf "%dx%d Center" $px $px) }}
+  <img src="{{ $img.RelPermalink }}" alt="{{ with $author }}{{ .Params.name }}{{ end }}" style="width:{{ $size }}px;height:{{ $size }}px;border-radius:50%;object-fit:cover;display:block;">
+{{ else }}
+  <i class="fas fa-user" style="color:#6b8b6b;font-size:{{ div $size 2 }}px;"></i>
+{{ end }}

@@ -17,7 +17,7 @@ profiles:
   linkedin: https://www.linkedin.com/in/erik-kostelijk-242956/
 resources:
     - name: avatar
-      src: erik.jpeg
+      src: erik.jpg
     - name: header
       src: gregoryai_background.jpg
 
