@@ -14,4 +14,7 @@ options:
   unlisted: false
   hideSubscribeForm: true
   navbar: "navbar navbar-expand-lg bg-white fixed-top"
+resources:
+  - name: header
+    src: ai-hed-vienna-maio-2025.jpg
 ---

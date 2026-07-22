@@ -580,12 +580,20 @@
 {{ define "main" }}
 {{ $eventDate := .Params.event_date | default "6 October 2026" }}
 {{ $eventBadge := .Params.event_badge | default "6 October 2026 · 13:00–18:30 CET · AUAS Amsterdam · Hybrid" }}
+{{ $heroImg := "/images/hva-amsterdam.jpg" }}
+{{ with .Resources.GetMatch "header" }}
+  {{ if eq .MediaType.SubType "gif" }}
+    {{ $heroImg = .RelPermalink }}
+  {{ else }}
+    {{ $heroImg = (.Resize "1920x").RelPermalink }}
+  {{ end }}
+{{ end }}
 
 <div class="fe-wrap">
 
   <!-- ── Hero ─────────────────────────────────────────────────────────────── -->
   <div class="fe-hero">
-    <img class="fe-hero__bg" src="/images/hva-amsterdam.jpg" alt="">
+    <img class="fe-hero__bg" src="{{ $heroImg }}" alt="">
     <div class="fe-hero__overlay"></div>
     <div class="fe-hero__body">
       <div class="fe-hero__eyebrow">AI-HED · Final Event</div>
